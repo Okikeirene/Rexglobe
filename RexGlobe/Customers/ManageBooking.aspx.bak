@@ -1,0 +1,77 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainSite.Master" AutoEventWireup="true" CodeBehind="ManageBooking.aspx.cs" Inherits="RexGlobe.Customers.ManageBooking" %>
+
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+<dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqLBooking" KeyFieldName="ID">
+    <Settings ShowFilterRow="True" />
+    <Columns>
+        <dx:GridViewCommandColumn ShowClearFilterButton="True" ShowEditButton="True" VisibleIndex="0">
+        </dx:GridViewCommandColumn>
+        <dx:GridViewDataTextColumn FieldName="ID" ReadOnly="True" VisibleIndex="1">
+            <EditFormSettings Visible="False" />
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn FieldName="ShipmentID" VisibleIndex="2">
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn FieldName="SenderName" VisibleIndex="3">
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn FieldName="SenderEmail" VisibleIndex="4">
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn FieldName="OriginServiceLocation" VisibleIndex="5">
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn FieldName="ReceiverName" VisibleIndex="6">
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn FieldName="ReceiverEmail" VisibleIndex="7">
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn FieldName="ReceiverDestination" VisibleIndex="8">
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn FieldName="ReceiverPinCode" VisibleIndex="9">
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn FieldName="ReceiverRegion" VisibleIndex="10">
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn FieldName="ReceiverCity" VisibleIndex="11">
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn FieldName="ServiceLocation" VisibleIndex="12">
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataDateColumn FieldName="CreateDate" VisibleIndex="13">
+        </dx:GridViewDataDateColumn>
+    </Columns>
+    </dx:ASPxGridView>
+    <asp:SqlDataSource ID="SqLBooking" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [Booking] WHERE [ID] = @ID" InsertCommand="INSERT INTO [Booking] ([ShipmentID], [SenderName], [SenderEmail], [OriginServiceLocation], [ReceiverName], [ReceiverEmail], [ReceiverDestination], [ReceiverPinCode], [ReceiverRegion], [ReceiverCity], [ServiceLocation], [CreateDate]) VALUES (@ShipmentID, @SenderName, @SenderEmail, @OriginServiceLocation, @ReceiverName, @ReceiverEmail, @ReceiverDestination, @ReceiverPinCode, @ReceiverRegion, @ReceiverCity, @ServiceLocation, @CreateDate)" SelectCommand="SELECT * FROM [Booking]" UpdateCommand="UPDATE [Booking] SET [ShipmentID] = @ShipmentID, [SenderName] = @SenderName, [SenderEmail] = @SenderEmail, [OriginServiceLocation] = @OriginServiceLocation, [ReceiverName] = @ReceiverName, [ReceiverEmail] = @ReceiverEmail, [ReceiverDestination] = @ReceiverDestination, [ReceiverPinCode] = @ReceiverPinCode, [ReceiverRegion] = @ReceiverRegion, [ReceiverCity] = @ReceiverCity, [ServiceLocation] = @ServiceLocation, [CreateDate] = @CreateDate WHERE [ID] = @ID">
+        <DeleteParameters>
+            <asp:Parameter Name="ID" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="ShipmentID" Type="Int32" />
+            <asp:Parameter Name="SenderName" Type="String" />
+            <asp:Parameter Name="SenderEmail" Type="String" />
+            <asp:Parameter Name="OriginServiceLocation" Type="String" />
+            <asp:Parameter Name="ReceiverName" Type="String" />
+            <asp:Parameter Name="ReceiverEmail" Type="String" />
+            <asp:Parameter Name="ReceiverDestination" Type="String" />
+            <asp:Parameter Name="ReceiverPinCode" Type="String" />
+            <asp:Parameter Name="ReceiverRegion" Type="String" />
+            <asp:Parameter Name="ReceiverCity" Type="String" />
+            <asp:Parameter Name="ServiceLocation" Type="String" />
+            <asp:Parameter Name="CreateDate" Type="DateTime" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="ShipmentID" Type="Int32" />
+            <asp:Parameter Name="SenderName" Type="String" />
+            <asp:Parameter Name="SenderEmail" Type="String" />
+            <asp:Parameter Name="OriginServiceLocation" Type="String" />
+            <asp:Parameter Name="ReceiverName" Type="String" />
+            <asp:Parameter Name="ReceiverEmail" Type="String" />
+            <asp:Parameter Name="ReceiverDestination" Type="String" />
+            <asp:Parameter Name="ReceiverPinCode" Type="String" />
+            <asp:Parameter Name="ReceiverRegion" Type="String" />
+            <asp:Parameter Name="ReceiverCity" Type="String" />
+            <asp:Parameter Name="ServiceLocation" Type="String" />
+            <asp:Parameter Name="CreateDate" Type="DateTime" />
+            <asp:Parameter Name="ID" Type="Int32" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
+</asp:Content>

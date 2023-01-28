@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6fa50b9d443546bd8f1572dd0d2ab385" Name="Diagram1" ZoomLevel="50">
+        <EntityTypeShape EntityType="RexGlobeModel.Bank" Width="1.5" PointX="11.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.Booking" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.BusinessLineGroup" Width="1.5" PointX="11.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.BusinessLine" Width="1.5" PointX="14" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.Country" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.Currency" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.Customer" Width="1.5" PointX="9.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.CustomerFile" Width="1.5" PointX="12" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.Gender" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.LGA" Width="1.5" PointX="7.5" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.MenuCategory" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.PaymentDate" Width="1.5" PointX="13.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.Payment" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.PaymentType" Width="1.5" PointX="7.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.Personnel" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.Personnel_Type" Width="1.5" PointX="14.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.PickUpRequest" Width="1.5" PointX="7.5" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.Product" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.Region" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.Resource" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.Role" Width="1.5" PointX="5.25" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.SaleType" Width="1.5" PointX="14.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.State" Width="1.5" PointX="5.25" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.Status" Width="1.5" PointX="15.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.SubMenu" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.Transportation" Width="1.5" PointX="7.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.UserAccount" Width="1.5" PointX="7.5" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.UserRole" Width="1.5" PointX="7.5" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.UsersProfile" Width="1.5" PointX="9.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.Vechicle" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.VechicleType" Width="1.5" PointX="7.75" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="RexGlobeModel.FK_Booking_Booking" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_Payments_Booking" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_BusinessLines_BusinessLineGroups" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_Region_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_Customer_LGAs" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_Customer_PaymentType" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_Customer_States" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_CustomerFiles_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_LGAs_LGAs" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_Resources_MenuCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_Payments_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_PickUpRequest_States" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_State_Region" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_UserAccount_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.Roles_UserRoles_FK" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_UserAccount_States" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_Vechicle_Transportation" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_UsersProfile_UserAccount" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_Vechicle_VechicleType" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RexGlobeModel.DispatchType" Width="1.5" PointX="17.375" PointY="16.75" />
+        <EntityTypeShape EntityType="RexGlobeModel.In_Bound_Dispatch" Width="1.5" PointX="19.625" PointY="7.25" />
+        <EntityTypeShape EntityType="RexGlobeModel.Out_Bound_Dispatch" Width="1.5" PointX="22.625" PointY="7.25" />
+        <EntityTypeShape EntityType="RexGlobeModel.Quantity" Width="1.5" PointX="17.375" PointY="19.75" />
+        <AssociationConnector Association="RexGlobeModel.FK_In_Bound_Dispatch_Booking" />
+        <AssociationConnector Association="RexGlobeModel.FK_Out_Bound_Dispatch_Booking" />
+        <AssociationConnector Association="RexGlobeModel.FK_Quantity_Customer" />
+        <AssociationConnector Association="RexGlobeModel.FK_In_Bound_Dispatch_DispatchType" />
+        <AssociationConnector Association="RexGlobeModel.FK_Out_Bound_Dispatch_DispatchType" />
+        <AssociationConnector Association="RexGlobeModel.FK_In_Bound_Dispatch_Quantity" />
+        <AssociationConnector Association="RexGlobeModel.FK_In_Bound_Dispatch_Vechicle" />
+        <AssociationConnector Association="RexGlobeModel.FK_Out_Bound_Dispatch_Quantity" />
+        <AssociationConnector Association="RexGlobeModel.FK_Out_Bound_Dispatch_Vechicle" />
+        <EntityTypeShape EntityType="RexGlobeModel.Shipment" Width="1.5" PointX="0.75" PointY="1.625" />
+        <AssociationConnector Association="RexGlobeModel.FK_Booking_Shipment" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

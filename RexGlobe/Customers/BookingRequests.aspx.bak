@@ -1,0 +1,257 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainSite.Master" AutoEventWireup="true" CodeBehind="BookingRequests.aspx.cs" Inherits="RexGlobe.Customers.BookingRequests" %>
+
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server">
+    <Items>
+    <dx:LayoutGroup ColCount="4" ColSpan="2" Caption="Sender Details">
+		<Items>
+			<dx:LayoutItem ColSpan="2" Caption="Sender Name" FieldName="SenderName" RequiredMarkDisplayMode="Required">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
+						<dx:ASPxTextBox ID="SenderName" runat="server" ClientInstanceName="SenderName" Width="100%" Height="25px">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+			<dx:LayoutItem Caption="Sender Email" FieldName="SenderEmail" RequiredMarkDisplayMode="Required">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server">
+						<dx:ASPxTextBox ID="SenderEmail" runat="server" ClientInstanceName="SenderEmail" Width="100%" Height="25px">
+							<ValidationSettings>
+                                <RegularExpression ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
+                                <RequiredField IsRequired="True" />
+                            </ValidationSettings>
+						</dx:ASPxTextBox>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+			<dx:LayoutItem Caption="Origin Service Location" FieldName="OriginServiceLocation"  RequiredMarkDisplayMode="Required" >
+				<LayoutItemNestedControlCollection>
+						<dx:LayoutItemNestedControlContainer>
+                        <dx:ASPxTextBox ID="OriginServiceLocation" runat="server" ClientInstanceName="OriginServiceLocation" Width="100%" Height="25px">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+`                             
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+		</Items>
+                                                                   
+	</dx:LayoutGroup>
+    <dx:LayoutGroup ColCount="4" ColSpan="2" Caption="Receiver Details">
+		<Items>
+			<dx:LayoutItem ColSpan="2" Caption="Receiver Name" FieldName="ReceiverName" RequiredMarkDisplayMode="Required">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
+						<dx:ASPxTextBox ID="ReceiverName" runat="server" ClientInstanceName="ReceiverName" Width="100%" Height="25px">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+			<dx:LayoutItem Caption="Receiver Email" FieldName="ReceiverEmail" RequiredMarkDisplayMode="Required">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server">
+						<dx:ASPxTextBox ID="ReceiverEmail" runat="server" ClientInstanceName="ReceiverEmail" Width="100%" Height="25px">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+			<dx:LayoutItem Caption="Receiver Destination" FieldName="ReceiverDestination"  RequiredMarkDisplayMode="Required" >
+				<LayoutItemNestedControlCollection>
+						<dx:LayoutItemNestedControlContainer>
+                        <dx:ASPxTextBox ID="ReceiverDestination" runat="server" ClientInstanceName="ReceiverDestination" Width="100%" Height="25px">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+`                             
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+            <dx:LayoutItem ColSpan="2" Caption="Receiver PinCode" FieldName="ReceiverPinCode" RequiredMarkDisplayMode="Required">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
+						<dx:ASPxTextBox ID="ReceiverPinCode" runat="server" ClientInstanceName="ReceiverPinCode" Width="100%" Height="25px">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+			<dx:LayoutItem Caption="Receiver Region" FieldName="ReceiverRegion" RequiredMarkDisplayMode="Required">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server">
+						<dx:ASPxTextBox ID="ReceiverRegion" runat="server" ClientInstanceName="ReceiverRegion" Width="100%" Height="25px">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+			<dx:LayoutItem Caption="Receiver City" FieldName="ReceiverCity"  RequiredMarkDisplayMode="Required" >
+				<LayoutItemNestedControlCollection>
+						<dx:LayoutItemNestedControlContainer>
+                        <dx:ASPxTextBox ID="ReceiverCity" runat="server" ClientInstanceName="ReceiverCity" Width="100%" Height="25px">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+`                             
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+            <dx:LayoutItem Caption="Service Location" FieldName="ServiceLocation"  RequiredMarkDisplayMode="Required" >
+				<LayoutItemNestedControlCollection>
+						<dx:LayoutItemNestedControlContainer>
+                        <dx:ASPxTextBox ID="ServiceLocation" runat="server" ClientInstanceName="ServiceLocation" Width="100%" Height="25px">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+`                             
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+		</Items>
+                                                                   
+	</dx:LayoutGroup>
+    <dx:LayoutGroup ColCount="4" ColSpan="2" Caption="Shipment Details">
+		<Items>
+			<dx:LayoutItem ColSpan="2" Caption="Commodity" FieldName="Commodity" RequiredMarkDisplayMode="Required">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
+						<dx:ASPxComboBox ID="Commodity" runat="server" AutoPostBack="True" AutoResizeWithContainer="True" ClientInstanceName="Product" DataSourceID="EdsProduct" EnableIncrementalFiltering="True" IncrementalFilteringMode="StartsWith" TextField="ProductName" ValueField="ProductID" Width="100%" Height="25px">
+                            <ClearButton Visibility="Auto"></ClearButton>
+                            <ValidationSettings>
+                                <RequiredField ErrorText="Required" IsRequired="True" />
+                            </ValidationSettings>
+                        </dx:ASPxComboBox>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+			<dx:LayoutItem Caption="Weight" FieldName="Weight" RequiredMarkDisplayMode="Required">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server">
+						<dx:ASPxTextBox ID="Weight" runat="server" ClientInstanceName="Weight" Width="100%" Height="25px" NullText="0.00" DisplayFormatString="0.00">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+			<dx:LayoutItem Caption="Total Weight" FieldName="TotalWeight"  RequiredMarkDisplayMode="Required" >
+				<LayoutItemNestedControlCollection>
+						<dx:LayoutItemNestedControlContainer>
+                        <dx:ASPxTextBox ID="TotalWeight" runat="server" ClientInstanceName="TotalWeight" Width="100%" Height="25px" NullText="0.00" DisplayFormatString="0.00">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+`                             
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+            <dx:LayoutItem ColSpan="2" Caption="Rate Per KG" FieldName="RatePerKG" RequiredMarkDisplayMode="Required">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
+						<dx:ASPxTextBox ID="RatePerKG" runat="server" ClientInstanceName="RatePerKG" Width="100%" Height="25px">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+			<dx:LayoutItem Caption="Expected Delivery Date" FieldName="ExpectedDeliveryDate" RequiredMarkDisplayMode="Required">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server">
+						<dx:ASPxDateEdit ID="ExpectedDeliveryDate" runat="server" ClientInstanceName="ExpectedDeliveryDate" Width="100%" Height="25px">
+                            <TimeSectionProperties>
+                            <TimeEditProperties>
+                            <ClearButton Visibility="Auto"></ClearButton>
+                            </TimeEditProperties>
+                            </TimeSectionProperties>
+
+                            <ClearButton Visibility="Auto"></ClearButton>
+
+                            <ValidationSettings ValidateOnLeave="False">
+                                <RequiredField ErrorText="Required" IsRequired="True" />
+                            </ValidationSettings>
+                        </dx:ASPxDateEdit>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+			<dx:LayoutItem Caption="Service Tax in Percentage" FieldName="ServiceTax"  RequiredMarkDisplayMode="Required" >
+				<LayoutItemNestedControlCollection>
+						<dx:LayoutItemNestedControlContainer>
+                        <dx:ASPxTextBox ID="ServiceTax" runat="server" ClientInstanceName="ServiceTax" Width="100%" Height="25px" NullText="0.00" DisplayFormatString="0.0">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+`                             
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+            <dx:LayoutItem Caption="Freight" FieldName="Freight"  RequiredMarkDisplayMode="Required" >
+				<LayoutItemNestedControlCollection>
+						<dx:LayoutItemNestedControlContainer>
+                        <dx:ASPxTextBox ID="Freight" runat="server" ClientInstanceName="Freight" Width="100%" Height="25px" >
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+`                             
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+		</Items>
+                                                                   
+	</dx:LayoutGroup>
+     <dx:LayoutGroup ColSpan="2" HorizontalAlign="Right" ShowCaption="False">
+		<Items>
+			<dx:LayoutItem ShowCaption="False" HorizontalAlign="Center">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
+                        <dx:ASPxButton ID="ASPxButtonSubmit" runat="server" Text="Submit Request" CommandName="New"  OnClick="ASPxButtonSubmit_Click" ClientInstanceName="submit" CssClass="btn btn-primary"  HorizontalAlign="Center" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {
+                            ASPxClientEdit.ValidateEditorsInContainer(formlayout);
+                            }" />
+                        </dx:ASPxButton>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+        </Items>
+    </dx:LayoutGroup>
+    </Items>
+<SettingsItemCaptions Location="Top" />
+</dx:ASPxFormLayout>
+
+    <asp:EntityDataSource ID="EdsProduct" runat="server" ConnectionString="name=RexGlobeEntities" DefaultContainerName="RexGlobeEntities" EnableFlattening="False" EntitySetName="Product" OrderBy="it.Decision" Select="it.[ProductID],it.[Code],it.[ProductName] ">
+    </asp:EntityDataSource>
+        
+    <asp:EntityDataSource ID="EdsBooking" runat="server" ConnectionString="name=RexGlobeEntities" DefaultContainerName="RexGlobeEntities" EnableFlattening="False" EntitySetName="Booking" OrderBy="it.PaymentID" Select="it.[ID] ,it.[ShipmentID],it.[SenderName],it.[SenderEmail],it.[Origin] ,it.[OriginServiceLocation],it.[ReceiverName],it.[ReceiverEmail],it.[ReceiverDestination],it.[ReceiverPinCode],it.[ReceiverRegion],it.[ReceiverCity],it.[ServiceLocation],it.[CreateDate]">
+    </asp:EntityDataSource>
+
+    <asp:EntityDataSource ID="EdsShipping" runat="server" ConnectionString="name=RexGlobeEntities" DefaultContainerName="RexGlobeEntities" EnableFlattening="False" EntitySetName="Shipment" OrderBy="it.ID" Select=" it.[ID],it.[Commodity],it.[Weight],it.[TotalWeight],it.[RatePerKG],it.[Date],it.[ExpectedDeliveryDate],it.[ServiceTax],it.[Freight],it.[BookingID],it.[CreatedBy],it.[CreateDate]">
+    </asp:EntityDataSource>
+
+</asp:Content>

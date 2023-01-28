@@ -1,0 +1,2742 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RexGlobeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Banks">
+          <Key>
+            <PropertyRef Name="BankCode" />
+          </Key>
+          <Property Name="BankCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="BankName" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Booking">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShipmentID" Type="int" />
+          <Property Name="SenderName" Type="varchar" MaxLength="50" />
+          <Property Name="SenderEmail" Type="varchar" MaxLength="50" />
+          <Property Name="OriginServiceLocation" Type="varchar" MaxLength="50" />
+          <Property Name="ReceiverName" Type="varchar" MaxLength="50" />
+          <Property Name="ReceiverEmail" Type="varchar" MaxLength="50" />
+          <Property Name="ReceiverDestination" Type="varchar" MaxLength="100" />
+          <Property Name="ReceiverPinCode" Type="varchar" MaxLength="20" />
+          <Property Name="ReceiverRegion" Type="varchar" MaxLength="50" />
+          <Property Name="ReceiverCity" Type="varchar" MaxLength="50" />
+          <Property Name="ServiceLocation" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="BusinessLineGroups">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="GroupId" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="GroupName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BusinessLines">
+          <Key>
+            <PropertyRef Name="BusinessLineId" />
+          </Key>
+          <Property Name="BusinessLineId" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="BusinessLineName" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="GroupId" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Currencies">
+          <Key>
+            <PropertyRef Name="CurrencyCode" />
+          </Key>
+          <Property Name="CurrencyCode" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="RequestID" />
+          </Key>
+          <Property Name="RequestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="REXID" Type="varchar" MaxLength="50" />
+          <Property Name="TIN" Type="int" />
+          <Property Name="Firstname" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="Designation" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="DateOfIncorporation" Type="datetime" Nullable="false" />
+          <Property Name="DateOfCommencement" Type="datetime" />
+          <Property Name="BVN" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="255" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Phone1" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone2" Type="varchar" MaxLength="50" />
+          <Property Name="ContractDate" Type="datetime" />
+          <Property Name="AssignedTo" Type="varchar" MaxLength="50" />
+          <Property Name="BusinessLineID" Type="int" />
+          <Property Name="LGAID" Type="int" />
+          <Property Name="StateID" Type="varchar" MaxLength="2" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreditLine" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Shareholding" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="StaffStrength" Type="int" />
+          <Property Name="TankFarms" Type="varchar" MaxLength="50" />
+          <Property Name="Vessels" Type="varchar" MaxLength="50" />
+          <Property Name="Trucks" Type="varchar" MaxLength="50" />
+          <Property Name="FillingStations" Type="varchar" MaxLength="50" />
+          <Property Name="Bankers" Type="varchar" MaxLength="50" />
+          <Property Name="AuditedAccounts" Type="bit" />
+          <Property Name="CompanyAuditors" Type="varchar" MaxLength="50" />
+          <Property Name="AttachedAuditedAccounts" Type="bit" />
+          <Property Name="CompanyTurnover" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SecurityDeposit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PaymentType" Type="int" />
+          <Property Name="CashLocation" Type="varchar" MaxLength="50" />
+          <Property Name="CashOwner" Type="varchar" MaxLength="50" />
+          <Property Name="Walkin" Type="bit" />
+          <Property Name="MarketedByWhom" Type="varchar" MaxLength="50" />
+          <Property Name="IntroducedByWhom" Type="varchar" MaxLength="50" />
+          <Property Name="SuppliersList" Type="varchar" MaxLength="100" />
+          <Property Name="TopFiveclients" Type="varchar" MaxLength="100" />
+          <Property Name="RemitMoneyForSanctionedCountry" Type="varchar" MaxLength="100" />
+          <Property Name="PerformThirdPartyBusinessTransaction" Type="varchar" MaxLength="100" />
+          <Property Name="AnySubsidiaryInSanctionCountry" Type="varchar" MaxLength="100" />
+          <Property Name="CountryOfProductTrade" Type="varchar" MaxLength="100" />
+          <Property Name="CountryImportedGoodsandServices" Type="varchar" MaxLength="100" />
+          <Property Name="CountryExportedGoodsandServices" Type="varchar" MaxLength="100" />
+          <Property Name="CountryTransitOfGoodsandService" Type="varchar" MaxLength="100" />
+          <Property Name="YourCustomers" Type="varchar" MaxLength="100" />
+          <Property Name="YourProducts" Type="varchar" MaxLength="100" />
+          <Property Name="TotalsalesOfClients" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalPurchasesofClient" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalAssetsoftheClient" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalOperatingIncomeofClient" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LicenseforConductedTransactions" Type="varchar" MaxLength="100" />
+          <Property Name="TransactwithSanctionedCountries" Type="varchar" MaxLength="100" />
+          <Property Name="BanksUsedtoTransactwithSanctionedCountries" Type="varchar" MaxLength="50" />
+          <Property Name="PlanToGrowMaintainorReduceBusinesswithSanctionCountries" Type="varchar" MaxLength="100" />
+          <Property Name="AcceptTermsandConditions" Type="bit" />
+        </EntityType>
+        <EntityType Name="CustomerFiles">
+          <Key>
+            <PropertyRef Name="FileId" />
+          </Key>
+          <Property Name="FileId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RequestId" Type="int" Nullable="false" />
+          <Property Name="FileName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="FileDescription" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="FileType" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="FileContent" Type="varbinary(max)" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DispatchType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="In_Bound_Dispatch">
+          <Key>
+            <PropertyRef Name="In_Bound_ID" />
+          </Key>
+          <Property Name="In_Bound_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuantityID" Type="int" />
+          <Property Name="DispatchID" Type="int" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="Region" Type="varchar" MaxLength="50" />
+          <Property Name="Route_Cities" Type="varchar" MaxLength="50" />
+          <Property Name="Dispatch_Date_Time" Type="time" Precision="7" />
+          <Property Name="BookingID" Type="int" />
+          <Property Name="WareHouseAgent" Type="varchar" MaxLength="50" />
+          <Property Name="BankStaffatDepo" Type="varchar" MaxLength="50" />
+          <Property Name="RexGlobeStaff" Type="varchar" MaxLength="50" />
+          <Property Name="NameofDepo" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyRep" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LGAs">
+          <Key>
+            <PropertyRef Name="LGAId" />
+          </Key>
+          <Property Name="LGAId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LGAName" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="StateId" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MenuCategory">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Out_Bound_Dispatch">
+          <Key>
+            <PropertyRef Name="Out_Bound_ID" />
+          </Key>
+          <Property Name="Out_Bound_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuantityID" Type="int" />
+          <Property Name="DispatchID" Type="int" />
+          <Property Name="VehicleID" Type="int" />
+          <Property Name="Region" Type="varchar" MaxLength="50" />
+          <Property Name="Route_Cities" Type="varchar" MaxLength="50" />
+          <Property Name="Dispatch_Date_Time" Type="time" Precision="7" />
+          <Property Name="BookingID" Type="int" />
+          <Property Name="WareHouseAgent" Type="varchar" MaxLength="50" />
+          <Property Name="BankStaffatDepo" Type="varchar" MaxLength="50" />
+          <Property Name="RexGlobeStaff" Type="varchar" MaxLength="50" />
+          <Property Name="NameofDepo" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+          <Property Name="CompanyRep" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PaymentDate">
+          <Key>
+            <PropertyRef Name="Payment_log_id" />
+          </Key>
+          <Property Name="Payment_log_id" Type="bigint" Nullable="false" />
+          <Property Name="PaymentDate" Type="datetime" />
+          <Property Name="PaymentYear" Type="int" />
+          <Property Name="PaymentMonthNumber" Type="int" />
+          <Property Name="PaymentMonthName" Type="varchar" MaxLength="50" />
+          <Property Name="PaymentDay" Type="int" />
+        </EntityType>
+        <EntityType Name="Payments">
+          <Key>
+            <PropertyRef Name="PaymentReference" />
+          </Key>
+          <Property Name="PaymentReference" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TIN" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PaymentDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="PaymentYear" Type="varchar" MaxLength="50" />
+          <Property Name="payment_type" Type="varchar" MaxLength="20" />
+          <Property Name="payment_currency" Type="varchar" MaxLength="10" />
+          <Property Name="payment_channel" Type="varchar" MaxLength="50" />
+          <Property Name="BookingID" Type="int" />
+          <Property Name="revenue_type" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="PaymentTypes">
+          <Key>
+            <PropertyRef Name="PaymentID" />
+          </Key>
+          <Property Name="PaymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PaymentType" Type="varchar" MaxLength="50" />
+          <Property Name="PaymentChannel" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Personnel">
+          <Key>
+            <PropertyRef Name="Personnel_ID" />
+          </Key>
+          <Property Name="Personnel_ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="First_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Middle_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Last_Name" Type="varchar" MaxLength="50" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" />
+          <Property Name="Designation" Type="varchar" MaxLength="50" />
+          <Property Name="Personnel_Type" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Phone_No" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="User_ID" Type="varchar" MaxLength="50" />
+          <Property Name="Task_Status" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Personnel_Type">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="100" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="Create_Date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PickUpRequest">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="PickUpDate" Type="datetime" />
+          <Property Name="ContactNumber" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="100" />
+          <Property Name="StateID" Type="varchar" MaxLength="2" />
+          <Property Name="Commodity" Type="varchar" MaxLength="50" />
+          <Property Name="Weight" Type="varchar" MaxLength="50" />
+          <Property Name="NearestServiceLocation" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+          <Property Name="ApprovePickUprequest" Type="bit" />
+          <Property Name="RejectPickUpRequest" Type="bit" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="ProductName" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Quantity">
+          <Key>
+            <PropertyRef Name="QuantityID" />
+          </Key>
+          <Property Name="QuantityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="50" />
+          <Property Name="Deposit_Credit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="VesselName" Type="varchar" MaxLength="50" />
+          <Property Name="TruckNumber" Type="varchar" MaxLength="50" />
+          <Property Name="DriversName" Type="varchar" MaxLength="50" />
+          <Property Name="DriversPhoneNumber" Type="varchar" MaxLength="50" />
+          <Property Name="WithDrawal_Debit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="AttachedWayBill" Type="varbinary(max)" />
+          <Property Name="TankFarm" Type="varchar" MaxLength="50" />
+          <Property Name="Quantityperton" Type="int" />
+          <Property Name="ProductPurchasedFrom" Type="varchar" MaxLength="50" />
+          <Property Name="LCFormNumber" Type="varchar" MaxLength="50" />
+          <Property Name="LCValue" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="FormNvalue" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CommercialInvoiceValue" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PointofDischarge" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="PaymentReference" Type="varchar" MaxLength="100" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Region_ID" Type="int" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Country_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="Resources">
+          <Key>
+            <PropertyRef Name="ResourceId" />
+          </Key>
+          <Property Name="ResourceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResourceDesc" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Url" Type="varchar" MaxLength="150" />
+          <Property Name="CategoryId" Type="tinyint" Nullable="false" />
+          <Property Name="Sequence" Type="smallint" />
+          <Property Name="Target" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ParentID" Type="int" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SaleTypes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SaleQuotation" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Shipment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Commodity" Type="varchar" MaxLength="50" />
+          <Property Name="Weight" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalWeight" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="RatePerKG" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="ExpectedDeliveryDate" Type="datetime" />
+          <Property Name="ServiceTax" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Freight" Type="varchar" MaxLength="50" />
+          <Property Name="BookingID" Type="int" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="States">
+          <Key>
+            <PropertyRef Name="StateID" />
+          </Key>
+          <Property Name="StateID" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Region_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Name="StatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Decision" Type="bit" />
+        </EntityType>
+        <EntityType Name="SubMenu">
+          <Key>
+            <PropertyRef Name="SubMenuId" />
+          </Key>
+          <Property Name="SubMenuId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubMenuName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Url" Type="varchar" MaxLength="150" />
+          <Property Name="ParentMenuId" Type="int" Nullable="false" />
+          <Property Name="Sequence" Type="smallint" />
+          <Property Name="Target" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Transportation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransportationType" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PasswordHash" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Salt" Type="varchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="50" />
+          <Property Name="RoleId" Type="int" />
+          <Property Name="StateID" Type="varchar" MaxLength="2" />
+          <Property Name="CountryID" Type="int" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="REXID" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+          <Property Name="ChangePassword" Type="bit" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserRoles">
+          <Key>
+            <PropertyRef Name="UserRoleID" />
+          </Key>
+          <Property Name="UserRoleID" Type="numeric" Precision="10" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="20" />
+          <Property Name="RoleID" Type="int" />
+          <Property Name="msrepl_tran_version" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersProfile">
+          <Key>
+            <PropertyRef Name="ProfileId" />
+          </Key>
+          <Property Name="ProfileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="FileName" Type="varchar" MaxLength="50" />
+          <Property Name="FileContent" Type="varbinary(max)" />
+          <Property Name="REXID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="REXCode" Type="nvarchar" MaxLength="256" />
+          <Property Name="SecurityID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Vechicle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VehicleProvider" Type="int" />
+          <Property Name="WorkServiceLocation" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleNumber" Type="varchar" MaxLength="50" />
+          <Property Name="TransportationType" Type="int" />
+          <Property Name="DriverName" Type="varchar" MaxLength="50" />
+          <Property Name="DriverPhoneNumber" Type="varchar" MaxLength="50" />
+          <Property Name="VehicleDetails" Type="varchar" MaxLength="100" />
+          <Property Name="PermitofStates" Type="varchar" MaxLength="50" />
+          <Property Name="PermitExpiryDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nchar" MaxLength="10" />
+          <Property Name="CreatedDate" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="VechicleType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VehicleProvider" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Booking_Booking">
+          <End Role="Booking" Type="Self.Booking" Multiplicity="1" />
+          <End Role="Booking1" Type="Self.Booking" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Booking">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Booking1">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Booking_Shipment">
+          <End Role="Shipment" Type="Self.Shipment" Multiplicity="0..1" />
+          <End Role="Booking" Type="Self.Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shipment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Booking">
+              <PropertyRef Name="ShipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessLines_BusinessLineGroups">
+          <End Role="BusinessLineGroups" Type="Self.BusinessLineGroups" Multiplicity="1" />
+          <End Role="BusinessLines" Type="Self.BusinessLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessLineGroups">
+              <PropertyRef Name="GroupId" />
+            </Principal>
+            <Dependent Role="BusinessLines">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_LGAs">
+          <End Role="LGAs" Type="Self.LGAs" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LGAs">
+              <PropertyRef Name="LGAId" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="LGAID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_PaymentType">
+          <End Role="PaymentTypes" Type="Self.PaymentTypes" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentTypes">
+              <PropertyRef Name="PaymentID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="PaymentType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_States">
+          <End Role="States" Type="Self.States" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerFiles_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="CustomerFiles" Type="Self.CustomerFiles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="RequestID" />
+            </Principal>
+            <Dependent Role="CustomerFiles">
+              <PropertyRef Name="RequestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_In_Bound_Dispatch_Booking">
+          <End Role="Booking" Type="Self.Booking" Multiplicity="0..1" />
+          <End Role="In_Bound_Dispatch" Type="Self.In_Bound_Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Booking">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="In_Bound_Dispatch">
+              <PropertyRef Name="BookingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_In_Bound_Dispatch_DispatchType">
+          <End Role="DispatchType" Type="Self.DispatchType" Multiplicity="0..1" />
+          <End Role="In_Bound_Dispatch" Type="Self.In_Bound_Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DispatchType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="In_Bound_Dispatch">
+              <PropertyRef Name="DispatchID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_In_Bound_Dispatch_Quantity">
+          <End Role="Quantity" Type="Self.Quantity" Multiplicity="0..1" />
+          <End Role="In_Bound_Dispatch" Type="Self.In_Bound_Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quantity">
+              <PropertyRef Name="QuantityID" />
+            </Principal>
+            <Dependent Role="In_Bound_Dispatch">
+              <PropertyRef Name="QuantityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_In_Bound_Dispatch_Vechicle">
+          <End Role="Vechicle" Type="Self.Vechicle" Multiplicity="0..1" />
+          <End Role="In_Bound_Dispatch" Type="Self.In_Bound_Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vechicle">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="In_Bound_Dispatch">
+              <PropertyRef Name="VehicleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LGAs_LGAs">
+          <End Role="States" Type="Self.States" Multiplicity="1" />
+          <End Role="LGAs" Type="Self.LGAs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="LGAs">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Out_Bound_Dispatch_Booking">
+          <End Role="Booking" Type="Self.Booking" Multiplicity="0..1" />
+          <End Role="Out_Bound_Dispatch" Type="Self.Out_Bound_Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Booking">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Out_Bound_Dispatch">
+              <PropertyRef Name="BookingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Out_Bound_Dispatch_DispatchType">
+          <End Role="DispatchType" Type="Self.DispatchType" Multiplicity="0..1" />
+          <End Role="Out_Bound_Dispatch" Type="Self.Out_Bound_Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DispatchType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Out_Bound_Dispatch">
+              <PropertyRef Name="DispatchID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Out_Bound_Dispatch_Quantity">
+          <End Role="Quantity" Type="Self.Quantity" Multiplicity="0..1" />
+          <End Role="Out_Bound_Dispatch" Type="Self.Out_Bound_Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quantity">
+              <PropertyRef Name="QuantityID" />
+            </Principal>
+            <Dependent Role="Out_Bound_Dispatch">
+              <PropertyRef Name="QuantityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Out_Bound_Dispatch_Vechicle">
+          <End Role="Vechicle" Type="Self.Vechicle" Multiplicity="0..1" />
+          <End Role="Out_Bound_Dispatch" Type="Self.Out_Bound_Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vechicle">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Out_Bound_Dispatch">
+              <PropertyRef Name="VehicleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_Booking">
+          <End Role="Booking" Type="Self.Booking" Multiplicity="0..1" />
+          <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Booking">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="BookingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Payments" Type="Self.Payments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PickUpRequest_States">
+          <End Role="States" Type="Self.States" Multiplicity="0..1" />
+          <End Role="PickUpRequest" Type="Self.PickUpRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="PickUpRequest">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quantity_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Quantity" Type="Self.Quantity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="RequestID" />
+            </Principal>
+            <Dependent Role="Quantity">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Region_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="Region" Type="Self.Region" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Region">
+              <PropertyRef Name="Country_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Resources_MenuCategory">
+          <End Role="MenuCategory" Type="Self.MenuCategory" Multiplicity="1" />
+          <End Role="Resources" Type="Self.Resources" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuCategory">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Resources">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_State_Region">
+          <End Role="Region" Type="Self.Region" Multiplicity="0..1" />
+          <End Role="States" Type="Self.States" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="States">
+              <PropertyRef Name="Region_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAccount_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+          <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="UserAccount">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAccount_States">
+          <End Role="States" Type="Self.States" Multiplicity="0..1" />
+          <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="UserAccount">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersProfile_UserAccount">
+          <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+          <End Role="UsersProfile" Type="Self.UsersProfile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsersProfile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vechicle_Transportation">
+          <End Role="Transportation" Type="Self.Transportation" Multiplicity="0..1" />
+          <End Role="Vechicle" Type="Self.Vechicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transportation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vechicle">
+              <PropertyRef Name="TransportationType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vechicle_VechicleType">
+          <End Role="VechicleType" Type="Self.VechicleType" Multiplicity="0..1" />
+          <End Role="Vechicle" Type="Self.Vechicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VechicleType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vechicle">
+              <PropertyRef Name="VehicleProvider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Roles_UserRoles_FK">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="0..1" />
+          <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="UserRoles">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="CreateBooking" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SenderName" Type="varchar" Mode="In" />
+          <Parameter Name="SenderEmail" Type="varchar" Mode="In" />
+          <Parameter Name="OriginServiceLocation" Type="varchar" Mode="In" />
+          <Parameter Name="ReceiverName" Type="varchar" Mode="In" />
+          <Parameter Name="ReceiverEmail" Type="varchar" Mode="In" />
+          <Parameter Name="ReceiverDestination" Type="varchar" Mode="In" />
+          <Parameter Name="ReceiverPinCode" Type="varchar" Mode="In" />
+          <Parameter Name="ReceiverRegion" Type="varchar" Mode="In" />
+          <Parameter Name="ReceiverCity" Type="varchar" Mode="In" />
+          <Parameter Name="ServiceLocation" Type="varchar" Mode="In" />
+          <Parameter Name="Commodity" Type="varchar" Mode="In" />
+          <Parameter Name="Weight" Type="decimal" Mode="In" />
+          <Parameter Name="TotalWeight" Type="decimal" Mode="In" />
+          <Parameter Name="RatePerKG" Type="decimal" Mode="In" />
+          <Parameter Name="ExpectedDeliveryDate" Type="datetime" Mode="In" />
+          <Parameter Name="ServiceTax" Type="int" Mode="In" />
+          <Parameter Name="Freight" Type="varchar" Mode="In" />
+          <Parameter Name="CreatedBy" Type="varchar" Mode="In" />
+          <Parameter Name="BookingID" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="CreateCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="PasswordHash" Type="varchar" Mode="In" />
+          <Parameter Name="Salt" Type="varchar" Mode="In" />
+          <Parameter Name="FirstName" Type="varchar" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="MiddleName" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
+          <Parameter Name="StateID" Type="varchar" Mode="In" />
+          <Parameter Name="CountryID" Type="int" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="REXID" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="CreatePassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Username" Type="varchar" Mode="In" />
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+          <Parameter Name="Result" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="CreatePickUp" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Name" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="ContactNumber" Type="varchar" Mode="In" />
+          <Parameter Name="Address" Type="varchar" Mode="In" />
+          <Parameter Name="StateID" Type="varchar" Mode="In" />
+          <Parameter Name="Commodity" Type="varchar" Mode="In" />
+          <Parameter Name="PickUpDate" Type="datetime" Mode="In" />
+          <Parameter Name="Weight" Type="varchar" Mode="In" />
+          <Parameter Name="NearestServiceLocation" Type="varchar" Mode="In" />
+          <Parameter Name="username" Type="varchar" Mode="In" />
+          <Parameter Name="PickUpID" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="PasswordReset" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="FirstName" Type="varchar" Mode="InOut" />
+          <Parameter Name="LastName" Type="varchar" Mode="InOut" />
+          <Parameter Name="Salt" Type="varchar" Mode="InOut" />
+          <Parameter Name="Result" Type="varchar" Mode="InOut" />
+        </Function>
+        <Function Name="UpdatePassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserName" Type="varchar" Mode="In" />
+          <Parameter Name="PasswordHash" Type="varchar" Mode="In" />
+          <Parameter Name="Salt" Type="varchar" Mode="In" />
+          <Parameter Name="PhoneNumber" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+          <Parameter Name="REXID" Type="varchar" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="RexGlobeModelStoreContainer">
+          <EntitySet Name="Banks" EntityType="Self.Banks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Booking" EntityType="Self.Booking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BusinessLineGroups" EntityType="Self.BusinessLineGroups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BusinessLines" EntityType="Self.BusinessLines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Currencies" EntityType="Self.Currencies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerFiles" EntityType="Self.CustomerFiles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DispatchType" EntityType="Self.DispatchType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="In_Bound_Dispatch" EntityType="Self.In_Bound_Dispatch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LGAs" EntityType="Self.LGAs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MenuCategory" EntityType="Self.MenuCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Out_Bound_Dispatch" EntityType="Self.Out_Bound_Dispatch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentDate" EntityType="Self.PaymentDate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Payments" EntityType="Self.Payments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentTypes" EntityType="Self.PaymentTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personnel" EntityType="Self.Personnel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Personnel_Type" EntityType="Self.Personnel_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PickUpRequest" EntityType="Self.PickUpRequest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Quantity" EntityType="Self.Quantity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Resources" EntityType="Self.Resources" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SaleTypes" EntityType="Self.SaleTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shipment" EntityType="Self.Shipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="States" EntityType="Self.States" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubMenu" EntityType="Self.SubMenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transportation" EntityType="Self.Transportation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsersProfile" EntityType="Self.UsersProfile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vechicle" EntityType="Self.Vechicle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VechicleType" EntityType="Self.VechicleType" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Booking_Booking" Association="Self.FK_Booking_Booking">
+            <End Role="Booking" EntitySet="Booking" />
+            <End Role="Booking1" EntitySet="Booking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Booking_Shipment" Association="Self.FK_Booking_Shipment">
+            <End Role="Shipment" EntitySet="Shipment" />
+            <End Role="Booking" EntitySet="Booking" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessLines_BusinessLineGroups" Association="Self.FK_BusinessLines_BusinessLineGroups">
+            <End Role="BusinessLineGroups" EntitySet="BusinessLineGroups" />
+            <End Role="BusinessLines" EntitySet="BusinessLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_LGAs" Association="Self.FK_Customer_LGAs">
+            <End Role="LGAs" EntitySet="LGAs" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_PaymentType" Association="Self.FK_Customer_PaymentType">
+            <End Role="PaymentTypes" EntitySet="PaymentTypes" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_States" Association="Self.FK_Customer_States">
+            <End Role="States" EntitySet="States" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerFiles_Customer" Association="Self.FK_CustomerFiles_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="CustomerFiles" EntitySet="CustomerFiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_In_Bound_Dispatch_Booking" Association="Self.FK_In_Bound_Dispatch_Booking">
+            <End Role="Booking" EntitySet="Booking" />
+            <End Role="In_Bound_Dispatch" EntitySet="In_Bound_Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_In_Bound_Dispatch_DispatchType" Association="Self.FK_In_Bound_Dispatch_DispatchType">
+            <End Role="DispatchType" EntitySet="DispatchType" />
+            <End Role="In_Bound_Dispatch" EntitySet="In_Bound_Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_In_Bound_Dispatch_Quantity" Association="Self.FK_In_Bound_Dispatch_Quantity">
+            <End Role="Quantity" EntitySet="Quantity" />
+            <End Role="In_Bound_Dispatch" EntitySet="In_Bound_Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_In_Bound_Dispatch_Vechicle" Association="Self.FK_In_Bound_Dispatch_Vechicle">
+            <End Role="Vechicle" EntitySet="Vechicle" />
+            <End Role="In_Bound_Dispatch" EntitySet="In_Bound_Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LGAs_LGAs" Association="Self.FK_LGAs_LGAs">
+            <End Role="States" EntitySet="States" />
+            <End Role="LGAs" EntitySet="LGAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Out_Bound_Dispatch_Booking" Association="Self.FK_Out_Bound_Dispatch_Booking">
+            <End Role="Booking" EntitySet="Booking" />
+            <End Role="Out_Bound_Dispatch" EntitySet="Out_Bound_Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Out_Bound_Dispatch_DispatchType" Association="Self.FK_Out_Bound_Dispatch_DispatchType">
+            <End Role="DispatchType" EntitySet="DispatchType" />
+            <End Role="Out_Bound_Dispatch" EntitySet="Out_Bound_Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Out_Bound_Dispatch_Quantity" Association="Self.FK_Out_Bound_Dispatch_Quantity">
+            <End Role="Quantity" EntitySet="Quantity" />
+            <End Role="Out_Bound_Dispatch" EntitySet="Out_Bound_Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Out_Bound_Dispatch_Vechicle" Association="Self.FK_Out_Bound_Dispatch_Vechicle">
+            <End Role="Vechicle" EntitySet="Vechicle" />
+            <End Role="Out_Bound_Dispatch" EntitySet="Out_Bound_Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_Booking" Association="Self.FK_Payments_Booking">
+            <End Role="Booking" EntitySet="Booking" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_Product" Association="Self.FK_Payments_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PickUpRequest_States" Association="Self.FK_PickUpRequest_States">
+            <End Role="States" EntitySet="States" />
+            <End Role="PickUpRequest" EntitySet="PickUpRequest" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quantity_Customer" Association="Self.FK_Quantity_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Quantity" EntitySet="Quantity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Region_Country" Association="Self.FK_Region_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="Region" EntitySet="Region" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Resources_MenuCategory" Association="Self.FK_Resources_MenuCategory">
+            <End Role="MenuCategory" EntitySet="MenuCategory" />
+            <End Role="Resources" EntitySet="Resources" />
+          </AssociationSet>
+          <AssociationSet Name="FK_State_Region" Association="Self.FK_State_Region">
+            <End Role="Region" EntitySet="Region" />
+            <End Role="States" EntitySet="States" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAccount_Roles" Association="Self.FK_UserAccount_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UserAccount" EntitySet="UserAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAccount_States" Association="Self.FK_UserAccount_States">
+            <End Role="States" EntitySet="States" />
+            <End Role="UserAccount" EntitySet="UserAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersProfile_UserAccount" Association="Self.FK_UsersProfile_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccount" />
+            <End Role="UsersProfile" EntitySet="UsersProfile" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vechicle_Transportation" Association="Self.FK_Vechicle_Transportation">
+            <End Role="Transportation" EntitySet="Transportation" />
+            <End Role="Vechicle" EntitySet="Vechicle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vechicle_VechicleType" Association="Self.FK_Vechicle_VechicleType">
+            <End Role="VechicleType" EntitySet="VechicleType" />
+            <End Role="Vechicle" EntitySet="Vechicle" />
+          </AssociationSet>
+          <AssociationSet Name="Roles_UserRoles_FK" Association="Self.Roles_UserRoles_FK">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UserRoles" EntitySet="UserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RexGlobeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bank">
+          <Key>
+            <PropertyRef Name="BankCode" />
+          </Key>
+          <Property Name="BankCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BankName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Booking">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ShipmentID" Type="Int32" />
+          <Property Name="SenderName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SenderEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OriginServiceLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReceiverName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReceiverEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReceiverDestination" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ReceiverPinCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ReceiverRegion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReceiverCity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ServiceLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Booking1" Relationship="Self.FK_Booking_Booking" FromRole="Booking" ToRole="Booking1" />
+          <NavigationProperty Name="Booking2" Relationship="Self.FK_Booking_Booking" FromRole="Booking1" ToRole="Booking" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK_Payments_Booking" FromRole="Booking" ToRole="Payments" />
+          <NavigationProperty Name="In_Bound_Dispatch" Relationship="RexGlobeModel.FK_In_Bound_Dispatch_Booking" FromRole="Booking" ToRole="In_Bound_Dispatch" />
+          <NavigationProperty Name="Out_Bound_Dispatch" Relationship="RexGlobeModel.FK_Out_Bound_Dispatch_Booking" FromRole="Booking" ToRole="Out_Bound_Dispatch" />
+          <NavigationProperty Name="Shipment" Relationship="RexGlobeModel.FK_Booking_Shipment" FromRole="Booking" ToRole="Shipment" />
+        </EntityType>
+        <EntityType Name="BusinessLineGroup">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="GroupId" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="BusinessLines" Relationship="Self.FK_BusinessLines_BusinessLineGroups" FromRole="BusinessLineGroups" ToRole="BusinessLines" />
+        </EntityType>
+        <EntityType Name="BusinessLine">
+          <Key>
+            <PropertyRef Name="BusinessLineId" />
+          </Key>
+          <Property Name="BusinessLineId" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BusinessLineName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GroupId" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="BusinessLineGroup" Relationship="Self.FK_BusinessLines_BusinessLineGroups" FromRole="BusinessLines" ToRole="BusinessLineGroups" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Regions" Relationship="Self.FK_Region_Country" FromRole="Country" ToRole="Region" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="CurrencyCode" />
+          </Key>
+          <Property Name="CurrencyCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="RequestID" />
+          </Key>
+          <Property Name="RequestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="REXID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TIN" Type="Int32" />
+          <Property Name="Firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateOfIncorporation" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateOfCommencement" Type="DateTime" Precision="3" />
+          <Property Name="BVN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContractDate" Type="DateTime" Precision="3" />
+          <Property Name="AssignedTo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BusinessLineID" Type="Int32" />
+          <Property Name="LGAID" Type="Int32" />
+          <Property Name="StateID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreditLine" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Shareholding" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="StaffStrength" Type="Int32" />
+          <Property Name="TankFarms" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Vessels" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Trucks" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FillingStations" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Bankers" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AuditedAccounts" Type="Boolean" />
+          <Property Name="CompanyAuditors" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AttachedAuditedAccounts" Type="Boolean" />
+          <Property Name="CompanyTurnover" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SecurityDeposit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PaymentType" Type="Int32" />
+          <Property Name="CashLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CashOwner" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Walkin" Type="Boolean" />
+          <Property Name="MarketedByWhom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IntroducedByWhom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SuppliersList" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TopFiveclients" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RemitMoneyForSanctionedCountry" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PerformThirdPartyBusinessTransaction" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AnySubsidiaryInSanctionCountry" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CountryOfProductTrade" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CountryImportedGoodsandServices" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CountryExportedGoodsandServices" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CountryTransitOfGoodsandService" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="YourCustomers" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="YourProducts" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TotalsalesOfClients" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalPurchasesofClient" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalAssetsoftheClient" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalOperatingIncomeofClient" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LicenseforConductedTransactions" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TransactwithSanctionedCountries" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BanksUsedtoTransactwithSanctionedCountries" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PlanToGrowMaintainorReduceBusinesswithSanctionCountries" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AcceptTermsandConditions" Type="Boolean" />
+          <NavigationProperty Name="LGA" Relationship="Self.FK_Customer_LGAs" FromRole="Customer" ToRole="LGAs" />
+          <NavigationProperty Name="PaymentType1" Relationship="Self.FK_Customer_PaymentType" FromRole="Customer" ToRole="PaymentTypes" />
+          <NavigationProperty Name="State" Relationship="Self.FK_Customer_States" FromRole="Customer" ToRole="States" />
+          <NavigationProperty Name="CustomerFiles" Relationship="Self.FK_CustomerFiles_Customer" FromRole="Customer" ToRole="CustomerFiles" />
+          <NavigationProperty Name="Quantities" Relationship="RexGlobeModel.FK_Quantity_Customer" FromRole="Customer" ToRole="Quantity" />
+        </EntityType>
+        <EntityType Name="CustomerFile">
+          <Key>
+            <PropertyRef Name="FileId" />
+          </Key>
+          <Property Name="FileId" Type="Guid" Nullable="false" />
+          <Property Name="RequestId" Type="Int32" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FileDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FileType" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FileContent" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK_CustomerFiles_Customer" FromRole="CustomerFiles" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LGA">
+          <Key>
+            <PropertyRef Name="LGAId" />
+          </Key>
+          <Property Name="LGAId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LGAName" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="StateId" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_LGAs" FromRole="LGAs" ToRole="Customer" />
+          <NavigationProperty Name="State" Relationship="Self.FK_LGAs_LGAs" FromRole="LGAs" ToRole="States" />
+        </EntityType>
+        <EntityType Name="MenuCategory">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Resources" Relationship="Self.FK_Resources_MenuCategory" FromRole="MenuCategory" ToRole="Resources" />
+        </EntityType>
+        <EntityType Name="PaymentDate">
+          <Key>
+            <PropertyRef Name="Payment_log_id" />
+          </Key>
+          <Property Name="Payment_log_id" Type="Int64" Nullable="false" />
+          <Property Name="PaymentDate1" Type="DateTime" Precision="3" />
+          <Property Name="PaymentYear" Type="Int32" />
+          <Property Name="PaymentMonthNumber" Type="Int32" />
+          <Property Name="PaymentMonthName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentDay" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="PaymentReference" />
+          </Key>
+          <Property Name="PaymentReference" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PaymentDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PaymentYear" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="payment_type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="payment_currency" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="payment_channel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BookingID" Type="Int32" />
+          <Property Name="revenue_type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Booking" Relationship="Self.FK_Payments_Booking" FromRole="Payments" ToRole="Booking" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Payments_Product" FromRole="Payments" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="PaymentType">
+          <Key>
+            <PropertyRef Name="PaymentID" />
+          </Key>
+          <Property Name="PaymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PaymentType1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentChannel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_PaymentType" FromRole="PaymentTypes" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="Personnel">
+          <Key>
+            <PropertyRef Name="Personnel_ID" />
+          </Key>
+          <Property Name="Personnel_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Middle_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Personnel_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Phone_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="User_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Task_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Personnel_Type">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Create_Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PickUpRequest">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PickUpDate" Type="DateTime" Precision="3" />
+          <Property Name="ContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="StateID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Commodity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Weight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NearestServiceLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovePickUprequest" Type="Boolean" />
+          <Property Name="RejectPickUpRequest" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="State" Relationship="Self.FK_PickUpRequest_States" FromRole="PickUpRequest" ToRole="States" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Payments" Relationship="Self.FK_Payments_Product" FromRole="Product" ToRole="Payments" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Region_ID" Type="Int32" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Country_ID" Type="Int32" />
+          <NavigationProperty Name="Country" Relationship="Self.FK_Region_Country" FromRole="Region" ToRole="Country" />
+          <NavigationProperty Name="States" Relationship="Self.FK_State_Region" FromRole="Region" ToRole="States" />
+        </EntityType>
+        <EntityType Name="Resource">
+          <Key>
+            <PropertyRef Name="ResourceId" />
+          </Key>
+          <Property Name="ResourceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResourceDesc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Url" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="CategoryId" Type="Byte" Nullable="false" />
+          <Property Name="Sequence" Type="Int16" />
+          <Property Name="Target" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MenuCategory" Relationship="Self.FK_Resources_MenuCategory" FromRole="Resources" ToRole="MenuCategory" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleID" />
+          </Key>
+          <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ParentID" Type="Int32" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="UserAccounts" Relationship="Self.FK_UserAccount_Roles" FromRole="Roles" ToRole="UserAccount" />
+          <NavigationProperty Name="UserRoles" Relationship="Self.Roles_UserRoles_FK" FromRole="Roles" ToRole="UserRoles" />
+        </EntityType>
+        <EntityType Name="SaleType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SaleQuotation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="StateID" />
+          </Key>
+          <Property Name="StateID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Region_ID" Type="Int32" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_Customer_States" FromRole="States" ToRole="Customer" />
+          <NavigationProperty Name="LGAs" Relationship="Self.FK_LGAs_LGAs" FromRole="States" ToRole="LGAs" />
+          <NavigationProperty Name="PickUpRequests" Relationship="Self.FK_PickUpRequest_States" FromRole="States" ToRole="PickUpRequest" />
+          <NavigationProperty Name="Region" Relationship="Self.FK_State_Region" FromRole="States" ToRole="Region" />
+          <NavigationProperty Name="UserAccounts" Relationship="Self.FK_UserAccount_States" FromRole="States" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Name="StatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Decision" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="SubMenu">
+          <Key>
+            <PropertyRef Name="SubMenuId" />
+          </Key>
+          <Property Name="SubMenuId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubMenuName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Url" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="ParentMenuId" Type="Int32" Nullable="false" />
+          <Property Name="Sequence" Type="Int16" />
+          <Property Name="Target" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Transportation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransportationType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Vechicles" Relationship="Self.FK_Vechicle_Transportation" FromRole="Transportation" ToRole="Vechicle" />
+        </EntityType>
+        <EntityType Name="UserAccount">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Salt" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RoleId" Type="Int32" />
+          <Property Name="StateID" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="CountryID" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="REXID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ChangePassword" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_UserAccount_Roles" FromRole="UserAccount" ToRole="Roles" />
+          <NavigationProperty Name="State" Relationship="Self.FK_UserAccount_States" FromRole="UserAccount" ToRole="States" />
+          <NavigationProperty Name="UsersProfiles" Relationship="Self.FK_UsersProfile_UserAccount" FromRole="UserAccount" ToRole="UsersProfile" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleID" />
+          </Key>
+          <Property Name="UserRoleID" Type="Decimal" Precision="10" Scale="0" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="RoleID" Type="Int32" />
+          <Property Name="msrepl_tran_version" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="Self.Roles_UserRoles_FK" FromRole="UserRoles" ToRole="Roles" />
+        </EntityType>
+        <EntityType Name="UsersProfile">
+          <Key>
+            <PropertyRef Name="ProfileId" />
+          </Key>
+          <Property Name="ProfileId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="FileName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FileContent" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="REXID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="REXCode" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityID" Type="Guid" />
+          <NavigationProperty Name="UserAccount" Relationship="Self.FK_UsersProfile_UserAccount" FromRole="UsersProfile" ToRole="UserAccount" />
+        </EntityType>
+        <EntityType Name="Vechicle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VehicleProvider" Type="Int32" />
+          <Property Name="WorkServiceLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TransportationType" Type="Int32" />
+          <Property Name="VehicleDetails" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PermitofStates" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PermitExpiryDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CreatedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Transportation" Relationship="Self.FK_Vechicle_Transportation" FromRole="Vechicle" ToRole="Transportation" />
+          <NavigationProperty Name="VechicleType" Relationship="Self.FK_Vechicle_VechicleType" FromRole="Vechicle" ToRole="VechicleType" />
+          <Property Name="DriverName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DriverPhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="In_Bound_Dispatch" Relationship="RexGlobeModel.FK_In_Bound_Dispatch_Vechicle" FromRole="Vechicle" ToRole="In_Bound_Dispatch" />
+          <NavigationProperty Name="Out_Bound_Dispatch" Relationship="RexGlobeModel.FK_Out_Bound_Dispatch_Vechicle" FromRole="Vechicle" ToRole="Out_Bound_Dispatch" />
+        </EntityType>
+        <EntityType Name="VechicleType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VehicleProvider" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Vechicles" Relationship="Self.FK_Vechicle_VechicleType" FromRole="VechicleType" ToRole="Vechicle" />
+        </EntityType>
+        <Association Name="FK_Booking_Booking">
+          <End Role="Booking" Type="Self.Booking" Multiplicity="1" />
+          <End Role="Booking1" Type="Self.Booking" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Booking">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Booking1">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_Booking">
+          <End Role="Booking" Type="Self.Booking" Multiplicity="0..1" />
+          <End Role="Payments" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Booking">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="BookingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BusinessLines_BusinessLineGroups">
+          <End Role="BusinessLineGroups" Type="Self.BusinessLineGroup" Multiplicity="1" />
+          <End Role="BusinessLines" Type="Self.BusinessLine" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BusinessLineGroups">
+              <PropertyRef Name="GroupId" />
+            </Principal>
+            <Dependent Role="BusinessLines">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Region_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+          <End Role="Region" Type="Self.Region" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Region">
+              <PropertyRef Name="Country_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_LGAs">
+          <End Role="LGAs" Type="Self.LGA" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LGAs">
+              <PropertyRef Name="LGAId" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="LGAID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_PaymentType">
+          <End Role="PaymentTypes" Type="Self.PaymentType" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentTypes">
+              <PropertyRef Name="PaymentID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="PaymentType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_States">
+          <End Role="States" Type="Self.State" Multiplicity="0..1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CustomerFiles_Customer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="CustomerFiles" Type="Self.CustomerFile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="RequestID" />
+            </Principal>
+            <Dependent Role="CustomerFiles">
+              <PropertyRef Name="RequestId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LGAs_LGAs">
+          <End Role="States" Type="Self.State" Multiplicity="1" />
+          <End Role="LGAs" Type="Self.LGA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="LGAs">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Resources_MenuCategory">
+          <End Role="MenuCategory" Type="Self.MenuCategory" Multiplicity="1" />
+          <End Role="Resources" Type="Self.Resource" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuCategory">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Resources">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payments_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Payments" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="Payments">
+              <PropertyRef Name="ProductID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PickUpRequest_States">
+          <End Role="States" Type="Self.State" Multiplicity="0..1" />
+          <End Role="PickUpRequest" Type="Self.PickUpRequest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="PickUpRequest">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_State_Region">
+          <End Role="Region" Type="Self.Region" Multiplicity="0..1" />
+          <End Role="States" Type="Self.State" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Region">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="States">
+              <PropertyRef Name="Region_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAccount_Roles">
+          <End Role="Roles" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="UserAccount">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Roles_UserRoles_FK">
+          <End Role="Roles" Type="Self.Role" Multiplicity="0..1" />
+          <End Role="UserRoles" Type="Self.UserRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleID" />
+            </Principal>
+            <Dependent Role="UserRoles">
+              <PropertyRef Name="RoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserAccount_States">
+          <End Role="States" Type="Self.State" Multiplicity="0..1" />
+          <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="UserAccount">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vechicle_Transportation">
+          <End Role="Transportation" Type="Self.Transportation" Multiplicity="0..1" />
+          <End Role="Vechicle" Type="Self.Vechicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transportation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vechicle">
+              <PropertyRef Name="TransportationType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UsersProfile_UserAccount">
+          <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+          <End Role="UsersProfile" Type="Self.UsersProfile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserAccount">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UsersProfile">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vechicle_VechicleType">
+          <End Role="VechicleType" Type="Self.VechicleType" Multiplicity="0..1" />
+          <End Role="Vechicle" Type="Self.Vechicle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VechicleType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Vechicle">
+              <PropertyRef Name="VehicleProvider" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RexGlobeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Banks" EntityType="Self.Bank" />
+          <EntitySet Name="Bookings" EntityType="Self.Booking" />
+          <EntitySet Name="BusinessLineGroups" EntityType="Self.BusinessLineGroup" />
+          <EntitySet Name="BusinessLines" EntityType="Self.BusinessLine" />
+          <EntitySet Name="Countries" EntityType="Self.Country" />
+          <EntitySet Name="Currencies" EntityType="Self.Currency" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="CustomerFiles" EntityType="Self.CustomerFile" />
+          <EntitySet Name="Genders" EntityType="Self.Gender" />
+          <EntitySet Name="LGAs" EntityType="Self.LGA" />
+          <EntitySet Name="MenuCategories" EntityType="Self.MenuCategory" />
+          <EntitySet Name="PaymentDates" EntityType="Self.PaymentDate" />
+          <EntitySet Name="Payments" EntityType="Self.Payment" />
+          <EntitySet Name="PaymentTypes" EntityType="Self.PaymentType" />
+          <EntitySet Name="Personnels" EntityType="Self.Personnel" />
+          <EntitySet Name="Personnel_Type" EntityType="Self.Personnel_Type" />
+          <EntitySet Name="PickUpRequests" EntityType="Self.PickUpRequest" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Regions" EntityType="Self.Region" />
+          <EntitySet Name="Resources" EntityType="Self.Resource" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="SaleTypes" EntityType="Self.SaleType" />
+          <EntitySet Name="States" EntityType="Self.State" />
+          <EntitySet Name="Status" EntityType="Self.Status" />
+          <EntitySet Name="SubMenus" EntityType="Self.SubMenu" />
+          <EntitySet Name="Transportations" EntityType="Self.Transportation" />
+          <EntitySet Name="UserAccounts" EntityType="Self.UserAccount" />
+          <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+          <EntitySet Name="UsersProfiles" EntityType="Self.UsersProfile" />
+          <EntitySet Name="Vechicles" EntityType="Self.Vechicle" />
+          <EntitySet Name="VechicleTypes" EntityType="Self.VechicleType" />
+          <AssociationSet Name="FK_Booking_Booking" Association="Self.FK_Booking_Booking">
+            <End Role="Booking" EntitySet="Bookings" />
+            <End Role="Booking1" EntitySet="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_Booking" Association="Self.FK_Payments_Booking">
+            <End Role="Booking" EntitySet="Bookings" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BusinessLines_BusinessLineGroups" Association="Self.FK_BusinessLines_BusinessLineGroups">
+            <End Role="BusinessLineGroups" EntitySet="BusinessLineGroups" />
+            <End Role="BusinessLines" EntitySet="BusinessLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Region_Country" Association="Self.FK_Region_Country">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="Region" EntitySet="Regions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_LGAs" Association="Self.FK_Customer_LGAs">
+            <End Role="LGAs" EntitySet="LGAs" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_PaymentType" Association="Self.FK_Customer_PaymentType">
+            <End Role="PaymentTypes" EntitySet="PaymentTypes" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_States" Association="Self.FK_Customer_States">
+            <End Role="States" EntitySet="States" />
+            <End Role="Customer" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CustomerFiles_Customer" Association="Self.FK_CustomerFiles_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="CustomerFiles" EntitySet="CustomerFiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LGAs_LGAs" Association="Self.FK_LGAs_LGAs">
+            <End Role="States" EntitySet="States" />
+            <End Role="LGAs" EntitySet="LGAs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Resources_MenuCategory" Association="Self.FK_Resources_MenuCategory">
+            <End Role="MenuCategory" EntitySet="MenuCategories" />
+            <End Role="Resources" EntitySet="Resources" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payments_Product" Association="Self.FK_Payments_Product">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Payments" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PickUpRequest_States" Association="Self.FK_PickUpRequest_States">
+            <End Role="States" EntitySet="States" />
+            <End Role="PickUpRequest" EntitySet="PickUpRequests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_State_Region" Association="Self.FK_State_Region">
+            <End Role="Region" EntitySet="Regions" />
+            <End Role="States" EntitySet="States" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAccount_Roles" Association="Self.FK_UserAccount_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+          </AssociationSet>
+          <AssociationSet Name="Roles_UserRoles_FK" Association="Self.Roles_UserRoles_FK">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UserRoles" EntitySet="UserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserAccount_States" Association="Self.FK_UserAccount_States">
+            <End Role="States" EntitySet="States" />
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vechicle_Transportation" Association="Self.FK_Vechicle_Transportation">
+            <End Role="Transportation" EntitySet="Transportations" />
+            <End Role="Vechicle" EntitySet="Vechicles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UsersProfile_UserAccount" Association="Self.FK_UsersProfile_UserAccount">
+            <End Role="UserAccount" EntitySet="UserAccounts" />
+            <End Role="UsersProfile" EntitySet="UsersProfiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vechicle_VechicleType" Association="Self.FK_Vechicle_VechicleType">
+            <End Role="VechicleType" EntitySet="VechicleTypes" />
+            <End Role="Vechicle" EntitySet="Vechicles" />
+          </AssociationSet>
+          <FunctionImport Name="CreateBooking">
+            <Parameter Name="SenderName" Mode="In" Type="String" />
+            <Parameter Name="SenderEmail" Mode="In" Type="String" />
+            <Parameter Name="OriginServiceLocation" Mode="In" Type="String" />
+            <Parameter Name="ReceiverName" Mode="In" Type="String" />
+            <Parameter Name="ReceiverEmail" Mode="In" Type="String" />
+            <Parameter Name="ReceiverDestination" Mode="In" Type="String" />
+            <Parameter Name="ReceiverPinCode" Mode="In" Type="String" />
+            <Parameter Name="ReceiverRegion" Mode="In" Type="String" />
+            <Parameter Name="ReceiverCity" Mode="In" Type="String" />
+            <Parameter Name="ServiceLocation" Mode="In" Type="String" />
+            <Parameter Name="Commodity" Mode="In" Type="String" />
+            <Parameter Name="Weight" Mode="In" Type="Decimal" />
+            <Parameter Name="TotalWeight" Mode="In" Type="Decimal" />
+            <Parameter Name="RatePerKG" Mode="In" Type="Decimal" />
+            <Parameter Name="ExpectedDeliveryDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ServiceTax" Mode="In" Type="Int32" />
+            <Parameter Name="Freight" Mode="In" Type="String" />
+            <Parameter Name="CreatedBy" Mode="In" Type="String" />
+            <Parameter Name="BookingID" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CreateCustomer">
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="PasswordHash" Mode="In" Type="String" />
+            <Parameter Name="Salt" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="MiddleName" Mode="In" Type="String" />
+            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+            <Parameter Name="StateID" Mode="In" Type="String" />
+            <Parameter Name="CountryID" Mode="In" Type="Int32" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="REXID" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CreatePassword">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CreatePersonal" ReturnType="Collection(Int32)">
+            <Parameter Name="Username" Mode="In" Type="String" />
+            <Parameter Name="DDLRole" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="In" Type="String" />
+            <Parameter Name="MiddleName" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="Gender" Mode="In" Type="String" />
+            <Parameter Name="Designation" Mode="In" Type="String" />
+            <Parameter Name="personnel_type" Mode="In" Type="String" />
+            <Parameter Name="Email1" Mode="In" Type="String" />
+            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+            <Parameter Name="user_id" Mode="In" Type="String" />
+            <Parameter Name="Personal_ID" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CreatePickUp">
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="ContactNumber" Mode="In" Type="String" />
+            <Parameter Name="Address" Mode="In" Type="String" />
+            <Parameter Name="StateID" Mode="In" Type="String" />
+            <Parameter Name="Commodity" Mode="In" Type="String" />
+            <Parameter Name="PickUpDate" Mode="In" Type="DateTime" />
+            <Parameter Name="Weight" Mode="In" Type="String" />
+            <Parameter Name="NearestServiceLocation" Mode="In" Type="String" />
+            <Parameter Name="username" Mode="In" Type="String" />
+            <Parameter Name="PickUpID" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="PasswordReset">
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="FirstName" Mode="InOut" Type="String" />
+            <Parameter Name="LastName" Mode="InOut" Type="String" />
+            <Parameter Name="Salt" Mode="InOut" Type="String" />
+            <Parameter Name="Result" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="UpdatePassword">
+            <Parameter Name="UserName" Mode="In" Type="String" />
+            <Parameter Name="PasswordHash" Mode="In" Type="String" />
+            <Parameter Name="Salt" Mode="In" Type="String" />
+            <Parameter Name="PhoneNumber" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="REXID" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="DispatchTypes" EntityType="RexGlobeModel.DispatchType" />
+          <EntitySet Name="In_Bound_Dispatch" EntityType="RexGlobeModel.In_Bound_Dispatch" />
+          <EntitySet Name="Out_Bound_Dispatch" EntityType="RexGlobeModel.Out_Bound_Dispatch" />
+          <EntitySet Name="Quantities" EntityType="RexGlobeModel.Quantity" />
+          <AssociationSet Name="FK_In_Bound_Dispatch_Booking" Association="RexGlobeModel.FK_In_Bound_Dispatch_Booking">
+            <End Role="Booking" EntitySet="Bookings" />
+            <End Role="In_Bound_Dispatch" EntitySet="In_Bound_Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Out_Bound_Dispatch_Booking" Association="RexGlobeModel.FK_Out_Bound_Dispatch_Booking">
+            <End Role="Booking" EntitySet="Bookings" />
+            <End Role="Out_Bound_Dispatch" EntitySet="Out_Bound_Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Quantity_Customer" Association="RexGlobeModel.FK_Quantity_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Quantity" EntitySet="Quantities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_In_Bound_Dispatch_DispatchType" Association="RexGlobeModel.FK_In_Bound_Dispatch_DispatchType">
+            <End Role="DispatchType" EntitySet="DispatchTypes" />
+            <End Role="In_Bound_Dispatch" EntitySet="In_Bound_Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Out_Bound_Dispatch_DispatchType" Association="RexGlobeModel.FK_Out_Bound_Dispatch_DispatchType">
+            <End Role="DispatchType" EntitySet="DispatchTypes" />
+            <End Role="Out_Bound_Dispatch" EntitySet="Out_Bound_Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_In_Bound_Dispatch_Quantity" Association="RexGlobeModel.FK_In_Bound_Dispatch_Quantity">
+            <End Role="Quantity" EntitySet="Quantities" />
+            <End Role="In_Bound_Dispatch" EntitySet="In_Bound_Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_In_Bound_Dispatch_Vechicle" Association="RexGlobeModel.FK_In_Bound_Dispatch_Vechicle">
+            <End Role="Vechicle" EntitySet="Vechicles" />
+            <End Role="In_Bound_Dispatch" EntitySet="In_Bound_Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Out_Bound_Dispatch_Quantity" Association="RexGlobeModel.FK_Out_Bound_Dispatch_Quantity">
+            <End Role="Quantity" EntitySet="Quantities" />
+            <End Role="Out_Bound_Dispatch" EntitySet="Out_Bound_Dispatch" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Out_Bound_Dispatch_Vechicle" Association="RexGlobeModel.FK_Out_Bound_Dispatch_Vechicle">
+            <End Role="Vechicle" EntitySet="Vechicles" />
+            <End Role="Out_Bound_Dispatch" EntitySet="Out_Bound_Dispatch" />
+          </AssociationSet>
+          <EntitySet Name="Shipments" EntityType="RexGlobeModel.Shipment" />
+          <AssociationSet Name="FK_Booking_Shipment" Association="RexGlobeModel.FK_Booking_Shipment">
+            <End Role="Shipment" EntitySet="Shipments" />
+            <End Role="Booking" EntitySet="Bookings" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="DispatchType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="In_Bound_Dispatch" Relationship="RexGlobeModel.FK_In_Bound_Dispatch_DispatchType" FromRole="DispatchType" ToRole="In_Bound_Dispatch" />
+          <NavigationProperty Name="Out_Bound_Dispatch" Relationship="RexGlobeModel.FK_Out_Bound_Dispatch_DispatchType" FromRole="DispatchType" ToRole="Out_Bound_Dispatch" />
+        </EntityType>
+        <EntityType Name="In_Bound_Dispatch">
+          <Key>
+            <PropertyRef Name="In_Bound_ID" />
+          </Key>
+          <Property Name="In_Bound_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuantityID" Type="Int32" />
+          <Property Name="DispatchID" Type="Int32" />
+          <Property Name="VehicleID" Type="Int32" />
+          <Property Name="Region" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Route_Cities" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dispatch_Date_Time" Type="Time" Precision="7" />
+          <Property Name="BookingID" Type="Int32" />
+          <Property Name="WareHouseAgent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BankStaffatDepo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RexGlobeStaff" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NameofDepo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyRep" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Booking" Relationship="RexGlobeModel.FK_In_Bound_Dispatch_Booking" FromRole="In_Bound_Dispatch" ToRole="Booking" />
+          <NavigationProperty Name="DispatchType" Relationship="RexGlobeModel.FK_In_Bound_Dispatch_DispatchType" FromRole="In_Bound_Dispatch" ToRole="DispatchType" />
+          <NavigationProperty Name="Quantity" Relationship="RexGlobeModel.FK_In_Bound_Dispatch_Quantity" FromRole="In_Bound_Dispatch" ToRole="Quantity" />
+          <NavigationProperty Name="Vechicle" Relationship="RexGlobeModel.FK_In_Bound_Dispatch_Vechicle" FromRole="In_Bound_Dispatch" ToRole="Vechicle" />
+        </EntityType>
+        <EntityType Name="Out_Bound_Dispatch">
+          <Key>
+            <PropertyRef Name="Out_Bound_ID" />
+          </Key>
+          <Property Name="Out_Bound_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuantityID" Type="Int32" />
+          <Property Name="DispatchID" Type="Int32" />
+          <Property Name="VehicleID" Type="Int32" />
+          <Property Name="Region" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Route_Cities" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dispatch_Date_Time" Type="Time" Precision="7" />
+          <Property Name="BookingID" Type="Int32" />
+          <Property Name="WareHouseAgent" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BankStaffatDepo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RexGlobeStaff" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NameofDepo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyRep" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Booking" Relationship="RexGlobeModel.FK_Out_Bound_Dispatch_Booking" FromRole="Out_Bound_Dispatch" ToRole="Booking" />
+          <NavigationProperty Name="DispatchType" Relationship="RexGlobeModel.FK_Out_Bound_Dispatch_DispatchType" FromRole="Out_Bound_Dispatch" ToRole="DispatchType" />
+          <NavigationProperty Name="Quantity" Relationship="RexGlobeModel.FK_Out_Bound_Dispatch_Quantity" FromRole="Out_Bound_Dispatch" ToRole="Quantity" />
+          <NavigationProperty Name="Vechicle" Relationship="RexGlobeModel.FK_Out_Bound_Dispatch_Vechicle" FromRole="Out_Bound_Dispatch" ToRole="Vechicle" />
+        </EntityType>
+        <EntityType Name="Quantity">
+          <Key>
+            <PropertyRef Name="QuantityID" />
+          </Key>
+          <Property Name="QuantityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deposit_Credit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VesselName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TruckNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DriversName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DriversPhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WithDrawal_Debit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="AttachedWayBill" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="TankFarm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Quantityperton" Type="Int32" />
+          <Property Name="ProductPurchasedFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LCFormNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LCValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FormNvalue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CommercialInvoiceValue" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PointofDischarge" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="PaymentReference" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customer" Relationship="RexGlobeModel.FK_Quantity_Customer" FromRole="Quantity" ToRole="Customer" />
+          <NavigationProperty Name="In_Bound_Dispatch" Relationship="RexGlobeModel.FK_In_Bound_Dispatch_Quantity" FromRole="Quantity" ToRole="In_Bound_Dispatch" />
+          <NavigationProperty Name="Out_Bound_Dispatch" Relationship="RexGlobeModel.FK_Out_Bound_Dispatch_Quantity" FromRole="Quantity" ToRole="Out_Bound_Dispatch" />
+        </EntityType>
+        <Association Name="FK_In_Bound_Dispatch_Booking">
+          <End Type="RexGlobeModel.Booking" Role="Booking" Multiplicity="0..1" />
+          <End Type="RexGlobeModel.In_Bound_Dispatch" Role="In_Bound_Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Booking">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="In_Bound_Dispatch">
+              <PropertyRef Name="BookingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Out_Bound_Dispatch_Booking">
+          <End Type="RexGlobeModel.Booking" Role="Booking" Multiplicity="0..1" />
+          <End Type="RexGlobeModel.Out_Bound_Dispatch" Role="Out_Bound_Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Booking">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Out_Bound_Dispatch">
+              <PropertyRef Name="BookingID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Quantity_Customer">
+          <End Type="RexGlobeModel.Customer" Role="Customer" Multiplicity="0..1" />
+          <End Type="RexGlobeModel.Quantity" Role="Quantity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="RequestID" />
+            </Principal>
+            <Dependent Role="Quantity">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_In_Bound_Dispatch_DispatchType">
+          <End Type="RexGlobeModel.DispatchType" Role="DispatchType" Multiplicity="0..1" />
+          <End Type="RexGlobeModel.In_Bound_Dispatch" Role="In_Bound_Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DispatchType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="In_Bound_Dispatch">
+              <PropertyRef Name="DispatchID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Out_Bound_Dispatch_DispatchType">
+          <End Type="RexGlobeModel.DispatchType" Role="DispatchType" Multiplicity="0..1" />
+          <End Type="RexGlobeModel.Out_Bound_Dispatch" Role="Out_Bound_Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DispatchType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Out_Bound_Dispatch">
+              <PropertyRef Name="DispatchID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_In_Bound_Dispatch_Quantity">
+          <End Type="RexGlobeModel.Quantity" Role="Quantity" Multiplicity="0..1" />
+          <End Type="RexGlobeModel.In_Bound_Dispatch" Role="In_Bound_Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quantity">
+              <PropertyRef Name="QuantityID" />
+            </Principal>
+            <Dependent Role="In_Bound_Dispatch">
+              <PropertyRef Name="QuantityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_In_Bound_Dispatch_Vechicle">
+          <End Type="RexGlobeModel.Vechicle" Role="Vechicle" Multiplicity="0..1" />
+          <End Type="RexGlobeModel.In_Bound_Dispatch" Role="In_Bound_Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vechicle">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="In_Bound_Dispatch">
+              <PropertyRef Name="VehicleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Out_Bound_Dispatch_Quantity">
+          <End Type="RexGlobeModel.Quantity" Role="Quantity" Multiplicity="0..1" />
+          <End Type="RexGlobeModel.Out_Bound_Dispatch" Role="Out_Bound_Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Quantity">
+              <PropertyRef Name="QuantityID" />
+            </Principal>
+            <Dependent Role="Out_Bound_Dispatch">
+              <PropertyRef Name="QuantityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Out_Bound_Dispatch_Vechicle">
+          <End Type="RexGlobeModel.Vechicle" Role="Vechicle" Multiplicity="0..1" />
+          <End Type="RexGlobeModel.Out_Bound_Dispatch" Role="Out_Bound_Dispatch" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vechicle">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Out_Bound_Dispatch">
+              <PropertyRef Name="VehicleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Shipment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Commodity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Weight" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalWeight" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RatePerKG" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="ExpectedDeliveryDate" Type="DateTime" Precision="3" />
+          <Property Name="ServiceTax" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Freight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BookingID" Type="Int32" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Bookings" Relationship="RexGlobeModel.FK_Booking_Shipment" FromRole="Shipment" ToRole="Booking" />
+        </EntityType>
+        <Association Name="FK_Booking_Shipment">
+          <End Type="RexGlobeModel.Shipment" Role="Shipment" Multiplicity="0..1" />
+          <End Type="RexGlobeModel.Booking" Role="Booking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shipment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Booking">
+              <PropertyRef Name="ShipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RexGlobeModelStoreContainer" CdmEntityContainer="RexGlobeEntities">
+          <EntitySetMapping Name="Banks">
+            <EntityTypeMapping TypeName="RexGlobeModel.Bank">
+              <MappingFragment StoreEntitySet="Banks">
+                <ScalarProperty Name="BankCode" ColumnName="BankCode" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bookings">
+            <EntityTypeMapping TypeName="RexGlobeModel.Booking">
+              <MappingFragment StoreEntitySet="Booking">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ShipmentID" ColumnName="ShipmentID" />
+                <ScalarProperty Name="SenderName" ColumnName="SenderName" />
+                <ScalarProperty Name="SenderEmail" ColumnName="SenderEmail" />
+                <ScalarProperty Name="OriginServiceLocation" ColumnName="OriginServiceLocation" />
+                <ScalarProperty Name="ReceiverName" ColumnName="ReceiverName" />
+                <ScalarProperty Name="ReceiverEmail" ColumnName="ReceiverEmail" />
+                <ScalarProperty Name="ReceiverDestination" ColumnName="ReceiverDestination" />
+                <ScalarProperty Name="ReceiverPinCode" ColumnName="ReceiverPinCode" />
+                <ScalarProperty Name="ReceiverRegion" ColumnName="ReceiverRegion" />
+                <ScalarProperty Name="ReceiverCity" ColumnName="ReceiverCity" />
+                <ScalarProperty Name="ServiceLocation" ColumnName="ServiceLocation" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BusinessLineGroups">
+            <EntityTypeMapping TypeName="RexGlobeModel.BusinessLineGroup">
+              <MappingFragment StoreEntitySet="BusinessLineGroups">
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BusinessLines">
+            <EntityTypeMapping TypeName="RexGlobeModel.BusinessLine">
+              <MappingFragment StoreEntitySet="BusinessLines">
+                <ScalarProperty Name="BusinessLineId" ColumnName="BusinessLineId" />
+                <ScalarProperty Name="BusinessLineName" ColumnName="BusinessLineName" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="RexGlobeModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Currencies">
+            <EntityTypeMapping TypeName="RexGlobeModel.Currency">
+              <MappingFragment StoreEntitySet="Currencies">
+                <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="RexGlobeModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="RequestID" ColumnName="RequestID" />
+                <ScalarProperty Name="REXID" ColumnName="REXID" />
+                <ScalarProperty Name="TIN" ColumnName="TIN" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="DateOfIncorporation" ColumnName="DateOfIncorporation" />
+                <ScalarProperty Name="DateOfCommencement" ColumnName="DateOfCommencement" />
+                <ScalarProperty Name="BVN" ColumnName="BVN" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+                <ScalarProperty Name="AssignedTo" ColumnName="AssignedTo" />
+                <ScalarProperty Name="BusinessLineID" ColumnName="BusinessLineID" />
+                <ScalarProperty Name="LGAID" ColumnName="LGAID" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CreditLine" ColumnName="CreditLine" />
+                <ScalarProperty Name="Shareholding" ColumnName="Shareholding" />
+                <ScalarProperty Name="StaffStrength" ColumnName="StaffStrength" />
+                <ScalarProperty Name="TankFarms" ColumnName="TankFarms" />
+                <ScalarProperty Name="Vessels" ColumnName="Vessels" />
+                <ScalarProperty Name="Trucks" ColumnName="Trucks" />
+                <ScalarProperty Name="FillingStations" ColumnName="FillingStations" />
+                <ScalarProperty Name="Bankers" ColumnName="Bankers" />
+                <ScalarProperty Name="AuditedAccounts" ColumnName="AuditedAccounts" />
+                <ScalarProperty Name="CompanyAuditors" ColumnName="CompanyAuditors" />
+                <ScalarProperty Name="AttachedAuditedAccounts" ColumnName="AttachedAuditedAccounts" />
+                <ScalarProperty Name="CompanyTurnover" ColumnName="CompanyTurnover" />
+                <ScalarProperty Name="SecurityDeposit" ColumnName="SecurityDeposit" />
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+                <ScalarProperty Name="CashLocation" ColumnName="CashLocation" />
+                <ScalarProperty Name="CashOwner" ColumnName="CashOwner" />
+                <ScalarProperty Name="Walkin" ColumnName="Walkin" />
+                <ScalarProperty Name="MarketedByWhom" ColumnName="MarketedByWhom" />
+                <ScalarProperty Name="IntroducedByWhom" ColumnName="IntroducedByWhom" />
+                <ScalarProperty Name="SuppliersList" ColumnName="SuppliersList" />
+                <ScalarProperty Name="TopFiveclients" ColumnName="TopFiveclients" />
+                <ScalarProperty Name="RemitMoneyForSanctionedCountry" ColumnName="RemitMoneyForSanctionedCountry" />
+                <ScalarProperty Name="PerformThirdPartyBusinessTransaction" ColumnName="PerformThirdPartyBusinessTransaction" />
+                <ScalarProperty Name="AnySubsidiaryInSanctionCountry" ColumnName="AnySubsidiaryInSanctionCountry" />
+                <ScalarProperty Name="CountryOfProductTrade" ColumnName="CountryOfProductTrade" />
+                <ScalarProperty Name="CountryImportedGoodsandServices" ColumnName="CountryImportedGoodsandServices" />
+                <ScalarProperty Name="CountryExportedGoodsandServices" ColumnName="CountryExportedGoodsandServices" />
+                <ScalarProperty Name="CountryTransitOfGoodsandService" ColumnName="CountryTransitOfGoodsandService" />
+                <ScalarProperty Name="YourCustomers" ColumnName="YourCustomers" />
+                <ScalarProperty Name="YourProducts" ColumnName="YourProducts" />
+                <ScalarProperty Name="TotalsalesOfClients" ColumnName="TotalsalesOfClients" />
+                <ScalarProperty Name="TotalPurchasesofClient" ColumnName="TotalPurchasesofClient" />
+                <ScalarProperty Name="TotalAssetsoftheClient" ColumnName="TotalAssetsoftheClient" />
+                <ScalarProperty Name="TotalOperatingIncomeofClient" ColumnName="TotalOperatingIncomeofClient" />
+                <ScalarProperty Name="LicenseforConductedTransactions" ColumnName="LicenseforConductedTransactions" />
+                <ScalarProperty Name="TransactwithSanctionedCountries" ColumnName="TransactwithSanctionedCountries" />
+                <ScalarProperty Name="BanksUsedtoTransactwithSanctionedCountries" ColumnName="BanksUsedtoTransactwithSanctionedCountries" />
+                <ScalarProperty Name="PlanToGrowMaintainorReduceBusinesswithSanctionCountries" ColumnName="PlanToGrowMaintainorReduceBusinesswithSanctionCountries" />
+                <ScalarProperty Name="AcceptTermsandConditions" ColumnName="AcceptTermsandConditions" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerFiles">
+            <EntityTypeMapping TypeName="RexGlobeModel.CustomerFile">
+              <MappingFragment StoreEntitySet="CustomerFiles">
+                <ScalarProperty Name="FileId" ColumnName="FileId" />
+                <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FileDescription" ColumnName="FileDescription" />
+                <ScalarProperty Name="FileType" ColumnName="FileType" />
+                <ScalarProperty Name="FileContent" ColumnName="FileContent" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genders">
+            <EntityTypeMapping TypeName="RexGlobeModel.Gender">
+              <MappingFragment StoreEntitySet="Gender">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LGAs">
+            <EntityTypeMapping TypeName="RexGlobeModel.LGA">
+              <MappingFragment StoreEntitySet="LGAs">
+                <ScalarProperty Name="LGAId" ColumnName="LGAId" />
+                <ScalarProperty Name="LGAName" ColumnName="LGAName" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuCategories">
+            <EntityTypeMapping TypeName="RexGlobeModel.MenuCategory">
+              <MappingFragment StoreEntitySet="MenuCategory">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentDates">
+            <EntityTypeMapping TypeName="RexGlobeModel.PaymentDate">
+              <MappingFragment StoreEntitySet="PaymentDate">
+                <ScalarProperty Name="Payment_log_id" ColumnName="Payment_log_id" />
+                <ScalarProperty Name="PaymentDate1" ColumnName="PaymentDate" />
+                <ScalarProperty Name="PaymentYear" ColumnName="PaymentYear" />
+                <ScalarProperty Name="PaymentMonthNumber" ColumnName="PaymentMonthNumber" />
+                <ScalarProperty Name="PaymentMonthName" ColumnName="PaymentMonthName" />
+                <ScalarProperty Name="PaymentDay" ColumnName="PaymentDay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="RexGlobeModel.Payment">
+              <MappingFragment StoreEntitySet="Payments">
+                <ScalarProperty Name="PaymentReference" ColumnName="PaymentReference" />
+                <ScalarProperty Name="TIN" ColumnName="TIN" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="PaymentYear" ColumnName="PaymentYear" />
+                <ScalarProperty Name="payment_type" ColumnName="payment_type" />
+                <ScalarProperty Name="payment_currency" ColumnName="payment_currency" />
+                <ScalarProperty Name="payment_channel" ColumnName="payment_channel" />
+                <ScalarProperty Name="BookingID" ColumnName="BookingID" />
+                <ScalarProperty Name="revenue_type" ColumnName="revenue_type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentTypes">
+            <EntityTypeMapping TypeName="RexGlobeModel.PaymentType">
+              <MappingFragment StoreEntitySet="PaymentTypes">
+                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+                <ScalarProperty Name="PaymentType1" ColumnName="PaymentType" />
+                <ScalarProperty Name="PaymentChannel" ColumnName="PaymentChannel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personnels">
+            <EntityTypeMapping TypeName="RexGlobeModel.Personnel">
+              <MappingFragment StoreEntitySet="Personnel">
+                <ScalarProperty Name="Personnel_ID" ColumnName="Personnel_ID" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="Middle_Name" ColumnName="Middle_Name" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Personnel_Type" ColumnName="Personnel_Type" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone_No" ColumnName="Phone_No" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Task_Status" ColumnName="Task_Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personnel_Type">
+            <EntityTypeMapping TypeName="RexGlobeModel.Personnel_Type">
+              <MappingFragment StoreEntitySet="Personnel_Type">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Create_Date" ColumnName="Create_Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PickUpRequests">
+            <EntityTypeMapping TypeName="RexGlobeModel.PickUpRequest">
+              <MappingFragment StoreEntitySet="PickUpRequest">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PickUpDate" ColumnName="PickUpDate" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="Commodity" ColumnName="Commodity" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="NearestServiceLocation" ColumnName="NearestServiceLocation" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="ApprovePickUprequest" ColumnName="ApprovePickUprequest" />
+                <ScalarProperty Name="RejectPickUpRequest" ColumnName="RejectPickUpRequest" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="RexGlobeModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regions">
+            <EntityTypeMapping TypeName="RexGlobeModel.Region">
+              <MappingFragment StoreEntitySet="Region">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Region_ID" ColumnName="Region_ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Country_ID" ColumnName="Country_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Resources">
+            <EntityTypeMapping TypeName="RexGlobeModel.Resource">
+              <MappingFragment StoreEntitySet="Resources">
+                <ScalarProperty Name="ResourceId" ColumnName="ResourceId" />
+                <ScalarProperty Name="ResourceDesc" ColumnName="ResourceDesc" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="Target" ColumnName="Target" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="RexGlobeModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaleTypes">
+            <EntityTypeMapping TypeName="RexGlobeModel.SaleType">
+              <MappingFragment StoreEntitySet="SaleTypes">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SaleQuotation" ColumnName="SaleQuotation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="RexGlobeModel.State">
+              <MappingFragment StoreEntitySet="States">
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Region_ID" ColumnName="Region_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="RexGlobeModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Decision" ColumnName="Decision" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubMenus">
+            <EntityTypeMapping TypeName="RexGlobeModel.SubMenu">
+              <MappingFragment StoreEntitySet="SubMenu">
+                <ScalarProperty Name="SubMenuId" ColumnName="SubMenuId" />
+                <ScalarProperty Name="SubMenuName" ColumnName="SubMenuName" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="ParentMenuId" ColumnName="ParentMenuId" />
+                <ScalarProperty Name="Sequence" ColumnName="Sequence" />
+                <ScalarProperty Name="Target" ColumnName="Target" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transportations">
+            <EntityTypeMapping TypeName="RexGlobeModel.Transportation">
+              <MappingFragment StoreEntitySet="Transportation">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TransportationType" ColumnName="TransportationType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserAccounts">
+            <EntityTypeMapping TypeName="RexGlobeModel.UserAccount">
+              <MappingFragment StoreEntitySet="UserAccount">
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="Salt" ColumnName="Salt" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="REXID" ColumnName="REXID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="ChangePassword" ColumnName="ChangePassword" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="RexGlobeModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRoles">
+                <ScalarProperty Name="UserRoleID" ColumnName="UserRoleID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+                <ScalarProperty Name="msrepl_tran_version" ColumnName="msrepl_tran_version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersProfiles">
+            <EntityTypeMapping TypeName="RexGlobeModel.UsersProfile">
+              <MappingFragment StoreEntitySet="UsersProfile">
+                <ScalarProperty Name="ProfileId" ColumnName="ProfileId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FileContent" ColumnName="FileContent" />
+                <ScalarProperty Name="REXID" ColumnName="REXID" />
+                <ScalarProperty Name="REXCode" ColumnName="REXCode" />
+                <ScalarProperty Name="SecurityID" ColumnName="SecurityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vechicles">
+            <EntityTypeMapping TypeName="RexGlobeModel.Vechicle">
+              <MappingFragment StoreEntitySet="Vechicle">
+                <ScalarProperty Name="DriverPhoneNumber" ColumnName="DriverPhoneNumber" />
+                <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VehicleProvider" ColumnName="VehicleProvider" />
+                <ScalarProperty Name="WorkServiceLocation" ColumnName="WorkServiceLocation" />
+                <ScalarProperty Name="VehicleNumber" ColumnName="VehicleNumber" />
+                <ScalarProperty Name="TransportationType" ColumnName="TransportationType" />
+                <ScalarProperty Name="VehicleDetails" ColumnName="VehicleDetails" />
+                <ScalarProperty Name="PermitofStates" ColumnName="PermitofStates" />
+                <ScalarProperty Name="PermitExpiryDate" ColumnName="PermitExpiryDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VechicleTypes">
+            <EntityTypeMapping TypeName="RexGlobeModel.VechicleType">
+              <MappingFragment StoreEntitySet="VechicleType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="VehicleProvider" ColumnName="VehicleProvider" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="CreateBooking" FunctionName="RexGlobeModel.Store.CreateBooking" />
+          <FunctionImportMapping FunctionImportName="CreateCustomer" FunctionName="RexGlobeModel.Store.CreateCustomer" />
+          <FunctionImportMapping FunctionImportName="CreatePassword" FunctionName="RexGlobeModel.Store.CreatePassword" />
+          <FunctionImportMapping FunctionImportName="CreatePickUp" FunctionName="RexGlobeModel.Store.CreatePickUp" />
+          <FunctionImportMapping FunctionImportName="PasswordReset" FunctionName="RexGlobeModel.Store.PasswordReset" />
+          <FunctionImportMapping FunctionImportName="UpdatePassword" FunctionName="RexGlobeModel.Store.UpdatePassword" />
+          <EntitySetMapping Name="DispatchTypes">
+            <EntityTypeMapping TypeName="RexGlobeModel.DispatchType">
+              <MappingFragment StoreEntitySet="DispatchType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="In_Bound_Dispatch">
+            <EntityTypeMapping TypeName="RexGlobeModel.In_Bound_Dispatch">
+              <MappingFragment StoreEntitySet="In_Bound_Dispatch">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CompanyRep" ColumnName="CompanyRep" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="NameofDepo" ColumnName="NameofDepo" />
+                <ScalarProperty Name="RexGlobeStaff" ColumnName="RexGlobeStaff" />
+                <ScalarProperty Name="BankStaffatDepo" ColumnName="BankStaffatDepo" />
+                <ScalarProperty Name="WareHouseAgent" ColumnName="WareHouseAgent" />
+                <ScalarProperty Name="BookingID" ColumnName="BookingID" />
+                <ScalarProperty Name="Dispatch_Date_Time" ColumnName="Dispatch_Date_Time" />
+                <ScalarProperty Name="Route_Cities" ColumnName="Route_Cities" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="DispatchID" ColumnName="DispatchID" />
+                <ScalarProperty Name="QuantityID" ColumnName="QuantityID" />
+                <ScalarProperty Name="In_Bound_ID" ColumnName="In_Bound_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Out_Bound_Dispatch">
+            <EntityTypeMapping TypeName="RexGlobeModel.Out_Bound_Dispatch">
+              <MappingFragment StoreEntitySet="Out_Bound_Dispatch">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="CompanyRep" ColumnName="CompanyRep" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="NameofDepo" ColumnName="NameofDepo" />
+                <ScalarProperty Name="RexGlobeStaff" ColumnName="RexGlobeStaff" />
+                <ScalarProperty Name="BankStaffatDepo" ColumnName="BankStaffatDepo" />
+                <ScalarProperty Name="WareHouseAgent" ColumnName="WareHouseAgent" />
+                <ScalarProperty Name="BookingID" ColumnName="BookingID" />
+                <ScalarProperty Name="Dispatch_Date_Time" ColumnName="Dispatch_Date_Time" />
+                <ScalarProperty Name="Route_Cities" ColumnName="Route_Cities" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="VehicleID" ColumnName="VehicleID" />
+                <ScalarProperty Name="DispatchID" ColumnName="DispatchID" />
+                <ScalarProperty Name="QuantityID" ColumnName="QuantityID" />
+                <ScalarProperty Name="Out_Bound_ID" ColumnName="Out_Bound_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Quantities">
+            <EntityTypeMapping TypeName="RexGlobeModel.Quantity">
+              <MappingFragment StoreEntitySet="Quantity">
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PaymentReference" ColumnName="PaymentReference" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="PointofDischarge" ColumnName="PointofDischarge" />
+                <ScalarProperty Name="CommercialInvoiceValue" ColumnName="CommercialInvoiceValue" />
+                <ScalarProperty Name="FormNvalue" ColumnName="FormNvalue" />
+                <ScalarProperty Name="LCValue" ColumnName="LCValue" />
+                <ScalarProperty Name="LCFormNumber" ColumnName="LCFormNumber" />
+                <ScalarProperty Name="ProductPurchasedFrom" ColumnName="ProductPurchasedFrom" />
+                <ScalarProperty Name="Quantityperton" ColumnName="Quantityperton" />
+                <ScalarProperty Name="TankFarm" ColumnName="TankFarm" />
+                <ScalarProperty Name="AttachedWayBill" ColumnName="AttachedWayBill" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="WithDrawal_Debit" ColumnName="WithDrawal_Debit" />
+                <ScalarProperty Name="DriversPhoneNumber" ColumnName="DriversPhoneNumber" />
+                <ScalarProperty Name="DriversName" ColumnName="DriversName" />
+                <ScalarProperty Name="TruckNumber" ColumnName="TruckNumber" />
+                <ScalarProperty Name="VesselName" ColumnName="VesselName" />
+                <ScalarProperty Name="Deposit_Credit" ColumnName="Deposit_Credit" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="QuantityID" ColumnName="QuantityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shipments">
+            <EntityTypeMapping TypeName="RexGlobeModel.Shipment">
+              <MappingFragment StoreEntitySet="Shipment">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="BookingID" ColumnName="BookingID" />
+                <ScalarProperty Name="Freight" ColumnName="Freight" />
+                <ScalarProperty Name="ServiceTax" ColumnName="ServiceTax" />
+                <ScalarProperty Name="ExpectedDeliveryDate" ColumnName="ExpectedDeliveryDate" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="RatePerKG" ColumnName="RatePerKG" />
+                <ScalarProperty Name="TotalWeight" ColumnName="TotalWeight" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Commodity" ColumnName="Commodity" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

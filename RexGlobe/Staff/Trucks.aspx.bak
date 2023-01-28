@@ -1,0 +1,130 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainSite.Master" AutoEventWireup="true" CodeBehind="Trucks.aspx.cs" Inherits="RexGlobe.Staff.Trucks" %>
+
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+<dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server">
+    <Items>
+    <dx:LayoutGroup ColCount="4" ColSpan="2" Caption="Vehicle Details">
+		<Items>
+			<dx:LayoutItem ColSpan="2" Caption="Vehicle Provider" FieldName="VehicleProvider" RequiredMarkDisplayMode="Required">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
+						<dx:ASPxComboBox ID="VehicleProvider" runat="server" DataSourceID="edsVehicleProvider" IncrementalFilteringMode="Contains" TextField="VehicleProvider" ValueField="ID" Width="100%" Height="25px">
+                            <ClearButton Visibility="Auto">
+                            </ClearButton>
+                            <ValidationSettings>
+                                <RequiredField ErrorText="Required" IsRequired="True" />
+                            </ValidationSettings>
+                        </dx:ASPxComboBox>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+			<dx:LayoutItem Caption="WorkService Location" FieldName="WorkServiceLocation" RequiredMarkDisplayMode="Required">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server">
+						<dx:ASPxTextBox ID="WorkServiceLocation" runat="server" ClientInstanceName="WorkServiceLocation" Width="100%" Height="25px">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+			<dx:LayoutItem Caption="Vehicle Number" FieldName="VehicleNumber"  RequiredMarkDisplayMode="Required" >
+				<LayoutItemNestedControlCollection>
+						<dx:LayoutItemNestedControlContainer>
+                        <dx:ASPxTextBox ID="VehicleNumber" runat="server" ClientInstanceName="VehicleNumber" Width="100%" Height="25px">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+`                             
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+		</Items>
+                                                                   
+	</dx:LayoutGroup>
+    <dx:LayoutGroup ColCount="4" ColSpan="2" Caption="Description">
+		<Items>
+			<dx:LayoutItem ColSpan="2" Caption="Transportation Type" FieldName="TransportationType" RequiredMarkDisplayMode="Required">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
+                        <dx:ASPxComboBox ID="TransportationType" runat="server" DataSourceID="edsTransportationType" IncrementalFilteringMode="Contains" TextField="TransportationType" ValueField="ID" Width="100%" Height="25px">
+                            <ClearButton Visibility="Auto">
+                            </ClearButton>
+                            <ValidationSettings>
+                                <RequiredField ErrorText="Required" IsRequired="True" />
+                            </ValidationSettings>
+                        </dx:ASPxComboBox>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+			<dx:LayoutItem Caption="Vehicle Details" FieldName="VehicleDetails" RequiredMarkDisplayMode="Required">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server">
+                        <dx:ASPxMemo ID="VehicleDetails" runat="server" Height="100px" Width="300px"></dx:ASPxMemo>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+			<dx:LayoutItem Caption="Permit of States" FieldName="PermitofStates"  RequiredMarkDisplayMode="Required" >
+				<LayoutItemNestedControlCollection>
+						<dx:LayoutItemNestedControlContainer>
+                        <dx:ASPxTextBox ID="PermitofStates" runat="server" ClientInstanceName="PermitofStates" Width="100%" Height="25px">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+`                             
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+            <dx:LayoutItem ColSpan="2" Caption="Permit Expiry Date" FieldName="PermitExpiryDate" RequiredMarkDisplayMode="Required">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
+						<dx:ASPxDateEdit ID="PermitExpiryDate" runat="server" Width="100%" Height="25px">
+                        <TimeSectionProperties>
+                        <TimeEditProperties>
+                        <ClearButton Visibility="Auto"></ClearButton>
+                        </TimeEditProperties>
+                        </TimeSectionProperties>
+
+                        <ClearButton Visibility="Auto"></ClearButton>
+                        </dx:ASPxDateEdit>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+		</Items>
+                                                                   
+	</dx:LayoutGroup>
+    
+     <dx:LayoutGroup ColSpan="2" HorizontalAlign="Right" ShowCaption="False">
+		<Items>
+			<dx:LayoutItem ShowCaption="False" HorizontalAlign="Center">
+                <LayoutItemNestedControlCollection>
+                    <dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
+                        <dx:ASPxButton ID="ASPxButtonSubmit" runat="server" Text="Submit Request" CommandName="New"  OnClick="ASPxButtonSubmit_Click" ClientInstanceName="submit" CssClass="btn btn-primary"  HorizontalAlign="Center" AutoPostBack="False">
+                            <ClientSideEvents Click="function(s, e) {
+                            ASPxClientEdit.ValidateEditorsInContainer(formlayout);
+                            }" />
+                        </dx:ASPxButton>
+                    </dx:LayoutItemNestedControlContainer>
+                </LayoutItemNestedControlCollection>
+            </dx:LayoutItem>
+        </Items>
+    </dx:LayoutGroup>
+    </Items>
+<SettingsItemCaptions Location="Top" />
+</dx:ASPxFormLayout>
+
+<asp:EntityDataSource ID="edsTransportationType" runat="server" ConnectionString="name=RexGlobeEntities" DefaultContainerName="RexGlobeEntities" EnableFlattening="False" EntitySetName="Transportation" OrderBy="it.ID" Select=" it.[ID],it.[TransportationType]">
+    </asp:EntityDataSource>
+
+    <asp:EntityDataSource ID="edsVehicleProvider" runat="server" ConnectionString="name=RexGlobeEntities" DefaultContainerName="RexGlobeEntities" EnableFlattening="False" EntitySetName="VechicleType" OrderBy="it.ID" Select=" it.[ID],it.[VehicleProvider]">
+    </asp:EntityDataSource>
+
+
+</asp:Content>

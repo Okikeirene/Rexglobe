@@ -1,0 +1,249 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image:url('../Content/Images/LoginBackgroundFinal.png');
+    background-size:cover;
+    font-family:'Times New Roman';
+    background-repeat:no-repeat;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.form-area{
+    position: absolute;
+    top: 82%;
+    left: 90%;
+    transform: translate(-82%,-80%);
+    width: 400px;
+    height: 500px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding:1em;
+    border-radius:0.9em;
+}
+
+h3{
+ margin: 0;
+ padding: 0 0 20px;
+ font-weight: bold;
+ color:white;
+}
+h2{
+ font-weight: bold;
+ color:white;
+}
+
+.form-area p{
+ margin: 0;
+ padding: 0;
+ font-weight: bold;
+ color: #ffffff;
+}
+
+.form-area input,select{
+ margin-bottom: 20px;
+ width: 100%;
+}
+
+.form-area input[type=text],
+.form-area input[type=password]{
+ border: none;
+ border-bottom: 1px solid #ffffff;
+ background-color: transparent;
+ outline: none;
+ height: 40px;
+ color: #ffffff;
+ display: 16px;
+}
+
+:-moz-placeholder{
+ color: #ffffff;
+}
+
+.form-area select{
+ margin-top: 20px;
+ padding: 10px 0;
+}
+
+.form-area input[type=submit]{
+ border: none;
+ height: 40px;
+ outline: none;
+ color: #ffffff;
+ font-size: 15px;
+ background-color: red;
+ cursor: pointer;
+ border-radius: 20px;
+}
+
+.form-area input[type=submit]:hover{
+ background-color: cyan;
+ color: #ffffff;
+}
+section{
+     background-image: url('../Content/Images/LoginBackgroundFinal.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100vw;
+    height:100vh;
+    Display:flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+}
+.container{
+    width:47vw;
+    height:570vh;
+    background-image: url('../Content/Images/LoginBackgroundFinal.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity:100%;
+}
+.container .inner1{
+    width:50%;
+    height:100%;
+    position:absolute;
+    left:0;
+    text-align:center;
+    margin-top:5%;
+}
+.inner1 a{
+    display:inline-block;
+    width:60%;
+    height:4%;
+    margin-bottom:11%;
+    padding:4% 4%;
+    font-family:'Times New Roman';
+    color:white;
+}
+
+.login
+{
+    background-image: url('../Resources/LoginBackgroundFinal.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:100vw;
+    height:100vh;
+    Display:flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    text-align: center;
+}
+	
+.CenterTable
+	{width:820px}
+
+.CenterTable
+	{width:820px}
+
+	{background:url(../content/images/main_bg.png) top no-repeat;
+	height:570px}
+	
+.LoginArea
+	{background:url(../content/images/main_bg.png) top no-repeat;
+	height:570px;
+	}
+.LoginArea2
+	{width:700px; height:500px; 
+	margin-top:45px; margin-left:80px; margin-right:80px}
+
+.LoginTable
+	{width:100%; height:100%}
+
+.LogoPlacement
+	{width:361px; height:110px;
+	margin-top:0px; margin-left:10px; margin-right:95px; margin-bottom:25px}
+	
+/*.FormArea
+{
+    margin-top: 90px;
+    width: 229px;
+    height: 395px;
+    background: url('../content/Images/form_bg.png') no-repeat top;
+    /*background-color:#ecf2f5;*/
+
+}*/
+
+.LeftColumn
+	{width:465px}
+	
+.RightColumn
+	{width:220px}
+	
+.InfoSegment
+	{ margin-left:10px; margin-right:100px;}
+
+.InfoHeading
+{
+    background: url('../content/Images/titlebar_bg.png') repeat top;
+    height: 30px;
+    border: #7D7D7D solid 1px;
+    border-bottom: none;
+}
+	
+.InfoHeadingTexts
+	{margin:5px; font-size:14px; font-weight:bold; text-align:left;
+	margin-left:15px; color:#FFF; text-shadow:#000 0px -1px 0px}
+
+.InfoContent
+	{border: #7D7D7D solid 1px; border-top:none;
+	height:200px}
+	
+.InfoContentTable
+	{margin:10px; margin-top:10px}
+
+.InfoContentTexts
+	{text-align:left; color:#333; font-family:Arial, Helvetica, sans-serif; font-size:12px; 
+	margin-top:5px; margin-left:7px; margin-right:22px; margin-bottom:20px}
+	
+.ButtonStyle
+{
+    background: url('../content/Images/button_bg.jpg') repeat-x top;
+    border: #151515 solid 1px;
+    cursor: pointer;
+    width: 170px;
+    height: 28px;
+    color: #F8F8F8;
+}
+	
+.ButtonStyle2
+{
+    background: url('../content/Images/button_bg.jpg') repeat-x top;
+    border: #151515 solid 1px;
+    cursor: pointer;
+    margin-top: 8px;
+    height: 25px;
+    color: #F8F8F8;
+}
+	
+.FormFieldStyle
+{
+    border: #900 solid 1px;
+    background: #FFF url('../content/Images/textfield_bg.jpg') repeat-x top;
+    height: 21px;
+}
+	
+.LoginBox
+	{margin:15px; margin-top:120px; margin-left:25px}
+	
+.LoginTexts
+	{margin:5px; margin-left:0px; font-size:12px; font-weight:bold; text-align:left;
+	color:#FFF;}
+
+.LinkStyle
+{
+    /*background: url('../Images/button_bg.jpg') repeat-x top;
+    border: #151515 solid 1px;*/
+    cursor: pointer;
+    width: 170px;
+    height: 28px;
+    /*color: #0066CC;*/
+    font-size: 12px;
+}

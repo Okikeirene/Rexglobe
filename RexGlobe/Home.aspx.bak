@@ -1,0 +1,42 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainSite.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="RexGlobe.Analytics.Home" %>
+
+<%@ Register Assembly="DevExpress.Dashboard.v17.1.Web.WebForms, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.DashboardWeb" TagPrefix="dx" %>
+
+<%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<dx:ASPxDashboardViewer ID="ASPxDashboardViewer3" runat="server" DashboardSource="RexGlobe.HomeDashboard" ClientInstanceName="dashboardViewer" RegisterJQuery="True" AllowExportDashboardItems="True" Width="100%" Height="600px" OnConfigureDataConnection="ASPxDashboardViewer1_ConfigureDataConnection" DisableHttpHandlerValidation="False">
+    </dx:ASPxDashboardViewer>
+    
+    <dx:ASPxLoadingPanel ID="ASPxLoadingPanel2" runat="server" ClientInstanceName="LoadingPanel" ContainerElementID="ASPxDashboardViewer3">
+    </dx:ASPxLoadingPanel>
+
+ <div class="col-md-12" >
+              <div class="panel panel-primary"> 
+                      <div class="panel-heading">Business Intelligent</div>
+                                   <div class="panel-body">
+
+                                        <%--<dx:ASPxDashboardViewer ID="ASPxDashboardViewer1" runat="server" DashboardSource="RexGlobe.Analytics.HomeDashboard" ClientInstanceName="dashboardViewer" RegisterJQuery="True" AllowExportDashboardItems="True" Width="100%" Height="600px" OnConfigureDataConnection="ASPxDashboardViewer1_ConfigureDataConnection">
+                                            </dx:ASPxDashboardViewer>--%>
+                                        <dx:ASPxDashboardViewer ID="ASPxDashboardViewer2" runat="server" DashboardSource="RexGlobe.Analytics.BusinessIntelligent" ClientInstanceName="dashboardViewer" RegisterJQuery="True" AllowExportDashboardItems="True" Width="100%" Height="600px" OnConfigureDataConnection="ASPxDashboardViewer1_ConfigureDataConnection">
+                                            </dx:ASPxDashboardViewer>
+                                            <%--<dx:ASPxTimeEdit ID="ASPxTimeEdit2" runat="server">
+                                            <ClientSideEvents Tick="function(s, e) {
+	                                                    LoadingPanel.Show();
+	                                                    dashboardViewer.ReloadData();
+	                                                    LoadingPanel.Hide();
+                                                    }" />
+                                            </dx:ASPxTimeEdit>--%>
+                                            <dx:ASPxLoadingPanel ID="ASPxLoadingPanel1" runat="server" ClientInstanceName="LoadingPanel" ContainerElementID="ASPxDashboardViewer2">
+                                            </dx:ASPxLoadingPanel>
+
+                                   </div><!----pane body end---->
+                      </div>
+              </div>
+
+
+</asp:Content>

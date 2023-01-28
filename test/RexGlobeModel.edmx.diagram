@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7c81ccc98b97495696a2886535fc75d6" Name="Diagram1" ZoomLevel="82">
+        <EntityTypeShape EntityType="RexGlobeModel.Country" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.MenuCategory" Width="1.5" PointX="5.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.Region" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.Resource" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.State" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.SubMenu" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RexGlobeModel.UserRole" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="RexGlobeModel.FK_Region_Country" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_Resources_MenuCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="RexGlobeModel.FK_State_Region" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RexGlobeModel.Role" Width="1.5" PointX="0.75" PointY="4.625" />
+        <AssociationConnector Association="RexGlobeModel.Roles_UserRoles_FK" />
+        <EntityTypeShape EntityType="RexGlobeModel.UsersProfile" Width="1.5" PointX="5.25" PointY="9.25" />
+        <EntityTypeShape EntityType="RexGlobeModel.UserAccount" Width="1.5" PointX="3" PointY="8.375" />
+        <AssociationConnector Association="RexGlobeModel.FK_UserAccount_Roles" />
+        <AssociationConnector Association="RexGlobeModel.FK_UsersProfile_UserAccount" />
+        <EntityTypeShape EntityType="RexGlobeModel.Bank" Width="1.5" PointX="12.75" PointY="8.75" />
+        <EntityTypeShape EntityType="RexGlobeModel.Booking" Width="1.5" PointX="10" PointY="9" />
+        <EntityTypeShape EntityType="RexGlobeModel.BusinessLineGroup" Width="1.5" PointX="12.75" PointY="6" />
+        <EntityTypeShape EntityType="RexGlobeModel.BusinessLine" Width="1.5" PointX="15" PointY="5.875" />
+        <EntityTypeShape EntityType="RexGlobeModel.Currency" Width="1.5" PointX="12.75" PointY="11.75" />
+        <EntityTypeShape EntityType="RexGlobeModel.Customer" Width="1.5" PointX="10.75" PointY="1" />
+        <EntityTypeShape EntityType="RexGlobeModel.CustomerFile" Width="1.5" PointX="13" PointY="2.125" />
+        <EntityTypeShape EntityType="RexGlobeModel.PaymentDate" Width="1.5" PointX="5.75" PointY="13.75" />
+        <EntityTypeShape EntityType="RexGlobeModel.Payment" Width="1.5" PointX="7.75" PointY="13.75" />
+        <EntityTypeShape EntityType="RexGlobeModel.SaleType" Width="1.5" PointX="9.75" PointY="13.75" />
+        <EntityTypeShape EntityType="RexGlobeModel.Shipment" Width="1.5" PointX="7.75" PointY="9.25" />
+        <EntityTypeShape EntityType="RexGlobeModel.Status" Width="1.5" PointX="0.75" PointY="14.75" />
+        <EntityTypeShape EntityType="RexGlobeModel.Transportation" Width="1.5" PointX="2.75" PointY="14.75" />
+        <EntityTypeShape EntityType="RexGlobeModel.VechicleType" Width="1.5" PointX="14.75" PointY="8.75" />
+        <AssociationConnector Association="RexGlobeModel.FK_Booking_Shipment" />
+        <AssociationConnector Association="RexGlobeModel.FK_BusinessLines_BusinessLineGroups" />
+        <AssociationConnector Association="RexGlobeModel.FK_CustomerFiles_Customer" />
+        <EntityTypeShape EntityType="RexGlobeModel.PickUpRequest" Width="1.5" PointX="7.5" PointY="18" />
+        <EntityTypeShape EntityType="RexGlobeModel.Vechicle" Width="1.5" PointX="12.375" PointY="14.75" />
+        <AssociationConnector Association="RexGlobeModel.FK_PickUpRequest_State" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

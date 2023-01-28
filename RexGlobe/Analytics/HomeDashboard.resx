@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="customSqlQuery2.Sql" xml:space="preserve">
+    <value>SELECT [ID]
+      ,[Name]
+      ,[Email]
+      ,[PickUpDate]
+      ,[ContactNumber]
+      ,[Address]
+      ,[StateID]
+      ,[Commodity]
+      ,[Weight]
+      ,[NearestServiceLocation]
+      ,[Status]
+      ,[ApprovePickUprequest]
+      ,[RejectPickUpRequest]
+      ,[CreateDate]
+      ,[CreatedBy]
+  FROM [RexGlobe].[dbo].[PickUpRequest]</value>
+  </data>
+  <data name="dashboardSqlDataSource4.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0iUGlja1VwUmVxdWVzdCI+PFZpZXcgTmFtZT0iUXVlcnkiPjxGaWVsZCBOYW1lPSJJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9Ik5hbWUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRW1haWwiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUGlja1VwRGF0ZSIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IkNvbnRhY3ROdW1iZXIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQWRkcmVzcyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTdGF0ZUlEIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNvbW1vZGl0eSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJXZWlnaHQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTmVhcmVzdFNlcnZpY2VMb2NhdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTdGF0dXMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQXBwcm92ZVBpY2tVcHJlcXVlc3QiIFR5cGU9IkJvb2xlYW4iIC8+PEZpZWxkIE5hbWU9IlJlamVjdFBpY2tVcFJlcXVlc3QiIFR5cGU9IkJvb2xlYW4iIC8+PEZpZWxkIE5hbWU9IkNyZWF0ZURhdGUiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJDcmVhdGVkQnkiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+  </data>
+  <data name="customSqlQuery3.Sql" xml:space="preserve">
+    <value>SELECT P.[PaymentReference]
+      ,P.[TIN]
+	,F.[Code]
+      ,F.[ProductName]
+      ,P.[Amount]
+      ,P.[PaymentDate]
+      ,P.[PaymentYear]
+      ,P.[payment_type]
+      ,P.[payment_currency]
+      ,P.[payment_channel]
+      ,P.[BookingID]
+      ,P.[revenue_type]
+  FROM [RexGlobe].[dbo].[Payments] P
+   INNER JOIN [RexGlobe].[dbo].[Product] F ON F.ProductID = P.ProductID</value>
+  </data>
+  <data name="dashboardSqlDataSource2.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0iUGF5bWVudHMiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iUGF5bWVudFJlZmVyZW5jZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUSU4iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ29kZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJQcm9kdWN0TmFtZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBbW91bnQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlBheW1lbnREYXRlIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iUGF5bWVudFllYXIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0icGF5bWVudF90eXBlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9InBheW1lbnRfY3VycmVuY3kiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0icGF5bWVudF9jaGFubmVsIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJvb2tpbmdJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9InJldmVudWVfdHlwZSIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+  </data>
+  <data name="customSqlQuery6.Sql" xml:space="preserve">
+    <value>SELECT TOP 1000 [RequestID]
+      ,[REXID]
+      ,[TIN]
+      ,[Firstname]
+      ,[LastName]
+      ,[Designation]
+      ,[CompanyName]
+      ,[DateOfIncorporation]
+      ,[DateOfCommencement]
+      ,[BVN]
+      ,[Address]
+      ,[Email]
+      ,[Phone1]
+      ,[Phone2]
+      ,[ContractDate]
+      ,[AssignedTo]
+      ,[BusinessLineID]
+      ,[LGAID]
+      ,[StateID]
+      ,[Status]
+      ,[CreatedBy]
+      ,[CreatedDate]
+      ,[CreditLine]
+      ,[Shareholding]
+      ,[StaffStrength]
+      ,[TankFarms]
+      ,[Vessels]
+      ,[Trucks]
+      ,[FillingStations]
+      ,[Bankers]
+      ,[AuditedAccounts]
+      ,[CompanyAuditors]
+      ,[AttachedAuditedAccounts]
+      ,[CompanyTurnover]
+      ,[SecurityDeposit]
+      ,[PaymentType]
+      ,[CashLocation]
+      ,[CashOwner]
+      ,[Walkin]
+      ,[MarketedByWhom]
+      ,[IntroducedByWhom]
+      ,[SuppliersList]
+      ,[TopFiveclients]
+      ,[RemitMoneyForSanctionedCountry]
+      ,[PerformThirdPartyBusinessTransaction]
+      ,[AnySubsidiaryInSanctionCountry]
+      ,[CountryOfProductTrade]
+      ,[CountryImportedGoodsandServices]
+      ,[CountryExportedGoodsandServices]
+      ,[CountryTransitOfGoodsandService]
+      ,[YourCustomers]
+      ,[YourProducts]
+      ,[TotalsalesOfClients]
+      ,[TotalPurchasesofClient]
+      ,[TotalAssetsoftheClient]
+      ,[TotalOperatingIncomeofClient]
+      ,[LicenseforConductedTransactions]
+      ,[TransactwithSanctionedCountries]
+      ,[BanksUsedtoTransactwithSanctionedCountries]
+      ,[PlanToGrowMaintainorReduceBusinesswithSanctionCountries]
+      ,[AcceptTermsandConditions]
+  FROM [RexGlobe].[dbo].[Customer]</value>
+  </data>
+  <data name="dashboardSqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0iQ3VzdG9tZXJzIj48VmlldyBOYW1lPSJRdWVyeSI+PEZpZWxkIE5hbWU9IlJlcXVlc3RJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlJFWElEIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRJTiIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkZpcnN0bmFtZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJMYXN0TmFtZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJEZXNpZ25hdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDb21wYW55TmFtZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJEYXRlT2ZJbmNvcnBvcmF0aW9uIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iRGF0ZU9mQ29tbWVuY2VtZW50IiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iQlZOIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFkZHJlc3MiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRW1haWwiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUGhvbmUxIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlBob25lMiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDb250cmFjdERhdGUiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJBc3NpZ25lZFRvIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJ1c2luZXNzTGluZUlEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iTEdBSUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJTdGF0ZUlEIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlN0YXR1cyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDcmVhdGVkQnkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ3JlYXRlZERhdGUiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJDcmVkaXRMaW5lIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJTaGFyZWhvbGRpbmciIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlN0YWZmU3RyZW5ndGgiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJUYW5rRmFybXMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVmVzc2VscyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUcnVja3MiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRmlsbGluZ1N0YXRpb25zIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkJhbmtlcnMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQXVkaXRlZEFjY291bnRzIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJDb21wYW55QXVkaXRvcnMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQXR0YWNoZWRBdWRpdGVkQWNjb3VudHMiIFR5cGU9IkJvb2xlYW4iIC8+PEZpZWxkIE5hbWU9IkNvbXBhbnlUdXJub3ZlciIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iU2VjdXJpdHlEZXBvc2l0IiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJQYXltZW50VHlwZSIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkNhc2hMb2NhdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDYXNoT3duZXIiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iV2Fsa2luIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJNYXJrZXRlZEJ5V2hvbSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJJbnRyb2R1Y2VkQnlXaG9tIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlN1cHBsaWVyc0xpc3QiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVG9wRml2ZWNsaWVudHMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUmVtaXRNb25leUZvclNhbmN0aW9uZWRDb3VudHJ5IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlBlcmZvcm1UaGlyZFBhcnR5QnVzaW5lc3NUcmFuc2FjdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBbnlTdWJzaWRpYXJ5SW5TYW5jdGlvbkNvdW50cnkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ291bnRyeU9mUHJvZHVjdFRyYWRlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNvdW50cnlJbXBvcnRlZEdvb2RzYW5kU2VydmljZXMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ291bnRyeUV4cG9ydGVkR29vZHNhbmRTZXJ2aWNlcyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDb3VudHJ5VHJhbnNpdE9mR29vZHNhbmRTZXJ2aWNlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IllvdXJDdXN0b21lcnMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iWW91clByb2R1Y3RzIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRvdGFsc2FsZXNPZkNsaWVudHMiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlRvdGFsUHVyY2hhc2Vzb2ZDbGllbnQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlRvdGFsQXNzZXRzb2Z0aGVDbGllbnQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlRvdGFsT3BlcmF0aW5nSW5jb21lb2ZDbGllbnQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IkxpY2Vuc2Vmb3JDb25kdWN0ZWRUcmFuc2FjdGlvbnMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVHJhbnNhY3R3aXRoU2FuY3Rpb25lZENvdW50cmllcyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJCYW5rc1VzZWR0b1RyYW5zYWN0d2l0aFNhbmN0aW9uZWRDb3VudHJpZXMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUGxhblRvR3Jvd01haW50YWlub3JSZWR1Y2VCdXNpbmVzc3dpdGhTYW5jdGlvbkNvdW50cmllcyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJBY2NlcHRUZXJtc2FuZENvbmRpdGlvbnMiIFR5cGU9IkJvb2xlYW4iIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
+  </data>
+  <data name="customSqlQuery7.Sql" xml:space="preserve">
+    <value>SELECT [ID]
+      ,[ShipmentID]
+      ,[SenderName]
+      ,[SenderEmail]
+      ,[OriginServiceLocation]
+      ,[ReceiverName]
+      ,[ReceiverEmail]
+      ,[ReceiverDestination]
+      ,[ReceiverPinCode]
+      ,[ReceiverRegion]
+      ,[ReceiverCity]
+      ,[ServiceLocation]
+      ,[CreateDate]
+  FROM [RexGlobe].[dbo].[Booking]</value>
+  </data>
+  <data name="dashboardSqlDataSource3.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0iQm9va2luZyI+PFZpZXcgTmFtZT0iUXVlcnkiPjxGaWVsZCBOYW1lPSJJRCIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlNoaXBtZW50SUQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJTZW5kZXJOYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlNlbmRlckVtYWlsIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik9yaWdpblNlcnZpY2VMb2NhdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJSZWNlaXZlck5hbWUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUmVjZWl2ZXJFbWFpbCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJSZWNlaXZlckRlc3RpbmF0aW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlJlY2VpdmVyUGluQ29kZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJSZWNlaXZlclJlZ2lvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJSZWNlaXZlckNpdHkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU2VydmljZUxvY2F0aW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNyZWF0ZURhdGUiIFR5cGU9IkRhdGVUaW1lIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+  </data>
+  <data name="customSqlQuery8.Sql" xml:space="preserve">
+    <value>SELECT [ID]
+      ,[VehicleProvider]
+      ,[WorkServiceLocation]
+      ,[VehicleNumber]
+      ,[TransportationType]
+      ,[VehicleDetails]
+      ,[PermitofStates]
+      ,[PermitExpiryDate]
+      ,[CreatedBy]
+      ,[CreatedDate]
+  FROM [RexGlobe].[dbo].[Vechicle]</value>
+  </data>
+  <data name="dashboardSqlDataSource5.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0iVHJ1Y2tzIj48VmlldyBOYW1lPSJRdWVyeSI+PEZpZWxkIE5hbWU9IklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVmVoaWNsZVByb3ZpZGVyIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iV29ya1NlcnZpY2VMb2NhdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJWZWhpY2xlTnVtYmVyIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRyYW5zcG9ydGF0aW9uVHlwZSIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlZlaGljbGVEZXRhaWxzIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlBlcm1pdG9mU3RhdGVzIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlBlcm1pdEV4cGlyeURhdGUiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJDcmVhdGVkQnkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ3JlYXRlZERhdGUiIFR5cGU9IkRhdGVUaW1lIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+  </data>
+</root>
