@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainSite.Master" AutoEventWireup="true" CodeBehind="ManagePersonnel.aspx.cs" Inherits="RexGlobe.Staff.ManagePersonnel" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperAdmin/SiteSuperAdmin.Master" AutoEventWireup="true" CodeBehind="ManagePersonnel.aspx.cs" Inherits="RexGlobe.Staff.ManagePersonnel" %>
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
     <dx:ASPxGridView ID="ASPxGridView1" Theme="PlasticBlue"  runat="server" AutoGenerateColumns="False" DataSourceID="SQLPersonnel" KeyFieldName="Personnel_ID">
     <Settings ShowFilterRow="True" />
     <settingsediting mode="PopupEditForm">

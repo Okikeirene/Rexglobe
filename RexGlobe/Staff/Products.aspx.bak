@@ -1,14 +1,20 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainSite.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="RexGlobe.Staff.Products" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperAdmin/SiteSuperAdmin.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="RexGlobe.Staff.Products" %>
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
 <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlProduct" KeyFieldName="ProductID" Width="100%">
+<SettingsAdaptivity>
+<AdaptiveDetailLayoutProperties ColCount="1"></AdaptiveDetailLayoutProperties>
+</SettingsAdaptivity>
+
     <Settings ShowFilterRow="True" />
     <SettingsDataSecurity AllowDelete="False" />
+
+<EditFormLayoutProperties ColCount="1"></EditFormLayoutProperties>
     <Columns>
-        <dx:GridViewCommandColumn ShowClearFilterButton="True" ShowNewButtonInHeader="True" VisibleIndex="0">
+        <dx:GridViewCommandColumn ShowClearFilterButton="True" ShowNewButtonInHeader="True" VisibleIndex="0" ShowEditButton="True">
         </dx:GridViewCommandColumn>
         <dx:GridViewDataTextColumn FieldName="ProductID" ReadOnly="True" VisibleIndex="1">
             <EditFormSettings Visible="False" />

@@ -58,7 +58,25 @@
                                                                        
                                         <div class="form-group">
                                         <label for="exampleInputText1">Select Role</label>
-                                        <asp:DropDownList CssClass="form-control" ID="DDLRole" runat="server"></asp:DropDownList>
+                                        <asp:DropDownList CssClass="form-control" ID="DDLRole" runat="server" DataSourceID="SqlRole" DataTextField="RoleID" DataValueField="RoleID"></asp:DropDownList>
+                                            <asp:SqlDataSource ID="SqlRole" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [Roles] WHERE [RoleID] = @RoleID" InsertCommand="INSERT INTO [Roles] ([RoleName], [ParentID], [CreatedBy], [CreateDate]) VALUES (@RoleName, @ParentID, @CreatedBy, @CreateDate)" SelectCommand="SELECT * FROM [Roles]" UpdateCommand="UPDATE [Roles] SET [RoleName] = @RoleName, [ParentID] = @ParentID, [CreatedBy] = @CreatedBy, [CreateDate] = @CreateDate WHERE [RoleID] = @RoleID">
+                                                <DeleteParameters>
+                                                    <asp:Parameter Name="RoleID" Type="Int32" />
+                                                </DeleteParameters>
+                                                <InsertParameters>
+                                                    <asp:Parameter Name="RoleName" Type="String" />
+                                                    <asp:Parameter Name="ParentID" Type="Int32" />
+                                                    <asp:Parameter Name="CreatedBy" Type="String" />
+                                                    <asp:Parameter Name="CreateDate" Type="DateTime" />
+                                                </InsertParameters>
+                                                <UpdateParameters>
+                                                    <asp:Parameter Name="RoleName" Type="String" />
+                                                    <asp:Parameter Name="ParentID" Type="Int32" />
+                                                    <asp:Parameter Name="CreatedBy" Type="String" />
+                                                    <asp:Parameter Name="CreateDate" Type="DateTime" />
+                                                    <asp:Parameter Name="RoleID" Type="Int32" />
+                                                </UpdateParameters>
+                                            </asp:SqlDataSource>
                                         </div>
                                                                         
                                     </div>

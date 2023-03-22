@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainSite.Master" AutoEventWireup="true" CodeBehind="ManageCustomers.aspx.cs" Inherits="RexGlobe.Customers.ManageCustomers" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperAdmin/SiteSuperAdmin.Master" AutoEventWireup="true" CodeBehind="ManageCustomers.aspx.cs" Inherits="RexGlobe.Customers.ManageCustomers" %>
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
 <script>
     function OnPageControlInit(s, e) {
         var enabled = !gridPPT_JVCAssessment.IsNewRowEditing();
@@ -15,6 +15,7 @@
 
 </script>
 <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlCustomers" KeyFieldName="RequestID"  OnStartRowEditing="ASPxGridView1_StartRowEditing"  OnRowInserting="ASPxGridView1_RowInserting" OnRowUpdating="ASPxGridView1_RowUpdating" OnCustomUnboundColumnData="ASPxGridView1_CustomUnboundColumnData" Width="27%">
+
     <Columns>
         <dx:GridViewCommandColumn ShowEditButton="True" ShowNewButtonInHeader="True" VisibleIndex="0">
         </dx:GridViewCommandColumn>
@@ -52,7 +53,7 @@
         <dx:GridViewDataTextColumn FieldName="AssignedTo" VisibleIndex="16">
         </dx:GridViewDataTextColumn>
         <dx:GridViewDataComboBoxColumn Caption="BusinessLine ID" FieldName="BusinessLineID" VisibleIndex="17">
-            <PropertiesComboBox DataSourceID="edsBusinessLines"  TextField="BusinessLines.BusinessLineName" ValueField="BusinessLines.BusinessLineId">                                                     
+            <PropertiesComboBox DataSourceID="SQLBusinessLines"  TextField="BusinessLineName" ValueField="BusinessLineId">                                                     
                                                     
                 <ValidationSettings CausesValidation="True" ErrorDisplayMode="ImageWithText">                                                      
                                                         
@@ -190,7 +191,7 @@
                                             <ContentCollection>
                                                 <dx:ContentControl runat="server">
 
-                                                    <dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" Width="100%" DataSourceID="edsCustomer" ClientInstanceName="formlayout" ColCount="2">
+                                                    <dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" Width="100%" DataSourceID="SQLCustomer" ClientInstanceName="formlayout" ColCount="2">
                                                         <Items>
 
                                                             <dx:LayoutGroup ColCount="4" ColSpan="2" Caption="Customer Info">
@@ -311,7 +312,7 @@
                                                                     <dx:LayoutItem Caption="BusinessLine" FieldName="BusinessLineId" RequiredMarkDisplayMode="Required">
                                                                         <LayoutItemNestedControlCollection>
                                                                             <dx:LayoutItemNestedControlContainer runat="server">                                                                                    
-                                                                                <dx:ASPxComboBox ID="ASPxComboAssessmentYear" runat="server" Text='<%# Bind("BusinessLineId")%>' IncrementalFilteringMode="Contains" TextField="BusinessLineName" ValueField="BusinessLineId" Width="100%" DataSourceID="edsBusinessLines">
+                                                                                <dx:ASPxComboBox ID="ASPxComboAssessmentYear" runat="server" Text='<%# Bind("BusinessLineId")%>' IncrementalFilteringMode="Contains" TextField="BusinessLineName" ValueField="BusinessLineId" Width="100%" DataSourceID="SQLBusinessLines">
                                                                                     <ValidationSettings>
                                                                                         <RequiredField ErrorText="Required" IsRequired="True" />
                                                                                     </ValidationSettings>
@@ -322,7 +323,7 @@
                                                                     <dx:LayoutItem Caption="Business State" FieldName="StateId" RequiredMarkDisplayMode="Required">
                                                                             <LayoutItemNestedControlCollection>
                                                                                 <dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
-                                                                                    <dx:ASPxComboBox ID="ASPxComboBoxState" runat="server" AutoPostBack="True" AutoResizeWithContainer="True" ClientInstanceName="state" DataSourceID="edsStates" EnableIncrementalFiltering="True" IncrementalFilteringMode="StartsWith" TextField="Name" ValueField="StateId" Width="100%" Height="25px">
+                                                                                    <dx:ASPxComboBox ID="ASPxComboBoxState" runat="server" AutoPostBack="True" AutoResizeWithContainer="True" ClientInstanceName="state" DataSourceID="SQLStates" EnableIncrementalFiltering="True" IncrementalFilteringMode="StartsWith" TextField="Name" ValueField="StateId" Width="100%" Height="25px">
                                                                                         <ClientSideEvents SelectedIndexChanged="function(s, e) {
 	                                                                                                    OnStateChanged(s);
                                                                                                     }" />
@@ -339,7 +340,7 @@
                                                                         <dx:LayoutItem Caption="Business Lga" FieldName="LgaId">
                                                                             <LayoutItemNestedControlCollection>
                                                                                 <dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
-                                                                                    <dx:ASPxComboBox ID="ASPxComboBoxLga" runat="server" ClientInstanceName="lga" DataSourceID="edsLgas" IncrementalFilteringMode="Contains" OnCallback="ASPxComboBoxLga_Callback" TextField="LGAName" ValueField="LGAId" Width="100%" Height="25px">
+                                                                                    <dx:ASPxComboBox ID="ASPxComboBoxLga" runat="server" ClientInstanceName="lga" DataSourceID="SqlLGA" IncrementalFilteringMode="Contains" OnCallback="ASPxComboBoxLga_Callback" TextField="LGAName" ValueField="LGAId" Width="100%" Height="25px">
                                                                                         <ClientSideEvents EndCallback="function(s, e) {
 	                                                                                            OnEndCallback
                                                                                             }" />
@@ -356,7 +357,7 @@
                                                         <SettingsItemCaptions Location="Top" />
                                                     </dx:ASPxFormLayout>
 
-                                                    <dx:ASPxFormLayout ID="ASPxFormLayout2" runat="server" Width="100%" DataSourceID="edsCustomer" ClientInstanceName="formlayout" ColCount="2">
+                                                    <dx:ASPxFormLayout ID="ASPxFormLayout2" runat="server" Width="100%" DataSourceID="SQLCustomer" ClientInstanceName="formlayout" ColCount="2">
                                                         <Items>
                                                             <dx:LayoutGroup ColCount="4" ColSpan="2" Caption="Financial Details">
                                                                 <Items>
@@ -457,7 +458,7 @@
                                         <dx:TabPage Name="Assets and Location of Assets" Text="Assets and Location of Assets">
                                             <ContentCollection>
                                                 <dx:ContentControl runat="server">
-                                                            <dx:ASPxFormLayout ID="ASPxFormLayout5" runat="server" Width="100%" ClientInstanceName="formlayout" ColCount="2" DataSourceID="edsCustomer" OnDataBound="ASPxFormLayout1_DataBound">
+                                                            <dx:ASPxFormLayout ID="ASPxFormLayout5" runat="server" Width="100%" ClientInstanceName="formlayout" ColCount="2" DataSourceID="SQLCustomer" OnDataBound="ASPxFormLayout1_DataBound">
                                                             <Items>
                                                                 <dx:LayoutGroup Caption="Credit Facility" ColCount="4" ColSpan="2" ShowCaption="False" >
                                                                     <Items>
@@ -548,7 +549,7 @@
                                                                         <dx:LayoutItem Caption="Does the company have audited accounts?" FieldName="AuditedAccounts">
                                                                             <LayoutItemNestedControlCollection>
                                                                                 <dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
-                                                                                     <dx:ASPxComboBox ID="ASPxAuditedAccounts" runat="server" DataSourceID="edsStatus" IncrementalFilteringMode="Contains" TextField="Decision" ValueField="StatusId" Width="100%" Height="25px">
+                                                                                     <dx:ASPxComboBox ID="ASPxAuditedAccounts" runat="server" DataSourceID="SQLStatus" IncrementalFilteringMode="Contains" TextField="Decision" ValueField="StatusId" Width="100%" Height="25px">
                                                                                         <ClearButton Visibility="Auto">
                                                                                         </ClearButton>
                                                                                         <ValidationSettings>
@@ -626,7 +627,7 @@
                                                                         <dx:LayoutItem Caption="Payment Type" FieldName="PaymentType" RequiredMarkDisplayMode="Required">
                                                                             <LayoutItemNestedControlCollection>
                                                                                 <dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
-                                                                                    <dx:ASPxComboBox ID="ASPxPaymentType" runat="server" AutoPostBack="True" AutoResizeWithContainer="True" ClientInstanceName="PaymentType" DataSourceID="EdsPaymentType" EnableIncrementalFiltering="True" IncrementalFilteringMode="StartsWith" TextField="PaymentType" ValueField="PaymentID" Width="100%" Height="25px">
+                                                                                    <dx:ASPxComboBox ID="ASPxPaymentType" runat="server" AutoPostBack="True" AutoResizeWithContainer="True" ClientInstanceName="PaymentType" DataSourceID="sqlPaymentType" EnableIncrementalFiltering="True" IncrementalFilteringMode="StartsWith" TextField="PaymentType" ValueField="PaymentID" Width="100%" Height="25px">
                                                                                         <ClearButton Visibility="Auto"></ClearButton>
 
                                                                                         <ValidationSettings>
@@ -677,7 +678,7 @@
                                         <dx:TabPage Name="Mode of Introduction" Text="Mode of Introduction">
                                             <ContentCollection>
                                                 <dx:ContentControl runat="server">
-                                                            <dx:ASPxFormLayout ID="ASPxFormLayout4" runat="server" Width="100%" DataSourceID="edsCustomer" ClientInstanceName="formlayout" ColCount="2">
+                                                            <dx:ASPxFormLayout ID="ASPxFormLayout4" runat="server" Width="100%" DataSourceID="SQLCustomer" ClientInstanceName="formlayout" ColCount="2">
                                                         <Items>
                                                         <dx:LayoutGroup ColCount="4" ColSpan="2" Caption="Mode of Introduction">
                                                                 <Items>
@@ -765,7 +766,6 @@
                                                                                     </dx:ASPxComboBox>--%>
                                                                                     <dx:ASPxMemo ID="MemoCommentRemitMoneyForSanctionedCountry" Text='<%# Bind("RemitMoneyForSanctionedCountry")%>' runat="server" Height="100px" Width="300px"></dx:ASPxMemo>
                                                                                     
-                                                                                    </dx:ASPxTextBox>
                                                                                 </dx:LayoutItemNestedControlContainer>
                                                                             </LayoutItemNestedControlCollection>
                                                                         </dx:LayoutItem>
@@ -903,7 +903,7 @@
                                         <dx:TabPage Name="Other Information" Text="Other Information">
                                             <ContentCollection>
                                                 <dx:ContentControl runat="server">
-                                                    <dx:ASPxFormLayout ID="ASPxFormLayout3" runat="server" Width="100%" DataSourceID="edsCustomer" ClientInstanceName="formlayout" ColCount="2">
+                                                    <dx:ASPxFormLayout ID="ASPxFormLayout3" runat="server" Width="100%" DataSourceID="SQLCustomer" ClientInstanceName="formlayout" ColCount="2">
                                                         <Items>
                                                                 <dx:LayoutGroup ColSpan="2" Caption="If any of your responses to questions (e, f, g or h) is “YES”, please provide additional " Width="100%">
                                                                     <Items>
@@ -1014,7 +1014,7 @@
                                         <dx:TabPage Name="Attachment" Text="Attachment">
                                             <ContentCollection>
                                                 <dx:ContentControl runat="server">
-                                                       <dx:ASPxGridView ID="GridViewAttachment" DataSourceID="edsCustomerFiles" KeyFieldName="FileId" EnableRowsCache="false" Width="100%" runat="server">
+                                                       <dx:ASPxGridView ID="GridViewAttachment" DataSourceID="SQLCustomerFiles" KeyFieldName="FileId" EnableRowsCache="false" Width="100%" runat="server">
                                                         <Columns>
                                                             <%--<dx:GridViewCommandColumn ShowEditButton="false" />--%>
                                                             <dx:GridViewDataTextColumn FieldName="FileName" />
@@ -1190,7 +1190,297 @@
     </asp:SqlDataSource>
 
 
+        <asp:SqlDataSource ID="SqlStatus" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [Status] WHERE [StatusId] = @StatusId" InsertCommand="INSERT INTO [Status] ([Name], [Decision]) VALUES (@Name, @Decision)" SelectCommand="SELECT * FROM [Status]" UpdateCommand="UPDATE [Status] SET [Name] = @Name, [Decision] = @Decision WHERE [StatusId] = @StatusId">
+             <DeleteParameters>
+                 <asp:Parameter Name="StatusId" Type="Int32" />
+             </DeleteParameters>
+             <InsertParameters>
+                 <asp:Parameter Name="Name" Type="String" />
+                 <asp:Parameter Name="Decision" Type="Boolean" />
+             </InsertParameters>
+             <UpdateParameters>
+                 <asp:Parameter Name="Name" Type="String" />
+                 <asp:Parameter Name="Decision" Type="Boolean" />
+                 <asp:Parameter Name="StatusId" Type="Int32" />
+             </UpdateParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlPaymentType" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [PaymentTypes] WHERE [PaymentID] = @PaymentID" InsertCommand="INSERT INTO [PaymentTypes] ([PaymentType], [PaymentChannel]) VALUES (@PaymentType, @PaymentChannel)" SelectCommand="SELECT * FROM [PaymentTypes]" UpdateCommand="UPDATE [PaymentTypes] SET [PaymentType] = @PaymentType, [PaymentChannel] = @PaymentChannel WHERE [PaymentID] = @PaymentID">
+        <DeleteParameters>
+            <asp:Parameter Name="PaymentID" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="PaymentType" Type="String" />
+            <asp:Parameter Name="PaymentChannel" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="PaymentType" Type="String" />
+            <asp:Parameter Name="PaymentChannel" Type="String" />
+            <asp:Parameter Name="PaymentID" Type="Int32" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlLGA" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [LGAs] WHERE [LGAId] = @LGAId" InsertCommand="INSERT INTO [LGAs] ([LGAName], [StateId]) VALUES (@LGAName, @StateId)" SelectCommand="SELECT * FROM [LGAs] WHERE ([StateId] = @StateId)" UpdateCommand="UPDATE [LGAs] SET [LGAName] = @LGAName, [StateId] = @StateId WHERE [LGAId] = @LGAId">
+        <DeleteParameters>
+            <asp:Parameter Name="LGAId" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="LGAName" Type="String" />
+            <asp:Parameter Name="StateId" Type="String" />
+        </InsertParameters>
+        <SelectParameters>
+            <asp:QueryStringParameter Name="StateId" QueryStringField="StateID" Type="String" />
+        </SelectParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="LGAName" Type="String" />
+            <asp:Parameter Name="StateId" Type="String" />
+            <asp:Parameter Name="LGAId" Type="Int32" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlCustomerFiles" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [CustomerFiles] WHERE [FileId] = @FileId" InsertCommand="INSERT INTO [CustomerFiles] ([FileId], [RequestId], [FileName], [FileDescription], [FileType], [FileContent], [CreateDate]) VALUES (@FileId, @RequestId, @FileName, @FileDescription, @FileType, @FileContent, @CreateDate)" SelectCommand="SELECT * FROM [CustomerFiles]" UpdateCommand="UPDATE [CustomerFiles] SET [RequestId] = @RequestId, [FileName] = @FileName, [FileDescription] = @FileDescription, [FileType] = @FileType, [FileContent] = @FileContent, [CreateDate] = @CreateDate WHERE [FileId] = @FileId">
+        <DeleteParameters>
+            <asp:Parameter Name="FileId" Type="Object" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="FileId" Type="Object" />
+            <asp:Parameter Name="RequestId" Type="Int32" />
+            <asp:Parameter Name="FileName" Type="String" />
+            <asp:Parameter Name="FileDescription" Type="String" />
+            <asp:Parameter Name="FileType" Type="String" />
+            <asp:Parameter Name="FileContent" Type="Object" />
+            <asp:Parameter Name="CreateDate" Type="DateTime" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="RequestId" Type="Int32" />
+            <asp:Parameter Name="FileName" Type="String" />
+            <asp:Parameter Name="FileDescription" Type="String" />
+            <asp:Parameter Name="FileType" Type="String" />
+            <asp:Parameter Name="FileContent" Type="Object" />
+            <asp:Parameter Name="CreateDate" Type="DateTime" />
+            <asp:Parameter Name="FileId" Type="Object" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlCustomer" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [Customer] WHERE [RequestID] = @RequestID" InsertCommand="INSERT INTO [Customer] ([REXID], [TIN], [Firstname], [LastName], [Designation], [CompanyName], [DateOfIncorporation], [DateOfCommencement], [BVN], [Address], [Email], [Phone1], [Phone2], [ContractDate], [AssignedTo], [BusinessLineID], [LGAID], [StateID], [Status], [CreatedBy], [CreatedDate], [CreditLine], [Shareholding], [StaffStrength], [TankFarms], [Vessels], [Trucks], [FillingStations], [Bankers], [AuditedAccounts], [CompanyAuditors], [AttachedAuditedAccounts], [CompanyTurnover], [SecurityDeposit], [PaymentType], [CashLocation], [CashOwner], [Walkin], [MarketedByWhom], [IntroducedByWhom], [SuppliersList], [TopFiveclients], [RemitMoneyForSanctionedCountry], [PerformThirdPartyBusinessTransaction], [AnySubsidiaryInSanctionCountry], [CountryOfProductTrade], [CountryImportedGoodsandServices], [CountryExportedGoodsandServices], [CountryTransitOfGoodsandService], [YourCustomers], [YourProducts], [TotalsalesOfClients], [TotalPurchasesofClient], [TotalAssetsoftheClient], [TotalOperatingIncomeofClient], [LicenseforConductedTransactions], [TransactwithSanctionedCountries], [BanksUsedtoTransactwithSanctionedCountries], [PlanToGrowMaintainorReduceBusinesswithSanctionCountries], [AcceptTermsandConditions]) VALUES (@REXID, @TIN, @Firstname, @LastName, @Designation, @CompanyName, @DateOfIncorporation, @DateOfCommencement, @BVN, @Address, @Email, @Phone1, @Phone2, @ContractDate, @AssignedTo, @BusinessLineID, @LGAID, @StateID, @Status, @CreatedBy, @CreatedDate, @CreditLine, @Shareholding, @StaffStrength, @TankFarms, @Vessels, @Trucks, @FillingStations, @Bankers, @AuditedAccounts, @CompanyAuditors, @AttachedAuditedAccounts, @CompanyTurnover, @SecurityDeposit, @PaymentType, @CashLocation, @CashOwner, @Walkin, @MarketedByWhom, @IntroducedByWhom, @SuppliersList, @TopFiveclients, @RemitMoneyForSanctionedCountry, @PerformThirdPartyBusinessTransaction, @AnySubsidiaryInSanctionCountry, @CountryOfProductTrade, @CountryImportedGoodsandServices, @CountryExportedGoodsandServices, @CountryTransitOfGoodsandService, @YourCustomers, @YourProducts, @TotalsalesOfClients, @TotalPurchasesofClient, @TotalAssetsoftheClient, @TotalOperatingIncomeofClient, @LicenseforConductedTransactions, @TransactwithSanctionedCountries, @BanksUsedtoTransactwithSanctionedCountries, @PlanToGrowMaintainorReduceBusinesswithSanctionCountries, @AcceptTermsandConditions)" SelectCommand="SELECT * FROM [Customer]" UpdateCommand="UPDATE [Customer] SET [REXID] = @REXID, [TIN] = @TIN, [Firstname] = @Firstname, [LastName] = @LastName, [Designation] = @Designation, [CompanyName] = @CompanyName, [DateOfIncorporation] = @DateOfIncorporation, [DateOfCommencement] = @DateOfCommencement, [BVN] = @BVN, [Address] = @Address, [Email] = @Email, [Phone1] = @Phone1, [Phone2] = @Phone2, [ContractDate] = @ContractDate, [AssignedTo] = @AssignedTo, [BusinessLineID] = @BusinessLineID, [LGAID] = @LGAID, [StateID] = @StateID, [Status] = @Status, [CreatedBy] = @CreatedBy, [CreatedDate] = @CreatedDate, [CreditLine] = @CreditLine, [Shareholding] = @Shareholding, [StaffStrength] = @StaffStrength, [TankFarms] = @TankFarms, [Vessels] = @Vessels, [Trucks] = @Trucks, [FillingStations] = @FillingStations, [Bankers] = @Bankers, [AuditedAccounts] = @AuditedAccounts, [CompanyAuditors] = @CompanyAuditors, [AttachedAuditedAccounts] = @AttachedAuditedAccounts, [CompanyTurnover] = @CompanyTurnover, [SecurityDeposit] = @SecurityDeposit, [PaymentType] = @PaymentType, [CashLocation] = @CashLocation, [CashOwner] = @CashOwner, [Walkin] = @Walkin, [MarketedByWhom] = @MarketedByWhom, [IntroducedByWhom] = @IntroducedByWhom, [SuppliersList] = @SuppliersList, [TopFiveclients] = @TopFiveclients, [RemitMoneyForSanctionedCountry] = @RemitMoneyForSanctionedCountry, [PerformThirdPartyBusinessTransaction] = @PerformThirdPartyBusinessTransaction, [AnySubsidiaryInSanctionCountry] = @AnySubsidiaryInSanctionCountry, [CountryOfProductTrade] = @CountryOfProductTrade, [CountryImportedGoodsandServices] = @CountryImportedGoodsandServices, [CountryExportedGoodsandServices] = @CountryExportedGoodsandServices, [CountryTransitOfGoodsandService] = @CountryTransitOfGoodsandService, [YourCustomers] = @YourCustomers, [YourProducts] = @YourProducts, [TotalsalesOfClients] = @TotalsalesOfClients, [TotalPurchasesofClient] = @TotalPurchasesofClient, [TotalAssetsoftheClient] = @TotalAssetsoftheClient, [TotalOperatingIncomeofClient] = @TotalOperatingIncomeofClient, [LicenseforConductedTransactions] = @LicenseforConductedTransactions, [TransactwithSanctionedCountries] = @TransactwithSanctionedCountries, [BanksUsedtoTransactwithSanctionedCountries] = @BanksUsedtoTransactwithSanctionedCountries, [PlanToGrowMaintainorReduceBusinesswithSanctionCountries] = @PlanToGrowMaintainorReduceBusinesswithSanctionCountries, [AcceptTermsandConditions] = @AcceptTermsandConditions WHERE [RequestID] = @RequestID">
+        <DeleteParameters>
+            <asp:Parameter Name="RequestID" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="REXID" Type="String" />
+            <asp:Parameter Name="TIN" Type="Int32" />
+            <asp:Parameter Name="Firstname" Type="String" />
+            <asp:Parameter Name="LastName" Type="String" />
+            <asp:Parameter Name="Designation" Type="String" />
+            <asp:Parameter Name="CompanyName" Type="String" />
+            <asp:Parameter Name="DateOfIncorporation" Type="DateTime" />
+            <asp:Parameter Name="DateOfCommencement" Type="DateTime" />
+            <asp:Parameter Name="BVN" Type="String" />
+            <asp:Parameter Name="Address" Type="String" />
+            <asp:Parameter Name="Email" Type="String" />
+            <asp:Parameter Name="Phone1" Type="String" />
+            <asp:Parameter Name="Phone2" Type="String" />
+            <asp:Parameter Name="ContractDate" Type="DateTime" />
+            <asp:Parameter Name="AssignedTo" Type="String" />
+            <asp:Parameter Name="BusinessLineID" Type="Int32" />
+            <asp:Parameter Name="LGAID" Type="Int32" />
+            <asp:Parameter Name="StateID" Type="String" />
+            <asp:Parameter Name="Status" Type="String" />
+            <asp:Parameter Name="CreatedBy" Type="String" />
+            <asp:Parameter Name="CreatedDate" Type="DateTime" />
+            <asp:Parameter Name="CreditLine" Type="Decimal" />
+            <asp:Parameter Name="Shareholding" Type="Decimal" />
+            <asp:Parameter Name="StaffStrength" Type="Int32" />
+            <asp:Parameter Name="TankFarms" Type="String" />
+            <asp:Parameter Name="Vessels" Type="String" />
+            <asp:Parameter Name="Trucks" Type="String" />
+            <asp:Parameter Name="FillingStations" Type="String" />
+            <asp:Parameter Name="Bankers" Type="String" />
+            <asp:Parameter Name="AuditedAccounts" Type="Boolean" />
+            <asp:Parameter Name="CompanyAuditors" Type="String" />
+            <asp:Parameter Name="AttachedAuditedAccounts" Type="Boolean" />
+            <asp:Parameter Name="CompanyTurnover" Type="Decimal" />
+            <asp:Parameter Name="SecurityDeposit" Type="Decimal" />
+            <asp:Parameter Name="PaymentType" Type="Int32" />
+            <asp:Parameter Name="CashLocation" Type="String" />
+            <asp:Parameter Name="CashOwner" Type="String" />
+            <asp:Parameter Name="Walkin" Type="Boolean" />
+            <asp:Parameter Name="MarketedByWhom" Type="String" />
+            <asp:Parameter Name="IntroducedByWhom" Type="String" />
+            <asp:Parameter Name="SuppliersList" Type="String" />
+            <asp:Parameter Name="TopFiveclients" Type="String" />
+            <asp:Parameter Name="RemitMoneyForSanctionedCountry" Type="String" />
+            <asp:Parameter Name="PerformThirdPartyBusinessTransaction" Type="String" />
+            <asp:Parameter Name="AnySubsidiaryInSanctionCountry" Type="String" />
+            <asp:Parameter Name="CountryOfProductTrade" Type="String" />
+            <asp:Parameter Name="CountryImportedGoodsandServices" Type="String" />
+            <asp:Parameter Name="CountryExportedGoodsandServices" Type="String" />
+            <asp:Parameter Name="CountryTransitOfGoodsandService" Type="String" />
+            <asp:Parameter Name="YourCustomers" Type="String" />
+            <asp:Parameter Name="YourProducts" Type="String" />
+            <asp:Parameter Name="TotalsalesOfClients" Type="Decimal" />
+            <asp:Parameter Name="TotalPurchasesofClient" Type="Decimal" />
+            <asp:Parameter Name="TotalAssetsoftheClient" Type="Decimal" />
+            <asp:Parameter Name="TotalOperatingIncomeofClient" Type="Decimal" />
+            <asp:Parameter Name="LicenseforConductedTransactions" Type="String" />
+            <asp:Parameter Name="TransactwithSanctionedCountries" Type="String" />
+            <asp:Parameter Name="BanksUsedtoTransactwithSanctionedCountries" Type="String" />
+            <asp:Parameter Name="PlanToGrowMaintainorReduceBusinesswithSanctionCountries" Type="String" />
+            <asp:Parameter Name="AcceptTermsandConditions" Type="Boolean" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="REXID" Type="String" />
+            <asp:Parameter Name="TIN" Type="Int32" />
+            <asp:Parameter Name="Firstname" Type="String" />
+            <asp:Parameter Name="LastName" Type="String" />
+            <asp:Parameter Name="Designation" Type="String" />
+            <asp:Parameter Name="CompanyName" Type="String" />
+            <asp:Parameter Name="DateOfIncorporation" Type="DateTime" />
+            <asp:Parameter Name="DateOfCommencement" Type="DateTime" />
+            <asp:Parameter Name="BVN" Type="String" />
+            <asp:Parameter Name="Address" Type="String" />
+            <asp:Parameter Name="Email" Type="String" />
+            <asp:Parameter Name="Phone1" Type="String" />
+            <asp:Parameter Name="Phone2" Type="String" />
+            <asp:Parameter Name="ContractDate" Type="DateTime" />
+            <asp:Parameter Name="AssignedTo" Type="String" />
+            <asp:Parameter Name="BusinessLineID" Type="Int32" />
+            <asp:Parameter Name="LGAID" Type="Int32" />
+            <asp:Parameter Name="StateID" Type="String" />
+            <asp:Parameter Name="Status" Type="String" />
+            <asp:Parameter Name="CreatedBy" Type="String" />
+            <asp:Parameter Name="CreatedDate" Type="DateTime" />
+            <asp:Parameter Name="CreditLine" Type="Decimal" />
+            <asp:Parameter Name="Shareholding" Type="Decimal" />
+            <asp:Parameter Name="StaffStrength" Type="Int32" />
+            <asp:Parameter Name="TankFarms" Type="String" />
+            <asp:Parameter Name="Vessels" Type="String" />
+            <asp:Parameter Name="Trucks" Type="String" />
+            <asp:Parameter Name="FillingStations" Type="String" />
+            <asp:Parameter Name="Bankers" Type="String" />
+            <asp:Parameter Name="AuditedAccounts" Type="Boolean" />
+            <asp:Parameter Name="CompanyAuditors" Type="String" />
+            <asp:Parameter Name="AttachedAuditedAccounts" Type="Boolean" />
+            <asp:Parameter Name="CompanyTurnover" Type="Decimal" />
+            <asp:Parameter Name="SecurityDeposit" Type="Decimal" />
+            <asp:Parameter Name="PaymentType" Type="Int32" />
+            <asp:Parameter Name="CashLocation" Type="String" />
+            <asp:Parameter Name="CashOwner" Type="String" />
+            <asp:Parameter Name="Walkin" Type="Boolean" />
+            <asp:Parameter Name="MarketedByWhom" Type="String" />
+            <asp:Parameter Name="IntroducedByWhom" Type="String" />
+            <asp:Parameter Name="SuppliersList" Type="String" />
+            <asp:Parameter Name="TopFiveclients" Type="String" />
+            <asp:Parameter Name="RemitMoneyForSanctionedCountry" Type="String" />
+            <asp:Parameter Name="PerformThirdPartyBusinessTransaction" Type="String" />
+            <asp:Parameter Name="AnySubsidiaryInSanctionCountry" Type="String" />
+            <asp:Parameter Name="CountryOfProductTrade" Type="String" />
+            <asp:Parameter Name="CountryImportedGoodsandServices" Type="String" />
+            <asp:Parameter Name="CountryExportedGoodsandServices" Type="String" />
+            <asp:Parameter Name="CountryTransitOfGoodsandService" Type="String" />
+            <asp:Parameter Name="YourCustomers" Type="String" />
+            <asp:Parameter Name="YourProducts" Type="String" />
+            <asp:Parameter Name="TotalsalesOfClients" Type="Decimal" />
+            <asp:Parameter Name="TotalPurchasesofClient" Type="Decimal" />
+            <asp:Parameter Name="TotalAssetsoftheClient" Type="Decimal" />
+            <asp:Parameter Name="TotalOperatingIncomeofClient" Type="Decimal" />
+            <asp:Parameter Name="LicenseforConductedTransactions" Type="String" />
+            <asp:Parameter Name="TransactwithSanctionedCountries" Type="String" />
+            <asp:Parameter Name="BanksUsedtoTransactwithSanctionedCountries" Type="String" />
+            <asp:Parameter Name="PlanToGrowMaintainorReduceBusinesswithSanctionCountries" Type="String" />
+            <asp:Parameter Name="AcceptTermsandConditions" Type="Boolean" />
+            <asp:Parameter Name="RequestID" Type="Int32" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
+    
+    <asp:SqlDataSource ID="SQLBanks" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT * FROM [Banks]"></asp:SqlDataSource>
 
+    <asp:SqlDataSource ID="SqlBusinessLines" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT * FROM [BusinessLines]"></asp:SqlDataSource>
+
+
+                <asp:SqlDataSource ID="SqlProduct" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [Product] WHERE [ProductID] = @ProductID" InsertCommand="INSERT INTO [Product] ([Code], [ProductName]) VALUES (@Code, @ProductName)" SelectCommand="SELECT * FROM [Product]" UpdateCommand="UPDATE [Product] SET [Code] = @Code, [ProductName] = @ProductName WHERE [ProductID] = @ProductID">
+                    <DeleteParameters>
+                        <asp:Parameter Name="ProductID" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="Code" Type="String" />
+                        <asp:Parameter Name="ProductName" Type="String" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="Code" Type="String" />
+                        <asp:Parameter Name="ProductName" Type="String" />
+                        <asp:Parameter Name="ProductID" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlBooking" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [Booking] WHERE [ID] = @ID" InsertCommand="INSERT INTO [Booking] ([ShipmentID], [SenderName], [SenderEmail], [OriginServiceLocation], [ReceiverName], [ReceiverEmail], [ReceiverDestination], [ReceiverPinCode], [ReceiverRegion], [ReceiverCity], [ServiceLocation], [CreateDate]) VALUES (@ShipmentID, @SenderName, @SenderEmail, @OriginServiceLocation, @ReceiverName, @ReceiverEmail, @ReceiverDestination, @ReceiverPinCode, @ReceiverRegion, @ReceiverCity, @ServiceLocation, @CreateDate)" SelectCommand="SELECT * FROM [Booking]" UpdateCommand="UPDATE [Booking] SET [ShipmentID] = @ShipmentID, [SenderName] = @SenderName, [SenderEmail] = @SenderEmail, [OriginServiceLocation] = @OriginServiceLocation, [ReceiverName] = @ReceiverName, [ReceiverEmail] = @ReceiverEmail, [ReceiverDestination] = @ReceiverDestination, [ReceiverPinCode] = @ReceiverPinCode, [ReceiverRegion] = @ReceiverRegion, [ReceiverCity] = @ReceiverCity, [ServiceLocation] = @ServiceLocation, [CreateDate] = @CreateDate WHERE [ID] = @ID">
+                    <DeleteParameters>
+                        <asp:Parameter Name="ID" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="ShipmentID" Type="Int32" />
+                        <asp:Parameter Name="SenderName" Type="String" />
+                        <asp:Parameter Name="SenderEmail" Type="String" />
+                        <asp:Parameter Name="OriginServiceLocation" Type="String" />
+                        <asp:Parameter Name="ReceiverName" Type="String" />
+                        <asp:Parameter Name="ReceiverEmail" Type="String" />
+                        <asp:Parameter Name="ReceiverDestination" Type="String" />
+                        <asp:Parameter Name="ReceiverPinCode" Type="String" />
+                        <asp:Parameter Name="ReceiverRegion" Type="String" />
+                        <asp:Parameter Name="ReceiverCity" Type="String" />
+                        <asp:Parameter Name="ServiceLocation" Type="String" />
+                        <asp:Parameter Name="CreateDate" Type="DateTime" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="ShipmentID" Type="Int32" />
+                        <asp:Parameter Name="SenderName" Type="String" />
+                        <asp:Parameter Name="SenderEmail" Type="String" />
+                        <asp:Parameter Name="OriginServiceLocation" Type="String" />
+                        <asp:Parameter Name="ReceiverName" Type="String" />
+                        <asp:Parameter Name="ReceiverEmail" Type="String" />
+                        <asp:Parameter Name="ReceiverDestination" Type="String" />
+                        <asp:Parameter Name="ReceiverPinCode" Type="String" />
+                        <asp:Parameter Name="ReceiverRegion" Type="String" />
+                        <asp:Parameter Name="ReceiverCity" Type="String" />
+                        <asp:Parameter Name="ServiceLocation" Type="String" />
+                        <asp:Parameter Name="CreateDate" Type="DateTime" />
+                        <asp:Parameter Name="ID" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
+
+<asp:SqlDataSource ID="SqlRegion" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [Region] WHERE [ID] = @ID" InsertCommand="INSERT INTO [Region] ([Region_ID], [Code], [Name], [Country_ID]) VALUES (@Region_ID, @Code, @Name, @Country_ID)" SelectCommand="SELECT * FROM [Region]" UpdateCommand="UPDATE [Region] SET [Region_ID] = @Region_ID, [Code] = @Code, [Name] = @Name, [Country_ID] = @Country_ID WHERE [ID] = @ID">
+        <DeleteParameters>
+            <asp:Parameter Name="ID" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="Region_ID" Type="Int32" />
+            <asp:Parameter Name="Code" Type="String" />
+            <asp:Parameter Name="Name" Type="String" />
+            <asp:Parameter Name="Country_ID" Type="Int32" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="Region_ID" Type="Int32" />
+            <asp:Parameter Name="Code" Type="String" />
+            <asp:Parameter Name="Name" Type="String" />
+            <asp:Parameter Name="Country_ID" Type="Int32" />
+            <asp:Parameter Name="ID" Type="Int32" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlState" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [States] WHERE [StateID] = @StateID" InsertCommand="INSERT INTO [States] ([StateID], [Name], [Region_ID]) VALUES (@StateID, @Name, @Region_ID)" SelectCommand="SELECT * FROM [States]" UpdateCommand="UPDATE [States] SET [Name] = @Name, [Region_ID] = @Region_ID WHERE [StateID] = @StateID">
+        <DeleteParameters>
+            <asp:Parameter Name="StateID" Type="String" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="StateID" Type="String" />
+            <asp:Parameter Name="Name" Type="String" />
+            <asp:Parameter Name="Region_ID" Type="Int32" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="Name" Type="String" />
+            <asp:Parameter Name="Region_ID" Type="Int32" />
+            <asp:Parameter Name="StateID" Type="String" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
+<%-- <asp:EntityDataSource ID="edsLgas" runat="server" ConnectionString="name=RexGlobeEntities" DefaultContainerName="RexGlobeEntities" EnableFlattening="False" EntitySetName="LGAs" Select="it.[LGAId], it.[LGAName], it.[StateId]" Where="it.StateId = @StateId">
+            <WhereParameters>
+                <asp:Parameter Name="StateId"  Type="String" />
+            </WhereParameters>
+        </asp:EntityDataSource>
 
  <asp:EntityDataSource ID="edsCustomer" runat="server" ConnectionString="name=RexGlobeEntities" DefaultContainerName="RexGlobeEntities" EnableFlattening="False" EnableInsert="True" EntitySetName="Customers" EntityTypeFilter="" Select="" Where="">
 
@@ -1220,6 +1510,6 @@
         <WhereParameters>
             <asp:SessionParameter Name="RequestId" SessionField="RequestId" Type="Int32" />
         </WhereParameters>
-</asp:EntityDataSource>
+</asp:EntityDataSource>--%>
 
 </asp:Content>

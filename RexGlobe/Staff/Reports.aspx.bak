@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainSite.Master" AutoEventWireup="true" CodeBehind="Reports.aspx.cs" Inherits="RexGlobe.WebForm4" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperAdmin/SiteSuperAdmin.Master" AutoEventWireup="true" CodeBehind="Reports.aspx.cs" Inherits="RexGlobe.WebForm4" %>
 
 <%@ Register Assembly="DevExpress.Dashboard.v17.1.Web.WebForms, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.DashboardWeb" TagPrefix="dx" %>
  
@@ -10,7 +10,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
     <%--<dx:ToolbarExport runat="server" id="ToolbarExport1" OnItemClick="ToolbarExport_ItemClick" />
 <dx:ASPxGridViewExporter ID="gridExport" runat="server" GridViewID="Grid">
 </dx:ASPxGridViewExporter>

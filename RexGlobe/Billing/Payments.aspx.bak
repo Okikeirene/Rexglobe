@@ -6,7 +6,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlPayOnly" KeyFieldName="PaymentReference">
+    <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlPayment" KeyFieldName="PaymentReference">
         <Settings ShowFilterRow="True" />
         <SettingsDataSecurity AllowDelete="False" />
         <Columns>

@@ -1,18 +1,54 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MainSite.Master" AutoEventWireup="true" CodeBehind="Trucks.aspx.cs" Inherits="RexGlobe.Staff.Trucks" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperAdmin/SiteSuperAdmin.Master" AutoEventWireup="true" CodeBehind="Trucks.aspx.cs" Inherits="RexGlobe.Staff.Trucks" %>
 
 <%@ Register Assembly="DevExpress.Web.v17.1, Version=17.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
 
-<dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server">
+    <asp:SqlDataSource ID="SqlTrucks" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [Vechicle] WHERE [ID] = @ID" InsertCommand="INSERT INTO [Vechicle] ([VehicleProvider], [WorkServiceLocation], [VehicleNumber], [TransportationType], [DriverName], [DriverPhoneNumber], [VehicleDetails], [PermitofStates], [PermitExpiryDate], [CreatedBy], [CreatedDate]) VALUES (@VehicleProvider, @WorkServiceLocation, @VehicleNumber, @TransportationType, @DriverName, @DriverPhoneNumber, @VehicleDetails, @PermitofStates, @PermitExpiryDate, @CreatedBy, @CreatedDate)" SelectCommand="SELECT * FROM [Vechicle]" UpdateCommand="UPDATE [Vechicle] SET [VehicleProvider] = @VehicleProvider, [WorkServiceLocation] = @WorkServiceLocation, [VehicleNumber] = @VehicleNumber, [TransportationType] = @TransportationType, [DriverName] = @DriverName, [DriverPhoneNumber] = @DriverPhoneNumber, [VehicleDetails] = @VehicleDetails, [PermitofStates] = @PermitofStates, [PermitExpiryDate] = @PermitExpiryDate, [CreatedBy] = @CreatedBy, [CreatedDate] = @CreatedDate WHERE [ID] = @ID">
+        <DeleteParameters>
+            <asp:Parameter Name="ID" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="VehicleProvider" Type="Int32" />
+            <asp:Parameter Name="WorkServiceLocation" Type="String" />
+            <asp:Parameter Name="VehicleNumber" Type="String" />
+            <asp:Parameter Name="TransportationType" Type="Int32" />
+            <asp:Parameter Name="DriverName" Type="String" />
+            <asp:Parameter Name="DriverPhoneNumber" Type="String" />
+            <asp:Parameter Name="VehicleDetails" Type="String" />
+            <asp:Parameter Name="PermitofStates" Type="String" />
+            <asp:Parameter Name="PermitExpiryDate" Type="DateTime" />
+            <asp:Parameter Name="CreatedBy" Type="String" />
+            <asp:Parameter Name="CreatedDate" Type="DateTime" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="VehicleProvider" Type="Int32" />
+            <asp:Parameter Name="WorkServiceLocation" Type="String" />
+            <asp:Parameter Name="VehicleNumber" Type="String" />
+            <asp:Parameter Name="TransportationType" Type="Int32" />
+            <asp:Parameter Name="DriverName" Type="String" />
+            <asp:Parameter Name="DriverPhoneNumber" Type="String" />
+            <asp:Parameter Name="VehicleDetails" Type="String" />
+            <asp:Parameter Name="PermitofStates" Type="String" />
+            <asp:Parameter Name="PermitExpiryDate" Type="DateTime" />
+            <asp:Parameter Name="CreatedBy" Type="String" />
+            <asp:Parameter Name="CreatedDate" Type="DateTime" />
+            <asp:Parameter Name="ID" Type="Int32" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
+<div class="panel panel-primary"> 
+            <div class="panel-heading">ADD NEW TRUCK</div>
+            <div class="panel-body">
+
+<dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" Width="100%" ClientInstanceName="formlayout" DataSourceID="SqlTrucks" ColCount="2" OnDataBound="ASPxFormLayout1_DataBound" >
     <Items>
     <dx:LayoutGroup ColCount="4" ColSpan="2" Caption="Vehicle Details">
 		<Items>
-			<dx:LayoutItem ColSpan="2" Caption="Vehicle Provider" FieldName="VehicleProvider" RequiredMarkDisplayMode="Required">
+			<dx:LayoutItem  Caption="Vehicle Provider" FieldName="VehicleProvider" RequiredMarkDisplayMode="Required">
 				<LayoutItemNestedControlCollection>
 					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
-						<dx:ASPxComboBox ID="VehicleProvider" runat="server" DataSourceID="edsVehicleProvider" IncrementalFilteringMode="Contains" TextField="VehicleProvider" ValueField="ID" Width="100%" Height="25px">
+						<dx:ASPxComboBox ID="VehicleProvider" runat="server" DataSourceID="SqlVehicleType" IncrementalFilteringMode="Contains" TextField="VehicleProvider" ValueField="ID" Width="100%" Height="25px">
                             <ClearButton Visibility="Auto">
                             </ClearButton>
                             <ValidationSettings>
@@ -50,10 +86,34 @@
 	</dx:LayoutGroup>
     <dx:LayoutGroup ColCount="4" ColSpan="2" Caption="Description">
 		<Items>
+            <dx:LayoutItem Caption="Driver Name" FieldName="DriverName"  RequiredMarkDisplayMode="Required" >
+				<LayoutItemNestedControlCollection>
+						<dx:LayoutItemNestedControlContainer>
+                        <dx:ASPxTextBox ID="DriverName" runat="server" ClientInstanceName="VehicleNumber" Width="100%" Height="25px">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+`                             
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+            <dx:LayoutItem Caption="Driver PhoneNumber" FieldName="DriverPhoneNumber"  RequiredMarkDisplayMode="Required" >
+				<LayoutItemNestedControlCollection>
+						<dx:LayoutItemNestedControlContainer>
+                        <dx:ASPxTextBox ID="DriverPhoneNumber" runat="server" ClientInstanceName="DriverPhoneNumber" Width="100%" Height="25px">
+							<ValidationSettings Display="Dynamic">
+								<RequiredField IsRequired="True" />
+							</ValidationSettings>
+						</dx:ASPxTextBox>
+`                             
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
 			<dx:LayoutItem ColSpan="2" Caption="Transportation Type" FieldName="TransportationType" RequiredMarkDisplayMode="Required">
 				<LayoutItemNestedControlCollection>
 					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
-                        <dx:ASPxComboBox ID="TransportationType" runat="server" DataSourceID="edsTransportationType" IncrementalFilteringMode="Contains" TextField="TransportationType" ValueField="ID" Width="100%" Height="25px">
+                        <dx:ASPxComboBox ID="TransportationType" runat="server" DataSourceID="SqlTransportation" IncrementalFilteringMode="Contains" TextField="TransportationType" ValueField="ID" Width="100%" Height="25px">
                             <ClearButton Visibility="Auto">
                             </ClearButton>
                             <ValidationSettings>
@@ -120,11 +180,38 @@
 <SettingsItemCaptions Location="Top" />
 </dx:ASPxFormLayout>
 
-<asp:EntityDataSource ID="edsTransportationType" runat="server" ConnectionString="name=RexGlobeEntities" DefaultContainerName="RexGlobeEntities" EnableFlattening="False" EntitySetName="Transportation" OrderBy="it.ID" Select=" it.[ID],it.[TransportationType]">
+                <asp:SqlDataSource ID="SqlVehicleType" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [VechicleType] WHERE [ID] = @ID" InsertCommand="INSERT INTO [VechicleType] ([VehicleProvider]) VALUES (@VehicleProvider)" SelectCommand="SELECT * FROM [VechicleType]" UpdateCommand="UPDATE [VechicleType] SET [VehicleProvider] = @VehicleProvider WHERE [ID] = @ID">
+                    <DeleteParameters>
+                        <asp:Parameter Name="ID" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="VehicleProvider" Type="String" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="VehicleProvider" Type="String" />
+                        <asp:Parameter Name="ID" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlTransportation" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [Transportation] WHERE [ID] = @ID" InsertCommand="INSERT INTO [Transportation] ([TransportationType]) VALUES (@TransportationType)" SelectCommand="SELECT * FROM [Transportation]" UpdateCommand="UPDATE [Transportation] SET [TransportationType] = @TransportationType WHERE [ID] = @ID">
+                    <DeleteParameters>
+                        <asp:Parameter Name="ID" Type="Int32" />
+                    </DeleteParameters>
+                    <InsertParameters>
+                        <asp:Parameter Name="TransportationType" Type="String" />
+                    </InsertParameters>
+                    <UpdateParameters>
+                        <asp:Parameter Name="TransportationType" Type="String" />
+                        <asp:Parameter Name="ID" Type="Int32" />
+                    </UpdateParameters>
+                </asp:SqlDataSource>
+    </div>      
+</div>
+
+<%--<asp:EntityDataSource ID="edsTransportationType" runat="server" ConnectionString="name=RexGlobeEntities" DefaultContainerName="RexGlobeEntities" EnableFlattening="False" EntitySetName="Transportation" OrderBy="it.ID" Select=" it.[ID],it.[TransportationType]">
     </asp:EntityDataSource>
 
-    <asp:EntityDataSource ID="edsVehicleProvider" runat="server" ConnectionString="name=RexGlobeEntities" DefaultContainerName="RexGlobeEntities" EnableFlattening="False" EntitySetName="VechicleType" OrderBy="it.ID" Select=" it.[ID],it.[VehicleProvider]">
-    </asp:EntityDataSource>
+    <asp:EntityDataSource ID="edsVehicleProvider" runat="server" ConnectionString="name=RexGlobeEntities" DefaultContainerName="RexGlobeEntities" EnableFlattening="False" EntitySetName="VechicleTypes" OrderBy="it.ID" Select=" it.[ID],it.[VehicleProvider]">
+    </asp:EntityDataSource>--%>
 
 
 </asp:Content>
