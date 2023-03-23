@@ -140,7 +140,7 @@
                                     <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Products<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item"><a runat="server" href="~/Staff/Products.aspx">Product Requests</a></li>
-                                            <%--<li class="nav-item"><a runat="server" href="~/Staff/PartsRequestList.aspx">Manage Product</a></li>--%>
+                                            <li class="nav-item"><a runat="server" href="~/Staff/ProductInventory.aspx">Manage Product</a></li>
                                         </ul>
                                     </li> 
                                     <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Payments<b class="caret"></b></a>
