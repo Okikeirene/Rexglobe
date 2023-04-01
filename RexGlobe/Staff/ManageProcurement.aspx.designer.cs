@@ -10,7 +10,7 @@
 namespace RexGlobe.Staff {
     
     
-    public partial class ManagePersonnel {
+    public partial class ManageProcurement {
         
         /// <summary>
         /// ASPxGridView1 control.
@@ -22,39 +22,21 @@ namespace RexGlobe.Staff {
         protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
         
         /// <summary>
-        /// SQLPersonnel control.
+        /// SqlProcurement control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SQLPersonnel;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlProcurement;
         
         /// <summary>
-        /// SqlGender control.
+        /// SqlProcurmentDescription control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlGender;
-        
-        /// <summary>
-        /// SqlDepartment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDepartment;
-        
-        /// <summary>
-        /// SqlDesignations control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDesignations;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlProcurmentDescription;
     }
 }

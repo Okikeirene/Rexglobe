@@ -418,31 +418,13 @@ namespace RexGlobe.Customers {
         protected global::DevExpress.Web.ASPxComboBox ASPxComWalkin;
         
         /// <summary>
-        /// ASPxComboBox1 control.
+        /// MarketedByWhom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox ASPxComboBox1;
-        
-        /// <summary>
-        /// ASPxComIntroducedByWhom control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox ASPxComIntroducedByWhom;
-        
-        /// <summary>
-        /// ASPxIntdByWhom control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ASPxIntdByWhom;
+        protected global::DevExpress.Web.ASPxComboBox MarketedByWhom;
         
         /// <summary>
         /// ASPxSuppliersList control.
@@ -1109,6 +1091,15 @@ namespace RexGlobe.Customers {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlBusinessLines;
+        
+        /// <summary>
+        /// SqlEmployees control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlEmployees;
         
         /// <summary>
         /// edsBusinessLines control.

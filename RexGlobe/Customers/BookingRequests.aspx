@@ -7,7 +7,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server" >
 
-<div class="panel panel-primary"> 
+    <div class="panel panel-primary"> 
             <div class="panel-heading">Create Booking Requests</div>
             <div class="panel-body">
 

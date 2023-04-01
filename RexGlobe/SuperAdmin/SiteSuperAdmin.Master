@@ -106,8 +106,10 @@
                                     </li>
                                     <li class="nav-item"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #FFFFFF; font-family: 'Calibri'" >Booking<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
-                                            <li class="nav-item"><a runat="server" href="~/Customers/BookingRequests.aspx" >Booking Requests</a></li>
-                                            <li class="nav-item"><a runat="server" href="~/Customers/ManageBooking.aspx">Manage Booking</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Customers/BookingRequests.aspx" >Base Oil Requests</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Customers/LubricantRequests.aspx">New Lubricant Request</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Customers/ManageLubricantBooking.aspx">Manage Lubricant Request</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Customers/ManageBooking.aspx">Manage Base Oil Requests</a></li>
                                         </ul>
                                       </li>  
                                     <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Truck Details<b class="caret"></b></a>
@@ -116,10 +118,11 @@
                                             <li class="nav-item"><a runat="server" href="~/Staff/Managetrucks.aspx">Manage Truck</a></li>
                                         </ul>
                                     </li>
-                                      <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri', Times, serif">Pick Up<b class="caret"></b></a>
+                                      <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri', Times, serif">Warehouse<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item"><a runat="server" href="~/Customers/PickUpRequest.aspx">PickUp Request</a></li>
                                             <li class="nav-item"><a runat="server" href="~/Customers/ManagePickUp.aspx">Manage PickUp</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/WareHouse/ManageWarehouse.aspx">Manage Warehouse</a></li>
                                         </ul>
                                     </li>
         
@@ -141,11 +144,19 @@
                                         <ul class="dropdown-menu">
                                             <li class="nav-item"><a runat="server" href="~/Staff/Products.aspx">Product Requests</a></li>
                                             <li class="nav-item"><a runat="server" href="~/Staff/ProductInventory.aspx">Manage Product</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Staff/ManageApprovals.aspx">Manage Approvals</a></li>
                                         </ul>
                                     </li> 
                                     <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Payments<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item"><a runat="server" href="~/Billing/Payments.aspx">New Payments</a></li>
+                                        </ul>
+                                    </li> 
+                                    <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Procurement<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a runat="server" href="~/Staff/Budget.aspx">Budget</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Staff/Procurement.aspx">Procurement</a></li>
+                                             <li class="nav-item"><a runat="server" href="~/Staff/ManageProcurement.aspx">Manage Procurement</a></li>
                                         </ul>
                                     </li>                           
                                     <li class="nav-item"><a runat="server" href="~/Transaction/Transactions.aspx" style="color: #FFFFFF; font-family: 'Calibri'">Transactions</a></li>

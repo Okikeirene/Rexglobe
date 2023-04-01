@@ -30,10 +30,10 @@
     <form id="form1" runat="server">
         
                 
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtUserName" ErrorMessage="You must enter Username..!!!" 
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" Visible="false" ControlToValidate="txtUserName" ErrorMessage="You must enter Username..!!!" 
                 ForeColor="Red"></asp:RequiredFieldValidator> 
                                     
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtPassword" ErrorMessage="You must enter Password..!!!" 
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" Visible="false" ControlToValidate="txtPassword" ErrorMessage="You must enter Password..!!!" 
                 ForeColor="Red"></asp:RequiredFieldValidator>
                 <asp:Literal ID="Literal1" runat="server" Visible="false"></asp:Literal>
                                

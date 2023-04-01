@@ -670,7 +670,10 @@
                                                                         <dx:LayoutItem Caption="Marketed By Whom?" FieldName="MarketedByWhom"  RequiredMarkDisplayMode="Required">
                                                                             <LayoutItemNestedControlCollection>
                                                                                 <dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
-                                                                                     <dx:ASPxComboBox ID="ASPxComboBox1" runat="server" SelectedIndex="0" Width="100%" Height="25px">
+                                                                                     <dx:ASPxComboBox ID="MarketedByWhom" runat="server" DataSourceID="SqlEmployees" IncrementalFilteringMode="Contains" TextField="UserName" ValueField="ID" Width="100%" Height="25px">
+                                                                                        <ClearButton Visibility="Auto"></ClearButton>
+                                                                                          </dx:ASPxComboBox>
+                                                                                     <%--<dx:ASPxComboBox ID="ASPxComboBox1" runat="server" SelectedIndex="0" Width="100%" Height="25px">
                                                                                         <Items>
                                                                                             <dx:ListEditItem Selected="True" Text="Select" Value="Select" />
                                                                                             <dx:ListEditItem Text="No" Value="No" />
@@ -678,14 +681,14 @@
                                                                                         </Items>
 
                                                                                     <ClearButton Visibility="Auto"></ClearButton>
-                                                                                    </dx:ASPxComboBox>
+                                                                                    </dx:ASPxComboBox>--%>
                                                                                 </dx:LayoutItemNestedControlContainer>
                                                                             </LayoutItemNestedControlCollection>
                                                                         </dx:LayoutItem>
-                                                                        <dx:LayoutItem Caption="Introduced By Whom" FieldName="IntroducedByWhom"  RequiredMarkDisplayMode="Required">
+                                                                      <%--  <dx:LayoutItem Caption="Introduced By Whom" FieldName="IntroducedByWhom"  RequiredMarkDisplayMode="Required">
                                                                             <LayoutItemNestedControlCollection>
                                                                                 <dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
-                                                                                <dx:ASPxComboBox ID="ASPxComIntroducedByWhom" runat="server" SelectedIndex="0" OnSelectedIndexChanged="ASPxComIntroducedByWhom_SelectedIndexChanged" Width="100%" Height="25px">
+                                                                                <dx:ASPxComboBox ID="ASPxComIntroducedByWhom" runat="server" SelectedIndex="0" OnSelectedIndexChanged="ASPxComIntroducedByWhom_SelectedIndexChanged"  Visible="False" Width="100%" Height="25px">
                                                                                         <Items>
                                                                                             <dx:ListEditItem Selected="True" Text="Select" Value="Select" />
                                                                                             <dx:ListEditItem Text="No" Value="No" />
@@ -694,11 +697,11 @@
 
                                                                                     <ClearButton Visibility="Auto"></ClearButton>
                                                                                     </dx:ASPxComboBox>
-                                                                                    <dx:ASPxTextBox ID="ASPxIntdByWhom" Visible="false" runat="server" Width="100%" Height="25px">
+                                                                                    <dx:ASPxTextBox ID="ASPxIntdByWhom" Visible="True" runat="server" Width="100%" Height="25px">
                                                                                     </dx:ASPxTextBox>
                                                                                 </dx:LayoutItemNestedControlContainer>
                                                                             </LayoutItemNestedControlCollection>
-                                                                        </dx:LayoutItem>
+                                                                        </dx:LayoutItem>--%>
                                                                     </Items>
                                                                 </dx:LayoutGroup>
                                                                 <dx:LayoutGroup Caption="Projects" ColCount="2">
@@ -1572,6 +1575,9 @@
     <asp:SqlDataSource ID="SQLBanks" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT * FROM [Banks]"></asp:SqlDataSource>
 
     <asp:SqlDataSource ID="SqlBusinessLines" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT * FROM [BusinessLines]"></asp:SqlDataSource>
+
+<asp:SqlDataSource ID="SqlEmployees" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT * FROM [Employees]"></asp:SqlDataSource>
+
 
          <%--<asp:EntityDataSource ID="edsCustomer" runat="server" ConnectionString="name=RexGlobeEntities" DefaultContainerName="RexGlobeEntities" EnableFlattening="False" EnableInsert="True" EntitySetName="Customers" EntityTypeFilter="" Select="" Where="">
 

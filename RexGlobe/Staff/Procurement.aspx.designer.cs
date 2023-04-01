@@ -7,19 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe.Users {
+namespace RexGlobe.Staff {
     
     
-    public partial class AddTruck {
-        
-        /// <summary>
-        /// SqlTrucks control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlTrucks;
+    public partial class Procurement {
         
         /// <summary>
         /// ASPxFormLayout1 control.
@@ -31,85 +22,94 @@ namespace RexGlobe.Users {
         protected global::DevExpress.Web.ASPxFormLayout ASPxFormLayout1;
         
         /// <summary>
-        /// VehicleProvider control.
+        /// RequestPerson control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox VehicleProvider;
+        protected global::DevExpress.Web.ASPxComboBox RequestPerson;
         
         /// <summary>
-        /// WorkServiceLocation control.
+        /// Procurement_Type control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox WorkServiceLocation;
+        protected global::DevExpress.Web.ASPxComboBox Procurement_Type;
         
         /// <summary>
-        /// VehicleNumber control.
+        /// Quantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox VehicleNumber;
+        protected global::DevExpress.Web.ASPxTextBox Quantity;
         
         /// <summary>
-        /// DriverName control.
+        /// Amount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox DriverName;
+        protected global::DevExpress.Web.ASPxTextBox Amount;
         
         /// <summary>
-        /// DriverPhoneNumber control.
+        /// Description control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox DriverPhoneNumber;
+        protected global::DevExpress.Web.ASPxMemo Description;
         
         /// <summary>
-        /// TransportationType control.
+        /// BudgetName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox TransportationType;
+        protected global::DevExpress.Web.ASPxComboBox BudgetName;
         
         /// <summary>
-        /// VehicleDetails control.
+        /// Department control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxMemo VehicleDetails;
+        protected global::DevExpress.Web.ASPxComboBox Department;
         
         /// <summary>
-        /// PermitofStates control.
+        /// FinancialMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox PermitofStates;
+        protected global::DevExpress.Web.ASPxComboBox FinancialMonth;
         
         /// <summary>
-        /// PermitExpiryDate control.
+        /// FinancialYear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxDateEdit PermitExpiryDate;
+        protected global::DevExpress.Web.ASPxComboBox FinancialYear;
+        
+        /// <summary>
+        /// LocationName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxComboBox LocationName;
         
         /// <summary>
         /// ASPxButtonSubmit control.
@@ -121,21 +121,66 @@ namespace RexGlobe.Users {
         protected global::DevExpress.Web.ASPxButton ASPxButtonSubmit;
         
         /// <summary>
-        /// SqlVehicleType control.
+        /// SqlSaleRep control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlVehicleType;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlSaleRep;
         
         /// <summary>
-        /// SqlTransportation control.
+        /// SqlYearMonth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlTransportation;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlYearMonth;
+        
+        /// <summary>
+        /// SqlProcurement control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlProcurement;
+        
+        /// <summary>
+        /// SqlProcurementDescritpion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlProcurementDescritpion;
+        
+        /// <summary>
+        /// SqlLocation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlLocation;
+        
+        /// <summary>
+        /// SqlBudget control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlBudget;
+        
+        /// <summary>
+        /// SqlDepartment control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDepartment;
     }
 }

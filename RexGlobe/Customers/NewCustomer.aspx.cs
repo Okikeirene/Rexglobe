@@ -54,6 +54,8 @@ namespace RexGlobe.Customers
                 Phone1 = (string)ASPxFormLayout1.GetNestedControlValueByFieldName("Phone1"),
                 Phone2 = (string)ASPxFormLayout1.GetNestedControlValueByFieldName("Phone2"),
                 Email = (string)ASPxFormLayout1.GetNestedControlValueByFieldName("Email"),
+                MarketedByWhom = (string)ASPxFormLayout1.GetNestedControlValueByFieldName("MarketedByWhom"),
+                AcceptTermsandConditions = (bool)ASPxFormLayout1.GetNestedControlValueByFieldName("AcceptTermsandConditions"),
                 Status = "New",
                 CreatedDate = DateTime.Now
             };
@@ -74,7 +76,7 @@ namespace RexGlobe.Customers
                 SqlParameter p3 = new SqlParameter("@Filecontent", SqlDbType.VarBinary);
                 p3.Value = ConvertImage(FileUpload1);
                 com.Parameters.Add(p3);
-                com.CommandText = "DECLARE @UNIQUEX UNIQUEIDENTIFIER,  @REGID INT; SELECT top 1 @REGID = RequestId  FROM [RexGlobe].[dbo].[CustomerFiles] order by RequestId desc;SET @UNIQUEX = NEWID(); Insert into [RexGlobe].[dbo].[CustomerFiles] ([FileId],[RequestId],[FileName],[FileDescription],[FileType],[FileContent]) VALUES (@UNIQUEX,@REGID,'" + FileName1.Text + "',' " + FileDescription1.Text + "','png',@Filecontent)";
+                com.CommandText = "DECLARE @UNIQUEX UNIQUEIDENTIFIER,  @REGID INT; SELECT top 1 @REGID = RequestId  FROM [RexGlobe].[dbo].[Customer] order by RequestId desc;SET @UNIQUEX = NEWID(); Insert into [RexGlobe].[dbo].[CustomerFiles] ([FileId],[RequestId],[FileName],[FileDescription],[FileType],[FileContent]) VALUES (@UNIQUEX,@REGID,'" + FileName1.Text + "',' " + FileDescription1.Text + "','png',@Filecontent)";
                 con.Open();
                 //insert the file into database
                 com.ExecuteNonQuery();
@@ -92,7 +94,7 @@ namespace RexGlobe.Customers
                 SqlParameter p3 = new SqlParameter("@Filecontent", SqlDbType.VarBinary);
                 p3.Value = ConvertImage(FileUpload2);
                 com.Parameters.Add(p3);
-                com.CommandText = "DECLARE @UNIQUEX UNIQUEIDENTIFIER,  @REGID INT; SELECT top 1 @REGID = RequestId  FROM [RexGlobe].[dbo].[CustomerFiles] order by RequestId desc;SET @UNIQUEX = NEWID();Insert into [RexGlobe].[dbo].[CustomerFiles] ([FileId],[RequestId],[FileName],[FileDescription],[FileType],[FileContent]) VALUES (@UNIQUEX,@REGID,'" + FileName2.Text + "', '" + FileDescription2.Text + "','png',@Filecontent)";
+                com.CommandText = "DECLARE @UNIQUEX UNIQUEIDENTIFIER,  @REGID INT; SELECT top 1 @REGID = RequestId  FROM [RexGlobe].[dbo].[Customer] order by RequestId desc;SET @UNIQUEX = NEWID();Insert into [RexGlobe].[dbo].[CustomerFiles] ([FileId],[RequestId],[FileName],[FileDescription],[FileType],[FileContent]) VALUES (@UNIQUEX,@REGID,'" + FileName2.Text + "', '" + FileDescription2.Text + "','png',@Filecontent)";
                 con.Open();
                 //insert the file into database
                 com.ExecuteNonQuery();
@@ -236,31 +238,31 @@ namespace RexGlobe.Customers
 
         }
 
-        protected void ASPxComIntroducedByWhom_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string YIntdByWhom_ = Session["ASPxComIntroducedByWhom"].ToString();
-            string YIntdByWhomFinal = this.ASPxComIntroducedByWhom.SelectedItem.ToString();
-            decideIntdByWhom(YIntdByWhomFinal);
-            Response.Redirect("~/Customers/NewCustomer.aspx?YIntdByWhom_=" + YIntdByWhomFinal + "#Introduction");
-            
-        }
+        //protected void ASPxComIntroducedByWhom_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    string YIntdByWhom_ = Session["ASPxComIntroducedByWhom"].ToString();
+        //    string YIntdByWhomFinal = this.ASPxComIntroducedByWhom.SelectedItem.ToString();
+        //    decideIntdByWhom(YIntdByWhomFinal);
+        //    Response.Redirect("~/Customers/NewCustomer.aspx?YIntdByWhom_=" + YIntdByWhomFinal + "#Introduction");
 
-        protected void decideIntdByWhom(string action)
-        {
-            if (action == "True")
-            {
-                ASPxIntdByWhom.Visible = true;
-            }
-            else
-            {
-                ASPxIntdByWhom.Visible = false;
-            }
-        }
+        //}
+
+        //protected void decideIntdByWhom(string action)
+        //{
+        //    if (action == "True")
+        //    {
+        //        ASPxIntdByWhom.Visible = true;
+        //    }
+        //    else
+        //    {
+        //        ASPxIntdByWhom.Visible = false;
+        //    }
+        //}
 
         protected void ASPxComAnySubsidiaryCountry_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string YASPxComAnySubsidiaryCountry_ = Session["ASPxComIntroducedByWhom"].ToString();
-            string YASPxComAnySubsidiaryCountryFinal = this.ASPxComIntroducedByWhom.SelectedItem.ToString();
+            string YASPxComAnySubsidiaryCountry_ = Session["MarketedByWhom"].ToString();
+            string YASPxComAnySubsidiaryCountryFinal = this.MarketedByWhom.SelectedItem.ToString();
             decideASPxComAnySubsidiaryCountry(YASPxComAnySubsidiaryCountryFinal);
             Response.Redirect("~/Customers/NewCustomer.aspx?YASPxComAnySubsidiaryCountry_=" + YASPxComAnySubsidiaryCountryFinal + "#Introduction");
             

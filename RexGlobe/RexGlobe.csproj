@@ -257,6 +257,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Billing\LubricantPayments.aspx" />
     <Content Include="Billing\Payments.aspx" />
     <Content Include="ChangePassword.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -328,8 +329,11 @@
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Content\w3.css" />
     <Content Include="Customers\BookingRequests.aspx" />
+    <Content Include="Customers\LubricantRequests.aspx" />
     <Content Include="Customers\ManageBooking.aspx" />
     <Content Include="Customers\ManageCustomers.aspx" />
+    <Content Include="Customers\ManageLubricantBooking.aspx" />
+    <Content Include="Customers\ManageLuricantRequest.aspx" />
     <Content Include="Customers\ManagePickUp.aspx" />
     <Content Include="Customers\NewCustomer.aspx" />
     <Content Include="Customers\PickUpRequest.aspx" />
@@ -347,6 +351,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <LastGenOutput>RexGlobeModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Staff\Budget.aspx" />
+    <Content Include="Staff\ManageApprovals.aspx" />
+    <Content Include="Staff\ManageProcurement.aspx" />
+    <Content Include="Staff\Procurement.aspx" />
     <Content Include="Staff\ProductInventory.aspx" />
     <Content Include="Staff\Staff.aspx" />
     <Content Include="SuperAdmin\Home.aspx" />
@@ -455,6 +463,9 @@
     <Content Include="Users\ManageTruck.aspx" />
     <Content Include="Users\Enquiry.aspx" />
     <Content Include="Users\Products.aspx" />
+    <Content Include="Util\NewProductRequest.html" />
+    <Content Include="Util\Procurement.html" />
+    <Content Include="WareHouse\ManageWarehouse.aspx" />
     <Content Include="WareHouse\SiteEngineer.Master" />
     <Content Include="SuperAdmin\SiteSuperAdmin.Master" />
     <None Include="Web.Debug.config">
@@ -588,6 +599,13 @@
       <DependentUpon>RexGlobeModel.tt</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Billing\LubricantPayments.aspx.cs">
+      <DependentUpon>LubricantPayments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Billing\LubricantPayments.aspx.designer.cs">
+      <DependentUpon>LubricantPayments.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Billing\Payments.aspx.cs">
       <DependentUpon>Payments.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -637,6 +655,13 @@
     <Compile Include="Customers\BookingRequests.aspx.designer.cs">
       <DependentUpon>BookingRequests.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Customers\LubricantRequests.aspx.cs">
+      <DependentUpon>LubricantRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\LubricantRequests.aspx.designer.cs">
+      <DependentUpon>LubricantRequests.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Customers\ManageBooking.aspx.cs">
       <DependentUpon>ManageBooking.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -650,6 +675,20 @@
     </Compile>
     <Compile Include="Customers\ManageCustomers.aspx.designer.cs">
       <DependentUpon>ManageCustomers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\ManageLubricantBooking.aspx.cs">
+      <DependentUpon>ManageLubricantBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\ManageLubricantBooking.aspx.designer.cs">
+      <DependentUpon>ManageLubricantBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customers\ManageLuricantRequest.aspx.cs">
+      <DependentUpon>ManageLuricantRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customers\ManageLuricantRequest.aspx.designer.cs">
+      <DependentUpon>ManageLuricantRequest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customers\ManagePickUp.aspx.cs">
       <DependentUpon>ManagePickUp.aspx</DependentUpon>
@@ -771,6 +810,13 @@
       <DependentUpon>RexGlobeModel.tt</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Staff\Budget.aspx.cs">
+      <DependentUpon>Budget.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\Budget.aspx.designer.cs">
+      <DependentUpon>Budget.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Staff\DashboardStaff.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -804,6 +850,20 @@
     </Compile>
     <Compile Include="MasterSite.Master.designer.cs">
       <DependentUpon>MasterSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\ManageApprovals.aspx.cs">
+      <DependentUpon>ManageApprovals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\ManageApprovals.aspx.designer.cs">
+      <DependentUpon>ManageApprovals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\ManageProcurement.aspx.cs">
+      <DependentUpon>ManageProcurement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\ManageProcurement.aspx.designer.cs">
+      <DependentUpon>ManageProcurement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Staff\OutBoundDispatch.aspx.cs">
       <DependentUpon>OutBoundDispatch.aspx</DependentUpon>
@@ -854,6 +914,13 @@
     </Compile>
     <Compile Include="Staff\ManageTrucks.aspx.designer.cs">
       <DependentUpon>ManageTrucks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Procurement.aspx.cs">
+      <DependentUpon>Procurement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\Procurement.aspx.designer.cs">
+      <DependentUpon>Procurement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Staff\ProductInventory.aspx.cs">
       <DependentUpon>ProductInventory.aspx</DependentUpon>
@@ -1044,6 +1111,13 @@
     </Compile>
     <Compile Include="Billing\MakePayments.aspx.designer.cs">
       <DependentUpon>MakePayments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WareHouse\ManageWarehouse.aspx.cs">
+      <DependentUpon>ManageWarehouse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WareHouse\ManageWarehouse.aspx.designer.cs">
+      <DependentUpon>ManageWarehouse.aspx</DependentUpon>
     </Compile>
     <Compile Include="WareHouse\SiteEngineer.Master.cs">
       <DependentUpon>SiteEngineer.Master</DependentUpon>
