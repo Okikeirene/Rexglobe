@@ -14,7 +14,7 @@ using RexGlobe;
 using DevExpress.Export;
 using DevExpress.XtraPrinting;
 
-namespace RexGlobe
+namespace RexLubs
 {
     public partial class WebForm4 : System.Web.UI.Page
     {
@@ -124,7 +124,7 @@ namespace RexGlobe
         
 
 
-        protected void ToolbarExport_ItemClick(object source, RexGlobe.ExportItemClickEventArgs e)
+        protected void ToolbarExport_ItemClick(object source, RexLubs.ExportItemClickEventArgs e)
         {
             switch (e.ExportType)
             {

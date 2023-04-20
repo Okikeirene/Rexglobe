@@ -7,19 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe
+namespace RexLubs
 {
     using System;
     using System.Collections.Generic;
     
     public partial class UserAccount
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public UserAccount()
-        {
-            this.UsersProfiles = new HashSet<UsersProfile>();
-        }
-    
         public int Id { get; set; }
         public string UserName { get; set; }
         public string PasswordHash { get; set; }
@@ -35,14 +29,12 @@ namespace RexGlobe
         public bool IsActive { get; set; }
         public string REXID { get; set; }
         public string Email { get; set; }
+        public string CompanyName { get; set; }
         public Nullable<bool> ChangePassword { get; set; }
         public string CreatedBy { get; set; }
         public System.DateTime CreateDate { get; set; }
-        public string CompanyName { get; set; }
     
         public virtual Role Role { get; set; }
         public virtual State State { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UsersProfile> UsersProfiles { get; set; }
     }
 }

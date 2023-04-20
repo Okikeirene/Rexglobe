@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/SuperAdmin/SiteSuperAdmin.Master"  AutoEventWireup="true" CodeBehind="ManageProcurement.aspx.cs" Inherits="RexGlobe.Staff.ManageProcurement" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/SuperAdmin/SiteSuperAdmin.Master"  AutoEventWireup="true" CodeBehind="ManageProcurement.aspx.cs" Inherits="RexLubs.Staff.ManageProcurement" %>
 
 <%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -40,14 +40,54 @@
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataTextColumn Caption="Location" FieldName="LocationName" VisibleIndex="11">
             </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="Compliance" VisibleIndex="12">
-            </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="HeadOfOperations" VisibleIndex="13">
-            </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="HeadOfFinance" VisibleIndex="14">
-            </dx:GridViewDataTextColumn>
-            <dx:GridViewDataTextColumn FieldName="ManagingDirector" VisibleIndex="15">
-            </dx:GridViewDataTextColumn>
+            <dx:GridViewDataComboBoxColumn Caption="Compliance" FieldName="Compliance"   VisibleIndex="12">
+            <PropertiesComboBox DataSourceID="SqlProcurementDescritpion" TextField="Response"  ValueField="Response" >                                                     
+                                                    
+            <ValidationSettings CausesValidation="True" ErrorDisplayMode="ImageWithText">                                                   
+                       
+            <RequiredField ErrorText="Required" IsRequired="True" />                                                                                         
+                                                    
+            </ValidationSettings>                                 
+                                                    
+            </PropertiesComboBox>
+            <EditFormSettings CaptionLocation="Top" />
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn Caption="Head Of Operations" FieldName="HeadOfOperations"   VisibleIndex="13">
+            <PropertiesComboBox DataSourceID="SqlProcurementDescritpion" TextField="Response"  ValueField="Response" >                                                     
+                                                    
+            <ValidationSettings CausesValidation="True" ErrorDisplayMode="ImageWithText">                                                   
+                       
+            <RequiredField ErrorText="Required" IsRequired="True" />                                                                                         
+                                                    
+            </ValidationSettings>                                 
+                                                    
+            </PropertiesComboBox>
+            <EditFormSettings CaptionLocation="Top" />
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn Caption="Head Of Finance" FieldName="HeadOfFinance"   VisibleIndex="14">
+            <PropertiesComboBox DataSourceID="SqlProcurementDescritpion" TextField="Response"  ValueField="Response" >                                                     
+                                                    
+            <ValidationSettings CausesValidation="True" ErrorDisplayMode="ImageWithText">                                                   
+                       
+            <RequiredField ErrorText="Required" IsRequired="True" />                                                                                         
+                                                    
+            </ValidationSettings>                                 
+                                                    
+            </PropertiesComboBox>
+            <EditFormSettings CaptionLocation="Top" />
+            </dx:GridViewDataComboBoxColumn>
+            <dx:GridViewDataComboBoxColumn Caption="Managing Director" FieldName="ManagingDirector"   VisibleIndex="15">
+            <PropertiesComboBox DataSourceID="SqlProcurementDescritpion" TextField="Response"  ValueField="Response" >                                                     
+                                                    
+            <ValidationSettings CausesValidation="True" ErrorDisplayMode="ImageWithText">                                                   
+                       
+            <RequiredField ErrorText="Required" IsRequired="True" />                                                                                         
+                                                    
+            </ValidationSettings>                                 
+                                                    
+            </PropertiesComboBox>
+            <EditFormSettings CaptionLocation="Top" />
+            </dx:GridViewDataComboBoxColumn>
             <dx:GridViewDataDateColumn FieldName="CreatedDate" VisibleIndex="16">
             </dx:GridViewDataDateColumn>
         </Columns>

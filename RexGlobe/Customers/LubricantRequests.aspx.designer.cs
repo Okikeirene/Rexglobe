@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe.Customers {
+namespace RexLubs.Customers {
     
     
     public partial class LubricantRequests {
@@ -28,7 +28,7 @@ namespace RexGlobe.Customers {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox BusinessName;
+        protected global::DevExpress.Web.ASPxComboBox BusinessName;
         
         /// <summary>
         /// Email control.
@@ -335,5 +335,41 @@ namespace RexGlobe.Customers {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlPaymentTypes;
+        
+        /// <summary>
+        /// SqlCustomers control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlCustomers;
+        
+        /// <summary>
+        /// esmdsRegisteredCompanies control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.EntityDataSource esmdsRegisteredCompanies;
+        
+        /// <summary>
+        /// ASPxPopupControl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxPopupControl ASPxPopupControl1;
+        
+        /// <summary>
+        /// ASPxGridView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
     }
 }

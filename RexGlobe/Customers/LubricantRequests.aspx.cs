@@ -16,13 +16,16 @@ using System.Net.Mail;
 using System.Net;
 
 
-namespace RexGlobe.Customers
+namespace RexLubs.Customers
 {
     public partial class LubricantRequests : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["LoggedInUser"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
 
         protected void ASPxButtonSubmit_Click(object sender, EventArgs e)
@@ -40,7 +43,7 @@ namespace RexGlobe.Customers
             string query = "CreateLubricantBooking";
             SqlCommand cmd = new SqlCommand(query, con);
 
-            cmd.Parameters.Add("@BusinessName", SqlDbType.VarChar).Value = BusinessName.Value;
+            cmd.Parameters.Add("@BusinessName", SqlDbType.VarChar).Value = BusinessName.SelectedItem.ToString();
             cmd.Parameters.Add("@PhoneNumber", SqlDbType.VarChar).Value = PhoneNumber.Value; 
             cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = Email.Value;
             cmd.Parameters.Add("@Address", SqlDbType.VarChar).Value = Address.Value;
@@ -104,11 +107,11 @@ namespace RexGlobe.Customers
                 smtp.Credentials = NetworkCred;
                 smtp.Port = int.Parse(ConfigurationManager.AppSettings["Port"]); //reading from web.config  
                 smtp.Send(msg);
-                string smtpAddress = "smtp.gmail.com";
-                int portNumber = 587;
+                string smtpAddress = "mail.rexlubs.com";
+                int portNumber = 465;
                 bool enableSSL = true;
-                string emailFrom = "RexGlobeNG@gmail.com";
-                string password = "RexGlobe@2020";
+                string emailFrom = "customercare@rexlubs.com";
+                string password = "customer@2023";
                 using (SmtpClient smtp2 = new SmtpClient(smtpAddress, portNumber))
                 {
                     smtp2.Credentials = new NetworkCredential(emailFrom, password);
@@ -123,7 +126,7 @@ namespace RexGlobe.Customers
             con.Close();
 
             ASPxFormLayout1.ForEach(ClearItem);
-
+            ClearItems();
 
         }
 
@@ -145,6 +148,37 @@ namespace RexGlobe.Customers
         protected void ASPxFormLayout1_DataBound(object sender, EventArgs e)
         {
             ASPxFormLayout1.ForEach(ClearItem);
+        }
+
+        private void ClearItems()
+        {
+            BusinessName.Value = string.Empty;
+            PhoneNumber.Value = string.Empty;
+            Email.Value = string.Empty;
+            Address.Value = string.Empty;
+            State.Value = string.Empty;
+            Country.Value = string.Empty;
+            SalesRepresentative.Value = string.Empty;
+            ContactPerson.Value = string.Empty;
+            ContactPersonEmail.Value = string.Empty;
+            ProductName.Value = string.Empty;
+            ProductType.Value = string.Empty;
+            ProductQuantity.Value = string.Empty;
+            UnitPrice.Value = string.Empty;
+            Total_Amount.Value = string.Empty;
+            PaymentTerms.Value = string.Empty;
+            TrasactionType.Value = string.Empty;
+            WarehouseManagerName.Value = string.Empty;
+            WarehouseManagerEmail.Value = string.Empty;
+            WarehouseLocation.Value = string.Empty;
+            PickUpPersonName.Value = string.Empty;
+            PickUpPersonPhone.Value = string.Empty;
+            ExpectedDeliveryDate.Value = string.Empty;
+        }
+
+        protected void esmdsRegisteredCompanies_Selecting(object sender, EntityDataSourceSelectingEventArgs e)
+        {
+
         }
     }
 }

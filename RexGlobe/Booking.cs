@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe
+namespace RexLubs
 {
     using System;
     using System.Collections.Generic;
@@ -17,7 +17,6 @@ namespace RexGlobe
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Booking()
         {
-            this.Payments = new HashSet<Payment>();
             this.In_Bound_Dispatch = new HashSet<In_Bound_Dispatch>();
             this.Out_Bound_Dispatch = new HashSet<Out_Bound_Dispatch>();
         }
@@ -38,12 +37,10 @@ namespace RexGlobe
     
         public virtual Booking Booking1 { get; set; }
         public virtual Booking Booking2 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Payment> Payments { get; set; }
+        public virtual Shipment Shipment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<In_Bound_Dispatch> In_Bound_Dispatch { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Out_Bound_Dispatch> Out_Bound_Dispatch { get; set; }
-        public virtual Shipment Shipment { get; set; }
     }
 }

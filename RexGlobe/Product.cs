@@ -7,24 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe
+namespace RexLubs
 {
     using System;
     using System.Collections.Generic;
     
     public partial class Product
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
-        {
-            this.Payments = new HashSet<Payment>();
-        }
-    
         public int ProductID { get; set; }
         public string Code { get; set; }
         public string ProductName { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Payment> Payments { get; set; }
     }
 }

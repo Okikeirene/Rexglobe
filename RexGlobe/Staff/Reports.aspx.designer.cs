@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe {
+namespace RexLubs {
     
     
     public partial class WebForm4 {
@@ -82,7 +82,7 @@ namespace RexGlobe {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::RexGlobe.ToolBarExport1 ToolbarExport1;
+        protected global::RexLubs.ToolBarExport1 ToolbarExport1;
         
         /// <summary>
         /// gridExport control.

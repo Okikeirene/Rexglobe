@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteSuperAdmin.master.cs" Inherits="RexGlobe.SuperAdmin.SiteSuperAdmin" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteSuperAdmin.master.cs" Inherits="RexLubs.SuperAdmin.SiteSuperAdmin" %>
 
 <!DOCTYPE html>
 
@@ -100,8 +100,8 @@
                                     <li class="nav-item"><a runat="server" href="~/SuperAdmin/Home.aspx" style="color: #FFFFFF; font-family: 'Calibri'">Home</a></li>
                                      <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri', Times, serif">Customers<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li class="nav-item"><a runat="server" href="~/Customers/NewCustomer.aspx">New Customers</a></li>
-                                            <li class="nav-item"><a runat="server" href="~/Customers/ManageCustomers.aspx">Manage Customers</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Customers/NewCustomerLub.aspx">New Customers</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Customers/ManageCustomer.aspx">Manage Customers</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #FFFFFF; font-family: 'Calibri'" >Booking<span class="caret"></span></a>
@@ -142,14 +142,15 @@
                                     </li>
                                     <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Products<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li class="nav-item"><a runat="server" href="~/Staff/Products.aspx">Product Requests</a></li>
-                                            <li class="nav-item"><a runat="server" href="~/Staff/ProductInventory.aspx">Manage Product</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Staff/Products.aspx">Product Types</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Staff/ProductInventory.aspx">Product Inventory</a></li>
                                             <li class="nav-item"><a runat="server" href="~/Staff/ManageApprovals.aspx">Manage Approvals</a></li>
                                         </ul>
                                     </li> 
                                     <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Payments<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li class="nav-item"><a runat="server" href="~/Billing/Payments.aspx">New Payments</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Billing/Payments.aspx">View Payments</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Billing/MakePayments.aspx">Make Payments</a></li>
                                         </ul>
                                     </li> 
                                     <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Procurement<b class="caret"></b></a>
@@ -159,7 +160,7 @@
                                              <li class="nav-item"><a runat="server" href="~/Staff/ManageProcurement.aspx">Manage Procurement</a></li>
                                         </ul>
                                     </li>                           
-                                    <li class="nav-item"><a runat="server" href="~/Transaction/Transactions.aspx" style="color: #FFFFFF; font-family: 'Calibri'">Transactions</a></li>
+                                    <li class="nav-item"><a runat="server" href="~/Billing/Invoice.aspx" style="color: #FFFFFF; font-family: 'Calibri'">Print Invoice</a></li>
                              </ul>
                   
                 </nav>

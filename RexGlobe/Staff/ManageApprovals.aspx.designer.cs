@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe.Staff {
+namespace RexLubs.Staff {
     
     
     public partial class ManageApprovals {
@@ -29,5 +29,14 @@ namespace RexGlobe.Staff {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlApproval;
+        
+        /// <summary>
+        /// SqlProcurementDescritpion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlProcurementDescritpion;
     }
 }

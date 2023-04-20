@@ -1,5 +1,5 @@
 ﻿using DevExpress.Web;
-using RexGlobe;
+using RexLubs;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -10,11 +10,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace RexGlobe.Customers
+namespace RexLubs.Customers
 {
     public partial class BookingRequests : System.Web.UI.Page
     {
-        RexGlobeEntities context = new RexGlobeEntities();
+        RexLubsEntities context = new RexLubsEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
 

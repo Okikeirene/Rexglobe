@@ -1,7 +1,7 @@
 body{
     margin: 0;
     padding: 0;
-    background-image:url('../Content/Images/LoginBackgroundFinal.png');
+    background-image:url('../Content/Images/LoginBackgroundFinal2.png');
     background-size:cover;
     font-family:'Times New Roman';
     background-repeat:no-repeat;
@@ -85,7 +85,7 @@ h2{
  color: #ffffff;
 }
 section{
-     background-image: url('../Content/Images/LoginBackgroundFinal.png');
+     background-image: url('../Content/Images/LoginBackgroundFinal2.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -99,7 +99,7 @@ section{
 .container{
     width:47vw;
     height:570vh;
-    background-image: url('../Content/Images/LoginBackgroundFinal.png');
+    background-image: url('../Content/Images/LoginBackgroundFinal2.png');
     background-position: center;
     background-repeat: no-repeat;
     opacity:100%;
@@ -124,7 +124,7 @@ section{
 
 .login
 {
-    background-image: url('../Resources/LoginBackgroundFinal.png');
+    background-image: url('../Resources/LoginBackgroundFinal2.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

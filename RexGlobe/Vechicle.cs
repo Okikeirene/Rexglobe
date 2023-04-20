@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe
+namespace RexLubs
 {
     using System;
     using System.Collections.Generic;
@@ -26,19 +26,19 @@ namespace RexGlobe
         public string WorkServiceLocation { get; set; }
         public string VehicleNumber { get; set; }
         public Nullable<int> TransportationType { get; set; }
+        public string DriverName { get; set; }
+        public string DriverPhoneNumber { get; set; }
         public string VehicleDetails { get; set; }
         public string PermitofStates { get; set; }
         public Nullable<System.DateTime> PermitExpiryDate { get; set; }
         public string CreatedBy { get; set; }
-        public string CreatedDate { get; set; }
-        public string DriverName { get; set; }
-        public string DriverPhoneNumber { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
     
-        public virtual Transportation Transportation { get; set; }
-        public virtual VechicleType VechicleType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<In_Bound_Dispatch> In_Bound_Dispatch { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Out_Bound_Dispatch> Out_Bound_Dispatch { get; set; }
+        public virtual Transportation Transportation { get; set; }
+        public virtual VechicleType VechicleType { get; set; }
     }
 }

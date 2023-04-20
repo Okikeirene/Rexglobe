@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterSite.master.cs" Inherits="RexGlobe.MasterSite" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterSite.master.cs" Inherits="RexLubs.MasterSite" %>
 
 <!DOCTYPE html>
 

@@ -14,7 +14,7 @@ using System.Net.Mail;
 using System.Net;
 using DevExpress.Web;
 
-namespace RexGlobe.Staff
+namespace RexLubs.Staff
 {
     public partial class CreatePersonnel : System.Web.UI.Page
     {
@@ -208,7 +208,7 @@ namespace RexGlobe.Staff
                 int portNumber = 587;
                 bool enableSSL = true;
                 string emailFrom = "RexGlobeNG@gmail.com";
-                string password = "RexGlobe@2020";
+                string password = "RexGlobe@2023";
                 using (SmtpClient smtp2 = new SmtpClient(smtpAddress, portNumber))
                 {
                     smtp2.Credentials = new NetworkCredential(emailFrom, password);

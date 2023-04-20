@@ -8,12 +8,13 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 using DevExpress.Web;
+using RexLubs;
 
-namespace RexGlobe.Staff
+namespace RexLubs.Staff
 {
     public partial class OutBoundDispatch : System.Web.UI.Page
     {
-        RexGlobeEntities _context = new RexGlobeEntities();
+        RexLubsEntities _context = new RexLubsEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
 

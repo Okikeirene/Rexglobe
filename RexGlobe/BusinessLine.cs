@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe
+namespace RexLubs
 {
     using System;
     using System.Collections.Generic;

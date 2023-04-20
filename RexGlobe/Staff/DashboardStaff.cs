@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DevExpress.DataAccess;
 using DevExpress.DashboardCommon;
 
-namespace RexGlobe.Staff
+namespace RexLubs.Staff
 {
     public partial class DashboardStaff : DevExpress.DashboardCommon.Dashboard
     {

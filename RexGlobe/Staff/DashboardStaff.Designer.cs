@@ -1,4 +1,4 @@
-﻿namespace RexGlobe.Staff
+﻿namespace RexLubs.Staff
 {
     partial class DashboardStaff
     {

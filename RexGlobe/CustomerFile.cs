@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe
+namespace RexLubs
 {
     using System;
     using System.Collections.Generic;
@@ -22,6 +22,6 @@ namespace RexGlobe
         public byte[] FileContent { get; set; }
         public System.DateTime CreateDate { get; set; }
     
-        public virtual Customer Customer { get; set; }
+        public virtual Customer1 Customer { get; set; }
     }
 }

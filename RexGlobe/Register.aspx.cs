@@ -15,11 +15,11 @@ using System.Net.Mail;
 using RexGlobe;
 using System.Net;
 
-namespace RexGlobe
+namespace RexLubs
 {
     public partial class Register : System.Web.UI.Page
     {
-        RexGlobeEntities context = new RexGlobeEntities();
+        RexLubsEntities context = new RexLubsEntities();
 
         protected void Page_Load(object sender, EventArgs e)
         {

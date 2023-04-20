@@ -7,8 +7,10 @@ using System.Web.SessionState;
 using System.Web.Routing;
 using Microsoft.AspNet.FriendlyUrls;
 using System.Web.Optimization;
+using RexLubs;
+using RexGlobe;
 
-namespace RexGlobe
+namespace RexLubs
 {
     public class Global : System.Web.HttpApplication
     {
@@ -16,6 +18,8 @@ namespace RexGlobe
         {
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            DevExpress.XtraReports.Web.ASPxWebDocumentViewer.StaticInitialize();
+            DevExpress.XtraReports.Web.ASPxReportDesigner.StaticInitialize();
         }
     }
 }

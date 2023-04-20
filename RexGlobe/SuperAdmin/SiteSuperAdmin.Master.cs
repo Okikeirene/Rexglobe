@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace RexGlobe.SuperAdmin
+namespace RexLubs.SuperAdmin
 {
     public partial class SiteSuperAdmin : System.Web.UI.MasterPage
     {

@@ -1,0 +1,171 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Operations.master.cs" Inherits="RexLubs.HeadOfOperations.Operations" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+   
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="../Content/tabmenu.css" rel="stylesheet" type="text/css" />
+    <link href="../Content/Site.css" rel="stylesheet" type="text/css" />
+     <style type="text/css">
+
+        .nav-item a:hover {
+            color: #01315A !important;
+            cursor: pointer;
+        }
+
+         
+        .news {
+                background-color: #006535;
+                padding: 15px 20px;
+              }
+
+        /*.mySlides {display:none;}
+           body { background: #01315A !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+                .auto-style2 {
+                    height: 39px;
+                }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="topdiv">
+        <form id="form1" runat="server">
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+                <Scripts>
+                    <asp:ScriptReference Name="MsAjaxBundle" />
+                    <asp:ScriptReference Name="jquery" />
+                    <asp:ScriptReference Name="bootstrap" />
+                    <asp:ScriptReference Name="respond" />
+                    <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                    <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                    <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                    <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                    <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                    <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                    <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                    <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                    <asp:ScriptReference Name="WebFormsBundle" />
+                    <asp:ScriptReference Path="~/Content/tabmenu.js" />
+                </Scripts>
+            </asp:ScriptManager>
+           
+            <div class="header" style="height: 39px">
+                <img runat="server" src="~/Resources/logoWeb.jpg" class="auto-style2"  />
+
+            </div>
+            <div class="header_btm_bg">
+                </div>
+            <div id="contentBox">
+                
+                <div class="row" align="center" style="margin-top:7px;" >
+                <nav class="navbar navbar-light"  style="background-color: #BA0925;font-family:'Calibri';color:white ; left: 0px; top: 0px; width: 100%;" >
+                 <div id="moduleStatus">
+                    <span class="loggedinUser">
+                        <asp:Label ID="lblLoggedInUser" runat="server"></asp:Label>
+                    </span>
+                    <span class="Role">
+                        <asp:Label ID="lblUserRole" runat="server"></asp:Label></span>
+                    <span class="logout">
+                        <a runat="server" href="~/Login.aspx">Log out</a>
+                    </span>
+                </div>
+                 <%-- <asp:LoginView runat="server" ViewStateMode="Disabled">
+                                <AnonymousTemplate>
+                                    <ul class="nav navbar-nav navbar-right">
+                                          <li><strong> Welcome <%=HttpContext.Current.Session["UserName"]%>:</strong> <span class="glyphicon glyphicon-user"></span></li>
+                          
+                                        <li>   <asp:Button ID="Logout" runat="server"  Text="Logout" OnClick="Logout_Click" CssClass="btn btn-primary" class="glyphicon glyphicon-log-out" /> </li>
+                                    </ul>
+                                </AnonymousTemplate>
+                                <LoggedInTemplate>
+                                    <ul class="nav navbar-nav navbar-right">
+                                       <li>
+                                            <asp:Button ID="Button1" runat="server"  Text="Logout" OnClick="Logout_Click" CssClass="btn btn-primary" class="glyphicon glyphicon-log-out" /> 
+                                        </li>
+                                    </ul>
+                                </LoggedInTemplate>
+                            </asp:LoginView>--%>
+                            <ul class="nav nav-pills" style="background-color: #BA0925;font-family:'Calibri';color:white ;" >
+                                    <li class="nav-item"><a runat="server" href="~/SuperAdmin/Home.aspx" style="color: #FFFFFF; font-family: 'Calibri'">Home</a></li>
+                                     <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri', Times, serif">Customers<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a runat="server" href="~/Customers/NewCustomerLub.aspx">New Customers</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Customers/ManageCustomer.aspx">Manage Customers</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #FFFFFF; font-family: 'Calibri'" >Booking<span class="caret"></span></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a runat="server" href="~/Customers/BookingRequests.aspx" >Base Oil Requests</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Customers/LubricantRequests.aspx">New Lubricant Request</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Customers/ManageLubricantBooking.aspx">Manage Lubricant Request</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Customers/ManageBooking.aspx">Manage Base Oil Requests</a></li>
+                                        </ul>
+                                      </li>  
+                                    <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Truck Details<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a runat="server" href="~/Staff/Trucks.aspx">New Truck</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Staff/Managetrucks.aspx">Manage Truck</a></li>
+                                        </ul>
+                                    </li>
+                                      <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri', Times, serif">Warehouse<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a runat="server" href="~/Customers/PickUpRequest.aspx">PickUp Request</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Customers/ManagePickUp.aspx">Manage PickUp</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/WareHouse/ManageWarehouse.aspx">Manage Warehouse</a></li>
+                                        </ul>
+                                    </li>
+        
+                                     <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri', Times, serif">Dispatch<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a runat="server" href="~/Staff/InBoundDispatch.aspx">In Bound Dispatch</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Staff/OutBoundDispatch.aspx">Out Bound Dispatch</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Products<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a runat="server" href="~/Staff/Products.aspx">Product Types</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Staff/ProductInventory.aspx">Product Inventory</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Staff/ManageApprovals.aspx">Manage Approvals</a></li>
+                                        </ul>
+                                    </li> 
+                                    <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Payments<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a runat="server" href="~/Billing/Payments.aspx">New Payments</a></li>
+                                        </ul>
+                                    </li> 
+                                    <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Procurement<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a runat="server" href="~/Staff/Budget.aspx">Budget</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Staff/Procurement.aspx">Procurement</a></li>
+                                             <li class="nav-item"><a runat="server" href="~/Operations/ManageProcurement.aspx">Manage Procurement</a></li>
+                                        </ul>
+                                    </li>                           
+                             </ul>
+                  
+                </nav>
+        
+                </div>
+                <div id="maincontent">
+                    <asp:ContentPlaceHolder ID="content" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div id="footer">Copyright © RexGlobe Limited <%: DateTime.Now.Year %> </div>
+
+</body>
+</html>
+

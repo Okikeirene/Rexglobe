@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DevExpress.DataAccess;
 using DevExpress.DashboardCommon;
 
-namespace RexGlobe.Analytics
+namespace RexLubs.Analytics
 {
     public partial class BusinessIntelligent : DevExpress.DashboardCommon.Dashboard
     {

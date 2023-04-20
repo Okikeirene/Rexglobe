@@ -12,11 +12,11 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace RexGlobe
+namespace RexLubs
 {
     public partial class ForgotPassword : System.Web.UI.Page
     {
-        RexGlobeEntities context = new RexGlobeEntities();
+        RexLubsEntities context = new RexLubsEntities();
         string Salt_;
 
         protected void Page_Load(object sender, EventArgs e)

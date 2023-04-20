@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 using RexGlobe;
 using System.Web.Security;
 
-namespace RexGlobe
+namespace RexLubs
 {
     public partial class Login : System.Web.UI.Page
     {
-        RexGlobeEntities context = new RexGlobeEntities();
+        RexLubsEntities context = new RexLubsEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
             RegisterHyperLink.NavigateUrl = "~/ForgotPassword.aspx";
@@ -51,32 +51,32 @@ namespace RexGlobe
                     Session["LastName"] = _user.LastName;
                     Response.Redirect("~/SuperAdmin/Home.aspx");
                 }
-                if (_user.RoleId == 2) //Admin
+                if (_user.RoleId == 2) //HeadOfOperations
                 {
-                    Session["Role"] = "Admin";
+                    Session["Role"] = "HeadOfOperations";
                     Session["LoggedInUser"] = _user;
                     Session["UserName"] = _user.UserName;
                     Session["PhoneNumber"] = _user.PhoneNumber;
                     Session["Email"] = _user.Email;
                     Session["FirstName"] = _user.FirstName;
                     Session["LastName"] = _user.LastName;
-                    Response.Redirect("~/Admin/Home.aspx");
+                    Response.Redirect("~/Operations/Home.aspx");
                 }
-                if (_user.RoleId == 3) //Users
+                if (_user.RoleId == 3) //Customer
                 {
-                    Session["Role"] = "Users";
+                    Session["Role"] = "Customer";
                     Session["LoggedInUser"] = _user;
                     Session["UserName"] = _user.UserName;
                     Session["PhoneNumber"] = _user.PhoneNumber;
                     Session["Email"] = _user.Email;
                     Session["FirstName"] = _user.FirstName;
                     Session["LastName"] = _user.LastName;
-                    Response.Redirect("~/Users/Home.aspx");
+                    Response.Redirect("~/Customers/Home.aspx");
+                }
 
-                }
-                if (_user.RoleId == 4) // Seller
+                if (_user.RoleId == 4) // HeadOfFinance
                 {
-                    Session["Role"] = "Engineer";
+                    Session["Role"] = "HeadOfFinance";
                     Session["LoggedInUser"] = _user;
                     Session["UserName"] = _user.UserName;
                     Session["PhoneNumber"] = _user.PhoneNumber;
@@ -85,7 +85,31 @@ namespace RexGlobe
                     Session["LastName"] = _user.LastName;
                     Response.Redirect("~/Engineer/Home.aspx");
                 }
-                if (_user.RoleId == 5) //Engineer
+                if (_user.RoleId == 5) //Legal
+                {
+                    Session["Role"] = "Legal";
+                    Session["LoggedInUser"] = _user;
+                    Session["UserName"] = _user.UserName;
+                    Session["PhoneNumber"] = _user.PhoneNumber;
+                    Session["Email"] = _user.Email;
+                    Session["FirstName"] = _user.FirstName;
+                    Session["LastName"] = _user.LastName;
+                    Response.Redirect("~/Legal/Home.aspx");
+                }
+
+                if (_user.RoleId == 6) //Staff
+                {
+                    Session["Role"] = "Staff";
+                    Session["LoggedInUser"] = _user;
+                    Session["UserName"] = _user.UserName;
+                    Session["PhoneNumber"] = _user.PhoneNumber;
+                    Session["Email"] = _user.Email;
+                    Session["FirstName"] = _user.FirstName;
+                    Session["LastName"] = _user.LastName;
+                    Response.Redirect("~/Staff/Home.aspx");
+                }
+
+                if (_user.RoleId == 7) //WareHouseAdmin
                 {
                     Session["Role"] = "WareHouseEngineer";
                     Session["LoggedInUser"] = _user;
@@ -97,15 +121,20 @@ namespace RexGlobe
                     Response.Redirect("~/WareHouse/Home.aspx");
                 }
 
-                //Session["LoggedInUser"] = _user;
-                //Session["UserName"] = _user.UserName;
-                //Session["StateID"] = _user.StateID;
-                //Session["UserRoleId"] = _user.RoleId;
-                //Session["FirstName"] = _user.FirstName;
-                //Session["LastName"] = _user.LastName;
 
-           
-                //Response.Redirect("~/Analytics/Home.aspx");
+                if (_user.RoleId == 8) //Users
+                {
+                    Session["Role"] = "Users";
+                    Session["LoggedInUser"] = _user;
+                    Session["UserName"] = _user.UserName;
+                    Session["PhoneNumber"] = _user.PhoneNumber;
+                    Session["Email"] = _user.Email;
+                    Session["FirstName"] = _user.FirstName;
+                    Session["LastName"] = _user.LastName;
+                    Response.Redirect("~/Users/Home.aspx");
+                }
+
+
             }
 
             else

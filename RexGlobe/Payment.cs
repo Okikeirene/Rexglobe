@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe
+namespace RexLubs
 {
     using System;
     using System.Collections.Generic;
@@ -17,16 +17,21 @@ namespace RexGlobe
         public string PaymentReference { get; set; }
         public string TIN { get; set; }
         public Nullable<int> ProductID { get; set; }
+        public Nullable<int> CustomerID { get; set; }
+        public string BusinessName { get; set; }
+        public string ProductName { get; set; }
+        public Nullable<decimal> UnitPrice { get; set; }
+        public Nullable<int> ProductQuantity { get; set; }
         public decimal Amount { get; set; }
         public System.DateTime PaymentDate { get; set; }
         public string PaymentYear { get; set; }
-        public string payment_type { get; set; }
+        public string PaymentTerms { get; set; }
+        public string TrasactionType { get; set; }
         public string payment_currency { get; set; }
         public string payment_channel { get; set; }
-        public Nullable<int> BookingID { get; set; }
-        public string revenue_type { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
     
-        public virtual Booking Booking { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual Customer1 Customer { get; set; }
+        public virtual ProductRequest ProductRequest { get; set; }
     }
 }

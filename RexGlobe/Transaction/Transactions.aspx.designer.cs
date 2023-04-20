@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe.Transaction {
+namespace RexLubs.Transaction {
     
     
     public partial class Transactions {

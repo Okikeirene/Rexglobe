@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe.Users {
+namespace RexLubs.Users {
     
     
     public partial class Enquiry {

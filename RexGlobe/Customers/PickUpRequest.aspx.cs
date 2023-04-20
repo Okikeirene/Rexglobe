@@ -10,11 +10,11 @@ using System.Data.SqlClient;
 using System.Data;
 using DevExpress.Web;
 
-namespace RexGlobe.Customers
+namespace RexLubs.Customers
 {
     public partial class PickUpRequest : System.Web.UI.Page
     {
-        RexGlobeEntities _context = new RexGlobeEntities();
+        RexLubsEntities _context = new RexLubsEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
 

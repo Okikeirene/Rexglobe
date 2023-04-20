@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/SuperAdmin/SiteSuperAdmin.Master" AutoEventWireup="true" CodeBehind="LubricantRequests.aspx.cs" Inherits="RexGlobe.Customers.LubricantRequests" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/SuperAdmin/SiteSuperAdmin.Master" AutoEventWireup="true" CodeBehind="LubricantRequests.aspx.cs" Inherits="RexLubs.Customers.LubricantRequests" %>
 
 <%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
@@ -7,9 +7,31 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server" >
+    `1<script type="text/javascript">
+        
+        
 
+        function HidePopUp(index) {
+            popup.HideWindow(popup.GetWindow(index));
+        }
 
-<div class="panel panel-primary"> 
+        function OnGetRCNo(Value) {
+            BusinessName.SetValue(Value[0]);
+            BusinessName.SetText(Value[0])
+            Email.SetValue(Value[1]);
+            Email.SetText(Value[1])
+            PhoneNumber.SetValue(Value[2]);
+            PhoneNumber.SetText(Value[2])
+            Address.SetValue(Value[3]);
+            Address.SetText(Value[3])
+            State.SetValue(Value[4]);
+            State.SetText(Value[4])
+            Country.SetValue(Value[5]);
+            Country.SetText(Value[5])
+            HidePopUp(0);
+        }
+       
+    </script><div class="panel panel-primary"> 
             <div class="panel-heading">Create Lubricant Booking Requests</div>
             <div class="panel-body">
 
@@ -21,13 +43,15 @@
 			<dx:LayoutItem  Caption="Business Name" FieldName="BusinessName" RequiredMarkDisplayMode="Required">
 				<LayoutItemNestedControlCollection>
 					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
-						&nbsp;&nbsp;
-                        <br />
-						<dx:ASPxTextBox ID="BusinessName" runat="server" ClientInstanceName="BusinessName" Width="100%" Height="25px">
-							<ValidationSettings Display="Dynamic">
-								<RequiredField IsRequired="True" />
-							</ValidationSettings>
-						</dx:ASPxTextBox>
+                       <dx:ASPxComboBox ID="BusinessName" runat="server"  AutoPostBack="True" ClientInstanceName="BusinessName"  AutoResizeWithContainer="True" IncrementalFilteringMode="StartsWith"  EnableIncrementalFiltering="True" TextField="BusinessName" ValueField="BusinessName" Width="100%" Height="25px" DataSourceID="SqlCustomers">
+                            <ClientSideEvents SelectedIndexChanged="function(s, e) {
+	                                    OnStateChanged(s);
+                                    }" />
+                                    <ClearButton Visibility="Auto"></ClearButton>
+                            <ValidationSettings>
+                                <RequiredField ErrorText="Required" IsRequired="True" />
+                            </ValidationSettings>
+                        </dx:ASPxComboBox> 
 					</dx:LayoutItemNestedControlContainer>
 				</LayoutItemNestedControlCollection>
 			</dx:LayoutItem>
@@ -533,7 +557,90 @@
     </asp:SqlDataSource> 
 
     <asp:SqlDataSource ID="SqlPaymentTypes" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [PaymentID],[PaymentType],[PaymentChannel],[Payementerms] FROM [RexGlobe].[dbo].[PaymentTypes]">
-    </asp:SqlDataSource> 
-   
+    </asp:SqlDataSource>   
+   <%--<asp:SqlDataSource ID="SqlCustomers" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID], [BusinessName], [TIN_Number], [DateOfBirth], [Email], [PhoneNumber], [Address], [State], [Country], [SalesRepresentative], [PaymentTerms], [TrasactionType], [DateofIncorporation], [TypeOfBusiness], [NextOfKinName], [NextOfKinPhone], [ContactPerson], [ContactPersonEmail], [ContactPersonGender], [ContactPersonPhoneNumber], [CreatedBy], [CreatedDate] FROM [Customers] WHERE ([BusinessName] = @BusinessName)">
+       <SelectParameters>
+           <asp:FormParameter Control="ASPxFormLayout1$BusinessName" FormField="BusinessName" Name="BusinessName" Type="String" />
+       </SelectParameters>
+    </asp:SqlDataSource>--%>
+    <asp:SqlDataSource ID="SqlCustomers" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID], [BusinessName], [TIN_Number], [DateOfBirth], [Email], [PhoneNumber], [Address], [State], [Country], [SalesRepresentative], [PaymentTerms], [TrasactionType], [DateofIncorporation], [TypeOfBusiness], [NextOfKinName], [NextOfKinPhone], [ContactPerson], [ContactPersonEmail], [ContactPersonGender], [ContactPersonPhoneNumber], [CreatedBy], [CreatedDate] FROM [Customers] ">
+     </asp:SqlDataSource>
+
+
+
+        <asp:EntityDataSource ID="esmdsRegisteredCompanies" runat="server" ConnectionString="name=RexLubsEntities" DefaultContainerName="RexLubsEntities" EntitySetName="Customers1" Include="BusinessName"  Where ="it.BusinessName = @BusinessName" OnSelecting="esmdsRegisteredCompanies_Selecting"  >
+        <WhereParameters>
+            <asp:ControlParameter ControlID="ASPxFormLayout1$BusinessName" Name="BusinessName" PropertyName="Value" Type="String" />
+        </WhereParameters>
+    </asp:EntityDataSource>
+
+
+  
+     <dx:ASPxPopupControl ID="ASPxPopupControl1" runat="server" ClientInstanceName="popup" Height="400px" Width="800px" AllowDragging="True" CloseAction="CloseButton" HeaderText="" Modal="True" PopupVerticalAlign="WindowCenter"  PopupElementID="ASPxFormLayout1$ASPxButtonEditRCNo">
+        <Windows>
+            
+            <dx:PopupWindow PopupElementID="ASPxFormLayout1$BusinessName">
+                <ContentCollection>
+                    <dx:PopupControlContentControl runat="server">
+                        <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlCustomers" KeyFieldName="ID" Width="100%" ClientInstanceName="mastergrid">
+                                        <ClientSideEvents RowDblClick="function(s, e) 
+                        {
+	                        mastergrid.GetRowValues(e.visibleIndex, 'BusinessName;Email;PhoneNumber;Address;State;', OnGetRCNo);
+                        }" />
+                                        <Columns>
+                                            <dx:GridViewDataTextColumn Caption="BusinessName" FieldName="BusinessName" ReadOnly="True"  VisibleIndex="0" Width="100px">
+                                            </dx:GridViewDataTextColumn>
+                                            <dx:GridViewDataTextColumn FieldName="Email" VisibleIndex="1">
+                                            </dx:GridViewDataTextColumn>
+                                            <dx:GridViewDataDateColumn FieldName="PhoneNumber" VisibleIndex="2">
+                                            </dx:GridViewDataDateColumn>
+                                            <dx:GridViewDataDateColumn FieldName="Address" VisibleIndex="3">
+                                            </dx:GridViewDataDateColumn>
+                                            <dx:GridViewDataDateColumn FieldName="State" VisibleIndex="4">
+                                            </dx:GridViewDataDateColumn>
+                                            <dx:GridViewDataDateColumn FieldName="Country" VisibleIndex="52">
+                                            </dx:GridViewDataDateColumn>
+                                        </Columns>
+                                        <SettingsBehavior AllowSelectByRowClick="True" AllowSelectSingleRowOnly="True" />
+                                        <Settings ShowFilterRow="True" />
+                                        <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                                    </dx:ASPxGridView>
+
+                    </dx:PopupControlContentControl>
+                </ContentCollection>
+            </dx:PopupWindow>
+            <%--<dx:PopupWindow PopupElementID="ASPxFormLayout1$ASPxComboBoxTaxOffices">
+                <ContentCollection>
+                    <dx:PopupControlContentControl runat="server">
+                        <dx:ASPxGridView ID="ASPxgvTaxOffices" runat="server" AutoGenerateColumns="False" ClientInstanceName="gridTaxOffices" DataSourceID="edsTaxOffices" KeyFieldName="TaxOfficeId" Width="100%">
+                            <ClientSideEvents RowDblClick="function(s, e) {
+	gridTaxOffices.GetRowValues(e.visibleIndex, 'TaxOfficeId;TaxOfficeName', OnGetTaxOffice);
+}" />
+                            <Columns>
+                                <dx:GridViewCommandColumn ShowClearFilterButton="True" ShowInCustomizationForm="True" VisibleIndex="6">
+                                </dx:GridViewCommandColumn>
+                                <dx:GridViewDataTextColumn Caption="Tax Office ID" FieldName="TaxOfficeId" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="TaxOfficeName" ShowInCustomizationForm="True" VisibleIndex="1">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="Street" ShowInCustomizationForm="True" VisibleIndex="4">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="City" ShowInCustomizationForm="True" VisibleIndex="5">
+                                </dx:GridViewDataTextColumn>
+                            </Columns>
+                            <SettingsBehavior AllowSelectByRowClick="True" AllowSelectSingleRowOnly="True" />
+                            <Settings ShowFilterRow="True" />
+                            <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
+                        </dx:ASPxGridView>
+                    </dx:PopupControlContentControl>
+                </ContentCollection>
+            </dx:PopupWindow>--%>
+        </Windows>
+        <ContentCollection>
+            <dx:PopupControlContentControl runat="server" SupportsDisabledAttribute="True">
+            </dx:PopupControlContentControl>
+        </ContentCollection>
+    </dx:ASPxPopupControl>
+
 </asp:Content>
 

@@ -10,11 +10,11 @@ using System.Data;
 using DevExpress.Web;
 using RexGlobe;
 
-namespace RexGlobe.Staff
+namespace RexLubs.Staff
 {
     public partial class InBoundDispatch : System.Web.UI.Page
     {
-        RexGlobeEntities _context = new RexGlobeEntities();
+        RexLubsEntities _context = new RexLubsEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
             

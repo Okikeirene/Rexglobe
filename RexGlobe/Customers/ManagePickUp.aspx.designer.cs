@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe.Customers {
+namespace RexLubs.Customers {
     
     
     public partial class ManagePickUp {

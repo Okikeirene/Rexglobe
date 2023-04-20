@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe
+namespace RexLubs
 {
     using System;
     using System.Collections.Generic;
@@ -24,7 +24,5 @@ namespace RexGlobe
         public string REXID { get; set; }
         public string REXCode { get; set; }
         public Nullable<System.Guid> SecurityID { get; set; }
-    
-        public virtual UserAccount UserAccount { get; set; }
     }
 }

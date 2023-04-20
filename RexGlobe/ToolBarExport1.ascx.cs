@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using DevExpress.Web;
 using System.ComponentModel;
 
-namespace RexGlobe
+namespace RexLubs
 {
     public enum ExportFormat { Pdf, Xls, Xlsx, Rtf, Csv }
 

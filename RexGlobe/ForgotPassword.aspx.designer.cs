@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe {
+namespace RexLubs {
     
     
     public partial class ForgotPassword {

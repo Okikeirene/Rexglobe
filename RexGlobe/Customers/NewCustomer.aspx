@@ -21,20 +21,20 @@
 
 <script type="text/javascript">
   
-    //var lastState = null;
-    //function OnStateChanged(state) {
+    var lastState = null;
+    function OnStateChanged(state) {
 
-    //    if (lga.InCallback())
-    //        lastState = state.GetValue().toString();
-    //    else lga.PerformCallback(state.GetValue().toString());
-    //}
+        if (lga.InCallback())
+            lastState = state.GetValue().toString();
+        else lga.PerformCallback(state.GetValue().toString());
+    }
 
-    //function OnEndCallback(s, e) {
-    //    if (lastState) {
-    //        lga.PerformCallback(lastState);
-    //        lastState = null;
-    //    }
-    //}
+    function OnEndCallback(s, e) {
+        if (lastState) {
+            lga.PerformCallback(lastState);
+            lastState = null;
+        }
+    }
    
     $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip();
@@ -783,6 +783,9 @@
                                                                                             <dx:ListEditItem Text="Syria" Value="Syria" />
                                                                                             <dx:ListEditItem Text="Crimea (Ukraine)" Value="Crimea (Ukraine)" />
                                                                                             <dx:ListEditItem Text="Israel" Value="Israel" />
+                                                                                            <dx:ListEditItem Text="Nigeria" Value="Nigeria" />
+                                                                                            <dx:ListEditItem Text="South Africa" Value="South Africa" />
+                                                                                            <dx:ListEditItem Text="Cameroon" Value="Cameroon" />
                                                                                         </Items>
 
                                                     <ClearButton Visibility="Auto"></ClearButton>
@@ -790,7 +793,7 @@
                                                                                 </dx:LayoutItemNestedControlContainer>
                                                                             </LayoutItemNestedControlCollection>
                                                                         </dx:LayoutItem>
-                                                                        <dx:LayoutItem FieldName="CountryImportedGoodsandServices" RequiredMarkDisplayMode="Required">
+                                                                        <dx:LayoutItem Caption="Country Imported Goods and Services" FieldName="CountryImportedGoodsandServices" RequiredMarkDisplayMode="Required">
                                                                             <LayoutItemNestedControlCollection>
                                                                                 <dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
                                                                                      <dx:ASPxLabel ID="ASPxLabel5" runat="server" Text="Do you import goods or services of any origin from or which transit through  any of the following countries?"></dx:ASPxLabel>
@@ -805,6 +808,9 @@
                                                                                             <dx:ListEditItem Text="Syria" Value="Syria" />
                                                                                             <dx:ListEditItem Text="Crimea (Ukraine)" Value="Crimea (Ukraine)" />
                                                                                             <dx:ListEditItem Text="Israel" Value="Israel" />
+                                                                                            <dx:ListEditItem Text="Nigeria" Value="Nigeria" />
+                                                                                            <dx:ListEditItem Text="South Africa" Value="South Africa" />
+                                                                                            <dx:ListEditItem Text="Cameroon" Value="Cameroon" />
                                                                                         </Items>
 
                                                     <ClearButton Visibility="Auto"></ClearButton>
@@ -812,7 +818,7 @@
                                                                                 </dx:LayoutItemNestedControlContainer>
                                                                             </LayoutItemNestedControlCollection>
                                                                         </dx:LayoutItem>
-                                                                        <dx:LayoutItem FieldName="CountryExportedGoodsandServices" RequiredMarkDisplayMode="Required">
+                                                                        <dx:LayoutItem Caption="Country Exported Goods and Services" FieldName="CountryExportedGoodsandServices" RequiredMarkDisplayMode="Required">
                                                                             <LayoutItemNestedControlCollection>
                                                                                 <dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
                                                                                     <dx:ASPxLabel ID="ASPxLabel6" runat="server" Text="Do you export or re-export any goods or services either directly  or indirectly to any of the following countries?"></dx:ASPxLabel>
@@ -827,6 +833,9 @@
                                                                                             <dx:ListEditItem Text="Syria" Value="Syria" />
                                                                                             <dx:ListEditItem Text="Crimea (Ukraine)" Value="Crimea (Ukraine)" />
                                                                                             <dx:ListEditItem Text="Israel" Value="Israel" />
+                                                                                            <dx:ListEditItem Text="Nigeria" Value="Nigeria" />
+                                                                                            <dx:ListEditItem Text="South Africa" Value="South Africa" />
+                                                                                            <dx:ListEditItem Text="Cameroon" Value="Cameroon" />
                                                                                         </Items>
 
                                                     <ClearButton Visibility="Auto"></ClearButton>
@@ -834,7 +843,7 @@
                                                                                 </dx:LayoutItemNestedControlContainer>
                                                                             </LayoutItemNestedControlCollection>
                                                                         </dx:LayoutItem>
-                                                                        <dx:LayoutItem FieldName="CountryTransitOfGoodsandService" RequiredMarkDisplayMode="Required">
+                                                                        <dx:LayoutItem Caption="Country Transit Of Goods and Service" FieldName="CountryTransitOfGoodsandService" RequiredMarkDisplayMode="Required">
                                                                             <LayoutItemNestedControlCollection>
                                                                                 <dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
                                                                                     <dx:ASPxLabel ID="ASPxLabel7" runat="server" Text="Do you export or re-export any goods or services which transit  through any of the following countries?"></dx:ASPxLabel>
@@ -849,6 +858,9 @@
                                                                                             <dx:ListEditItem Text="Syria" Value="Syria" />
                                                                                             <dx:ListEditItem Text="Crimea (Ukraine)" Value="Crimea (Ukraine)" />
                                                                                             <dx:ListEditItem Text="Israel" Value="Israel" />
+                                                                                            <dx:ListEditItem Text="Nigeria" Value="Nigeria" />
+                                                                                            <dx:ListEditItem Text="South Africa" Value="South Africa" />
+                                                                                            <dx:ListEditItem Text="Cameroon" Value="Cameroon" />
                                                                                         </Items>
 
                                                     <ClearButton Visibility="Auto"></ClearButton>
@@ -945,7 +957,7 @@
                                                                 </dx:LayoutGroup>
                                                                 <dx:LayoutGroup Caption="Purchase Information" ColCount="2" Width="100%">
                                                                     <Items>
-                                                                        <dx:LayoutItem Caption="Total purchases of client (USDm)" FieldName="TotalPurchasesofClient" RequiredMarkDisplayMode="Required">
+                                                                        <dx:LayoutItem Caption="Total Purchases of Client" FieldName="TotalPurchasesofClient" RequiredMarkDisplayMode="Required">
                                                                             <LayoutItemNestedControlCollection>
                                                                                 <dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
                                                                                     
@@ -968,7 +980,7 @@
                                                                                 </dx:LayoutItemNestedControlContainer>
                                                                             </LayoutItemNestedControlCollection>
                                                                         </dx:LayoutItem>
-                                                                        <dx:LayoutItem FieldName="Total operating income of client (USDm)">
+                                                                        <dx:LayoutItem Caption="Total operating income of client (USDm)" FieldName="TotalOperatingIncomeofClient">
                                                                             <LayoutItemNestedControlCollection>
                                                                                 <dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
                                                                                     <dx:ASPxTextBox ID="ASPxTextBox20" runat="server" ClientInstanceName="textAmount"  Width="100%" Height="25px" NullText="0.00" DisplayFormatString="0.00">

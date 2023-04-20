@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe
+namespace RexLubs
 {
     using System;
     using System.Collections.Generic;
@@ -17,5 +17,6 @@ namespace RexGlobe
         public int StatusId { get; set; }
         public string Name { get; set; }
         public Nullable<bool> Decision { get; set; }
+        public string ProductStatus { get; set; }
     }
 }

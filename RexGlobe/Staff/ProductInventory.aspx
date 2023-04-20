@@ -1,4 +1,4 @@
-﻿<%@ Page MasterPageFile="~/SuperAdmin/SiteSuperAdmin.Master" Language="C#" AutoEventWireup="true" CodeBehind="ProductInventory.aspx.cs" Inherits="RexGlobe.Staff.ProductInventory" %>
+﻿<%@ Page MasterPageFile="~/SuperAdmin/SiteSuperAdmin.Master" Language="C#" AutoEventWireup="true" CodeBehind="ProductInventory.aspx.cs" Inherits="RexLubs.Staff.ProductInventory" %>
 
 <%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
@@ -13,11 +13,10 @@
 </SettingsAdaptivity>
 
     <Settings ShowFilterRow="True" />
-    <SettingsDataSecurity AllowDelete="False" />
 <EditFormLayoutProperties ColCount="1"></EditFormLayoutProperties>
     <Columns>
 
-        <dx:GridViewCommandColumn ShowEditButton="True" ShowNewButtonInHeader="True" VisibleIndex="0">
+        <dx:GridViewCommandColumn ShowEditButton="True" ShowNewButtonInHeader="True" VisibleIndex="0" ShowDeleteButton="True">
         </dx:GridViewCommandColumn>
 
         <dx:GridViewDataTextColumn FieldName="ID" VisibleIndex="1" ReadOnly="True">

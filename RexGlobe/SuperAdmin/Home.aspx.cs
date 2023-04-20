@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using DevExpress.DataAccess.ConnectionParameters;
 
-namespace RexGlobe.SuperAdmin
+namespace RexLubs.SuperAdmin
 {
     public partial class Home : System.Web.UI.Page
     {

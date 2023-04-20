@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#"  MasterPageFile="~/SuperAdmin/SiteSuperAdmin.Master"  AutoEventWireup="true" CodeBehind="Procurement.aspx.cs" Inherits="RexGlobe.Staff.Procurement" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/SuperAdmin/SiteSuperAdmin.Master"  AutoEventWireup="true" CodeBehind="Procurement.aspx.cs" Inherits="RexLubs.Staff.Procurement" %>
 
 <%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -214,7 +214,7 @@
     <asp:SqlDataSource ID="SqlProcurementDescritpion" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID],[Procurement_Type],[Response],[Budget] FROM [RexGlobe].[dbo].[ProcurementDescritpion]">
 </asp:SqlDataSource>  
        <asp:SqlDataSource ID="SqlLocation" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID],[LocationName],[LocationCategory],[State],[Country]  FROM [RexGlobe].[dbo].[Location]">
-</asp:SqlDataSource>  Select [BudgetName]  FROM  [RexGlobe].[dbo].[ProcurementBudget]  
+</asp:SqlDataSource>  
 
 
 <asp:SqlDataSource ID="SqlBudget" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="Select [BudgetName]  FROM  [RexGlobe].[dbo].[ProcurementBudget]  ">

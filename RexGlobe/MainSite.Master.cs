@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace RexGlobe
+namespace RexLubs
 {
     public partial class MainSite : System.Web.UI.MasterPage
     {

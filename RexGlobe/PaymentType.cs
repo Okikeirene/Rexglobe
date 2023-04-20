@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe
+namespace RexLubs
 {
     using System;
     using System.Collections.Generic;
@@ -23,8 +23,11 @@ namespace RexGlobe
         public int PaymentID { get; set; }
         public string PaymentType1 { get; set; }
         public string PaymentChannel { get; set; }
+        public string Payementerms { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Customer> Customers { get; set; }
+        public virtual PaymentType PaymentTypes1 { get; set; }
+        public virtual PaymentType PaymentType2 { get; set; }
     }
 }

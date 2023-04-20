@@ -9,11 +9,11 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace RexGlobe.Staff
+namespace RexLubs.Staff
 {
     public partial class CreatePassword : System.Web.UI.Page
     {
-        RexGlobeEntities context = new RexGlobeEntities();
+        RexLubsEntities context = new RexLubsEntities();
         string NewName = "";
 
         protected void Page_Load(object sender, EventArgs e)

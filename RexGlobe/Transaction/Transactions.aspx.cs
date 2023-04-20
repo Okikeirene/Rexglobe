@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace RexGlobe.Transaction
+namespace RexLubs.Transaction
 {
     public partial class Transactions : System.Web.UI.Page
     {

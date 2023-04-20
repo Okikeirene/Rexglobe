@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe.Staff {
+namespace RexLubs.Staff {
     
     
     public partial class ManageTrucks {

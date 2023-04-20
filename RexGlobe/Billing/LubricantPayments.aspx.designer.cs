@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe.Billing {
+namespace RexLubs.Billing {
     
     
     public partial class LubricantPayments {

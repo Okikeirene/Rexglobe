@@ -11,7 +11,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace RexGlobe
+namespace RexLubs
 {
     public partial class ChangePassword : System.Web.UI.Page
     {

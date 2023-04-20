@@ -15,7 +15,7 @@ using System.Text;
 using System.Net.Mail;
 using System.Net;
 
-namespace RexGlobe.Staff
+namespace RexLubs.Staff
 {
     public partial class Procurement : System.Web.UI.Page
     {
@@ -106,7 +106,7 @@ namespace RexGlobe.Staff
                 int portNumber = 587;
                 bool enableSSL = true;
                 string emailFrom = "RexGlobeNG@gmail.com";
-                string password = "RexGlobe@2020";
+                string password = "RexGlobe@2023";
                 using (SmtpClient smtp2 = new SmtpClient(smtpAddress, portNumber))
                 {
                     smtp2.Credentials = new NetworkCredential(emailFrom, password);
@@ -121,7 +121,7 @@ namespace RexGlobe.Staff
             con.Close();
 
             ASPxFormLayout1.ForEach(ClearItem);
-
+            ClearItem();
 
         }
 
@@ -143,6 +143,20 @@ namespace RexGlobe.Staff
         protected void ASPxFormLayout1_DataBound(object sender, EventArgs e)
         {
             ASPxFormLayout1.ForEach(ClearItem);
+        }
+
+        private void ClearItem()
+        {
+            RequestPerson.Value = string.Empty;
+            Procurement_Type.Value = string.Empty;
+            Description.Value = string.Empty;
+            Quantity.Value = string.Empty;
+            Amount.Value = string.Empty;
+            BudgetName.Value = string.Empty;
+            Department.Value = string.Empty;
+            FinancialMonth.Value = string.Empty;
+            FinancialYear.Value = string.Empty;
+            LocationName.Value = string.Empty;
         }
 
     }

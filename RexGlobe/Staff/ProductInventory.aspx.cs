@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace RexGlobe.Staff
+namespace RexLubs.Staff
 {
     public partial class ProductInventory : System.Web.UI.Page
     {
