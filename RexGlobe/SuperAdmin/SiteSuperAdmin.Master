@@ -159,8 +159,14 @@
                                             <li class="nav-item"><a runat="server" href="~/Staff/Procurement.aspx">Procurement</a></li>
                                              <li class="nav-item"><a runat="server" href="~/Staff/ManageProcurement.aspx">Manage Procurement</a></li>
                                         </ul>
-                                    </li>                           
-                                    <li class="nav-item"><a runat="server" href="~/Billing/Invoice.aspx" style="color: #FFFFFF; font-family: 'Calibri'">Print Invoice</a></li>
+                                    </li>      
+                                    <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Print Invoice<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <%--<li class="nav-item"><a runat="server" href="~/Billing/Invoice.aspx">Print Invoice</a></li>--%>
+                                            <li class="nav-item"><a runat="server" href="~/Billing/PrintInvoice.aspx"> Print Invoice</a></li>
+                                        </ul>
+                                    </li>                      
+                                    <%--<li class="nav-item"><a runat="server" href="~/Billing/Invoice.aspx" style="color: #FFFFFF; font-family: 'Calibri'">Print Invoice</a></li>--%>
                              </ul>
                   
                 </nav>

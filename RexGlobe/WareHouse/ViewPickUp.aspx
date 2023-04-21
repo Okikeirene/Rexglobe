@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WareHouse/SiteEngineer.Master" AutoEventWireup="true" CodeBehind="ViewPickUp.aspx.cs" Inherits="RexGlobe.WareHouse.ViewPickUp" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WareHouse/SiteEngineer.Master" AutoEventWireup="true" CodeBehind="ViewPickUp.aspx.cs" Inherits="RexLubs.WareHouse.ViewPickUp" %>
 
 
 

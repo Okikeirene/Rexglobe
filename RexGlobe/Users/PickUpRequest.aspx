@@ -1,8 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Users/UserSite.Master" AutoEventWireup="true" CodeBehind="PickUpRequest.aspx.cs" Inherits="RexLubs.Users.PickUpRequest" %>
+
+<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
-
+  
 
 <div class="panel panel-primary"> 
             <div class="panel-heading">Create PickUp Requests</div>

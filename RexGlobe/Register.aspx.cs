@@ -12,7 +12,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.IO;
 using System.Net.Mail;
-using RexGlobe;
+using RexLubs;
 using System.Net;
 
 namespace RexLubs

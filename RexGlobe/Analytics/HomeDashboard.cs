@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using DevExpress.DataAccess;
 using DevExpress.DashboardCommon;
 
-namespace RexGlobe
+namespace RexLubs
 {
     public partial class HomeDashboard : DevExpress.DashboardCommon.Dashboard
     {

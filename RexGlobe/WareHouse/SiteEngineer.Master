@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteEngineer.master.cs" Inherits="RexGlobe.WareHouse.SiteEngineer" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteEngineer.master.cs" Inherits="RexLubs.WareHouse.SiteEngineer" %>
 
 <!DOCTYPE html>
 

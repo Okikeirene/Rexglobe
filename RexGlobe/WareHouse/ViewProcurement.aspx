@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WareHouse/SiteEngineer.Master" AutoEventWireup="true" CodeBehind="ViewProcurement.aspx.cs" Inherits="RexGlobe.WareHouse.ViewProcurement" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WareHouse/SiteEngineer.Master" AutoEventWireup="true" CodeBehind="ViewProcurement.aspx.cs" Inherits="RexLubs.WareHouse.ViewProcurement" %>
 
 
 <%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>

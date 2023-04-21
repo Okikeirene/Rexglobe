@@ -255,6 +255,8 @@
     <Content Include="Billing\Invoice.aspx" />
     <Content Include="Billing\LubricantPayments.aspx" />
     <Content Include="Billing\Payments.aspx" />
+    <Content Include="Billing\Print.aspx" />
+    <Content Include="Billing\PrintInvoice.aspx" />
     <Content Include="ChangePassword.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -651,6 +653,23 @@
     </Compile>
     <Compile Include="Billing\Payments.aspx.designer.cs">
       <DependentUpon>Payments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\Print.aspx.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Billing\Print.aspx.designer.cs">
+      <DependentUpon>Print.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\PrintInvoice.aspx.cs">
+      <DependentUpon>PrintInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Billing\PrintInvoice.aspx.designer.cs">
+      <DependentUpon>PrintInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Billing\XtraReport1.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Booking.cs">
       <DependentUpon>RexLubsModel.tt</DependentUpon>

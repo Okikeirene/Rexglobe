@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexLubs.WareHouse {
+namespace RexLubs.Billing {
     
     
-    public partial class ManageWarehouse {
+    public partial class Print {
         
         /// <summary>
-        /// ASPxGridView1 control.
+        /// ASPxWebDocumentViewer1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
-        
-        /// <summary>
-        /// SqlWarehouse control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlWarehouse;
+        protected global::DevExpress.XtraReports.Web.ASPxWebDocumentViewer ASPxWebDocumentViewer1;
     }
 }

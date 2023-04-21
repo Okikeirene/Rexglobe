@@ -1,4 +1,4 @@
-﻿namespace RexGlobe
+﻿namespace RexLubs
 {
     partial class HomeDashboard
     {
@@ -35,20 +35,18 @@
             DevExpress.DashboardCommon.Measure measure2 = new DevExpress.DashboardCommon.Measure();
             DevExpress.DashboardCommon.Card card2 = new DevExpress.DashboardCommon.Card();
             DevExpress.DashboardCommon.CardStretchedLayoutTemplate cardStretchedLayoutTemplate2 = new DevExpress.DashboardCommon.CardStretchedLayoutTemplate();
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery2 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             DevExpress.DashboardCommon.Measure measure3 = new DevExpress.DashboardCommon.Measure();
             DevExpress.DashboardCommon.Card card3 = new DevExpress.DashboardCommon.Card();
             DevExpress.DashboardCommon.CardStretchedLayoutTemplate cardStretchedLayoutTemplate3 = new DevExpress.DashboardCommon.CardStretchedLayoutTemplate();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery2 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
+            DevExpress.DashboardCommon.Measure measure4 = new DevExpress.DashboardCommon.Measure();
+            DevExpress.DashboardCommon.Card card4 = new DevExpress.DashboardCommon.Card();
+            DevExpress.DashboardCommon.CardStretchedLayoutTemplate cardStretchedLayoutTemplate4 = new DevExpress.DashboardCommon.CardStretchedLayoutTemplate();
             DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery3 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery4 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeDashboard));
             DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery5 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery6 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery7 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
-            DevExpress.DashboardCommon.Measure measure4 = new DevExpress.DashboardCommon.Measure();
-            DevExpress.DashboardCommon.Card card4 = new DevExpress.DashboardCommon.Card();
-            DevExpress.DashboardCommon.CardStretchedLayoutTemplate cardStretchedLayoutTemplate4 = new DevExpress.DashboardCommon.CardStretchedLayoutTemplate();
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery8 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             DevExpress.DashboardCommon.DashboardLayoutGroup dashboardLayoutGroup1 = new DevExpress.DashboardCommon.DashboardLayoutGroup();
             DevExpress.DashboardCommon.DashboardLayoutGroup dashboardLayoutGroup2 = new DevExpress.DashboardCommon.DashboardLayoutGroup();
             DevExpress.DashboardCommon.DashboardLayoutItem dashboardLayoutItem1 = new DevExpress.DashboardCommon.DashboardLayoutItem();
@@ -58,31 +56,27 @@
             DevExpress.DashboardCommon.DashboardLayoutItem dashboardLayoutItem4 = new DevExpress.DashboardCommon.DashboardLayoutItem();
             this.cardDashboardApprovedPickUpRequests = new DevExpress.DashboardCommon.CardDashboardItem();
             this.dashboardSqlDataSource6 = new DevExpress.DashboardCommon.DashboardSqlDataSource();
+            this.cardDashboardTotalEarnings = new DevExpress.DashboardCommon.CardDashboardItem();
             this.cardDashboardRejectedPickUpRequests = new DevExpress.DashboardCommon.CardDashboardItem();
             this.dashboardSqlDataSource7 = new DevExpress.DashboardCommon.DashboardSqlDataSource();
             this.cardDashboardPendingOrders = new DevExpress.DashboardCommon.CardDashboardItem();
             this.dashboardSqlDataSource8 = new DevExpress.DashboardCommon.DashboardSqlDataSource();
             this.dashboardSqlDataSource4 = new DevExpress.DashboardCommon.DashboardSqlDataSource();
-            this.dashboardSqlDataSource1 = new DevExpress.DashboardCommon.DashboardSqlDataSource();
-            this.dashboardSqlDataSource3 = new DevExpress.DashboardCommon.DashboardSqlDataSource();
             this.dashboardSqlDataSource5 = new DevExpress.DashboardCommon.DashboardSqlDataSource();
-            this.cardDashboardTotalEarnings = new DevExpress.DashboardCommon.CardDashboardItem();
             this.dashboardSqlDataSource2 = new DevExpress.DashboardCommon.DashboardSqlDataSource();
             ((System.ComponentModel.ISupportInitialize)(this.cardDashboardApprovedPickUpRequests)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(measure1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardDashboardRejectedPickUpRequests)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardDashboardTotalEarnings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(measure2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardDashboardRejectedPickUpRequests)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(measure3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardDashboardPendingOrders)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(measure3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(measure4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardDashboardTotalEarnings)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(measure4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -133,9 +127,9 @@
     "lF1ZXJ5Ij48RmllbGQgTmFtZT0iQXBwcm92ZVBpY2tVcHJlcXVlc3QiIFR5cGU9IkludDMyIiAvPjwvV" +
     "mlldz48L0RhdGFTZXQ+";
             // 
-            // cardDashboardRejectedPickUpRequests
+            // cardDashboardTotalEarnings
             // 
-            measure2.DataMember = "RejectPickUpRequest";
+            measure2.DataMember = "Amount";
             cardStretchedLayoutTemplate2.BottomValue1.DimensionIndex = 0;
             cardStretchedLayoutTemplate2.BottomValue1.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.PercentVariation;
             cardStretchedLayoutTemplate2.BottomValue1.Visible = true;
@@ -154,12 +148,44 @@
             cardStretchedLayoutTemplate2.TopValue.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.ActualValue;
             cardStretchedLayoutTemplate2.TopValue.Visible = true;
             card2.LayoutTemplate = cardStretchedLayoutTemplate2;
+            card2.Name = "Total Earnings";
             card2.AddDataItem("ActualValue", measure2);
-            this.cardDashboardRejectedPickUpRequests.Cards.AddRange(new DevExpress.DashboardCommon.Card[] {
+            this.cardDashboardTotalEarnings.Cards.AddRange(new DevExpress.DashboardCommon.Card[] {
             card2});
+            this.cardDashboardTotalEarnings.ComponentName = "cardDashboardTotalEarnings";
+            this.cardDashboardTotalEarnings.DataItemRepository.Clear();
+            this.cardDashboardTotalEarnings.DataItemRepository.Add(measure2, "DataItem0");
+            this.cardDashboardTotalEarnings.InteractivityOptions.IgnoreMasterFilters = false;
+            this.cardDashboardTotalEarnings.Name = "Total Earnings";
+            this.cardDashboardTotalEarnings.ShowCaption = true;
+            // 
+            // cardDashboardRejectedPickUpRequests
+            // 
+            measure3.DataMember = "RejectPickUpRequest";
+            cardStretchedLayoutTemplate3.BottomValue1.DimensionIndex = 0;
+            cardStretchedLayoutTemplate3.BottomValue1.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.PercentVariation;
+            cardStretchedLayoutTemplate3.BottomValue1.Visible = true;
+            cardStretchedLayoutTemplate3.BottomValue2.DimensionIndex = 0;
+            cardStretchedLayoutTemplate3.BottomValue2.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.AbsoluteVariation;
+            cardStretchedLayoutTemplate3.BottomValue2.Visible = true;
+            cardStretchedLayoutTemplate3.DeltaIndicator.Visible = true;
+            cardStretchedLayoutTemplate3.MainValue.DimensionIndex = 0;
+            cardStretchedLayoutTemplate3.MainValue.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.Title;
+            cardStretchedLayoutTemplate3.MainValue.Visible = true;
+            cardStretchedLayoutTemplate3.Sparkline.Visible = true;
+            cardStretchedLayoutTemplate3.SubValue.DimensionIndex = 0;
+            cardStretchedLayoutTemplate3.SubValue.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.Subtitle;
+            cardStretchedLayoutTemplate3.SubValue.Visible = true;
+            cardStretchedLayoutTemplate3.TopValue.DimensionIndex = 0;
+            cardStretchedLayoutTemplate3.TopValue.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.ActualValue;
+            cardStretchedLayoutTemplate3.TopValue.Visible = true;
+            card3.LayoutTemplate = cardStretchedLayoutTemplate3;
+            card3.AddDataItem("ActualValue", measure3);
+            this.cardDashboardRejectedPickUpRequests.Cards.AddRange(new DevExpress.DashboardCommon.Card[] {
+            card3});
             this.cardDashboardRejectedPickUpRequests.ComponentName = "cardDashboardRejectedPickUpRequests";
             this.cardDashboardRejectedPickUpRequests.DataItemRepository.Clear();
-            this.cardDashboardRejectedPickUpRequests.DataItemRepository.Add(measure2, "DataItem0");
+            this.cardDashboardRejectedPickUpRequests.DataItemRepository.Add(measure3, "DataItem0");
             this.cardDashboardRejectedPickUpRequests.DataMember = "Query";
             this.cardDashboardRejectedPickUpRequests.DataSource = this.dashboardSqlDataSource7;
             this.cardDashboardRejectedPickUpRequests.InteractivityOptions.IgnoreMasterFilters = false;
@@ -182,31 +208,31 @@
             // 
             // cardDashboardPendingOrders
             // 
-            measure3.DataMember = "pending";
-            cardStretchedLayoutTemplate3.BottomValue1.DimensionIndex = 0;
-            cardStretchedLayoutTemplate3.BottomValue1.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.PercentVariation;
-            cardStretchedLayoutTemplate3.BottomValue1.Visible = true;
-            cardStretchedLayoutTemplate3.BottomValue2.DimensionIndex = 0;
-            cardStretchedLayoutTemplate3.BottomValue2.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.AbsoluteVariation;
-            cardStretchedLayoutTemplate3.BottomValue2.Visible = true;
-            cardStretchedLayoutTemplate3.DeltaIndicator.Visible = true;
-            cardStretchedLayoutTemplate3.MainValue.DimensionIndex = 0;
-            cardStretchedLayoutTemplate3.MainValue.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.Title;
-            cardStretchedLayoutTemplate3.MainValue.Visible = true;
-            cardStretchedLayoutTemplate3.Sparkline.Visible = true;
-            cardStretchedLayoutTemplate3.SubValue.DimensionIndex = 0;
-            cardStretchedLayoutTemplate3.SubValue.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.Subtitle;
-            cardStretchedLayoutTemplate3.SubValue.Visible = true;
-            cardStretchedLayoutTemplate3.TopValue.DimensionIndex = 0;
-            cardStretchedLayoutTemplate3.TopValue.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.ActualValue;
-            cardStretchedLayoutTemplate3.TopValue.Visible = true;
-            card3.LayoutTemplate = cardStretchedLayoutTemplate3;
-            card3.AddDataItem("ActualValue", measure3);
+            measure4.DataMember = "pending";
+            cardStretchedLayoutTemplate4.BottomValue1.DimensionIndex = 0;
+            cardStretchedLayoutTemplate4.BottomValue1.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.PercentVariation;
+            cardStretchedLayoutTemplate4.BottomValue1.Visible = true;
+            cardStretchedLayoutTemplate4.BottomValue2.DimensionIndex = 0;
+            cardStretchedLayoutTemplate4.BottomValue2.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.AbsoluteVariation;
+            cardStretchedLayoutTemplate4.BottomValue2.Visible = true;
+            cardStretchedLayoutTemplate4.DeltaIndicator.Visible = true;
+            cardStretchedLayoutTemplate4.MainValue.DimensionIndex = 0;
+            cardStretchedLayoutTemplate4.MainValue.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.Title;
+            cardStretchedLayoutTemplate4.MainValue.Visible = true;
+            cardStretchedLayoutTemplate4.Sparkline.Visible = true;
+            cardStretchedLayoutTemplate4.SubValue.DimensionIndex = 0;
+            cardStretchedLayoutTemplate4.SubValue.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.Subtitle;
+            cardStretchedLayoutTemplate4.SubValue.Visible = true;
+            cardStretchedLayoutTemplate4.TopValue.DimensionIndex = 0;
+            cardStretchedLayoutTemplate4.TopValue.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.ActualValue;
+            cardStretchedLayoutTemplate4.TopValue.Visible = true;
+            card4.LayoutTemplate = cardStretchedLayoutTemplate4;
+            card4.AddDataItem("ActualValue", measure4);
             this.cardDashboardPendingOrders.Cards.AddRange(new DevExpress.DashboardCommon.Card[] {
-            card3});
+            card4});
             this.cardDashboardPendingOrders.ComponentName = "cardDashboardPendingOrders";
             this.cardDashboardPendingOrders.DataItemRepository.Clear();
-            this.cardDashboardPendingOrders.DataItemRepository.Add(measure3, "DataItem0");
+            this.cardDashboardPendingOrders.DataItemRepository.Add(measure4, "DataItem0");
             this.cardDashboardPendingOrders.DataMember = "Query";
             this.cardDashboardPendingOrders.DataSource = this.dashboardSqlDataSource8;
             this.cardDashboardPendingOrders.InteractivityOptions.IgnoreMasterFilters = false;
@@ -237,89 +263,33 @@
             customSqlQuery4});
             this.dashboardSqlDataSource4.ResultSchemaSerializable = resources.GetString("dashboardSqlDataSource4.ResultSchemaSerializable");
             // 
-            // dashboardSqlDataSource1
-            // 
-            this.dashboardSqlDataSource1.ComponentName = "dashboardSqlDataSource1";
-            this.dashboardSqlDataSource1.ConnectionName = "RexGlobeDB";
-            this.dashboardSqlDataSource1.Name = "Customers";
-            customSqlQuery5.Name = "Query";
-            customSqlQuery5.Sql = resources.GetString("customSqlQuery5.Sql");
-            this.dashboardSqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery5});
-            this.dashboardSqlDataSource1.ResultSchemaSerializable = resources.GetString("dashboardSqlDataSource1.ResultSchemaSerializable");
-            // 
-            // dashboardSqlDataSource3
-            // 
-            this.dashboardSqlDataSource3.ComponentName = "dashboardSqlDataSource3";
-            this.dashboardSqlDataSource3.ConnectionName = "RexGlobeDB";
-            this.dashboardSqlDataSource3.Name = "Booking";
-            customSqlQuery6.Name = "Query";
-            customSqlQuery6.Sql = resources.GetString("customSqlQuery6.Sql");
-            this.dashboardSqlDataSource3.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery6});
-            this.dashboardSqlDataSource3.ResultSchemaSerializable = resources.GetString("dashboardSqlDataSource3.ResultSchemaSerializable");
-            // 
             // dashboardSqlDataSource5
             // 
             this.dashboardSqlDataSource5.ComponentName = "dashboardSqlDataSource5";
             this.dashboardSqlDataSource5.ConnectionName = "RexGlobeDB";
             this.dashboardSqlDataSource5.Name = "Trucks";
-            customSqlQuery7.Name = "Query";
-            customSqlQuery7.Sql = resources.GetString("customSqlQuery7.Sql");
+            customSqlQuery5.Name = "Query";
+            customSqlQuery5.Sql = resources.GetString("customSqlQuery5.Sql");
             this.dashboardSqlDataSource5.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery7});
+            customSqlQuery5});
             this.dashboardSqlDataSource5.ResultSchemaSerializable = resources.GetString("dashboardSqlDataSource5.ResultSchemaSerializable");
-            // 
-            // cardDashboardTotalEarnings
-            // 
-            measure4.DataMember = "Amount";
-            cardStretchedLayoutTemplate4.BottomValue1.DimensionIndex = 0;
-            cardStretchedLayoutTemplate4.BottomValue1.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.PercentVariation;
-            cardStretchedLayoutTemplate4.BottomValue1.Visible = true;
-            cardStretchedLayoutTemplate4.BottomValue2.DimensionIndex = 0;
-            cardStretchedLayoutTemplate4.BottomValue2.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.AbsoluteVariation;
-            cardStretchedLayoutTemplate4.BottomValue2.Visible = true;
-            cardStretchedLayoutTemplate4.DeltaIndicator.Visible = true;
-            cardStretchedLayoutTemplate4.MainValue.DimensionIndex = 0;
-            cardStretchedLayoutTemplate4.MainValue.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.Title;
-            cardStretchedLayoutTemplate4.MainValue.Visible = true;
-            cardStretchedLayoutTemplate4.Sparkline.Visible = true;
-            cardStretchedLayoutTemplate4.SubValue.DimensionIndex = 0;
-            cardStretchedLayoutTemplate4.SubValue.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.Subtitle;
-            cardStretchedLayoutTemplate4.SubValue.Visible = true;
-            cardStretchedLayoutTemplate4.TopValue.DimensionIndex = 0;
-            cardStretchedLayoutTemplate4.TopValue.ValueType = DevExpress.DashboardCommon.CardRowDataElementType.ActualValue;
-            cardStretchedLayoutTemplate4.TopValue.Visible = true;
-            card4.LayoutTemplate = cardStretchedLayoutTemplate4;
-            card4.Name = "Total Earnings";
-            card4.AddDataItem("ActualValue", measure4);
-            this.cardDashboardTotalEarnings.Cards.AddRange(new DevExpress.DashboardCommon.Card[] {
-            card4});
-            this.cardDashboardTotalEarnings.ComponentName = "cardDashboardTotalEarnings";
-            this.cardDashboardTotalEarnings.DataItemRepository.Clear();
-            this.cardDashboardTotalEarnings.DataItemRepository.Add(measure4, "DataItem0");
-            this.cardDashboardTotalEarnings.InteractivityOptions.IgnoreMasterFilters = false;
-            this.cardDashboardTotalEarnings.Name = "Total Earnings";
-            this.cardDashboardTotalEarnings.ShowCaption = true;
             // 
             // dashboardSqlDataSource2
             // 
             this.dashboardSqlDataSource2.ComponentName = "dashboardSqlDataSource2";
             this.dashboardSqlDataSource2.ConnectionName = "RexGlobeDB";
             this.dashboardSqlDataSource2.Name = "SQL Data Source 1";
-            customSqlQuery8.Name = "Query";
-            customSqlQuery8.Sql = "SELECT SUM([Amount]) AS TOTALAMOUNT FROM [RexGlobe].[dbo].[Payments] where [Creat" +
+            customSqlQuery6.Name = "Query";
+            customSqlQuery6.Sql = "SELECT SUM([Amount]) AS TOTALAMOUNT FROM [RexGlobe].[dbo].[Payments] where [Creat" +
     "edDate] = GETDATE();";
             this.dashboardSqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery8});
+            customSqlQuery6});
             this.dashboardSqlDataSource2.ResultSchemaSerializable = "PERhdGFTZXQgTmFtZT0iU1FMIERhdGEgU291cmNlIDEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgT" +
     "mFtZT0iVE9UQUxBTU9VTlQiIFR5cGU9IkRlY2ltYWwiIC8+PC9WaWV3PjwvRGF0YVNldD4=";
             // 
             // HomeDashboard
             // 
             this.DataSources.AddRange(new DevExpress.DashboardCommon.IDashboardDataSource[] {
-            this.dashboardSqlDataSource1,
-            this.dashboardSqlDataSource3,
             this.dashboardSqlDataSource4,
             this.dashboardSqlDataSource5,
             this.dashboardSqlDataSource6,
@@ -360,26 +330,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.cardDashboardApprovedPickUpRequests)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(measure2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardDashboardTotalEarnings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(measure3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardDashboardRejectedPickUpRequests)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(measure3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(measure4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardDashboardPendingOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(measure4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cardDashboardTotalEarnings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
 
         #endregion
-
-        private DevExpress.DashboardCommon.DashboardSqlDataSource dashboardSqlDataSource1;
-        private DevExpress.DashboardCommon.DashboardSqlDataSource dashboardSqlDataSource3;
         private DevExpress.DashboardCommon.DashboardSqlDataSource dashboardSqlDataSource4;
         private DevExpress.DashboardCommon.DashboardSqlDataSource dashboardSqlDataSource5;
         private DevExpress.DashboardCommon.CardDashboardItem cardDashboardApprovedPickUpRequests;

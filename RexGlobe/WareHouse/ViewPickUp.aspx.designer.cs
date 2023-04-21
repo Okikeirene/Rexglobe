@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexGlobe.WareHouse {
+namespace RexLubs.WareHouse {
     
     
     public partial class ViewPickUp {

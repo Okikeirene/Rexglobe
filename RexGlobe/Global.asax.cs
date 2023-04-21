@@ -8,7 +8,7 @@ using System.Web.Routing;
 using Microsoft.AspNet.FriendlyUrls;
 using System.Web.Optimization;
 using RexLubs;
-using RexGlobe;
+using RexLubs;
 
 namespace RexLubs
 {

@@ -567,8 +567,7 @@
      </asp:SqlDataSource>
 
 
-
-        <asp:EntityDataSource ID="esmdsRegisteredCompanies" runat="server" ConnectionString="name=RexLubsEntities" DefaultContainerName="RexLubsEntities" EntitySetName="Customers1" Include="BusinessName"  Where ="it.BusinessName = @BusinessName" OnSelecting="esmdsRegisteredCompanies_Selecting"  >
+        <asp:EntityDataSource ID="esmdsRegisteredCompanies" runat="server" ConnectionString="name=RexLubsEntities" DefaultContainerName="RexLubsEntities" EntitySetName="Customer1" Include="BusinessName"  Where ="it.BusinessName = @BusinessName" OnSelecting="esmdsRegisteredCompanies_Selecting"  >
         <WhereParameters>
             <asp:ControlParameter ControlID="ASPxFormLayout1$BusinessName" Name="BusinessName" PropertyName="Value" Type="String" />
         </WhereParameters>
@@ -585,7 +584,7 @@
                         <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlCustomers" KeyFieldName="ID" Width="100%" ClientInstanceName="mastergrid">
                                         <ClientSideEvents RowDblClick="function(s, e) 
                         {
-	                        mastergrid.GetRowValues(e.visibleIndex, 'BusinessName;Email;PhoneNumber;Address;State;', OnGetRCNo);
+	                        mastergrid.GetRowValues(e.visibleIndex, 'BusinessName;Email;PhoneNumber;Address;State;Country', OnGetRCNo);
                         }" />
                                         <Columns>
                                             <dx:GridViewDataTextColumn Caption="BusinessName" FieldName="BusinessName" ReadOnly="True"  VisibleIndex="0" Width="100px">

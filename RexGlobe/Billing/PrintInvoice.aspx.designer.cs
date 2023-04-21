@@ -7,10 +7,37 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexLubs.Staff {
+namespace RexLubs.Billing {
     
     
-    public partial class ViewPickUp {
+    public partial class PrintInvoice {
+        
+        /// <summary>
+        /// popup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxPopupControl popup;
+        
+        /// <summary>
+        /// callbackPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCallbackPanel callbackPanel;
+        
+        /// <summary>
+        /// ASPxWebDocumentViewer1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.XtraReports.Web.ASPxWebDocumentViewer ASPxWebDocumentViewer1;
         
         /// <summary>
         /// ASPxGridView1 control.
@@ -22,39 +49,12 @@ namespace RexLubs.Staff {
         protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
         
         /// <summary>
-        /// SqlStatus control.
+        /// PaymentReceipts control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlStatus;
-        
-        /// <summary>
-        /// SqlPickUp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlPickUp;
-        
-        /// <summary>
-        /// SqlProduct control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlProduct;
-        
-        /// <summary>
-        /// SqlState control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlState;
+        protected global::System.Web.UI.WebControls.SqlDataSource PaymentReceipts;
     }
 }

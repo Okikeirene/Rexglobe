@@ -8,7 +8,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 using DevExpress.Web;
-using RexGlobe;
+using RexLubs;
 
 namespace RexLubs.Staff
 {

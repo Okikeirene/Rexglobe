@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace RexGlobe.Users
+namespace RexLubs.Users
 {
     public partial class ViewProcurement : System.Web.UI.Page
     {

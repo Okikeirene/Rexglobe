@@ -13,31 +13,40 @@ namespace RexLubs.Billing {
     public partial class Invoice {
         
         /// <summary>
-        /// popup control.
+        /// ASPxbtnGenerate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl popup;
+        protected global::DevExpress.Web.ASPxButton ASPxbtnGenerate;
         
         /// <summary>
-        /// callbackPanel control.
+        /// Viewer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxCallbackPanel callbackPanel;
+        protected global::DevExpress.XtraReports.Web.ReportViewer Viewer;
         
         /// <summary>
-        /// ASPxWebDocumentViewer1 control.
+        /// visibleIndex control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.XtraReports.Web.ASPxWebDocumentViewer ASPxWebDocumentViewer1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden visibleIndex;
+        
+        /// <summary>
+        /// isPrint control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden isPrint;
         
         /// <summary>
         /// ASPxGridView1 control.
@@ -47,6 +56,15 @@ namespace RexLubs.Billing {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
+        
+        /// <summary>
+        /// btnPrint control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton btnPrint;
         
         /// <summary>
         /// PaymentReceipts control.

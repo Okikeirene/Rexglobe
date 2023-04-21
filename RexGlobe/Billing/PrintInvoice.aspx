@@ -1,7 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/SuperAdmin/SiteSuperAdmin.Master" AutoEventWireup="true" CodeBehind="Invoice.aspx.cs" Inherits="RexLubs.Billing.Invoice" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/SuperAdmin/SiteSuperAdmin.Master"  CodeBehind="PrintInvoice.aspx.cs" Inherits="RexLubs.Billing.PrintInvoice" %>
 
-
-<%@ Register Assembly="DevExpress.XtraReports.v18.1.Web.WebForms, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx" %>
 
 <%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 <%@ Register Assembly="DevExpress.XtraReports.v18.1.Web.WebForms, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx" %>
@@ -25,7 +23,7 @@
       
 
 </script>
-<%--<dx:ASPxPopupControl ID="popup" ClientInstanceName="popup" runat="server" AllowDragging="true"  PopupHorizontalAlign="Center" HeaderText="Add Product Request to Schedule" Width="800">
+<dx:ASPxPopupControl ID="popup" ClientInstanceName="popup" runat="server" AllowDragging="true"  PopupHorizontalAlign="Center" HeaderText="Add Product Request to Schedule" Width="800">
         <ContentCollection>
             <dx:PopupControlContentControl runat="server">
                 <dx:ASPxCallbackPanel ID="callbackPanel" ClientInstanceName="callbackPanel" runat="server" Width="1200px" Height="100px"  RenderMode="Table">
@@ -38,36 +36,15 @@
             </dx:PopupControlContentControl>
         </ContentCollection>
         <ClientSideEvents Shown="popup_Shown" />
-    </dx:ASPxPopupControl>--%>
-
-<dx:ASPxButton ID="ASPxbtnGenerate" runat="server" Text="Print Bulk Enforcement Letter"  ClientInstanceName="btnGenerate" OnClick="ASPxButtonSubmit_Click" CssClass="btn btn-primary"  HorizontalAlign="Center">
- </dx:ASPxButton>
-
-<div width="1" heigth="1">
-    <dx:reportviewer id="Viewer" runat="server" clientinstancename="Viewer" PrintUsingAdobePlugIn="true"></dx:reportviewer>
-</div>
-<input id="visibleIndex" type="hidden" runat ="server" />
-<input id="isPrint" type="hidden" runat="server" value="false" />
+    </dx:ASPxPopupControl>
 
 
-    
- <dx:ASPxGridView ID="ASPxGridView1"  ClientInstanceName="mastergrid" runat="server" AutoGenerateColumns="False" DataSourceID="PaymentReceipts" KeyFieldName="ID" Width="100%" CssFilePath="~/App_GlobalResourcesApp_Themes/PlasticBlue/{0}/styles.css" CssPostfix="PlasticBlue">
-     <SettingsAdaptivity>
-<AdaptiveDetailLayoutProperties ColCount="1"></AdaptiveDetailLayoutProperties>
-</SettingsAdaptivity>
 
-    <SettingsEditing Mode="PopupEditForm">
-        </SettingsEditing>
-        <Settings ShowFilterRow="True" />
+ <dx:ASPxGridView ID="ASPxGridView1"  ClientInstanceName="mastergrid" runat="server" AutoGenerateColumns="False" DataSourceID="PaymentReceipts" KeyFieldName="ID" Width="100%" OnCustomUnboundColumnData="ASPxgvPayments_CustomUnboundColumnData" OnStartRowEditing="ASPxgvPayments_StartRowEditing" >
 
-<EditFormLayoutProperties ColCount="1"></EditFormLayoutProperties>
         <Columns>
-         <dx:GridViewCommandColumn ButtonType="Button" Caption="Print" VisibleIndex="0">
-                <CustomButtons>
-                    <dx:GridViewCommandColumnCustomButton ID="btnPrint" Text="Print">
-                    </dx:GridViewCommandColumnCustomButton>
-                </CustomButtons>
-         </dx:GridViewCommandColumn>
+            <dx:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0" Width="30px" SelectAllCheckboxMode="AllPages">
+            </dx:GridViewCommandColumn>
              <dx:GridViewCommandColumn ShowApplyFilterButton="True" ShowClearFilterButton="True" VisibleIndex="18" Width="70px">
             </dx:GridViewCommandColumn>
             <dx:GridViewDataTextColumn Caption="ID" VisibleIndex="2" Width="50px" FieldName="SNo" UnboundType="Integer">
@@ -101,21 +78,17 @@
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataDateColumn FieldName="CreatedDate" VisibleIndex="16">
             </dx:GridViewDataDateColumn>
+            <dx:GridViewDataColumn Caption="View Schedule" VisibleIndex="17" Width="15%">
+               <DataItemTemplate>
+                    <a href="javascript:void(0);" onclick="OnMoreInfoClick(this, '<%# Container.KeyValue %>')">Print Receipt</a>
+                </DataItemTemplate>
+            </dx:GridViewDataColumn>
         </Columns>
-        <Styles CssFilePath="~/App_GlobalResourcesApp_Themes/PlasticBlue/{0}/styles.css" CssPostfix="PlasticBlue">
-                <Header ImageSpacing="5px" SortingImageSpacing="5px">
-                </Header>
-            </Styles>
-            <Images ImageFolder="~/App_GlobalResources/App_Themes/PlasticBlue/{0}/">
-                <FilterRowButton Height="13px" Width="13px" />
-            </Images>
-            <ClientSideEvents CustomButtonClick="function(s, e) {
-	if(e.buttonID == 'btnPrint'){
-		document.getElementById('visibleIndex').value = e.visibleIndex;
-		document.getElementById('isPrint').value = 'true';
-		Viewer.Print();
-	}
-}" />
+        <SettingsBehavior FilterRowMode="OnClick" AllowSelectByRowClick="True" ColumnResizeMode="Control" />
+        <SettingsPager ShowSeparators="True">
+        </SettingsPager>
+        <Settings EnableFilterControlPopupMenuScrolling="True" ShowFilterBar="Visible" ShowFilterRow="True" ShowFilterRowMenu="True" ShowFooter="True" />
+        <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
       
     </dx:ASPxGridView>
     <asp:SqlDataSource ID="PaymentReceipts" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID], [BusinessName], [State], [Country], [ProductName], [ProductType], [UnitPrice], [ProductQuantity], [Total_Amount], [SalesRepresentative], [PaymentTerms], [TrasactionType], [Status], [CreatedBy], [CreatedDate] FROM [ProductRequest]"></asp:SqlDataSource>

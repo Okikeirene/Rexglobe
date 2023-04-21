@@ -10,7 +10,7 @@
 namespace RexLubs.WareHouse {
     
     
-    public partial class ome {
+    public partial class Home {
         
         /// <summary>
         /// ASPxDashboardViewer3 control.

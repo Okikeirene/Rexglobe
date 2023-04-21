@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SuperAdmin/SiteSuperAdmin.Master" AutoEventWireup="true" CodeBehind="LubricantRequests.aspx.cs" Inherits="RexLubs.SuperAdmin.LubricantRequests" %>
 
+
 <%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 
@@ -7,7 +8,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server" >
-    <script type="text/javascript">
+    `1<script type="text/javascript">
         
         
 
@@ -558,16 +559,21 @@
 
     <asp:SqlDataSource ID="SqlPaymentTypes" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [PaymentID],[PaymentType],[PaymentChannel],[Payementerms] FROM [RexGlobe].[dbo].[PaymentTypes]">
     </asp:SqlDataSource>   
-   <asp:SqlDataSource ID="SqlCustomers" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID], [BusinessName], [TIN_Number], [DateOfBirth], [Email], [PhoneNumber], [Address], [State], [Country], [SalesRepresentative], [PaymentTerms], [TrasactionType], [DateofIncorporation], [TypeOfBusiness], [NextOfKinName], [NextOfKinPhone], [ContactPerson], [ContactPersonEmail], [ContactPersonGender], [ContactPersonPhoneNumber], [CreatedBy], [CreatedDate] FROM [Customers])">
-    </asp:SqlDataSource>
+   <%--<asp:SqlDataSource ID="SqlCustomers" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID], [BusinessName], [TIN_Number], [DateOfBirth], [Email], [PhoneNumber], [Address], [State], [Country], [SalesRepresentative], [PaymentTerms], [TrasactionType], [DateofIncorporation], [TypeOfBusiness], [NextOfKinName], [NextOfKinPhone], [ContactPerson], [ContactPersonEmail], [ContactPersonGender], [ContactPersonPhoneNumber], [CreatedBy], [CreatedDate] FROM [Customers] WHERE ([BusinessName] = @BusinessName)">
+       <SelectParameters>
+           <asp:FormParameter Control="ASPxFormLayout1$BusinessName" FormField="BusinessName" Name="BusinessName" Type="String" />
+       </SelectParameters>
+    </asp:SqlDataSource>--%>
+    <asp:SqlDataSource ID="SqlCustomers" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID], [BusinessName], [TIN_Number], [DateOfBirth], [Email], [PhoneNumber], [Address], [State], [Country], [SalesRepresentative], [PaymentTerms], [TrasactionType], [DateofIncorporation], [TypeOfBusiness], [NextOfKinName], [NextOfKinPhone], [ContactPerson], [ContactPersonEmail], [ContactPersonGender], [ContactPersonPhoneNumber], [CreatedBy], [CreatedDate] FROM [Customers] ">
+     </asp:SqlDataSource>
 
 
-
-   <asp:EntityDataSource ID="esmdsRegisteredCompanies" runat="server" ConnectionString="name=RexLubsEntities" DefaultContainerName="RexLubsEntities" EntitySetName="Customers1" Include="BusinessName"  Where ="it.BusinessName = @BusinessName" OnSelecting="esmdsRegisteredCompanies_Selecting"  >
+        <asp:EntityDataSource ID="esmdsRegisteredCompanies" runat="server" ConnectionString="name=RexLubsEntities" DefaultContainerName="RexLubsEntities" EntitySetName="Customer1" Include="BusinessName"  Where ="it.BusinessName = @BusinessName" OnSelecting="esmdsRegisteredCompanies_Selecting"  >
         <WhereParameters>
             <asp:ControlParameter ControlID="ASPxFormLayout1$BusinessName" Name="BusinessName" PropertyName="Value" Type="String" />
         </WhereParameters>
     </asp:EntityDataSource>
+
 
   
      <dx:ASPxPopupControl ID="ASPxPopupControl1" runat="server" ClientInstanceName="popup" Height="400px" Width="800px" AllowDragging="True" CloseAction="CloseButton" HeaderText="" Modal="True" PopupVerticalAlign="WindowCenter"  PopupElementID="ASPxFormLayout1$ASPxButtonEditRCNo">
@@ -579,7 +585,7 @@
                         <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlCustomers" KeyFieldName="ID" Width="100%" ClientInstanceName="mastergrid">
                                         <ClientSideEvents RowDblClick="function(s, e) 
                         {
-	                        mastergrid.GetRowValues(e.visibleIndex, 'BusinessName;Email;PhoneNumber;Address;State;', OnGetRCNo);
+	                        mastergrid.GetRowValues(e.visibleIndex, 'BusinessName;Email;PhoneNumber;Address;State;Country', OnGetRCNo);
                         }" />
                                         <Columns>
                                             <dx:GridViewDataTextColumn Caption="BusinessName" FieldName="BusinessName" ReadOnly="True"  VisibleIndex="0" Width="100px">
@@ -637,4 +643,5 @@
     </dx:ASPxPopupControl>
 
 </asp:Content>
+
 
