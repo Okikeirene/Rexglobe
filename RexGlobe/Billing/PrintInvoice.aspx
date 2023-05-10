@@ -1,13 +1,86 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/SuperAdmin/SiteSuperAdmin.Master"  CodeBehind="PrintInvoice.aspx.cs" Inherits="RexLubs.Billing.PrintInvoice" %>
 
 
-<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
-<%@ Register Assembly="DevExpress.XtraReports.v18.1.Web.WebForms, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.XtraReports.v18.1.Web.WebForms, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.XtraReports.Web" TagPrefix="dxxr" %>
+
+<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dxwgv" %>
+<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+    Namespace="DevExpress.Web" TagPrefix="dxe" %>
+
+<%--<%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
+<%@ Register Assembly="DevExpress.XtraReports.v18.1.Web.WebForms, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.XtraReports.Web" TagPrefix="dx" %>--%>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
-    <script>
+
+    <div>
+        <dxwgv:ASPxGridView ID="Grid" runat="server" DataSourceID="PaymentReceipts" AutoGenerateColumns="False" KeyFieldName="ID" CssFilePath="~/App_Themes/BlackGlass/{0}/styles.css" CssPostfix="BlackGlass">
+            <Columns>
+            <dxwgv:GridViewCommandColumn ButtonType="Button" Caption="Print" VisibleIndex="0">
+                <CustomButtons>
+                    <dxwgv:GridViewCommandColumnCustomButton ID="btnPrint" Text="Print">
+                    </dxwgv:GridViewCommandColumnCustomButton>
+                </CustomButtons>
+            </dxwgv:GridViewCommandColumn>
+                <dxwgv:GridViewDataTextColumn FieldName="ID" ReadOnly="True" VisibleIndex="1">
+                    <EditFormSettings Visible="False" />
+                </dxwgv:GridViewDataTextColumn>
+                <dxwgv:GridViewDataTextColumn FieldName="BusinessName" VisibleIndex="3">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="State" VisibleIndex="4">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="Country" VisibleIndex="5">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="ProductName" VisibleIndex="6">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="ProductType" VisibleIndex="7">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="UnitPrice" VisibleIndex="8">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="ProductQuantity" VisibleIndex="9">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="Total_Amount" VisibleIndex="10">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="SalesRepresentative" VisibleIndex="11">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="PaymentTerms" VisibleIndex="12">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="TrasactionType" VisibleIndex="13">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataTextColumn FieldName="Status" VisibleIndex="14">
+            </dxwgv:GridViewDataTextColumn>
+            <dxwgv:GridViewDataDateColumn FieldName="CreatedBy" VisibleIndex="15">
+            </dxwgv:GridViewDataDateColumn>
+            <%--<dxwgv:GridViewDataDateColumn FieldName="CreatedDate" VisibleIndex="16">
+                <PropertiesDateEdit DisplayFormatString="dd-MMM-yyyy HH:mm:ss"> </PropertiesDateEdit>
+            </dxwgv:GridViewDataDateColumn>--%>
+                
+            </Columns>
+            <Styles CssFilePath="~/App_Themes/BlackGlass/{0}/styles.css" CssPostfix="BlackGlass">
+                <Header ImageSpacing="5px" SortingImageSpacing="5px">
+                </Header>
+            </Styles>
+            <Images ImageFolder="~/App_Themes/BlackGlass/{0}/">
+                <FilterRowButton Height="13px" Width="13px" />
+            </Images>
+            <ClientSideEvents CustomButtonClick="function(s, e) {
+	if(e.buttonID == 'btnPrint'){
+		document.getElementById('visibleIndex').value = e.visibleIndex;
+		document.getElementById('isPrint').value = 'true';
+		Viewer.Print();
+	}
+}" />
+        </dxwgv:ASPxGridView>
+        <div width="1" heigth="1">
+            <dxxr:reportviewer id="Viewer" runat="server" clientinstancename="Viewer" PrintUsingAdobePlugIn="true"></dxxr:reportviewer>
+        </div>
+    </div>
+        <input id="visibleIndex" type="hidden" runat ="server" />
+        <input id="isPrint" type="hidden" runat="server" value="true" />
+<%--    <script>
         
 
         var keyValue;
@@ -36,11 +109,11 @@
             </dx:PopupControlContentControl>
         </ContentCollection>
         <ClientSideEvents Shown="popup_Shown" />
-    </dx:ASPxPopupControl>
+    </dx:ASPxPopupControl>--%>
 
 
 
- <dx:ASPxGridView ID="ASPxGridView1"  ClientInstanceName="mastergrid" runat="server" AutoGenerateColumns="False" DataSourceID="PaymentReceipts" KeyFieldName="ID" Width="100%" OnCustomUnboundColumnData="ASPxgvPayments_CustomUnboundColumnData" OnStartRowEditing="ASPxgvPayments_StartRowEditing" >
+<%-- <dx:ASPxGridView ID="ASPxGridView1"  ClientInstanceName="mastergrid" runat="server" AutoGenerateColumns="False" DataSourceID="PaymentReceipts" KeyFieldName="ID" Width="100%" OnCustomUnboundColumnData="ASPxgvPayments_CustomUnboundColumnData" OnStartRowEditing="ASPxgvPayments_StartRowEditing" >
 
         <Columns>
             <dx:GridViewCommandColumn ShowSelectCheckbox="True" VisibleIndex="0" Width="30px" SelectAllCheckboxMode="AllPages">
@@ -90,7 +163,7 @@
         <Settings EnableFilterControlPopupMenuScrolling="True" ShowFilterBar="Visible" ShowFilterRow="True" ShowFilterRowMenu="True" ShowFooter="True" />
         <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
       
-    </dx:ASPxGridView>
+    </dx:ASPxGridView>--%>
     <asp:SqlDataSource ID="PaymentReceipts" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID], [BusinessName], [State], [Country], [ProductName], [ProductType], [UnitPrice], [ProductQuantity], [Total_Amount], [SalesRepresentative], [PaymentTerms], [TrasactionType], [Status], [CreatedBy], [CreatedDate] FROM [ProductRequest]"></asp:SqlDataSource>
     
 

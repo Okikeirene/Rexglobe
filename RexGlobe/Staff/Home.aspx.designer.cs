@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexLubs.SuperAdmin {
+namespace RexLubs.Staff {
     
     
     public partial class Home {

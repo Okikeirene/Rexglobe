@@ -41,7 +41,7 @@
             <dx:GridViewDataTextColumn Caption="Location" FieldName="LocationName" VisibleIndex="11">
             </dx:GridViewDataTextColumn>
             <dx:GridViewDataComboBoxColumn Caption="Compliance" FieldName="Compliance"   VisibleIndex="12">
-            <PropertiesComboBox DataSourceID="SqlProcurementDescritpion" TextField="Response"  ValueField="Response" >                                                     
+            <PropertiesComboBox DataSourceID="SqlProcurmentDescription" TextField="Response"  ValueField="Response" >                                                     
                                                     
             <ValidationSettings CausesValidation="True" ErrorDisplayMode="ImageWithText">                                                   
                        
@@ -53,7 +53,7 @@
             <EditFormSettings CaptionLocation="Top" />
             </dx:GridViewDataComboBoxColumn>
             <dx:GridViewDataComboBoxColumn Caption="Head Of Operations" FieldName="HeadOfOperations"   VisibleIndex="13">
-            <PropertiesComboBox DataSourceID="SqlProcurementDescritpion" TextField="Response"  ValueField="Response" >                                                     
+            <PropertiesComboBox DataSourceID="SqlProcurmentDescription" TextField="Response"  ValueField="Response" >                                                     
                                                     
             <ValidationSettings CausesValidation="True" ErrorDisplayMode="ImageWithText">                                                   
                        
@@ -65,7 +65,7 @@
             <EditFormSettings CaptionLocation="Top" />
             </dx:GridViewDataComboBoxColumn>
             <dx:GridViewDataComboBoxColumn Caption="Head Of Finance" FieldName="HeadOfFinance"   VisibleIndex="14">
-            <PropertiesComboBox DataSourceID="SqlProcurementDescritpion" TextField="Response"  ValueField="Response" >                                                     
+            <PropertiesComboBox DataSourceID="SqlProcurmentDescription" TextField="Response"  ValueField="Response" >                                                     
                                                     
             <ValidationSettings CausesValidation="True" ErrorDisplayMode="ImageWithText">                                                   
                        

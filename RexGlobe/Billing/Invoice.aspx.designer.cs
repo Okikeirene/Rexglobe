@@ -13,6 +13,33 @@ namespace RexLubs.Billing {
     public partial class Invoice {
         
         /// <summary>
+        /// popup control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxPopupControl popup;
+        
+        /// <summary>
+        /// callbackPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxCallbackPanel callbackPanel;
+        
+        /// <summary>
+        /// ASPxWebDocumentViewer1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.XtraReports.Web.ASPxWebDocumentViewer ASPxWebDocumentViewer1;
+        
+        /// <summary>
         /// ASPxbtnGenerate control.
         /// </summary>
         /// <remarks>
@@ -20,33 +47,6 @@ namespace RexLubs.Billing {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton ASPxbtnGenerate;
-        
-        /// <summary>
-        /// Viewer control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.XtraReports.Web.ReportViewer Viewer;
-        
-        /// <summary>
-        /// visibleIndex control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden visibleIndex;
-        
-        /// <summary>
-        /// isPrint control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden isPrint;
         
         /// <summary>
         /// ASPxGridView1 control.

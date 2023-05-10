@@ -114,95 +114,101 @@ namespace RexLubs
 
         protected void btnregister_Click(object sender, EventArgs e)
         {
-          
-            string _username = Username.Value;
-            string _password = txtPassword.Text;
-            string _email = Email.Value;
-            string _phonenumber = PhoneNumber.Value;
-
-
-            string RexGlobeCS = ConfigurationManager.ConnectionStrings["RexGlobeDB"].ConnectionString;
-            
-            SqlConnection con = new SqlConnection(RexGlobeCS);
-            
-            con.Open();
-            string query = "CreateCustomer";
-            SqlCommand cmd = new SqlCommand(query, con);
-
-            cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = Username.Value;
-            cmd.Parameters.Add("@PasswordHash", SqlDbType.VarChar).Value = GeneratePasswordHash(_password, _username);
-            cmd.Parameters.Add("@Salt", SqlDbType.VarChar).Value = GenerateSalt(_password); 
-            cmd.Parameters.Add("@CompanyName", SqlDbType.VarChar).Value = CompanyName.Value;
-            cmd.Parameters.Add("@FirstName", SqlDbType.VarChar).Value = FirstName.Value;
-            cmd.Parameters.Add("@MiddleName", SqlDbType.VarChar).Value = MiddleName.Value;
-            cmd.Parameters.Add("@LastName", SqlDbType.VarChar).Value = LastName.Value;
-            cmd.Parameters.Add("@PhoneNumber", SqlDbType.VarChar).Value = PhoneNumber.Value;
-            cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = Email.Value;
-            cmd.Parameters.Add("@StateID", SqlDbType.VarChar).Value = DDLState.SelectedValue; 
-            cmd.Parameters.Add("@CountryID", SqlDbType.VarChar).Value = Country.Value;
-
-            var returnParam = cmd.Parameters.Add("@REXID", SqlDbType.VarChar, 50); 
-            returnParam.Direction = ParameterDirection.Output;
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.ExecuteNonQuery();
-            var result = returnParam.Value.ToString();
-
-            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registration was Successful.')", true);
-            Response.Redirect("~/Login.aspx");
-            
-       
-            try
+            if (context.UserAccounts.Any(u => u.UserName == Username.Value))
             {
-                string body;
-                //Read template file from the Util folder
-                using (var sr = new StreamReader(System.Web.HttpContext.Current.Server.MapPath("~/Util/CreatePassword.html")))
-                {
-                    body = sr.ReadToEnd();
-                }
-                string APPURL = ConfigurationManager.AppSettings["APPURL"];
-                string msgBody = string.Format(body, result, _username, _username, APPURL);
-                MailMessage msg = new MailMessage(new MailAddress(ConfigurationManager.AppSettings["UserName"], "RexGlobe Administrator"), new MailAddress(_email));
-                msg.Subject = "RexGlobe Management System - User Registration Creation : " + _username + "";
-                msg.Body = msgBody;
-                msg.IsBodyHtml = true;
-
-                SmtpClient smtp = new SmtpClient();
-                smtp.Host = ConfigurationManager.AppSettings["Host"];
-                smtp.EnableSsl = Convert.ToBoolean(ConfigurationManager.AppSettings["EnableSsl"]);
-                System.Net.NetworkCredential NetworkCred = new System.Net.NetworkCredential();
-                NetworkCred.UserName = ConfigurationManager.AppSettings["UserName"]; //reading from web.config  
-                NetworkCred.Password = ConfigurationManager.AppSettings["Password"]; //reading from web.config  
-                smtp.UseDefaultCredentials = true;
-                smtp.Credentials = NetworkCred;
-                smtp.Port = int.Parse(ConfigurationManager.AppSettings["Port"]); //reading from web.config  
-                smtp.Send(msg);
-                string smtpAddress = "smtp.gmail.com";
-                int portNumber = 587;
-                bool enableSSL = true;
-                string emailFrom = "RexGlobeNG@gmail.com";
-                string password = "RexGlobe@2020";
-                using (SmtpClient smtp2 = new SmtpClient(smtpAddress, portNumber))
-                {
-                    smtp2.Credentials = new NetworkCredential(emailFrom, password);
-                    smtp2.EnableSsl = enableSSL;
-                    smtp2.Send(msg);
-                }
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('UserName Already Exist!!.Kindly enter another Unique UserName.')", true);
             }
-            catch (Exception ex)
+            else
             {
-                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Email for Personal Creation was not Successfully sent.')", true);
-            }
-            con.Close();
+                string _username = Username.Value;
+                string _password = txtPassword.Text;
+                string _email = Email.Value;
+                string _phonenumber = PhoneNumber.Value;
 
-            ClearItem();
-            //if (dt.Rows.Count > 0)
-            //{
-            //    Response.Redirect("Login.aspx");
-            //}
-            //else
-            //{
-            //    Literal1.Text = "Registion was not successful";
-            //}
+
+                string RexGlobeCS = ConfigurationManager.ConnectionStrings["RexGlobeDB"].ConnectionString;
+
+                SqlConnection con = new SqlConnection(RexGlobeCS);
+
+                con.Open();
+                string query = "CreateCustomer";
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = Username.Value;
+                cmd.Parameters.Add("@PasswordHash", SqlDbType.VarChar).Value = GeneratePasswordHash(_password, _username);
+                cmd.Parameters.Add("@Salt", SqlDbType.VarChar).Value = GenerateSalt(_password);
+                cmd.Parameters.Add("@CompanyName", SqlDbType.VarChar).Value = CompanyName.Value;
+                cmd.Parameters.Add("@FirstName", SqlDbType.VarChar).Value = FirstName.Value;
+                cmd.Parameters.Add("@MiddleName", SqlDbType.VarChar).Value = MiddleName.Value;
+                cmd.Parameters.Add("@LastName", SqlDbType.VarChar).Value = LastName.Value;
+                cmd.Parameters.Add("@PhoneNumber", SqlDbType.VarChar).Value = PhoneNumber.Value;
+                cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = Email.Value;
+                cmd.Parameters.Add("@StateID", SqlDbType.VarChar).Value = DDLState.SelectedValue;
+                cmd.Parameters.Add("@CountryID", SqlDbType.VarChar).Value = Country.Value;
+
+                var returnParam = cmd.Parameters.Add("@REXID", SqlDbType.VarChar, 50);
+                returnParam.Direction = ParameterDirection.Output;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+                var result = returnParam.Value.ToString();
+
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Registration was Successful.')", true);
+                Response.Redirect("~/Login.aspx");
+
+
+                try
+                {
+                    string body;
+                    //Read template file from the Util folder
+                    using (var sr = new StreamReader(System.Web.HttpContext.Current.Server.MapPath("~/Util/CreatePassword.html")))
+                    {
+                        body = sr.ReadToEnd();
+                    }
+                    string APPURL = ConfigurationManager.AppSettings["APPURL"];
+                    string msgBody = string.Format(body, result, _username, _username, APPURL);
+                    MailMessage msg = new MailMessage(new MailAddress(ConfigurationManager.AppSettings["UserName"], "RexGlobe Administrator"), new MailAddress(_email));
+                    msg.Subject = "RexGlobe Management System - User Registration Creation : " + _username + "";
+                    msg.Body = msgBody;
+                    msg.IsBodyHtml = true;
+
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.Host = ConfigurationManager.AppSettings["Host"];
+                    smtp.EnableSsl = Convert.ToBoolean(ConfigurationManager.AppSettings["EnableSsl"]);
+                    System.Net.NetworkCredential NetworkCred = new System.Net.NetworkCredential();
+                    NetworkCred.UserName = ConfigurationManager.AppSettings["UserName"]; //reading from web.config  
+                    NetworkCred.Password = ConfigurationManager.AppSettings["Password"]; //reading from web.config  
+                    smtp.UseDefaultCredentials = true;
+                    smtp.Credentials = NetworkCred;
+                    smtp.Port = int.Parse(ConfigurationManager.AppSettings["Port"]); //reading from web.config  
+                    smtp.Send(msg);
+                    string smtpAddress = "smtp.gmail.com";
+                    int portNumber = 587;
+                    bool enableSSL = true;
+                    string emailFrom = "RexGlobeNG@gmail.com";
+                    string password = "RexGlobe@2020";
+                    using (SmtpClient smtp2 = new SmtpClient(smtpAddress, portNumber))
+                    {
+                        smtp2.Credentials = new NetworkCredential(emailFrom, password);
+                        smtp2.EnableSsl = enableSSL;
+                        smtp2.Send(msg);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Email for Personal Creation was not Successfully sent.')", true);
+                }
+                con.Close();
+
+                ClearItem();
+                //if (dt.Rows.Count > 0)
+                //{
+                //    Response.Redirect("Login.aspx");
+                //}
+                //else
+                //{
+                //    Literal1.Text = "Registion was not successful";
+                //}
+            }
         }
 
         private void ClearItem()

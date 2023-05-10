@@ -124,8 +124,8 @@
                                     <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Products<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
                                             <li class="nav-item"><a runat="server" href="~/Staff/Products.aspx">Product Types</a></li>
-                                            <li class="nav-item"><a runat="server" href="~/Staff/ProductInventory.aspx">Product Inventory</a></li>
-                                            <li class="nav-item"><a runat="server" href="~/Staff/View Approvals.aspx">View Approvals</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Staff/ViewProductInventory.aspx">View Product Inventory</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Staff/ViewApprovals.aspx">View Approvals</a></li>
                                         </ul>
                                     </li> 
                                     <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Procurement<b class="caret"></b></a>

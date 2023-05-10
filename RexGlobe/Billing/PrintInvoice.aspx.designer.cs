@@ -13,40 +13,49 @@ namespace RexLubs.Billing {
     public partial class PrintInvoice {
         
         /// <summary>
-        /// popup control.
+        /// Grid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl popup;
+        protected global::DevExpress.Web.ASPxGridView Grid;
         
         /// <summary>
-        /// callbackPanel control.
+        /// btnPrint control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxCallbackPanel callbackPanel;
+        protected global::DevExpress.Web.GridViewCommandColumnCustomButton btnPrint;
         
         /// <summary>
-        /// ASPxWebDocumentViewer1 control.
+        /// Viewer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.XtraReports.Web.ASPxWebDocumentViewer ASPxWebDocumentViewer1;
+        protected global::DevExpress.XtraReports.Web.ReportViewer Viewer;
         
         /// <summary>
-        /// ASPxGridView1 control.
+        /// visibleIndex control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden visibleIndex;
+        
+        /// <summary>
+        /// isPrint control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden isPrint;
         
         /// <summary>
         /// PaymentReceipts control.

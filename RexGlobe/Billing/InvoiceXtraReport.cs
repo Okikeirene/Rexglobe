@@ -88,6 +88,7 @@ public class InvoiceXtraReport : DevExpress.XtraReports.UI.XtraReport
     /// Required designer variable.
     /// </summary>
     private System.ComponentModel.IContainer components = null;
+    private int catID;
 
     public InvoiceXtraReport()
     {
@@ -95,6 +96,11 @@ public class InvoiceXtraReport : DevExpress.XtraReports.UI.XtraReport
         //
         // TODO: Add constructor logic here
         //
+    }
+
+    public InvoiceXtraReport(int catID)
+    {
+        this.catID = catID;
     }
 
     /// <summary> 

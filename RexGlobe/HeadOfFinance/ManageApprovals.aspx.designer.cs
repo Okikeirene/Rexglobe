@@ -7,27 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexLubs.SuperAdmin {
+namespace RexLubs.HeadOfFinance {
     
     
-    public partial class Home {
+    public partial class ManageApprovals {
         
         /// <summary>
-        /// ASPxDashboardViewer2 control.
+        /// ASPxGridView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.DashboardWeb.ASPxDashboardViewer ASPxDashboardViewer2;
+        protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
         
         /// <summary>
-        /// ASPxLoadingPanel1 control.
+        /// SqlApproval control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLoadingPanel ASPxLoadingPanel1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlApproval;
+        
+        /// <summary>
+        /// SqlProcurementDescritpion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlProcurementDescritpion;
     }
 }

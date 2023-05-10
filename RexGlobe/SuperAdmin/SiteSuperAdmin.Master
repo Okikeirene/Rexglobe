@@ -106,10 +106,10 @@
                                     </li>
                                     <li class="nav-item"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: #FFFFFF; font-family: 'Calibri'" >Booking<span class="caret"></span></a>
                                         <ul class="dropdown-menu">
-                                            <li class="nav-item"><a runat="server" href="~/Customers/BookingRequests.aspx" >Base Oil Requests</a></li>
+                                            <%-- <li class="nav-item"><a runat="server" href="~/Customers/BookingRequests.aspx" >Base Oil Requests</a></li>--%>
                                             <li class="nav-item"><a runat="server" href="~/Customers/LubricantRequests.aspx">New Lubricant Request</a></li>
                                             <li class="nav-item"><a runat="server" href="~/Customers/ManageLubricantBooking.aspx">Manage Lubricant Request</a></li>
-                                            <li class="nav-item"><a runat="server" href="~/Customers/ManageBooking.aspx">Manage Base Oil Requests</a></li>
+                                            <%-- <li class="nav-item"><a runat="server" href="~/Customers/ManageBooking.aspx">Manage Base Oil Requests</a></li>--%>
                                         </ul>
                                       </li>  
                                     <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Truck Details<b class="caret"></b></a>
@@ -162,7 +162,7 @@
                                     </li>      
                                     <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Print Invoice<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <%--<li class="nav-item"><a runat="server" href="~/Billing/Invoice.aspx">Print Invoice</a></li>--%>
+                                            <li class="nav-item"><a runat="server" href="~/Billing/Invoice.aspx">Print Invoice</a></li>
                                             <li class="nav-item"><a runat="server" href="~/Billing/PrintInvoice.aspx"> Print Invoice</a></li>
                                         </ul>
                                     </li>                      

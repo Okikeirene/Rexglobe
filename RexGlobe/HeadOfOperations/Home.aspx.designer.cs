@@ -13,21 +13,21 @@ namespace RexLubs.HeadOfOperations {
     public partial class Home {
         
         /// <summary>
-        /// ASPxDashboardViewer3 control.
+        /// ASPxDashboardViewer2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.DashboardWeb.ASPxDashboardViewer ASPxDashboardViewer3;
+        protected global::DevExpress.DashboardWeb.ASPxDashboardViewer ASPxDashboardViewer2;
         
         /// <summary>
-        /// ASPxLoadingPanel2 control.
+        /// ASPxLoadingPanel1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxLoadingPanel ASPxLoadingPanel2;
+        protected global::DevExpress.Web.ASPxLoadingPanel ASPxLoadingPanel1;
     }
 }

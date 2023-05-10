@@ -9,13 +9,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-<dx:ASPxDashboardViewer ID="ASPxDashboardViewer3" runat="server" DashboardSource="RexGlobe.HomeDashboard" ClientInstanceName="dashboardViewer" RegisterJQuery="True" AllowExportDashboardItems="True" Width="100%" Height="600px" OnConfigureDataConnection="ASPxDashboardViewer1_ConfigureDataConnection" DisableHttpHandlerValidation="False">
+<%--<dx:ASPxDashboardViewer ID="ASPxDashboardViewer3" runat="server" DashboardSource="RexLubs.Analytics.HomeDashboard" ClientInstanceName="dashboardViewer" RegisterJQuery="True" AllowExportDashboardItems="True" Width="100%" Height="600px" OnConfigureDataConnection="ASPxDashboardViewer1_ConfigureDataConnection" DisableHttpHandlerValidation="False">
 </dx:ASPxDashboardViewer>
     
 <dx:ASPxLoadingPanel ID="ASPxLoadingPanel2" runat="server" ClientInstanceName="LoadingPanel" ContainerElementID="ASPxDashboardViewer3">
-</dx:ASPxLoadingPanel>
+</dx:ASPxLoadingPanel>--%>
 
-<dx:ASPxDashboardViewer ID="ASPxDashboardViewer2" runat="server" DashboardSource="RexGlobe.Analytics.BusinessIntelligent" ClientInstanceName="dashboardViewer" RegisterJQuery="True" AllowExportDashboardItems="True" Width="100%" Height="600px" OnConfigureDataConnection="ASPxDashboardViewer1_ConfigureDataConnection">
+<dx:ASPxDashboardViewer ID="ASPxDashboardViewer2" runat="server" DashboardSource="RexLubs.Analytics.BusinessIntelligent" ClientInstanceName="dashboardViewer" RegisterJQuery="True" AllowExportDashboardItems="True" Width="100%" Height="600px" OnConfigureDataConnection="ASPxDashboardViewer1_ConfigureDataConnection">
 </dx:ASPxDashboardViewer>
                                            
 <dx:ASPxLoadingPanel ID="ASPxLoadingPanel1" runat="server" ClientInstanceName="LoadingPanel" ContainerElementID="ASPxDashboardViewer2">

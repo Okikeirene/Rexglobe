@@ -60,7 +60,7 @@ namespace RexLubs
                     Session["Email"] = _user.Email;
                     Session["FirstName"] = _user.FirstName;
                     Session["LastName"] = _user.LastName;
-                    Response.Redirect("~/Operations/Home.aspx");
+                    Response.Redirect("~/HeadOfOperations/Home.aspx");
                 }
                 if (_user.RoleId == 3) //Customer
                 {
@@ -83,7 +83,7 @@ namespace RexLubs
                     Session["Email"] = _user.Email;
                     Session["FirstName"] = _user.FirstName;
                     Session["LastName"] = _user.LastName;
-                    Response.Redirect("~/Engineer/Home.aspx");
+                    Response.Redirect("~/HeadOfFinance/Home.aspx");
                 }
                 if (_user.RoleId == 5) //Legal
                 {

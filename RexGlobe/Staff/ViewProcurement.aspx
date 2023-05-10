@@ -7,7 +7,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
 
-    <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlProcurement" KeyFieldName="ID">
+    <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlProcurement" KeyFieldName="ID" Width="100%">
         <SettingsAdaptivity>
             <AdaptiveDetailLayoutProperties ColCount="1">
             </AdaptiveDetailLayoutProperties>

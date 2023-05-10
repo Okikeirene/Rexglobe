@@ -207,7 +207,7 @@
             dimension7});
             this.pieDashboardItem1.ComponentName = "pieDashboardItem1";
             measure5.DataMember = "Amount";
-            dimension8.DataMember = "ProductName";
+            dimension8.DataMember = "CreatedDate";
             this.pieDashboardItem1.DataItemRepository.Clear();
             this.pieDashboardItem1.DataItemRepository.Add(measure5, "DataItem0");
             this.pieDashboardItem1.DataItemRepository.Add(dimension7, "DataItem1");

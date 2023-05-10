@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace RexLubs.Users
+namespace RexLubs.Staff
 {
     public partial class Home : System.Web.UI.Page
     {

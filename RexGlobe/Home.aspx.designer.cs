@@ -13,24 +13,6 @@ namespace RexLubs {
     public partial class Home {
         
         /// <summary>
-        /// ASPxDashboardViewer3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.DashboardWeb.ASPxDashboardViewer ASPxDashboardViewer3;
-        
-        /// <summary>
-        /// ASPxLoadingPanel2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxLoadingPanel ASPxLoadingPanel2;
-        
-        /// <summary>
         /// ASPxDashboardViewer2 control.
         /// </summary>
         /// <remarks>
