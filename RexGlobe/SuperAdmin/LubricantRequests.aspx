@@ -8,7 +8,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server" >
-    `1<script type="text/javascript">
+<script type="text/javascript">
         
         
 

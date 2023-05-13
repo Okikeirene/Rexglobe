@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Customer.Master" AutoEventWireup="true" CodeBehind="LubricantRequests.aspx.cs" Inherits="RexLubs.Customers.LubricantRequests" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Staff/Staff.Master" AutoEventWireup="true" CodeBehind="LubricantRequests.aspx.cs" Inherits="RexLubs.Staff.LubricantRequests" %>
+
 
 <%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
