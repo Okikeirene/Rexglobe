@@ -17,23 +17,22 @@
 <EditFormLayoutProperties ColCount="1"></EditFormLayoutProperties>
     <Columns>
 
-        <dx:GridViewCommandColumn VisibleIndex="0">
-        </dx:GridViewCommandColumn>
-
-        <dx:GridViewDataTextColumn FieldName="ID" VisibleIndex="1" ReadOnly="True">
+        <dx:GridViewDataTextColumn FieldName="ID" VisibleIndex="0" ReadOnly="True">
             <EditFormSettings Visible="False" />
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="ProductCode" VisibleIndex="2">
+        <dx:GridViewDataTextColumn FieldName="ProductCode" VisibleIndex="1">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="ProductName" VisibleIndex="3">
+        <dx:GridViewDataTextColumn FieldName="ProductName" VisibleIndex="2">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="ProductDescription" VisibleIndex="4">
+        <dx:GridViewDataTextColumn FieldName="ProductDescription" VisibleIndex="3">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="UnitPrice" VisibleIndex="5">
+        <dx:GridViewDataTextColumn FieldName="UnitPrice" VisibleIndex="4">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Units_Price_In_Carton" VisibleIndex="6">
+        <dx:GridViewDataTextColumn FieldName="Units_Price_In_Carton" VisibleIndex="5">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Units_In_Store" VisibleIndex="7">
+        <dx:GridViewDataTextColumn FieldName="Pieces_In_Store" VisibleIndex="6">
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataTextColumn FieldName="Cartons_In_Store" VisibleIndex="7">
         </dx:GridViewDataTextColumn>
         <dx:GridViewDataTextColumn FieldName="Location" VisibleIndex="8">
         </dx:GridViewDataTextColumn>
@@ -47,32 +46,6 @@
     <br />
     <br />
 
-    <asp:SqlDataSource ID="SqlProductDescription" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [ProductDescription] WHERE [ID] = @ID" InsertCommand="INSERT INTO [ProductDescription] ([ProductCode], [ProductName], [ProductDescription], [UnitPrice], [Units_Price_In_Carton], [Units_In_Store], [Location], [CreateBy], [CreatedDate]) VALUES (@ProductCode, @ProductName, @ProductDescription, @UnitPrice, @Units_Price_In_Carton, @Units_In_Store, @Location, @CreateBy, @CreatedDate)" SelectCommand="SELECT * FROM [ProductDescription]" UpdateCommand="UPDATE [ProductDescription] SET [ProductCode] = @ProductCode, [ProductName] = @ProductName, [ProductDescription] = @ProductDescription, [UnitPrice] = @UnitPrice, [Units_Price_In_Carton] = @Units_Price_In_Carton, [Units_In_Store] = @Units_In_Store, [Location] = @Location, [CreateBy] = @CreateBy, [CreatedDate] = @CreatedDate WHERE [ID] = @ID">
-       <DeleteParameters>
-            <asp:Parameter Name="ID" Type="Int32" />
-        </DeleteParameters>
-        <InsertParameters>
-            <asp:Parameter Name="ProductCode" Type="String" />
-            <asp:Parameter Name="ProductName" Type="String" />
-            <asp:Parameter Name="ProductDescription" Type="String" />
-            <asp:Parameter Name="UnitPrice" Type="Decimal" />
-            <asp:Parameter Name="Units_Price_In_Carton" Type="Decimal" />
-            <asp:Parameter Name="Units_In_Store" Type="Int32" />
-            <asp:Parameter Name="Location" Type="String" />
-            <asp:Parameter Name="CreateBy" Type="String" />
-            <asp:Parameter Name="CreatedDate" Type="DateTime" />
-        </InsertParameters>
-        <UpdateParameters>
-            <asp:Parameter Name="ProductCode" Type="String" />
-            <asp:Parameter Name="ProductName" Type="String" />
-            <asp:Parameter Name="ProductDescription" Type="String" />
-            <asp:Parameter Name="UnitPrice" Type="Decimal" />
-            <asp:Parameter Name="Units_Price_In_Carton" Type="Decimal" />
-            <asp:Parameter Name="Units_In_Store" Type="Int32" />
-            <asp:Parameter Name="Location" Type="String" />
-            <asp:Parameter Name="CreateBy" Type="String" />
-            <asp:Parameter Name="CreatedDate" Type="DateTime" />
-            <asp:Parameter Name="ID" Type="Int32" />
-        </UpdateParameters>
+    <asp:SqlDataSource ID="SqlProductDescription" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT * FROM [ProductDescription]">
     </asp:SqlDataSource>
 </asp:Content>

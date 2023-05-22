@@ -16,7 +16,7 @@
 <EditFormLayoutProperties ColCount="1"></EditFormLayoutProperties>
     <Columns>
 
-        <dx:GridViewCommandColumn ShowEditButton="True" ShowNewButtonInHeader="True" VisibleIndex="0" ShowDeleteButton="True">
+        <dx:GridViewCommandColumn ShowDeleteButton="True" ShowEditButton="True" ShowNewButtonInHeader="True" VisibleIndex="0">
         </dx:GridViewCommandColumn>
 
         <dx:GridViewDataTextColumn FieldName="ID" VisibleIndex="1" ReadOnly="True">
@@ -32,13 +32,15 @@
         </dx:GridViewDataTextColumn>
         <dx:GridViewDataTextColumn FieldName="Units_Price_In_Carton" VisibleIndex="6">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Units_In_Store" VisibleIndex="7">
+        <dx:GridViewDataTextColumn FieldName="Pieces_In_Store" VisibleIndex="7">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Location" VisibleIndex="8">
+        <dx:GridViewDataTextColumn FieldName="Cartons_In_Store" VisibleIndex="8">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="CreateBy" VisibleIndex="9">
+        <dx:GridViewDataTextColumn FieldName="Location" VisibleIndex="9">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataDateColumn FieldName="CreatedDate" VisibleIndex="10">
+        <dx:GridViewDataTextColumn FieldName="CreateBy" VisibleIndex="10">
+        </dx:GridViewDataTextColumn>
+        <dx:GridViewDataDateColumn FieldName="CreatedDate" VisibleIndex="11">
         </dx:GridViewDataDateColumn>
     </Columns>
     </dx:ASPxGridView>
@@ -46,7 +48,7 @@
     <br />
     <br />
 
-    <asp:SqlDataSource ID="SqlProductDescription" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [ProductDescription] WHERE [ID] = @ID" InsertCommand="INSERT INTO [ProductDescription] ([ProductCode], [ProductName], [ProductDescription], [UnitPrice], [Units_Price_In_Carton], [Units_In_Store], [Location], [CreateBy], [CreatedDate]) VALUES (@ProductCode, @ProductName, @ProductDescription, @UnitPrice, @Units_Price_In_Carton, @Units_In_Store, @Location, @CreateBy, @CreatedDate)" SelectCommand="SELECT * FROM [ProductDescription]" UpdateCommand="UPDATE [ProductDescription] SET [ProductCode] = @ProductCode, [ProductName] = @ProductName, [ProductDescription] = @ProductDescription, [UnitPrice] = @UnitPrice, [Units_Price_In_Carton] = @Units_Price_In_Carton, [Units_In_Store] = @Units_In_Store, [Location] = @Location, [CreateBy] = @CreateBy, [CreatedDate] = @CreatedDate WHERE [ID] = @ID">
+    <asp:SqlDataSource ID="SqlProductDescription" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [ProductDescription] WHERE [ID] = @ID" InsertCommand="INSERT INTO ProductDescription(ProductCode, ProductName, ProductDescription, UnitPrice, Units_Price_In_Carton, Pieces_In_Store, Cartons_In_Store, Location, CreateBy, CreatedDate) VALUES (@ProductCode, @ProductName, @ProductDescription, @UnitPrice, @Units_Price_In_Carton, @Pieces_In_Store, @Cartons_In_Store, @Location, @CreateBy, @CreatedDate)" SelectCommand="SELECT * FROM [ProductDescription]" UpdateCommand="UPDATE ProductDescription SET ProductCode = @ProductCode, ProductName = @ProductName, ProductDescription = @ProductDescription, UnitPrice = @UnitPrice, Units_Price_In_Carton = @Units_Price_In_Carton, Pieces_In_Store = @Pieces_In_Store, Cartons_In_Store = @Cartons_In_Store, Location = @Location, CreateBy = @CreateBy, CreatedDate = @CreatedDate WHERE (ID = @ID)">
        <DeleteParameters>
             <asp:Parameter Name="ID" Type="Int32" />
         </DeleteParameters>
@@ -56,7 +58,8 @@
             <asp:Parameter Name="ProductDescription" Type="String" />
             <asp:Parameter Name="UnitPrice" Type="Decimal" />
             <asp:Parameter Name="Units_Price_In_Carton" Type="Decimal" />
-            <asp:Parameter Name="Units_In_Store" Type="Int32" />
+            <asp:Parameter Name="Pieces_In_Store" />
+            <asp:Parameter Name="Cartons_In_Store" />
             <asp:Parameter Name="Location" Type="String" />
             <asp:Parameter Name="CreateBy" Type="String" />
             <asp:Parameter Name="CreatedDate" Type="DateTime" />
@@ -67,7 +70,8 @@
             <asp:Parameter Name="ProductDescription" Type="String" />
             <asp:Parameter Name="UnitPrice" Type="Decimal" />
             <asp:Parameter Name="Units_Price_In_Carton" Type="Decimal" />
-            <asp:Parameter Name="Units_In_Store" Type="Int32" />
+            <asp:Parameter Name="Pieces_In_Store" />
+            <asp:Parameter Name="Cartons_In_Store" />
             <asp:Parameter Name="Location" Type="String" />
             <asp:Parameter Name="CreateBy" Type="String" />
             <asp:Parameter Name="CreatedDate" Type="DateTime" />

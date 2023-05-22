@@ -14,22 +14,73 @@ using System.IO;
 using System.Text;
 using System.Net.Mail;
 using System.Net;
-
+using Twilio;
+using Twilio.Rest.Api.V2010.Account;
+using Twilio.Types;
 
 namespace RexLubs.SuperAdmin
 {
     public partial class LubricantRequests : System.Web.UI.Page
     {
+        decimal TotalAmount = 0;
+        string Product_Name = "";
+        string Product_Type = "";
+        int Product_Quantity = 0;
+        decimal Unit_Price = 0;
+        decimal Price_In_Carton = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["LoggedInUser"] == null)
             {
                 Response.Redirect("Login.aspx");
             }
+
         }
 
         protected void ASPxButtonSubmit_Click(object sender, EventArgs e)
         {
+
+
+            if (UnitPrice.Value == null && Units_Price_In_Carton.Value == null)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Please Enter your perferred Product for Booking.')", true);
+            }
+
+            if (UnitPrice.Value != null && Units_Price_In_Carton.Value == null)
+            {
+
+                TotalAmount = (Int32.Parse((UnitPrice.Value).ToString())) * Int32.Parse((ProductQuantity.Value.ToString()));
+                Product_Name = ProductName.SelectedItem.ToString();
+                Product_Type = ProductType.SelectedItem.ToString();
+                Product_Quantity = Int32.Parse((ProductQuantity.Value).ToString());
+                Unit_Price = Int32.Parse((UnitPrice.Value).ToString());
+            }
+
+            if (UnitPrice.Value == null && Units_Price_In_Carton.Value != null)
+            {
+
+                TotalAmount = (Int32.Parse((Units_Price_In_Carton.Value).ToString())) * Int32.Parse((ProductQuantity2.Value.ToString()));
+
+                Product_Name = ProductName2.SelectedItem.ToString();
+                Product_Type = ProductType2.SelectedItem.ToString();
+                Product_Quantity = Int32.Parse((ProductQuantity2.Value).ToString());
+                Unit_Price = Int32.Parse((Units_Price_In_Carton.Value).ToString());
+            }
+
+            if (UnitPrice.Value != null && Units_Price_In_Carton.Value != null)
+            {
+                decimal Unit_PricePlus = (Int32.Parse((UnitPrice.Value).ToString())) * Int32.Parse((ProductQuantity.Value.ToString()));
+                Price_In_Carton = (Int32.Parse((Units_Price_In_Carton.Value).ToString())) * Int32.Parse((ProductQuantity2.Value.ToString()));
+                TotalAmount = Unit_PricePlus + Price_In_Carton;
+                Product_Name = ProductName.SelectedItem.ToString() + " Qty: " + Int32.Parse((ProductQuantity.Value).ToString()) + " and " + ProductName2.SelectedItem.ToString() + " Qty: " + Int32.Parse((ProductQuantity2.Value).ToString());
+                Product_Type = ProductType.SelectedItem.ToString() + " and " + ProductType2.SelectedItem.ToString();
+                Product_Quantity = Int32.Parse((ProductQuantity2.Value).ToString()) + Int32.Parse((ProductQuantity2.Value).ToString());
+                Unit_Price = 0;
+            }
+
+            //Total_Amount.Value = TotalAmount.ToString();
+
 
             UserAccount _user = (UserAccount)Session["LoggedInUser"];
 
@@ -44,29 +95,32 @@ namespace RexLubs.SuperAdmin
             SqlCommand cmd = new SqlCommand(query, con);
 
             cmd.Parameters.Add("@BusinessName", SqlDbType.VarChar).Value = BusinessName.SelectedItem.ToString();
-            cmd.Parameters.Add("@PhoneNumber", SqlDbType.VarChar).Value = PhoneNumber.Value;
-            cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = Email.Value;
-            cmd.Parameters.Add("@Address", SqlDbType.VarChar).Value = Address.Value;
             cmd.Parameters.Add("@State", SqlDbType.VarChar).Value = State.SelectedItem.ToString();
             cmd.Parameters.Add("@Country", SqlDbType.VarChar).Value = Country.SelectedItem.ToString();
             cmd.Parameters.Add("@SalesRepresentative", SqlDbType.VarChar).Value = SalesRepresentative.Value;
             cmd.Parameters.Add("@ContactPerson", SqlDbType.VarChar).Value = ContactPerson.Value;
             cmd.Parameters.Add("@ContactPersonEmail", SqlDbType.VarChar).Value = ContactPersonEmail.Value;
             cmd.Parameters.Add("@ContactPersonPhoneNumber", SqlDbType.VarChar).Value = ContactPersonPhoneNumber.Value;
-            cmd.Parameters.Add("@ProductName", SqlDbType.VarChar).Value = ProductName.SelectedItem.ToString();
-            cmd.Parameters.Add("@ProductType", SqlDbType.VarChar).Value = ProductType.SelectedItem.ToString();
-            cmd.Parameters.Add("@ProductQuantity", SqlDbType.Int).Value = ProductQuantity.Value;
-            cmd.Parameters.Add("@UnitPrice", SqlDbType.Decimal).Value = UnitPrice.Value;
-            cmd.Parameters.Add("@Total_Amount", SqlDbType.Decimal).Value = Total_Amount.Value;
+            cmd.Parameters.Add("@GeneralProduct_Name", SqlDbType.VarChar).Value = Product_Name;
+            cmd.Parameters.Add("@GeneralProduct_Type", SqlDbType.VarChar).Value = Product_Type;
+            cmd.Parameters.Add("@GeneralUnit_Price", SqlDbType.Decimal).Value = Unit_Price;
+            cmd.Parameters.Add("@ProductNameByPiece", SqlDbType.VarChar).Value = ProductName.Value;
+            cmd.Parameters.Add("@ProductTypeP", SqlDbType.VarChar).Value = ProductType.Value;
+            cmd.Parameters.Add("@UnitPriceByPiece", SqlDbType.Decimal).Value = UnitPrice.Value;
+            cmd.Parameters.Add("@ProductQuantityP", SqlDbType.Int).Value = ProductQuantity.Value;
+            cmd.Parameters.Add("@ProductNameByCarton", SqlDbType.VarChar).Value = ProductName2.Value;
+            cmd.Parameters.Add("@ProductTypeC", SqlDbType.VarChar).Value = ProductType2.Value;
+            cmd.Parameters.Add("@UnitPriceByCarton", SqlDbType.Decimal).Value = Units_Price_In_Carton.Value;
+            cmd.Parameters.Add("@ProductQuantityC", SqlDbType.Int).Value = ProductQuantity2.Value;
+            cmd.Parameters.Add("@ProductDescription", SqlDbType.VarChar).Value = ProductDescription.SelectedItem.ToString();
+            cmd.Parameters.Add("@Total_Amount", SqlDbType.Decimal).Value = TotalAmount;
+
             cmd.Parameters.Add("@PaymentTerms", SqlDbType.VarChar).Value = PaymentTerms.SelectedItem.ToString();
             cmd.Parameters.Add("@TrasactionType", SqlDbType.VarChar).Value = TrasactionType.SelectedItem.ToString();
-            cmd.Parameters.Add("@WarehouseManagerName", SqlDbType.VarChar).Value = WarehouseManagerName.Value;
-            cmd.Parameters.Add("@WarehouseManagerEmail", SqlDbType.VarChar).Value = WarehouseManagerEmail.Value;
             cmd.Parameters.Add("@WarehouseLocation", SqlDbType.VarChar).Value = WarehouseLocation.Value;
-            cmd.Parameters.Add("@PickUpPersonName", SqlDbType.VarChar).Value = PickUpPersonName.Value;
-            cmd.Parameters.Add("@PickUpPersonPhone", SqlDbType.VarChar).Value = PickUpPersonPhone.Value;
-            cmd.Parameters.Add("@ExpectedDeliveryDate", SqlDbType.DateTime).Value = ExpectedDeliveryDate.Value; // Convert.ToDateTime(ExpectedDeliveryDate.Value);
+            cmd.Parameters.Add("@ExpectedDeliveryDate", SqlDbType.DateTime).Value = ExpectedDeliveryDate.Value;
             cmd.Parameters.Add("@CreatedBy", SqlDbType.VarChar).Value = username.ToString();
+            cmd.Parameters.Add("@Region", SqlDbType.VarChar).Value = ASPxComboBoxRegion.SelectedItem.ToString();
 
             var returnParam = cmd.Parameters.Add("@BookingID", SqlDbType.Int);
             var returnParam2 = cmd.Parameters.Add("@ManagerEmail", SqlDbType.VarChar, 50);
@@ -77,7 +131,7 @@ namespace RexLubs.SuperAdmin
 
             var result = returnParam.Value.ToString();
             string ManagerEmail = returnParam2.Value.ToString();
-            string Email1 = Email.Value.ToString();
+            string Email1 = ContactPersonEmail.Value.ToString();
 
             ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Lubricant Request Booking was Successful. Your Request ID is " + result + ".')", true);
             //Response.Redirect("~/Customers/ManageCustomers.aspx");
@@ -91,7 +145,7 @@ namespace RexLubs.SuperAdmin
                     body = sr.ReadToEnd();
                 }
                 string APPURL = ConfigurationManager.AppSettings["APPURL"];
-                string msgBody = string.Format(body, result, ProductName, ProductType, ProductQuantity, UnitPrice, Total_Amount, PaymentTerms, TrasactionType, WarehouseManagerName, WarehouseLocation);
+                string msgBody = string.Format(body, result, Product_Name, Product_Type, Product_Quantity, Unit_Price, TotalAmount, PaymentTerms, TrasactionType, WarehouseLocation);
                 MailMessage msg = new MailMessage(new MailAddress(ConfigurationManager.AppSettings["UserName"], "RexGlobe Support"), new MailAddress(ManagerEmail));
                 msg.Subject = "RexGlobe Portal - New Product Request from : " + username + "";
                 msg.Body = msgBody;
@@ -125,11 +179,19 @@ namespace RexLubs.SuperAdmin
             }
             con.Close();
 
+            SMSMessage();
             ASPxFormLayout1.ForEach(ClearItem);
             ClearItems();
 
         }
 
+        //protected void ASPxComboBoxLga_Callback(object sender, DevExpress.Web.CallbackEventArgsBase e)
+        //{
+        //    if (string.IsNullOrEmpty(e.Parameter)) return;
+
+        //    esmdsProductDescription.WhereParameters[0].DefaultValue = e.Parameter;
+        //    ProductName.DataBind();
+        //}
 
         private void ClearItem(LayoutItemBase obj)
         {
@@ -144,6 +206,47 @@ namespace RexLubs.SuperAdmin
             }
         }
 
+        private void SMSMessage()
+        {
+            string body;
+            //Read template file from the Util folder
+            using (var sr = new StreamReader(System.Web.HttpContext.Current.Server.MapPath("~/Util/NewProductRequest.html")))
+            {
+                body = sr.ReadToEnd();
+            }
+            System.Uri address = new System.Uri("http://tinyurl.com/api-create.php?url=" + body);
+            //ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('URL'"+ address + ")", true);
+            System.Net.WebClient client = new System.Net.WebClient();
+            string tinyUrl = client.DownloadString(address);
+            //Console.WriteLine(tinyUrl);
+
+            /*-----------Tiny Url ---------------------------*/
+
+            var accountSid = "ACa74b02abc022c25d83c8b95166d5dd5b";
+            var authToken = "8c78773fad367e4924ea81a94f0bb67c";
+            TwilioClient.Init(accountSid, authToken);
+
+
+            var messageOptions = new CreateMessageOptions(
+             new PhoneNumber(ContactPerson.Value.ToString()));
+            messageOptions.From = new PhoneNumber("+12707976398");
+            messageOptions.Body = "This is to confirm your product request for " + Product_Name + " Quantity :" + Product_Quantity + "; Total Amount:" + TotalAmount + " From RexLubs URL" + address;
+
+            var message = MessageResource.Create(messageOptions);
+            Console.WriteLine(message.Body);
+
+            //string accountSid = Environment.GetEnvironmentVariable("ACa74b02abc022c25d83c8b95166d5dd5b");
+            //string authToken = Environment.GetEnvironmentVariable("8c78773fad367e4924ea81a94f0bb67c");
+
+            //TwilioClient.Init(accountSid, authToken);
+
+            //var message = MessageResource.Create(
+            //    body: "This is to confirm your product request for "+ ProductType.SelectedItem.ToString()+ " br/ Quantity :"+ ProductQuantity.Value+ ";br/ Total Amount:"+ Total_Amount.Value+" From RexLubs URL"+ address,
+            //    from: new Twilio.Types.PhoneNumber("+12707976398"),
+            //    to: new Twilio.Types.PhoneNumber((ContactPersonPhoneNumber.Value).ToString())
+            //);
+            ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('SMS Success'" + message.Body + ")", true);
+        }
 
         protected void ASPxFormLayout1_DataBound(object sender, EventArgs e)
         {
@@ -153,9 +256,6 @@ namespace RexLubs.SuperAdmin
         private void ClearItems()
         {
             BusinessName.Value = string.Empty;
-            PhoneNumber.Value = string.Empty;
-            Email.Value = string.Empty;
-            Address.Value = string.Empty;
             State.Value = string.Empty;
             Country.Value = string.Empty;
             SalesRepresentative.Value = string.Empty;
@@ -165,18 +265,19 @@ namespace RexLubs.SuperAdmin
             ProductType.Value = string.Empty;
             ProductQuantity.Value = string.Empty;
             UnitPrice.Value = string.Empty;
-            Total_Amount.Value = string.Empty;
+            //Total_Amount.Value = string.Empty;
             PaymentTerms.Value = string.Empty;
             TrasactionType.Value = string.Empty;
-            WarehouseManagerName.Value = string.Empty;
-            WarehouseManagerEmail.Value = string.Empty;
             WarehouseLocation.Value = string.Empty;
-            PickUpPersonName.Value = string.Empty;
-            PickUpPersonPhone.Value = string.Empty;
             ExpectedDeliveryDate.Value = string.Empty;
         }
 
         protected void esmdsRegisteredCompanies_Selecting(object sender, EntityDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void esmdsProductDescription_Selecting(object sender, EntityDataSourceSelectingEventArgs e)
         {
 
         }

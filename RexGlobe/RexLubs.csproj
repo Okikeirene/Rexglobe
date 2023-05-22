@@ -389,6 +389,7 @@
     <Content Include="Staff\Home.aspx" />
     <Content Include="Staff\ViewProductInventory.aspx" />
     <Content Include="Staff\LubricantRequests.aspx" />
+    <Content Include="Staff\NewCustomerLub.aspx" />
     <Content Include="SuperAdmin\Home.aspx" />
     <Content Include="SuperAdmin\LubricantRequests.aspx" />
     <Content Include="SuperAdmin\ManageCustomer.aspx" />
@@ -1199,6 +1200,13 @@
     </Compile>
     <Compile Include="Staff\LubricantRequests.aspx.designer.cs">
       <DependentUpon>LubricantRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\NewCustomerLub.aspx.cs">
+      <DependentUpon>NewCustomerLub.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\NewCustomerLub.aspx.designer.cs">
+      <DependentUpon>NewCustomerLub.aspx</DependentUpon>
     </Compile>
     <Compile Include="State.cs">
       <DependentUpon>RexLubsModel.tt</DependentUpon>

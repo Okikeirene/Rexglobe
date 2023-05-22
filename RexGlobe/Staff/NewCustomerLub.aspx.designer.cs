@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexLubs.Customers {
+namespace RexLubs.Staff {
     
     
-    public partial class LubricantRequests {
+    public partial class NewCustomerLub {
         
         /// <summary>
         /// ASPxFormLayout1 control.
@@ -28,7 +28,52 @@ namespace RexLubs.Customers {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox BusinessName;
+        protected global::DevExpress.Web.ASPxTextBox BusinessName;
+        
+        /// <summary>
+        /// TIN_Number control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox TIN_Number;
+        
+        /// <summary>
+        /// DateOfIncorporation control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxDateEdit DateOfIncorporation;
+        
+        /// <summary>
+        /// Email control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox Email;
+        
+        /// <summary>
+        /// PhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox PhoneNumber;
+        
+        /// <summary>
+        /// Address control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox Address;
         
         /// <summary>
         /// State control.
@@ -47,6 +92,42 @@ namespace RexLubs.Customers {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxComboBox Country;
+        
+        /// <summary>
+        /// SalesRepresentative control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxComboBox SalesRepresentative;
+        
+        /// <summary>
+        /// TypeOfBusiness control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxComboBox TypeOfBusiness;
+        
+        /// <summary>
+        /// NextOfKinName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox NextOfKinName;
+        
+        /// <summary>
+        /// NextOfKinPhone control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox NextOfKinPhone;
         
         /// <summary>
         /// ContactPerson control.
@@ -76,121 +157,22 @@ namespace RexLubs.Customers {
         protected global::DevExpress.Web.ASPxTextBox ContactPersonPhoneNumber;
         
         /// <summary>
-        /// ASPxComboBoxRegion control.
+        /// ContactPersonGender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox ASPxComboBoxRegion;
+        protected global::DevExpress.Web.ASPxComboBox ContactPersonGender;
         
         /// <summary>
-        /// WarehouseLocation control.
+        /// DateOfBirth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox WarehouseLocation;
-        
-        /// <summary>
-        /// ExpectedDeliveryDate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxDateEdit ExpectedDeliveryDate;
-        
-        /// <summary>
-        /// ProductName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox ProductName;
-        
-        /// <summary>
-        /// ProductType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox ProductType;
-        
-        /// <summary>
-        /// ProductQuantity control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ProductQuantity;
-        
-        /// <summary>
-        /// UnitPrice control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxGridLookup UnitPrice;
-        
-        /// <summary>
-        /// ProductName2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox ProductName2;
-        
-        /// <summary>
-        /// ProductType2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox ProductType2;
-        
-        /// <summary>
-        /// ProductQuantity2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxTextBox ProductQuantity2;
-        
-        /// <summary>
-        /// Units_Price_In_Carton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxGridLookup Units_Price_In_Carton;
-        
-        /// <summary>
-        /// ProductDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox ProductDescription;
-        
-        /// <summary>
-        /// SalesRepresentative control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.Web.ASPxComboBox SalesRepresentative;
+        protected global::DevExpress.Web.ASPxDateEdit DateOfBirth;
         
         /// <summary>
         /// PaymentTerms control.
@@ -211,6 +193,87 @@ namespace RexLubs.Customers {
         protected global::DevExpress.Web.ASPxComboBox TrasactionType;
         
         /// <summary>
+        /// FileName1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox FileName1;
+        
+        /// <summary>
+        /// FileDescription1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox FileDescription1;
+        
+        /// <summary>
+        /// FileUpload1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        
+        /// <summary>
+        /// FileName2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox FileName2;
+        
+        /// <summary>
+        /// FileDescription2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox FileDescription2;
+        
+        /// <summary>
+        /// FileUpload2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload2;
+        
+        /// <summary>
+        /// FileName3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox FileName3;
+        
+        /// <summary>
+        /// FileDescription3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::DevExpress.Web.ASPxTextBox FileDescription3;
+        
+        /// <summary>
+        /// FileUpload3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload3;
+        
+        /// <summary>
         /// ASPxButtonSubmit control.
         /// </summary>
         /// <remarks>
@@ -218,42 +281,6 @@ namespace RexLubs.Customers {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DevExpress.Web.ASPxButton ASPxButtonSubmit;
-        
-        /// <summary>
-        /// SqlShipping control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlShipping;
-        
-        /// <summary>
-        /// SqlProduct control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlProduct;
-        
-        /// <summary>
-        /// SqlBooking control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlBooking;
-        
-        /// <summary>
-        /// SqlRegion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlRegion;
         
         /// <summary>
         /// SqlState control.
@@ -274,6 +301,15 @@ namespace RexLubs.Customers {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlSaleRep;
         
         /// <summary>
+        /// SqlGender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlGender;
+        
+        /// <summary>
         /// SqlLocation control.
         /// </summary>
         /// <remarks>
@@ -292,24 +328,6 @@ namespace RexLubs.Customers {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlCountry;
         
         /// <summary>
-        /// SqlProductDescription control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlProductDescription;
-        
-        /// <summary>
-        /// SqlProductDescription2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlProductDescription2;
-        
-        /// <summary>
         /// SqlPaymentTypes control.
         /// </summary>
         /// <remarks>
@@ -319,21 +337,12 @@ namespace RexLubs.Customers {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlPaymentTypes;
         
         /// <summary>
-        /// SqlProductCategory control.
+        /// SqlBusinessLines control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlProductCategory;
-        
-        /// <summary>
-        /// SqlCustomers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlCustomers;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlBusinessLines;
     }
 }

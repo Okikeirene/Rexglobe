@@ -4,39 +4,19 @@
 <%@ Register Assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" Namespace="DevExpress.Web" TagPrefix="dx" %>
 
 
+<%@ Register assembly="DevExpress.Web.v18.1, Version=18.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Data.Linq" tagprefix="dx" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server" >
-<script type="text/javascript">
-        
-        
 
-        function HidePopUp(index) {
-            popup.HideWindow(popup.GetWindow(index));
-        }
-
-        function OnGetRCNo(Value) {
-            BusinessName.SetValue(Value[0]);
-            BusinessName.SetText(Value[0])
-            Email.SetValue(Value[1]);
-            Email.SetText(Value[1])
-            PhoneNumber.SetValue(Value[2]);
-            PhoneNumber.SetText(Value[2])
-            Address.SetValue(Value[3]);
-            Address.SetText(Value[3])
-            State.SetValue(Value[4]);
-            State.SetText(Value[4])
-            Country.SetValue(Value[5]);
-            Country.SetText(Value[5])
-            HidePopUp(0);
-        }
-       
-    </script><div class="panel panel-primary"> 
+<div class="panel panel-primary"> 
             <div class="panel-heading">Create Lubricant Booking Requests</div>
             <div class="panel-body">
 
-                
+
 <dx:ASPxFormLayout ID="ASPxFormLayout1" runat="server" Width="100%" ClientInstanceName="formlayout" ColCount="2"   OnDataBound="ASPxFormLayout1_DataBound" ColumnCount="2">
     <Items>
     <dx:LayoutGroup ColCount="4" ColSpan="2" Caption="Customer Details">
@@ -44,49 +24,13 @@
 			<dx:LayoutItem  Caption="Business Name" FieldName="BusinessName" RequiredMarkDisplayMode="Required">
 				<LayoutItemNestedControlCollection>
 					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
-                       <dx:ASPxComboBox ID="BusinessName" runat="server"  AutoPostBack="True" ClientInstanceName="BusinessName"  AutoResizeWithContainer="True" IncrementalFilteringMode="StartsWith"  EnableIncrementalFiltering="True" TextField="BusinessName" ValueField="BusinessName" Width="100%" Height="25px" DataSourceID="SqlCustomers">
-                            <ClientSideEvents SelectedIndexChanged="function(s, e) {
-	                                    OnStateChanged(s);
-                                    }" />
-                                    <ClearButton Visibility="Auto"></ClearButton>
+                       <dx:ASPxComboBox ID="BusinessName" runat="server"  AutoPostBack="False" ClientInstanceName="BusinessName"  AutoResizeWithContainer="True" IncrementalFilteringMode="StartsWith"  EnableIncrementalFiltering="True" TextField="BusinessName" ValueField="BusinessName" Width="100%" Height="25px" DataSourceID="SqlCustomers">
+                          
+                            <ClearButton Visibility="Auto"></ClearButton>
                             <ValidationSettings>
                                 <RequiredField ErrorText="Required" IsRequired="True" />
                             </ValidationSettings>
                         </dx:ASPxComboBox> 
-					</dx:LayoutItemNestedControlContainer>
-				</LayoutItemNestedControlCollection>
-			</dx:LayoutItem>
-			<dx:LayoutItem  Caption="Business Email" FieldName="Email" RequiredMarkDisplayMode="Required">
-				<LayoutItemNestedControlCollection>
-					<dx:LayoutItemNestedControlContainer runat="server">
-						<dx:ASPxTextBox ID="Email" runat="server" ClientInstanceName="Email" Width="100%" Height="25px">
-							<ValidationSettings>
-                                <RegularExpression ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
-                                <RequiredField IsRequired="True" />
-                            </ValidationSettings>
-						</dx:ASPxTextBox>
-					</dx:LayoutItemNestedControlContainer>
-				</LayoutItemNestedControlCollection>
-			</dx:LayoutItem>
-			<dx:LayoutItem Caption="Business Phone Number" FieldName="PhoneNumber"  RequiredMarkDisplayMode="Required" >
-				<LayoutItemNestedControlCollection>
-						<dx:LayoutItemNestedControlContainer>
-`                       <dx:ASPxTextBox ID="PhoneNumber" runat="server" ClientInstanceName="PhoneNumber" Width="100%" Height="25px">
-							<ValidationSettings Display="Dynamic">
-								<RequiredField IsRequired="True" />
-							</ValidationSettings>
-						</dx:ASPxTextBox> 
-					</dx:LayoutItemNestedControlContainer>
-				</LayoutItemNestedControlCollection>
-			</dx:LayoutItem>
-            <dx:LayoutItem Caption="Address" FieldName="Address"  RequiredMarkDisplayMode="Required" >
-				<LayoutItemNestedControlCollection>
-						<dx:LayoutItemNestedControlContainer>
-`                       <dx:ASPxTextBox ID="Address" runat="server" ClientInstanceName="Address" Width="100%" Height="25px">
-							<ValidationSettings Display="Dynamic">
-								<RequiredField IsRequired="True" />
-							</ValidationSettings>
-						</dx:ASPxTextBox> 
 					</dx:LayoutItemNestedControlContainer>
 				</LayoutItemNestedControlCollection>
 			</dx:LayoutItem>
@@ -105,6 +49,7 @@
 				<LayoutItemNestedControlCollection>
 						<dx:LayoutItemNestedControlContainer>
 `                       <dx:ASPxComboBox ID="Country" runat="server"  IncrementalFilteringMode="Contains" TextField="Name" ValueField="Name" Width="100%" Height="25px" DataSourceID="SqlCountry">
+               
                             <ValidationSettings>
                                 <RequiredField ErrorText="Required" IsRequired="True" />
                             </ValidationSettings>
@@ -112,18 +57,7 @@
 					</dx:LayoutItemNestedControlContainer>
 				</LayoutItemNestedControlCollection>
 			</dx:LayoutItem>
-            <dx:LayoutItem Caption="Sales Representative" FieldName="SalesRepresentative"  RequiredMarkDisplayMode="Required" >
-				<LayoutItemNestedControlCollection>
-						<dx:LayoutItemNestedControlContainer>
-`                       <dx:ASPxComboBox ID="SalesRepresentative" runat="server"  IncrementalFilteringMode="Contains" TextField="UserName" ValueField="UserName" Width="100%" Height="25px" DataSourceID="SqlSaleRep">
-                            <ValidationSettings>
-                                <RequiredField ErrorText="Required" IsRequired="True" />
-                            </ValidationSettings>
-                        </dx:ASPxComboBox> 
-					</dx:LayoutItemNestedControlContainer>
-				</LayoutItemNestedControlCollection>
-			</dx:LayoutItem>
-		</Items>
+           </Items>
                                                                    
 	</dx:LayoutGroup>
     <dx:LayoutGroup ColCount="4" ColSpan="2" Caption="Contact Person Details">
@@ -165,15 +99,70 @@
         </Items>                                          
 	</dx:LayoutGroup>
 
+    <dx:LayoutGroup ColCount="4" ColSpan="2" Caption="Warehouse Details">
+		<Items>
+			 <dx:LayoutItem Caption="Region" FieldName="WarehouseLocation" RequiredMarkDisplayMode="Required">
+                        <LayoutItemNestedControlCollection>
+                            <dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
+                                <dx:ASPxComboBox ID="ASPxComboBoxRegion" runat="server" AutoPostBack="True" AutoResizeWithContainer="True" ClientInstanceName="state" DataSourceID="SqlLocation" EnableIncrementalFiltering="True" IncrementalFilteringMode="StartsWith" TextField="LocationCategory" ValueField="LocationCategory" Width="100%" Height="25px">
+                                    <ClientSideEvents SelectedIndexChanged="function(s, e) {
+	                                                OnStateChanged(s);
+                                                }" />
+
+                                                <ClearButton Visibility="Auto"></ClearButton>
+
+                                    <ValidationSettings>
+                                        <RequiredField ErrorText="Required" IsRequired="True" />
+                                    </ValidationSettings>
+                                </dx:ASPxComboBox>
+                            </dx:LayoutItemNestedControlContainer>
+                        </LayoutItemNestedControlCollection>
+                    </dx:LayoutItem>
+			<dx:LayoutItem Caption="WarehouseLocation" FieldName="WarehouseLocation"  RequiredMarkDisplayMode="Required" >
+				<LayoutItemNestedControlCollection>
+						<dx:LayoutItemNestedControlContainer>
+                         <dx:ASPxComboBox ID="WarehouseLocation" runat="server"  IncrementalFilteringMode="Contains" TextField="LocationName" ValueField="LocationName" Width="100%" Height="25px" DataSourceID="SqlLocation">
+                            <ValidationSettings>
+                                <RequiredField ErrorText="Required" IsRequired="True" />
+                            </ValidationSettings>
+                        </dx:ASPxComboBox>
+`                             
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+           
+			<dx:LayoutItem Caption="Expected Delivery Date" FieldName="ExpectedDeliveryDate" RequiredMarkDisplayMode="Required">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server">
+						<dx:ASPxDateEdit ID="ExpectedDeliveryDate" runat="server" ClientInstanceName="ExpectedDeliveryDate" Width="100%" Height="25px">
+                            <TimeSectionProperties>
+                            <TimeEditProperties>
+                            <ClearButton Visibility="Auto"></ClearButton>
+                            </TimeEditProperties>
+                            </TimeSectionProperties>
+
+                            <ClearButton Visibility="Auto"></ClearButton>
+
+                            <ValidationSettings ValidateOnLeave="False">
+                                <RequiredField ErrorText="Required" IsRequired="True" />
+                            </ValidationSettings>
+                        </dx:ASPxDateEdit>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+
+		</Items>
+                                                                   
+	</dx:LayoutGroup>
 
     <dx:LayoutGroup ColCount="4" ColSpan="2" Caption="Product Details">
 		<Items>
-            <dx:LayoutItem ColSpan="2" Caption="Product PriceList" FieldName="ProductList" RequiredMarkDisplayMode="Required">
+              <%--  <dx:LayoutItem ColSpan="2" Caption="Product PriceList" FieldName="ProductList" RequiredMarkDisplayMode="Required">
 				<LayoutItemNestedControlCollection>
 					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
 							
                                                                               
-                                
+                            
 					    <dx:ASPxGridLookup ID="ASPxGridLookup1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlProductDescription" KeyFieldName="ID"
                             TextFormatString="{2};{3};{4};{5};{6};{7}" MultiTextSeparator=", " Width="500px" SelectionMode="Single">
                             <GridViewProperties>
@@ -195,7 +184,83 @@
                                 </dx:GridViewDataTextColumn>
                                 <dx:GridViewDataTextColumn FieldName="Units_Price_In_Carton" ShowInCustomizationForm="True" VisibleIndex="5">
                                 </dx:GridViewDataTextColumn>
-                                <dx:GridViewDataTextColumn FieldName="Units_In_Store" ShowInCustomizationForm="True" VisibleIndex="6">
+                                <dx:GridViewDataTextColumn FieldName="Pieces_In_Store" ShowInCustomizationForm="True" VisibleIndex="6">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="Cartons_In_Store" ShowInCustomizationForm="True" VisibleIndex="6">
+                                </dx:GridViewDataTextColumn><dx:GridViewDataTextColumn FieldName="Units_In_Store" ShowInCustomizationForm="True" VisibleIndex="6">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="Location" ShowInCustomizationForm="True" VisibleIndex="7">
+                                </dx:GridViewDataTextColumn>
+                            </Columns>
+                        </dx:ASPxGridLookup>
+						
+                                                                              
+                                
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem> --%>
+			
+			<dx:LayoutItem Caption="Product Name By Piece" FieldName="ProductName" >
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server">
+						<dx:ASPxComboBox ID="ProductName" runat="server" AutoPostBack="False" AutoResizeWithContainer ="True" ClientInstanceName="ProductName" DataSourceID="SqlProductDescription" EnableIncrementalFiltering="True" IncrementalFilteringMode="StartsWith" TextField="ProductName" ValueField="ProductName" Width="100%" Height="25px">
+                     
+                            <ClearButton Visibility="Auto"></ClearButton>
+                            
+                        </dx:ASPxComboBox>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+            <dx:LayoutItem  Caption="Product Category" FieldName="ProductType">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
+						<dx:ASPxComboBox ID="ProductType" runat="server" AutoPostBack="False" AutoResizeWithContainer="True" ClientInstanceName="ProductCategory" DataSourceID="SqlProductCategory" EnableIncrementalFiltering="True" IncrementalFilteringMode="StartsWith" TextField="ProductType" ValueField="ProductType" Width="100%" Height="25px">
+                            <ClearButton Visibility="Auto"></ClearButton>
+                          
+                        </dx:ASPxComboBox>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+			<dx:LayoutItem Caption="Product Quantity" FieldName="ProductQuantity" >
+				<LayoutItemNestedControlCollection>
+						<dx:LayoutItemNestedControlContainer>
+                        <dx:ASPxTextBox ID="ProductQuantity" runat="server" ClientInstanceName="ProductQuantity" Width="100%" Height="25px" NullText="0" DisplayFormatString="0">
+						
+						</dx:ASPxTextBox>
+`                             
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+            <dx:LayoutItem Caption="Unit Price By Piece" FieldName="UnitPrice">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
+							
+                                                                              
+                            
+					    <dx:ASPxGridLookup ID="UnitPrice" runat="server" AutoGenerateColumns="False" DataSourceID="SqlProductDescription" KeyFieldName="ID"
+                            TextFormatString="{4}" MultiTextSeparator=", " Width="500px" SelectionMode="Single">
+                            <GridViewProperties>
+                                <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
+                                <EditFormLayoutProperties ColCount="1">
+                                </EditFormLayoutProperties>
+                            </GridViewProperties>
+                            <Columns>
+                                <dx:GridViewDataTextColumn FieldName="ID" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                    <EditFormSettings Visible="False" />
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="ProductCode" ShowInCustomizationForm="True" VisibleIndex="1">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="ProductName" ShowInCustomizationForm="True" VisibleIndex="2">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="ProductDescription" ShowInCustomizationForm="True" VisibleIndex="3">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="UnitPrice" ShowInCustomizationForm="True" VisibleIndex="4">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="Units_Price_In_Carton" ShowInCustomizationForm="True" VisibleIndex="5">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="Pieces_In_Store" ShowInCustomizationForm="True" VisibleIndex="6">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="Cartons_In_Store" ShowInCustomizationForm="True" VisibleIndex="6">
                                 </dx:GridViewDataTextColumn>
                                 <dx:GridViewDataTextColumn FieldName="Location" ShowInCustomizationForm="True" VisibleIndex="7">
                                 </dx:GridViewDataTextColumn>
@@ -207,66 +272,105 @@
 					</dx:LayoutItemNestedControlContainer>
 				</LayoutItemNestedControlCollection>
 			</dx:LayoutItem>
-			<dx:LayoutItem ColSpan="2" Caption="Product Name" FieldName="ProductName" RequiredMarkDisplayMode="Required">
-				<LayoutItemNestedControlCollection>
-					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
-						<dx:ASPxComboBox ID="ProductName" runat="server" AutoPostBack="False" AutoResizeWithContainer="True" ClientInstanceName="ProductName" DataSourceID="SqlProduct" EnableIncrementalFiltering="True" IncrementalFilteringMode="StartsWith" TextField="ProductName" ValueField="ProductName" Width="100%" Height="25px">
-                            <ClearButton Visibility="Auto"></ClearButton>
-                            <ValidationSettings>
-                                <RequiredField ErrorText="Required" IsRequired="True" />
-                            </ValidationSettings>
-                        </dx:ASPxComboBox>
-					</dx:LayoutItemNestedControlContainer>
-				</LayoutItemNestedControlCollection>
-			</dx:LayoutItem>
-			<dx:LayoutItem Caption="ProductType" FieldName="ProductType" RequiredMarkDisplayMode="Required">
+				
+            <dx:LayoutItem Caption="Product Name By Carton" FieldName="ProductName">
 				<LayoutItemNestedControlCollection>
 					<dx:LayoutItemNestedControlContainer runat="server">
-						<dx:ASPxComboBox ID="ProductType" runat="server" AutoPostBack="False" AutoResizeWithContainer="True" ClientInstanceName="ProductName" DataSourceID="SqlProductDescription" EnableIncrementalFiltering="True" IncrementalFilteringMode="StartsWith" TextField="ProductName" ValueField="ProductName" Width="100%" Height="25px">
+						<dx:ASPxComboBox ID="ProductName2" runat="server" AutoPostBack="False" AutoResizeWithContainer="True" ClientInstanceName="ProductName" DataSourceID="SqlProductDescription2" EnableIncrementalFiltering="True" IncrementalFilteringMode="StartsWith" TextField="ProductName" ValueField="ProductName" Width="100%" Height="25px">
+                            <ClearButton Visibility="Auto"></ClearButton>
+                            
+                        </dx:ASPxComboBox>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+            <dx:LayoutItem  Caption="Product Category" FieldName="ProductType">
+				<LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
+						<dx:ASPxComboBox ID="ProductType2" runat="server" AutoPostBack="False" AutoResizeWithContainer="True" ClientInstanceName="ProductCategory" DataSourceID="SqlProductCategory" EnableIncrementalFiltering="True" IncrementalFilteringMode="StartsWith" TextField="ProductType" ValueField="ProductType" Width="100%" Height="25px">
+                            <ClearButton Visibility="Auto"></ClearButton>
+                          
+                        </dx:ASPxComboBox>
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+			<dx:LayoutItem Caption="Product Quantity" FieldName="ProductQuantity">
+				<LayoutItemNestedControlCollection>
+						<dx:LayoutItemNestedControlContainer>
+                        <dx:ASPxTextBox ID="ProductQuantity2" runat="server" ClientInstanceName="ProductQuantity" Width="100%" Height="25px" NullText="0" DisplayFormatString="0">
+							
+						</dx:ASPxTextBox>
+`                             
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+            <dx:LayoutItem Caption="Carton Price" FieldName="Units_Price_In_Carton">
+			    <LayoutItemNestedControlCollection>
+					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">					
+                                                                              
+                            
+					    <dx:ASPxGridLookup ID="Units_Price_In_Carton" runat="server" AutoGenerateColumns="False" DataSourceID="SqlProductDescription2" KeyFieldName="ID"
+                            TextFormatString="{5}" MultiTextSeparator=", " Width="500px" SelectionMode="Single">
+                            <GridViewProperties>
+                                <SettingsBehavior AllowFocusedRow="True" AllowSelectSingleRowOnly="True" />
+                                <EditFormLayoutProperties ColCount="1">
+                                </EditFormLayoutProperties>
+                            </GridViewProperties>
+                            <Columns>
+                                <dx:GridViewDataTextColumn FieldName="ID" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="0">
+                                    <EditFormSettings Visible="False" />
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="ProductCode" ShowInCustomizationForm="True" VisibleIndex="1">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="ProductName" ShowInCustomizationForm="True" VisibleIndex="2">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="ProductDescription" ShowInCustomizationForm="True" VisibleIndex="3">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="UnitPrice" ShowInCustomizationForm="True" VisibleIndex="4">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="Units_Price_In_Carton" ShowInCustomizationForm="True" VisibleIndex="5">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="Pieces_In_Store" ShowInCustomizationForm="True" VisibleIndex="6">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="Cartons_In_Store" ShowInCustomizationForm="True" VisibleIndex="6">
+                                </dx:GridViewDataTextColumn>
+                                <dx:GridViewDataTextColumn FieldName="Location" ShowInCustomizationForm="True" VisibleIndex="7">
+                                </dx:GridViewDataTextColumn>
+                            </Columns>
+                        </dx:ASPxGridLookup>
+						
+                                                                              
+                                
+					</dx:LayoutItemNestedControlContainer>
+				</LayoutItemNestedControlCollection>
+			</dx:LayoutItem>
+             
+                <dx:LayoutItem Caption="Carton Description" FieldName="ProductDescription"  RequiredMarkDisplayMode="Required" >
+				<LayoutItemNestedControlCollection>
+						<dx:LayoutItemNestedControlContainer>
+                        <dx:ASPxComboBox ID="ProductDescription" runat="server" AutoPostBack="False" AutoResizeWithContainer="True" ClientInstanceName="ProductDescription" DataSourceID="SqlProductDescription2" EnableIncrementalFiltering="True" IncrementalFilteringMode="StartsWith" TextField="ProductDescription" ValueField="ProductDescription" Width="100%" Height="25px">
                             <ClearButton Visibility="Auto"></ClearButton>
                             <ValidationSettings>
                                 <RequiredField ErrorText="Required" IsRequired="True" />
                             </ValidationSettings>
                         </dx:ASPxComboBox>
-					</dx:LayoutItemNestedControlContainer>
-				</LayoutItemNestedControlCollection>
-			</dx:LayoutItem>
-			<dx:LayoutItem Caption="Product Quantity" FieldName="ProductQuantity"  RequiredMarkDisplayMode="Required" >
-				<LayoutItemNestedControlCollection>
-						<dx:LayoutItemNestedControlContainer>
-                        <dx:ASPxTextBox ID="ProductQuantity" runat="server" ClientInstanceName="ProductQuantity" Width="100%" Height="25px" NullText="0" DisplayFormatString="0">
-							<ValidationSettings Display="Dynamic">
-								<RequiredField IsRequired="True" />
-							</ValidationSettings>
-						</dx:ASPxTextBox>
 `                             
 					</dx:LayoutItemNestedControlContainer>
 				</LayoutItemNestedControlCollection>
 			</dx:LayoutItem>
-            <dx:LayoutItem ColSpan="2" Caption="Unit Price" FieldName="UnitPrice" RequiredMarkDisplayMode="Required">
-				<LayoutItemNestedControlCollection>
-					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
-						<dx:ASPxTextBox ID="UnitPrice" runat="server" ClientInstanceName="UnitPrice" Width="100%" Height="25px" NullText="0.00" DisplayFormatString="0.00">
-							<ValidationSettings Display="Dynamic">
-								<RequiredField IsRequired="True" />
-							</ValidationSettings>
-						</dx:ASPxTextBox>
-					</dx:LayoutItemNestedControlContainer>
-				</LayoutItemNestedControlCollection>
-			</dx:LayoutItem>
-            <dx:LayoutItem Caption="Total Amount" FieldName="Total_Amount"  RequiredMarkDisplayMode="Required" >
+            <dx:LayoutItem Caption="Sales Representative" FieldName="SalesRepresentative"  RequiredMarkDisplayMode="Required" >
 				<LayoutItemNestedControlCollection>
 						<dx:LayoutItemNestedControlContainer>
-                        <dx:ASPxTextBox ID="Total_Amount" runat="server" ClientInstanceName="TotalWeight" Width="100%" Height="25px" NullText="0.00" DisplayFormatString="0.00" UnboundType="Decimal" UnboundExpression="[ProductQuantity]*[UnitPrice]">
-							<ValidationSettings Display="Dynamic">
-								<RequiredField IsRequired="True" />
-							</ValidationSettings>
-						</dx:ASPxTextBox>
-`                             
+`                       <dx:ASPxComboBox ID="SalesRepresentative" runat="server"  AutoPostBack="False" AutoResizeWithContainer="True" ClientInstanceName="SalesRepresentative" EnableIncrementalFiltering="True" IncrementalFilteringMode="StartsWith"  TextField="UserName" ValueField="UserName" Width="100%" Height="25px" DataSourceID="SqlSaleRep">
+                            <ClearButton Visibility="Auto"></ClearButton>
+                            <ValidationSettings>
+                                <RequiredField ErrorText="Required" IsRequired="True" />
+                            </ValidationSettings>
+                        </dx:ASPxComboBox> 
 					</dx:LayoutItemNestedControlContainer>
 				</LayoutItemNestedControlCollection>
 			</dx:LayoutItem>
-            <dx:LayoutItem Caption="Payment Terms" FieldName="PaymentTerms"  RequiredMarkDisplayMode="Required" >
+		
+            <dx:LayoutItem Caption="Payment Terms" FieldName="PaymentTerms" RequiredMarkDisplayMode="Required" >
 				<LayoutItemNestedControlCollection>
 						<dx:LayoutItemNestedControlContainer>
                         <dx:ASPxComboBox ID="PaymentTerms" runat="server" AutoPostBack="False" AutoResizeWithContainer="True" ClientInstanceName="PaymentTerms" DataSourceID="SqlPaymentTypes" EnableIncrementalFiltering="True" IncrementalFilteringMode="StartsWith" TextField="PaymentType" ValueField="PaymentType" Width="100%" Height="25px">
@@ -292,91 +396,7 @@
 					</dx:LayoutItemNestedControlContainer>
 				</LayoutItemNestedControlCollection>
 			</dx:LayoutItem>
-		
-		</Items>
-                                                                   
-	</dx:LayoutGroup>
-
-    <dx:LayoutGroup ColCount="4" ColSpan="2" Caption="Warehouse Details">
-		<Items>
-			<dx:LayoutItem ColSpan="2" Caption="Warehouse Manager Name" FieldName="WarehouseManagerName" RequiredMarkDisplayMode="Required">
-				<LayoutItemNestedControlCollection>
-					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
-						<dx:ASPxComboBox ID="WarehouseManagerName" runat="server"  IncrementalFilteringMode="Contains" TextField="UserName" ValueField="UserName" Width="100%" Height="25px" DataSourceID="SqlSaleRep">
-                            <ValidationSettings>
-                                <RequiredField ErrorText="Required" IsRequired="True" />
-                            </ValidationSettings>
-                        </dx:ASPxComboBox> 
-					</dx:LayoutItemNestedControlContainer>
-				</LayoutItemNestedControlCollection>
-			</dx:LayoutItem>
-			<dx:LayoutItem Caption="Warehouse Manager Email" FieldName="WarehouseManagerEmail" RequiredMarkDisplayMode="Required">
-				<LayoutItemNestedControlCollection>
-					<dx:LayoutItemNestedControlContainer>
-						<dx:ASPxTextBox ID="WarehouseManagerEmail" runat="server" ClientInstanceName="WarehouseManagerEmail" Width="100%" Height="25px">
-							<ValidationSettings>
-                                <RegularExpression ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
-                                <RequiredField IsRequired="True" />
-                            </ValidationSettings>
-						</dx:ASPxTextBox>
-					</dx:LayoutItemNestedControlContainer>
-				</LayoutItemNestedControlCollection>
-			</dx:LayoutItem>
-			<dx:LayoutItem Caption="WarehouseLocation" FieldName="WarehouseLocation"  RequiredMarkDisplayMode="Required" >
-				<LayoutItemNestedControlCollection>
-						<dx:LayoutItemNestedControlContainer>
-                         <dx:ASPxComboBox ID="WarehouseLocation" runat="server"  IncrementalFilteringMode="Contains" TextField="LocationName" ValueField="LocationName" Width="100%" Height="25px" DataSourceID="SqlLocation">
-                            <ValidationSettings>
-                                <RequiredField ErrorText="Required" IsRequired="True" />
-                            </ValidationSettings>
-                        </dx:ASPxComboBox>
-`                             
-					</dx:LayoutItemNestedControlContainer>
-				</LayoutItemNestedControlCollection>
-			</dx:LayoutItem>
-            <dx:LayoutItem ColSpan="2" Caption="PickUp Person Name" FieldName="PickUpPersonName" RequiredMarkDisplayMode="Required">
-				<LayoutItemNestedControlCollection>
-					<dx:LayoutItemNestedControlContainer runat="server" SupportsDisabledAttribute="True">
-						 <dx:ASPxTextBox ID="PickUpPersonName" runat="server" ClientInstanceName="PickUpPersonName" Width="100%" Height="25px">
-							<ValidationSettings Display="Dynamic">
-								<RequiredField IsRequired="True" />
-							</ValidationSettings>
-						</dx:ASPxTextBox>
-					</dx:LayoutItemNestedControlContainer>
-				</LayoutItemNestedControlCollection>
-			</dx:LayoutItem>
-			<dx:LayoutItem Caption="PickUp Person Phone" FieldName="PickUpPersonPhone" RequiredMarkDisplayMode="Required">
-				<LayoutItemNestedControlCollection>
-					<dx:LayoutItemNestedControlContainer runat="server">
-                        <dx:ASPxTextBox ID="PickUpPersonPhone" runat="server" ClientInstanceName="PickUpPersonPhone" Width="100%" Height="25px">
-							<ValidationSettings Display="Dynamic">
-								<RequiredField IsRequired="True" />
-							</ValidationSettings>
-						</dx:ASPxTextBox>
-					</dx:LayoutItemNestedControlContainer>
-				</LayoutItemNestedControlCollection>
-			</dx:LayoutItem>
-			<dx:LayoutItem Caption="Expected Delivery Date" FieldName="ExpectedDeliveryDate" RequiredMarkDisplayMode="Required">
-				<LayoutItemNestedControlCollection>
-					<dx:LayoutItemNestedControlContainer runat="server">
-						<dx:ASPxDateEdit ID="ExpectedDeliveryDate" runat="server" ClientInstanceName="ExpectedDeliveryDate" Width="100%" Height="25px">
-                            <TimeSectionProperties>
-                            <TimeEditProperties>
-                            <ClearButton Visibility="Auto"></ClearButton>
-                            </TimeEditProperties>
-                            </TimeSectionProperties>
-
-                            <ClearButton Visibility="Auto"></ClearButton>
-
-                            <ValidationSettings ValidateOnLeave="False">
-                                <RequiredField ErrorText="Required" IsRequired="True" />
-                            </ValidationSettings>
-                        </dx:ASPxDateEdit>
-					</dx:LayoutItemNestedControlContainer>
-				</LayoutItemNestedControlCollection>
-			</dx:LayoutItem>
-
-		</Items>
+        </Items>
                                                                    
 	</dx:LayoutGroup>
     
@@ -511,6 +531,8 @@
                     </UpdateParameters>
                 </asp:SqlDataSource>
 
+
+
 <asp:SqlDataSource ID="SqlRegion" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" DeleteCommand="DELETE FROM [Region] WHERE [ID] = @ID" InsertCommand="INSERT INTO [Region] ([Region_ID], [Code], [Name], [Country_ID]) VALUES (@Region_ID, @Code, @Name, @Country_ID)" SelectCommand="SELECT * FROM [Region]" UpdateCommand="UPDATE [Region] SET [Region_ID] = @Region_ID, [Code] = @Code, [Name] = @Name, [Country_ID] = @Country_ID WHERE [ID] = @ID">
         <DeleteParameters>
             <asp:Parameter Name="ID" Type="Int32" />
@@ -548,99 +570,25 @@
     <asp:SqlDataSource ID="SqlSaleRep" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID], [UserName] FROM [Employees]">
     </asp:SqlDataSource>
 
-    <asp:SqlDataSource ID="SqlLocation" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID],[LocationName],[State],[Country] FROM [RexGlobe].[dbo].[Location]">
+    <asp:SqlDataSource ID="SqlLocation" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID],[LocationName],[LocationCategory],[State],[Country] FROM [RexGlobe].[dbo].[Location]">
     </asp:SqlDataSource>
 
      <asp:SqlDataSource ID="SqlCountry" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID] ,[Code],[Name] FROM [RexGlobe].[dbo].[Country]">
     </asp:SqlDataSource>  
 
-    <asp:SqlDataSource ID="SqlProductDescription" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID], [ProductCode], [ProductName], [ProductDescription], [UnitPrice], [Units_Price_In_Carton], [Units_In_Store], [Location] FROM [ProductDescription]">
+    <asp:SqlDataSource ID="SqlProductDescription" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID], [ProductCode], [ProductName], [ProductDescription], [UnitPrice], [Units_Price_In_Carton], [Pieces_In_Store],[Cartons_In_Store], [Location] FROM [ProductDescription]">
+    </asp:SqlDataSource> 
+
+    <asp:SqlDataSource ID="SqlProductDescription2" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID], [ProductCode], [ProductName], [ProductDescription], [UnitPrice], [Units_Price_In_Carton], [Pieces_In_Store],[Cartons_In_Store], [Location] FROM [ProductDescription] where [Units_Price_In_Carton]  is not null">
     </asp:SqlDataSource> 
 
     <asp:SqlDataSource ID="SqlPaymentTypes" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [PaymentID],[PaymentType],[PaymentChannel],[Payementerms] FROM [RexGlobe].[dbo].[PaymentTypes]">
     </asp:SqlDataSource>   
-   <%--<asp:SqlDataSource ID="SqlCustomers" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID], [BusinessName], [TIN_Number], [DateOfBirth], [Email], [PhoneNumber], [Address], [State], [Country], [SalesRepresentative], [PaymentTerms], [TrasactionType], [DateofIncorporation], [TypeOfBusiness], [NextOfKinName], [NextOfKinPhone], [ContactPerson], [ContactPersonEmail], [ContactPersonGender], [ContactPersonPhoneNumber], [CreatedBy], [CreatedDate] FROM [Customers] WHERE ([BusinessName] = @BusinessName)">
-       <SelectParameters>
-           <asp:FormParameter Control="ASPxFormLayout1$BusinessName" FormField="BusinessName" Name="BusinessName" Type="String" />
-       </SelectParameters>
-    </asp:SqlDataSource>--%>
+   <asp:SqlDataSource ID="SqlProductCategory" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID],[ProductType] FROM [RexGlobe].[dbo].[ProductCategory]">
+    </asp:SqlDataSource>
+
     <asp:SqlDataSource ID="SqlCustomers" runat="server" ConnectionString="<%$ ConnectionStrings:RexGlobeDB %>" SelectCommand="SELECT [ID], [BusinessName], [TIN_Number], [DateOfBirth], [Email], [PhoneNumber], [Address], [State], [Country], [SalesRepresentative], [PaymentTerms], [TrasactionType], [DateofIncorporation], [TypeOfBusiness], [NextOfKinName], [NextOfKinPhone], [ContactPerson], [ContactPersonEmail], [ContactPersonGender], [ContactPersonPhoneNumber], [CreatedBy], [CreatedDate] FROM [Customers] ">
      </asp:SqlDataSource>
-
-
-        <asp:EntityDataSource ID="esmdsRegisteredCompanies" runat="server" ConnectionString="name=RexLubsEntities" DefaultContainerName="RexLubsEntities" EntitySetName="Customer1" Include="BusinessName"  Where ="it.BusinessName = @BusinessName" OnSelecting="esmdsRegisteredCompanies_Selecting"  >
-        <WhereParameters>
-            <asp:ControlParameter ControlID="ASPxFormLayout1$BusinessName" Name="BusinessName" PropertyName="Value" Type="String" />
-        </WhereParameters>
-    </asp:EntityDataSource>
-
-
-  
-     <dx:ASPxPopupControl ID="ASPxPopupControl1" runat="server" ClientInstanceName="popup" Height="400px" Width="800px" AllowDragging="True" CloseAction="CloseButton" HeaderText="" Modal="True" PopupVerticalAlign="WindowCenter"  PopupElementID="ASPxFormLayout1$ASPxButtonEditRCNo">
-        <Windows>
-            
-            <dx:PopupWindow PopupElementID="ASPxFormLayout1$BusinessName">
-                <ContentCollection>
-                    <dx:PopupControlContentControl runat="server">
-                        <dx:ASPxGridView ID="ASPxGridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlCustomers" KeyFieldName="ID" Width="100%" ClientInstanceName="mastergrid">
-                                        <ClientSideEvents RowDblClick="function(s, e) 
-                        {
-	                        mastergrid.GetRowValues(e.visibleIndex, 'BusinessName;Email;PhoneNumber;Address;State;Country', OnGetRCNo);
-                        }" />
-                                        <Columns>
-                                            <dx:GridViewDataTextColumn Caption="BusinessName" FieldName="BusinessName" ReadOnly="True"  VisibleIndex="0" Width="100px">
-                                            </dx:GridViewDataTextColumn>
-                                            <dx:GridViewDataTextColumn FieldName="Email" VisibleIndex="1">
-                                            </dx:GridViewDataTextColumn>
-                                            <dx:GridViewDataDateColumn FieldName="PhoneNumber" VisibleIndex="2">
-                                            </dx:GridViewDataDateColumn>
-                                            <dx:GridViewDataDateColumn FieldName="Address" VisibleIndex="3">
-                                            </dx:GridViewDataDateColumn>
-                                            <dx:GridViewDataDateColumn FieldName="State" VisibleIndex="4">
-                                            </dx:GridViewDataDateColumn>
-                                            <dx:GridViewDataDateColumn FieldName="Country" VisibleIndex="52">
-                                            </dx:GridViewDataDateColumn>
-                                        </Columns>
-                                        <SettingsBehavior AllowSelectByRowClick="True" AllowSelectSingleRowOnly="True" />
-                                        <Settings ShowFilterRow="True" />
-                                        <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
-                                    </dx:ASPxGridView>
-
-                    </dx:PopupControlContentControl>
-                </ContentCollection>
-            </dx:PopupWindow>
-            <%--<dx:PopupWindow PopupElementID="ASPxFormLayout1$ASPxComboBoxTaxOffices">
-                <ContentCollection>
-                    <dx:PopupControlContentControl runat="server">
-                        <dx:ASPxGridView ID="ASPxgvTaxOffices" runat="server" AutoGenerateColumns="False" ClientInstanceName="gridTaxOffices" DataSourceID="edsTaxOffices" KeyFieldName="TaxOfficeId" Width="100%">
-                            <ClientSideEvents RowDblClick="function(s, e) {
-	gridTaxOffices.GetRowValues(e.visibleIndex, 'TaxOfficeId;TaxOfficeName', OnGetTaxOffice);
-}" />
-                            <Columns>
-                                <dx:GridViewCommandColumn ShowClearFilterButton="True" ShowInCustomizationForm="True" VisibleIndex="6">
-                                </dx:GridViewCommandColumn>
-                                <dx:GridViewDataTextColumn Caption="Tax Office ID" FieldName="TaxOfficeId" ReadOnly="True" ShowInCustomizationForm="True" VisibleIndex="0">
-                                </dx:GridViewDataTextColumn>
-                                <dx:GridViewDataTextColumn FieldName="TaxOfficeName" ShowInCustomizationForm="True" VisibleIndex="1">
-                                </dx:GridViewDataTextColumn>
-                                <dx:GridViewDataTextColumn FieldName="Street" ShowInCustomizationForm="True" VisibleIndex="4">
-                                </dx:GridViewDataTextColumn>
-                                <dx:GridViewDataTextColumn FieldName="City" ShowInCustomizationForm="True" VisibleIndex="5">
-                                </dx:GridViewDataTextColumn>
-                            </Columns>
-                            <SettingsBehavior AllowSelectByRowClick="True" AllowSelectSingleRowOnly="True" />
-                            <Settings ShowFilterRow="True" />
-                            <SettingsDataSecurity AllowDelete="False" AllowEdit="False" AllowInsert="False" />
-                        </dx:ASPxGridView>
-                    </dx:PopupControlContentControl>
-                </ContentCollection>
-            </dx:PopupWindow>--%>
-        </Windows>
-        <ContentCollection>
-            <dx:PopupControlContentControl runat="server" SupportsDisabledAttribute="True">
-            </dx:PopupControlContentControl>
-        </ContentCollection>
-    </dx:ASPxPopupControl>
 
 </asp:Content>
 

@@ -15,7 +15,7 @@ using System.Text;
 using System.Net.Mail;
 using System.Net;
 
-namespace RexLubs.Customers
+namespace RexLubs.Staff
 {
     public partial class NewCustomerLub : System.Web.UI.Page
     {

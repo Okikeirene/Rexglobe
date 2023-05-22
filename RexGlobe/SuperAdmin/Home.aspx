@@ -16,4 +16,11 @@
         <dx:ASPxLoadingPanel ID="ASPxLoadingPanel1" runat="server" ClientInstanceName="LoadingPanel" ContainerElementID="ASPxDashboardViewer2">
         </dx:ASPxLoadingPanel>
 
+    <dx:ASPxDashboardViewer ID="ASPxDashboardViewer3" runat="server" DashboardSource="RexLubs.Analytics.HomeDashboard" ClientInstanceName="dashboardViewer" RegisterJQuery="True" AllowExportDashboardItems="True" Width="100%" Height="600px" OnConfigureDataConnection="ASPxDashboardViewer1_ConfigureDataConnection" >
+    </dx:ASPxDashboardViewer>
+    
+    <dx:ASPxLoadingPanel ID="ASPxLoadingPanel2" runat="server" ClientInstanceName="LoadingPanel" ContainerElementID="ASPxDashboardViewer3">
+    </dx:ASPxLoadingPanel>
+
+
 </asp:Content>
