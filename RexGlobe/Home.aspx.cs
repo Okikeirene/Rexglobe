@@ -32,5 +32,22 @@ namespace RexLubs
             }
 
         }
+
+        protected void ASPxDashboardViewer2_ConfigureDataConnection(object sender, DevExpress.DashboardWeb.ConfigureDataConnectionWebEventArgs e)
+        {
+            string conString2 = ConfigurationManager.ConnectionStrings["RexGlobeDB"].ConnectionString;
+            SqlConnectionStringBuilder con2 = new SqlConnectionStringBuilder(conString2);
+
+            if (e.ConnectionName == "connection")
+            {
+
+                CustomStringConnectionParameters customParameters = e.ConnectionParameters as CustomStringConnectionParameters;
+                if (customParameters != null)
+                {
+                    customParameters.ConnectionString = conString2;
+                }
+            }
+
+        }
     }
 }

@@ -390,9 +390,9 @@
     <Content Include="Staff\ViewProductInventory.aspx" />
     <Content Include="Staff\LubricantRequests.aspx" />
     <Content Include="Staff\NewCustomerLub.aspx" />
-    <Content Include="SuperAdmin\Home.aspx" />
     <Content Include="SuperAdmin\LubricantRequests.aspx" />
     <Content Include="SuperAdmin\ManageCustomer.aspx" />
+    <Content Include="SuperAdmin\Home.aspx" />
     <Content Include="Transaction\Transactions.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Billing\MakePayments.aspx" />
