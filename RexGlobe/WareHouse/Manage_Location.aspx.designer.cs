@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexLubs.Customers {
+namespace RexLubs.WareHouse {
     
     
-    public partial class ManageLubricantBooking {
+    public partial class Manage_Location {
         
         /// <summary>
         /// ASPxGridView1 control.
@@ -22,21 +22,30 @@ namespace RexLubs.Customers {
         protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
         
         /// <summary>
-        /// SqlManageLub control.
+        /// SqlDataLocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlManageLub;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataLocation;
         
         /// <summary>
-        /// SqlLubREq control.
+        /// SqlState control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlLubREq;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlState;
+        
+        /// <summary>
+        /// SqlCountry control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlCountry;
     }
 }

@@ -17,28 +17,31 @@
 <EditFormLayoutProperties ColCount="1"></EditFormLayoutProperties>
     <Columns>
 
-        <dx:GridViewDataTextColumn FieldName="ID" VisibleIndex="0" ReadOnly="True">
+        <dx:GridViewCommandColumn VisibleIndex="0">
+        </dx:GridViewCommandColumn>
+
+        <dx:GridViewDataTextColumn FieldName="ID" VisibleIndex="1" ReadOnly="True">
             <EditFormSettings Visible="False" />
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="ProductCode" VisibleIndex="1">
+        <dx:GridViewDataTextColumn FieldName="ProductCode" VisibleIndex="2">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="ProductName" VisibleIndex="2">
+        <dx:GridViewDataTextColumn FieldName="ProductName" VisibleIndex="3">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="ProductDescription" VisibleIndex="3">
+        <dx:GridViewDataTextColumn FieldName="ProductDescription" VisibleIndex="4">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="UnitPrice" VisibleIndex="4">
+        <dx:GridViewDataTextColumn FieldName="UnitPrice" VisibleIndex="5">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Units_Price_In_Carton" VisibleIndex="5">
+        <dx:GridViewDataTextColumn FieldName="Units_Price_In_Carton" VisibleIndex="6">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Pieces_In_Store" VisibleIndex="6">
+        <dx:GridViewDataTextColumn FieldName="Pieces_In_Store" VisibleIndex="7">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Cartons_In_Store" VisibleIndex="7">
+        <dx:GridViewDataTextColumn FieldName="Cartons_In_Store" VisibleIndex="8">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="Location" VisibleIndex="8">
+        <dx:GridViewDataTextColumn FieldName="Location" VisibleIndex="9">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataTextColumn FieldName="CreateBy" VisibleIndex="9">
+        <dx:GridViewDataTextColumn FieldName="CreateBy" VisibleIndex="10">
         </dx:GridViewDataTextColumn>
-        <dx:GridViewDataDateColumn FieldName="CreatedDate" VisibleIndex="10">
+        <dx:GridViewDataDateColumn FieldName="CreatedDate" VisibleIndex="11">
         </dx:GridViewDataDateColumn>
     </Columns>
     </dx:ASPxGridView>

@@ -133,7 +133,20 @@
                                             <li class="nav-item"><a runat="server" href="~/Staff/Procurement.aspx">Procurement</a></li>
                                              <li class="nav-item"><a runat="server" href="~/Staff/ViewProcurement.aspx">View Procurement</a></li>
                                         </ul>
-                                    </li>                           
+                                    </li>    
+                                     <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Payments<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a runat="server" href="~/Billing/Payments.aspx">View Payments</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Billing/MakePayments.aspx">Make Payments</a></li>
+                                        </ul>
+                                    </li> 
+                                    <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Print Invoice<b class="caret"></b></a>
+                                        <ul class="dropdown-menu">
+                                            <li class="nav-item"><a runat="server" href="~/Billing/InvoiceXtraReport.cs">Print Bulk Invoice</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/Billing/PrintInvoice.aspx"> Print Invoice</a></li>
+                                        </ul>
+                                    </li>     
+                                                  
                                </ul>
                   
                 </nav>

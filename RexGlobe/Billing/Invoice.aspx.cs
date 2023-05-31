@@ -29,61 +29,33 @@ namespace RexLubs.Billing
             string RexGlobeCS = ConfigurationManager.ConnectionStrings["RexGlobeDB"].ConnectionString;
             using (SqlConnection con = new SqlConnection(RexGlobeCS))
             {
-                SqlCommand cmd = new SqlCommand("  select Customers.ID, Customers.BusinessName," +
-                                       "Customers.TIN_Number, Customers.DateOfBirth, " +
-                                       "Customers.Email, Customers.PhoneNumber, " +
-                                       "Customers.Address, Customers.State, " +
-                                       "Customers.Country, Customers.SalesRepresentative, " +
-                                       "Customers.PaymentTerms, Customers.TrasactionType, " +
-                                       "Customers.DateofIncorporation, " +
-                                       "Customers.TypeOfBusiness, Customers.NextOfKinName, " +
-                                       "Customers.NextOfKinPhone, Customers.ContactPerson, " +
-                                       "Customers.ContactPersonEmail, " +
-                                       "Customers.ContactPersonGender, " +
-                                       "Customers.ContactPersonPhoneNumber, " +
-                                       "Customers.CreatedBy, Customers.CreatedDate, " +
-                                       "ProductRequest.ID as ProductRequest_ID, " +
-                                       "ProductRequest.CustomerID, " +
-                                       "ProductRequest.BusinessName as ProductRequest_BusinessName, " +
-                                       "ProductRequest.Email as ProductRequest_Email, " +
-                                       "ProductRequest.PhoneNumber as ProductRequest_PhoneNumber, " +
-                                       "ProductRequest.Address as ProductRequest_Address, " +
-                                       "ProductRequest.State as ProductRequest_State, " +
-                                       "ProductRequest.Country as ProductRequest_Country, " +
-                                       "ProductRequest.SalesRepresentative as ProductRequest_SalesRepresentative, " +
-                                       "ProductRequest.ContactPerson as ProductRequest_ContactPerson, " +
-                                       "ProductRequest.ContactPersonEmail as ProductRequest_ContactPersonEmail, " +
-                                       "ProductRequest.ContactPersonPhoneNumber as ProductRequest_ContactPersonPhoneNumber, " +
-                                       "ProductRequest.ProductName, ProductRequest.ProductType, " +
-                                       "ProductRequest.UnitPrice, " +
-                                       "ProductRequest.ProductQuantity, " +
-                                       "ProductRequest.Total_Amount, " +
-                                       "ProductRequest.PaymentTerms as ProductRequest_PaymentTerms, " +
-                                       "ProductRequest.TrasactionType as ProductRequest_TrasactionType, " +
-                                       "ProductRequest.WarehouseManagerName, " +
-                                       "ProductRequest.WarehouseManagerEmail, " +
-                                       "ProductRequest.WarehouseLocation, " +
-                                       "ProductRequest.PickUpPersonName, " +
-                                       "ProductRequest.PickUpPersonPhone, " +
-                                       "ProductRequest.Status, " +
-                                       "ProductRequest.ExpectedDeliveryDate, " +
-                                       "ProductRequest.CreatedBy as ProductRequest_CreatedBy, " +
-                                       "ProductRequest.CreatedDate as ProductRequest_CreatedDate " +
-                                  " from (dbo.Customers Customers  " +
-                                 " inner join dbo.ProductRequest ProductRequest " +
-                                     "  on(ProductRequest.BusinessName = Customers.BusinessName)) " +
-                                "WHERE ProductRequest.ID = @ID))", con);
-
-                con.Open();
+                SqlCommand cmd = new SqlCommand("  SELECT P.[PaymentReference],P.[CustomerID],P.[BusinessName],P.[ProductName], P.[UnitPrice],P.[ProductQuantity],P.[Amount] " +
+                    ", P.[PaymentDate], P.[PaymentYear], P.[PaymentTerms], P.[TrasactionType], P.[payment_currency], P.[payment_channel], " +
+                    " C.[TIN_Number], C.[DateOfBirth], C.[Email], C.[PhoneNumber], C.[Address], C.[State], C.[Country], C.[SalesRepresentative], " +
+                    " C.[DateofIncorporation], C.[TypeOfBusiness], C.[NextOfKinName], C.[NextOfKinPhone], C.[ContactPerson], C.[ContactPersonEmail] " +
+                    " , C.[ContactPersonGender], C.[ContactPersonPhoneNumber], C.[CreatedBy], C.[CreatedDate], R.[ExpectedDeliveryDate], " +
+                     " R.[ProductNameByPiece], R.[ProductTypeP], R.[UnitPriceByPiece], R.[ProductQuantityP], R.[UnitPriceByPiece] * R.[ProductQuantityP] as TotalPiece, R.[ProductNameByCarton] " +
+                    " , R.[ProductTypeC], R.[UnitPriceByCarton], R.[ProductQuantityC], R.[UnitPriceByCarton] * R.[ProductQuantityC] as TotalCarton, R.[Total_Amount], 0.075 * R.[Total_Amount] as VAT, R.[Total_Amount] + (0.075 * R.[Total_Amount]) as GrandTotal " +
+                    " FROM[RexGlobe].[dbo].[Payments] P " +
+                    " INNER JOIN[RexGlobe].[dbo].[Customers] C on C.ID = P.CustomerID " +
+                    " INNER JOIN[RexGlobe].[dbo].[ProductRequest] R on R.ID = P.RequestID" +
+                    "WHERE R.ID = @ID)", con);
                 cmd.Parameters.Add("@ID", SqlDbType.VarChar).Value = _ID;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 cmd.ExecuteNonQuery();
                 DataSet ds1 = new DataSet();
                 da.Fill(ds1);
 
-                XtraReport report = new XtraReport();
-                this.ASPxWebDocumentViewer1.Visible = true;
-                report.DataSource = ds1;
+                //XtraReport report = new XtraReport();
+                //this.ASPxWebDocumentViewer1.Visible = true;
+                //report.DataSource = ds1;
+
+                //XtraReport1 report = GetReport();
+                //string selectedIDs = HiddenField1.Value.Trim(new char[] { ',' });
+
+                //report.FilterString = string.Format("PaymentReference in ({0})", selectedIDs);
+                //report.CreateDocument();
+                //ReportViewer1.Report = report;
 
                 con.Close();
             }

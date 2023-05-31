@@ -51,7 +51,6 @@
             DevExpress.DashboardCommon.Measure measure4 = new DevExpress.DashboardCommon.Measure();
             DevExpress.DashboardCommon.Dimension dimension9 = new DevExpress.DashboardCommon.Dimension();
             DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery3 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery4 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             DevExpress.DashboardCommon.DashboardLayoutGroup dashboardLayoutGroup1 = new DevExpress.DashboardCommon.DashboardLayoutGroup();
             DevExpress.DashboardCommon.DashboardLayoutGroup dashboardLayoutGroup2 = new DevExpress.DashboardCommon.DashboardLayoutGroup();
             DevExpress.DashboardCommon.DashboardLayoutItem dashboardLayoutItem1 = new DevExpress.DashboardCommon.DashboardLayoutItem();
@@ -65,7 +64,6 @@
             this.chartDashboardItem1 = new DevExpress.DashboardCommon.ChartDashboardItem();
             this.dashboardSqlDataSource1 = new DevExpress.DashboardCommon.DashboardSqlDataSource();
             this.pieDashboardItem1 = new DevExpress.DashboardCommon.PieDashboardItem();
-            this.dashboardSqlDataSource2 = new DevExpress.DashboardCommon.DashboardSqlDataSource();
             this.dashboardSqlDataSource3 = new DevExpress.DashboardCommon.DashboardSqlDataSource();
             ((System.ComponentModel.ISupportInitialize)(this.gridDashboardItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(dimension1)).BeginInit();
@@ -86,7 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(dimension8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(measure4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(dimension9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
@@ -222,32 +219,21 @@
             this.pieDashboardItem1.Values.AddRange(new DevExpress.DashboardCommon.Measure[] {
             measure4});
             // 
-            // dashboardSqlDataSource2
-            // 
-            this.dashboardSqlDataSource2.ComponentName = "dashboardSqlDataSource2";
-            this.dashboardSqlDataSource2.ConnectionName = "RexGlobeDB";
-            this.dashboardSqlDataSource2.Name = "Booking";
-            customSqlQuery3.Name = "Query";
-            customSqlQuery3.Sql = resources.GetString("customSqlQuery3.Sql");
-            this.dashboardSqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery3});
-            // 
             // dashboardSqlDataSource3
             // 
             this.dashboardSqlDataSource3.ComponentName = "dashboardSqlDataSource3";
             this.dashboardSqlDataSource3.ConnectionName = "RexGlobeDB";
             this.dashboardSqlDataSource3.Name = "Vehicle";
-            customSqlQuery4.Name = "Query";
-            customSqlQuery4.Sql = resources.GetString("customSqlQuery4.Sql");
+            customSqlQuery3.Name = "Query";
+            customSqlQuery3.Sql = resources.GetString("customSqlQuery3.Sql");
             this.dashboardSqlDataSource3.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery4});
+            customSqlQuery3});
             this.dashboardSqlDataSource3.ResultSchemaSerializable = resources.GetString("dashboardSqlDataSource3.ResultSchemaSerializable");
             // 
             // BusinessIntelligent
             // 
             this.DataSources.AddRange(new DevExpress.DashboardCommon.IDashboardDataSource[] {
             this.dashboardSqlDataSource1,
-            this.dashboardSqlDataSource2,
             this.dashboardSqlDataSource3,
             this.dashboardSqlDataSource4});
             this.Items.AddRange(new DevExpress.DashboardCommon.DashboardItem[] {
@@ -299,7 +285,6 @@
             ((System.ComponentModel.ISupportInitialize)(measure4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(dimension9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pieDashboardItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dashboardSqlDataSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
@@ -310,7 +295,6 @@
         private DevExpress.DashboardCommon.PieDashboardItem pieDashboardItem1;
         private DevExpress.DashboardCommon.ChartDashboardItem chartDashboardItem1;
         private DevExpress.DashboardCommon.DashboardSqlDataSource dashboardSqlDataSource1;
-        private DevExpress.DashboardCommon.DashboardSqlDataSource dashboardSqlDataSource2;
         private DevExpress.DashboardCommon.DashboardSqlDataSource dashboardSqlDataSource3;
         private DevExpress.DashboardCommon.GridDashboardItem gridDashboardItem1;
         private DevExpress.DashboardCommon.PivotDashboardItem pivotDashboardItem1;

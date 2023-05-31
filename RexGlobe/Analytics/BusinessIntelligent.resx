@@ -131,7 +131,10 @@
   </data>
   <data name="customSqlQuery2.Sql" xml:space="preserve">
     <value>SELECT [PaymentReference]
-      ,[CustomerID],[BusinessName],[ProductName]
+      ,[CustomerID]
+      ,[RequestID]
+      ,[BusinessName]
+      ,[ProductName]
       ,[ProductType]
       ,[UnitPrice]
       ,[ProductQuantity]
@@ -146,40 +149,9 @@
   FROM [RexGlobe].[dbo].[Payments]</value>
   </data>
   <data name="dashboardSqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0iUGF5bWVudHMiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iUGF5bWVudFJlZmVyZW5jZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDdXN0b21lcklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iQnVzaW5lc3NOYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlByb2R1Y3ROYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlByb2R1Y3RUeXBlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlVuaXRQcmljZSIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iUHJvZHVjdFF1YW50aXR5IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFtb3VudCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iUGF5bWVudERhdGUiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJQYXltZW50WWVhciIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJQYXltZW50VGVybXMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVHJhc2FjdGlvblR5cGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0icGF5bWVudF9jdXJyZW5jeSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJwYXltZW50X2NoYW5uZWwiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ3JlYXRlZERhdGUiIFR5cGU9IkRhdGVUaW1lIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+    <value>PERhdGFTZXQgTmFtZT0iUGF5bWVudHMiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iUGF5bWVudFJlZmVyZW5jZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDdXN0b21lcklEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iUmVxdWVzdElEIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iQnVzaW5lc3NOYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlByb2R1Y3ROYW1lIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlByb2R1Y3RUeXBlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlVuaXRQcmljZSIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iUHJvZHVjdFF1YW50aXR5IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkFtb3VudCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iUGF5bWVudERhdGUiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJQYXltZW50WWVhciIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJQYXltZW50VGVybXMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVHJhc2FjdGlvblR5cGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0icGF5bWVudF9jdXJyZW5jeSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJwYXltZW50X2NoYW5uZWwiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ3JlYXRlZERhdGUiIFR5cGU9IkRhdGVUaW1lIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
   </data>
   <data name="customSqlQuery3.Sql" xml:space="preserve">
-    <value>SELECT [ID]
-      ,[CustomerID]
-      ,[BusinessName]
-      ,[Email]
-      ,[PhoneNumber]
-      ,[Address]
-      ,[State]
-      ,[Country]
-      ,[SalesRepresentative]
-      ,[ContactPerson]
-      ,[ContactPersonEmail]
-      ,[ContactPersonPhoneNumber]
-      ,[ProductName]
-      ,[ProductType]
-      ,[UnitPrice]
-      ,[ProductQuantity]
-      ,[Total_Amount]
-      ,[PaymentTerms]
-      ,[TrasactionType]
-      ,[WarehouseManagerName]
-      ,[WarehouseManagerEmail]
-      ,[WarehouseLocation]
-      ,[PickUpPersonName]
-      ,[PickUpPersonPhone]
-      ,[Status]
-      ,[ExpectedDeliveryDate]
-      ,[CreatedBy]
-      ,[CreatedDate]
-  FROM [RexGlobe].[dbo].[ProductRequest]</value>
-  </data>
-  <data name="customSqlQuery4.Sql" xml:space="preserve">
     <value>SELECT [ID]
       ,[VehicleProvider]
       ,[WorkServiceLocation]

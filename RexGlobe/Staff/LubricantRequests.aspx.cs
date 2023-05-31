@@ -17,7 +17,9 @@ using System.Net;
 using Twilio;
 using Twilio.Rest.Api.V2010.Account;
 using Twilio.Types;
-
+using System.Net.Http;
+//using Flutterwave.Net;
+//using Flutterwave.Net.Utilities;
 
 namespace RexLubs.Staff
 {
@@ -125,14 +127,17 @@ namespace RexLubs.Staff
 
             var returnParam = cmd.Parameters.Add("@BookingID", SqlDbType.Int);
             var returnParam2 = cmd.Parameters.Add("@ManagerEmail", SqlDbType.VarChar, 50);
+            var returnParam3 = cmd.Parameters.Add("@GrandTotal", SqlDbType.Decimal);
             returnParam.Direction = ParameterDirection.Output;
             returnParam2.Direction = ParameterDirection.Output;
+            returnParam3.Direction = ParameterDirection.Output;
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.ExecuteNonQuery();
 
             var result = returnParam.Value.ToString();
             string ManagerEmail = returnParam2.Value.ToString();
             string Email1 = ContactPersonEmail.Value.ToString();
+            decimal GrandTotal = decimal.Parse(returnParam3.Value.ToString());
 
             ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Lubricant Request Booking was Successful. Your Request ID is " + result + ".')", true);
             //Response.Redirect("~/Customers/ManageCustomers.aspx");
@@ -180,6 +185,8 @@ namespace RexLubs.Staff
             }
             con.Close();
 
+            
+            FlutterWavePayment(GrandTotal, Email1, ContactPersonPhoneNumber.Value.ToString(), ContactPerson.Value.ToString());
             SMSMessage();
             ASPxFormLayout1.ForEach(ClearItem);
             ClearItems();
@@ -273,14 +280,96 @@ namespace RexLubs.Staff
             ExpectedDeliveryDate.Value = string.Empty;
         }
 
-        protected void esmdsRegisteredCompanies_Selecting(object sender, EntityDataSourceSelectingEventArgs e)
+        private async void FlutterWavePayment(decimal GrandTotal, string email, string phonenumber, string name)
         {
+            // Flutterwave API endpoint
+            string url = "https://api.flutterwave.com/v3/payments";
 
+            // Your Flutterwave API key
+            string apiKey = "FLWPUBK_TEST-0129a7cb725322c8933d931990ad3bbe-X";
+
+            // Payment details
+            decimal amount = GrandTotal;
+            string currency = "NGN";
+            string redirectUrl = "~/Billing.MakePayments.aspx";
+
+            // Create the request payload
+            var payload = new
+            {
+                tx_ref = Guid.NewGuid().ToString(),
+                amount,
+                currency,
+                redirect_url = redirectUrl,
+                payment_options = "card",
+                customer = new
+                {
+                    email = "irenemmam@gmail.com",
+                    phonenumber = "08060312032",
+                    name = "Irene Mmam"
+                }
+            };
+
+            // Serialize the payload
+            var jsonPayload = Newtonsoft.Json.JsonConvert.SerializeObject(payload);
+            var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+
+            using (var httpClient = new HttpClient())
+            {
+                // Set the authorization header
+                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {apiKey}");
+
+                // Make the POST request to Flutterwave API
+                var response = await httpClient.PostAsync(url, content);
+
+                // Read the response
+                var responseContent = await response.Content.ReadAsStringAsync();
+
+                // Handle the response
+                if (response.IsSuccessStatusCode)
+                {
+                    // Payment initiation successful
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Payment initiated successfully.')", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('responseContent')", true);
+                }
+                else
+                {
+                    // Payment initiation failed
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Payment initiation failed.')", true);
+                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('responseContent')", true);
+                }
+            }
         }
 
-        protected void esmdsProductDescription_Selecting(object sender, EntityDataSourceSelectingEventArgs e)
-        {
+        //private async void FlutterWave(decimal GrandTotal, string email, string phonenumber, string name)
+        //{// Set your Flutterwave API keys
+        //    var publicKey = "YOUR_PUBLIC_KEY";
+        //    var secretKey = "YOUR_SECRET_KEY";
 
-        }
+        //    // Initialize the Flutterwave API client
+        //    var flutterwaveApi = new FlutterwaveApi(publicKey, secretKey);
+
+        //    // Create a payment request
+        //    var paymentRequest = new PaymentRequest
+        //    {
+        //        Amount = 1000, // Amount in the smallest currency unit (e.g., kobo)
+        //        Currency = "NGN",
+        //        Email = "customer@example.com",
+        //        TXRef = "YOUR_TRANSACTION_REFERENCE",
+        //        RedirectUrl = "https://yourwebsite.com/redirect",
+        //        Customizations = new Customizations
+        //        {
+        //            Title = "Your Payment Title",
+        //            Description = "Your Payment Description",
+        //            Logo = "https://yourwebsite.com/logo.png"
+        //        }
+        //    };
+
+        //    // Generate a payment link
+        //    var paymentLink = flutterwaveApi.GeneratePaymentLink(paymentRequest);
+
+        //    // Open the payment link in a browser or redirect the user to the link
+        //    System.Diagnostics.Process.Start(paymentLink);
+        //}
+
     }
 }

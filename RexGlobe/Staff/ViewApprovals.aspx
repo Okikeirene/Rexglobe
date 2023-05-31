@@ -18,7 +18,7 @@
         <EditFormLayoutProperties ColCount="1">
         </EditFormLayoutProperties>
         <Columns>
-            <dx:GridViewCommandColumn ShowEditButton="True" VisibleIndex="0">
+            <dx:GridViewCommandColumn VisibleIndex="0">
             </dx:GridViewCommandColumn>
             <dx:GridViewDataTextColumn FieldName="ID" VisibleIndex="1"  ReadOnly="True">
                 <EditFormSettings Visible="False" />

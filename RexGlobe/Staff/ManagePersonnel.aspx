@@ -81,8 +81,6 @@
             <EditFormSettings CaptionLocation="Top" />
         </dx:GridViewDataComboBoxColumn>
 
-        <dx:GridViewDataTextColumn FieldName="Manager" VisibleIndex="14">
-        </dx:GridViewDataTextColumn>
         <dx:GridViewDataComboBoxColumn Caption="Manager" FieldName="Manager"   VisibleIndex="14">
             <PropertiesComboBox DataSourceID="SQLPersonnel" TextField="UserName"  ValueField="UserName" >                                                     
                                                     

@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RexLubs.Billing {
+namespace RexLubs.WareHouse {
     
     
-    public partial class PrintInvoice {
+    public partial class WareHouseInventory {
         
         /// <summary>
         /// ASPxGridView1 control.
@@ -22,66 +22,39 @@ namespace RexLubs.Billing {
         protected global::DevExpress.Web.ASPxGridView ASPxGridView1;
         
         /// <summary>
-        /// Grid control.
+        /// SqlInventory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxGridView Grid;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlInventory;
         
         /// <summary>
-        /// ASPxPopupControl1 control.
+        /// SqlState control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.ASPxPopupControl ASPxPopupControl1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlState;
         
         /// <summary>
-        /// PopupControlContentControl1 control.
+        /// SqlCountry control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.Web.PopupControlContentControl PopupControlContentControl1;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlCountry;
         
         /// <summary>
-        /// ReportToolbar1 control.
+        /// SQLPersonnel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DevExpress.XtraReports.Web.ReportToolbar ReportToolbar1;
-        
-        /// <summary>
-        /// ReportViewer1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::DevExpress.XtraReports.Web.ReportViewer ReportViewer1;
-        
-        /// <summary>
-        /// HiddenField1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField HiddenField1;
-        
-        /// <summary>
-        /// PaymentReceipts control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource PaymentReceipts;
+        protected global::System.Web.UI.WebControls.SqlDataSource SQLPersonnel;
     }
 }

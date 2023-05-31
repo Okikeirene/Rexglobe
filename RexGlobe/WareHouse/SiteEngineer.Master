@@ -118,10 +118,10 @@
                                     </li>
         
                                       
-                                    <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Products<b class="caret"></b></a>
+                                    <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Manage Inventory<b class="caret"></b></a>
                                         <ul class="dropdown-menu">
-                                            <li class="nav-item"><a runat="server" href="~/Users/Products.aspx">Product Lists</a></li>
-                                            <%--<li class="nav-item"><a runat="server" href="~/Staff/PartsRequestList.aspx">Manage Product</a></li>--%>
+                                            <li class="nav-item"><a runat="server" href="~/WareHouse/WareHouseInventory.aspx">Inventory</a></li>
+                                            <li class="nav-item"><a runat="server" href="~/WareHouse.ManageWarehouse.aspx">Manage Requests</a></li>
                                         </ul>
                                     </li> 
                                     <li class="nav-item"><a runat="server" href="#" data-toggle="dropdown" class="dropdown-toggle" style="color: #FFFFFF; font-family: 'Calibri'">Payments<b class="caret"></b></a>
