@@ -53,5 +53,5 @@ jobs:
         with:
           app-name: 'RexLubsAppService'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_812D9C201AD841CB9C3A3CB88999993C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A3A2F030DEFF470ABF50F7FF8A37FE74 }}
           package: .
